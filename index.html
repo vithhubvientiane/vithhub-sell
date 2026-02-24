@@ -10,7 +10,8 @@
         body { font-family: 'Anuphan', 'Noto Sans Lao', sans-serif; }
         .lang-content { display: none; }
         .lang-content.active { display: block; }
-        .nav-glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); }
+        .nav-glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); }
+        .image-hover:hover img { transform: scale(1.05); transition: all 0.5s ease; }
     </style>
 </head>
 
@@ -21,10 +22,10 @@
             <div class="font-extrabold text-2xl tracking-tighter italic">
                 VITH <span class="text-red-600">HUB</span>
             </div>
-            <div class="flex gap-2 bg-slate-100 p-1 rounded-full border">
-                <button onclick="setLang('th')" id="btn-th" class="lang-btn px-4 py-1 rounded-full text-sm font-bold transition-all bg-white shadow-sm text-red-600">TH</button>
-                <button onclick="setLang('la')" id="btn-la" class="lang-btn px-4 py-1 rounded-full text-sm font-bold transition-all text-slate-500">LAO</button>
-                <button onclick="setLang('en')" id="btn-en" class="lang-btn px-4 py-1 rounded-full text-sm font-bold transition-all text-slate-500">EN</button>
+            <div class="flex gap-2 bg-slate-100 p-1 rounded-full border border-slate-200">
+                <button onclick="setLang('th')" id="btn-th" class="lang-btn px-4 py-1 rounded-full text-xs font-bold transition-all bg-white shadow-sm text-red-600">TH</button>
+                <button onclick="setLang('la')" id="btn-la" class="lang-btn px-4 py-1 rounded-full text-xs font-bold transition-all text-slate-500">LAO</button>
+                <button onclick="setLang('en')" id="btn-en" class="lang-btn px-4 py-1 rounded-full text-xs font-bold transition-all text-slate-500">EN</button>
             </div>
         </div>
     </nav>
@@ -37,182 +38,229 @@
         
         <div class="relative max-w-5xl mx-auto px-6 text-center z-10">
             <div class="lang-content th active">
-                <span class="inline-block py-1 px-4 rounded-full bg-red-600/20 text-red-400 text-sm font-bold mb-6 border border-red-600/30">จำกัดเพียง 25 แบรนด์เท่านั้น</span>
-                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">VITH <span class="text-red-500 italic">x</span> Big C Vientiane</h1>
-                <p class="text-2xl md:text-3xl text-slate-300 mb-10">ยกบูธไทย ไปตั้งกลางเวียงจันทน์ <br><span class="text-white font-semibold underline decoration-red-600 underline-offset-8">เปิดตลาดลาวอย่างเป็นทางการ</span></p>
+                <span class="inline-block py-1 px-4 rounded-full bg-red-600/20 text-red-400 text-sm font-bold mb-6 border border-red-600/30 uppercase tracking-widest">รับเพียง 25 แบรนด์เท่านั้น</span>
+                <h1 class="text-5xl md:text-8xl font-black mb-6 leading-tight uppercase italic">VITH <span class="text-red-500">x</span> Big C</h1>
+                <p class="text-2xl md:text-3xl text-slate-300 mb-10 font-light">ยกบูธไทย ไปตั้งกลางเวียงจันทน์ <br><span class="text-white font-bold underline decoration-red-600 underline-offset-8">เปิดตลาดลาวอย่างเป็นทางการ</span></p>
             </div>
             <div class="lang-content la">
-                <span class="inline-block py-1 px-4 rounded-full bg-red-600/20 text-red-400 text-sm font-bold mb-6 border border-red-600/30">ຈຳກັດພຽງ 25 ແບຣນເທົ່ານັ້ນ</span>
-                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">VITH <span class="text-red-500 italic">x</span> Big C Vientiane</h1>
-                <p class="text-2xl md:text-3xl text-slate-300 mb-10">ຍົກບູດໄທ ໄປຕັ້ງກາງນະຄອນຫຼວງວຽງຈັນ <br><span class="text-white font-semibold underline decoration-red-600 underline-offset-8">ເປີດຕະຫຼາດລາວຢ່າງເປັນທາງການ</span></p>
+                <span class="inline-block py-1 px-4 rounded-full bg-red-600/20 text-red-400 text-sm font-bold mb-6 border border-red-600/30 uppercase tracking-widest">ຈຳກັດພຽງ 25 ແບຣນເທົ່ານັ້ນ</span>
+                <h1 class="text-5xl md:text-8xl font-black mb-6 leading-tight uppercase italic">VITH <span class="text-red-500">x</span> Big C</h1>
+                <p class="text-2xl md:text-3xl text-slate-300 mb-10 font-light">ຍົກບູດໄທ ໄປຕັ້ງກາງນະຄອນຫຼວງວຽງຈັນ <br><span class="text-white font-bold underline decoration-red-600 underline-offset-8">ເປີດຕະຫຼາດລາວຢ່າງເປັນທາງການ</span></p>
             </div>
             <div class="lang-content en">
-                <span class="inline-block py-1 px-4 rounded-full bg-red-600/20 text-red-400 text-sm font-bold mb-6 border border-red-600/30">Limited to 25 Brands Only</span>
-                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">VITH <span class="text-red-500 italic">x</span> Big C Vientiane</h1>
-                <p class="text-2xl md:text-3xl text-slate-300 mb-10">Thai SME Showcase in Vientiane <br><span class="text-white font-semibold underline decoration-red-600 underline-offset-8">Official Entry to Laos Market</span></p>
+                <span class="inline-block py-1 px-4 rounded-full bg-red-600/20 text-red-400 text-sm font-bold mb-6 border border-red-600/30 uppercase tracking-widest">Limited to 25 Brands Only</span>
+                <h1 class="text-5xl md:text-8xl font-black mb-6 leading-tight uppercase italic">VITH <span class="text-red-500">x</span> Big C</h1>
+                <p class="text-2xl md:text-3xl text-slate-300 mb-10 font-light">Thai SME Showcase in Vientiane <br><span class="text-white font-bold underline decoration-red-600 underline-offset-8">Official Entry to Laos Market</span></p>
             </div>
-            <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 hover:scale-105 transition-all px-12 py-5 rounded-full text-xl font-bold shadow-2xl">
-                Register / Get Proposal
+            <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 hover:scale-105 transition-all px-12 py-5 rounded-full text-xl font-black italic shadow-2xl">
+                Register Now
             </a>
         </div>
     </section>
 
     <section class="py-24 bg-white px-6">
         <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                
+                <div class="lg:w-1/2">
+                    <div class="lang-content th active">
+                        <h2 class="text-4xl font-black mb-4 italic uppercase">Event Layout</h2>
+                        <p class="text-xl text-slate-600 mb-8 font-light italic">ทำเลทอง ชั้น 1 (Indoor) ติดประตูทางเข้าหลัก ฝั่งที่มีคนเดินหนาแน่นที่สุด</p>
+                    </div>
+                    <div class="lang-content la">
+                        <h2 class="text-4xl font-black mb-4 italic uppercase">Event Layout</h2>
+                        <p class="text-xl text-slate-600 mb-8 font-light italic">ທຳເລທອງ, ຊັ້ນ 1 (Indoor) ຕິດປະຕູທາງເຂົ້າຫຼັກ ຝັ່ງທີ່ມີຄົນຍ່າງຫນາແຫນ້ນທີ່ສຸດ</p>
+                    </div>
+                    <div class="lang-content en">
+                        <h2 class="text-4xl font-black mb-4 italic uppercase">Event Layout</h2>
+                        <p class="text-xl text-slate-600 mb-8 font-light italic">Prime Location, 1st Floor Indoor, situated near the main high-traffic entrance.</p>
+                    </div>
+
+                    <div class="relative bg-slate-900 rounded-[2.5rem] p-3 shadow-3xl">
+                        <div class="aspect-[4/3] bg-white rounded-[2rem] overflow-hidden border-2 border-slate-100 relative">
+                            <img src="https://images.unsplash.com/photo-1582653280643-e79c79219b19?q=80&w=1000&auto=format&fit=crop" alt="Floor Plan" class="w-full h-full object-cover opacity-50 grayscale">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-900 p-8 text-center">
+                                <div class="w-16 h-16 bg-red-600 text-white rounded-full flex items-center justify-center mb-4 shadow-xl font-bold">MAP</div>
+                                <p class="font-black text-2xl italic uppercase tracking-tighter mb-2">Insert Floor Plan Image</p>
+                                <p class="text-sm text-slate-500 uppercase font-bold tracking-widest">( ชั้น 1 Big C เวียงจันทน์ )</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2 grid grid-cols-2 gap-4">
+                    <div class="space-y-4">
+                        <div class="relative rounded-3xl overflow-hidden shadow-lg image-hover h-64 border-b-8 border-red-600">
+                            <img src="https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?q=80&w=500&auto=format&fit=crop" class="w-full h-full object-cover">
+                            <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-white text-xs font-bold italic uppercase">
+                                <span class="lang-content th active">บรรยากาศลูกค้าจริง</span>
+                                <span class="lang-content la">ບັນຍາກາດລູກຄ້າຈິງ</span>
+                                <span class="lang-content en">Real Shopper Traffic</span>
+                            </div>
+                        </div>
+                        <div class="relative rounded-3xl overflow-hidden shadow-lg image-hover h-48 border-l-4 border-slate-900">
+                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=500&auto=format&fit=crop" class="w-full h-full object-cover">
+                            <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-white text-xs font-bold italic uppercase">
+                                <span class="lang-content th active">บูธตัวอย่างที่ทันสมัย</span>
+                                <span class="lang-content la">ບູດຕົວຢ່າງທີ່ທັນສະໄຫມ</span>
+                                <span class="lang-content en">Premium Booth Design</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4 pt-8">
+                        <div class="relative rounded-3xl overflow-hidden shadow-lg image-hover h-48 border-r-4 border-slate-900">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=500&auto=format&fit=crop" class="w-full h-full object-cover">
+                            <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-white text-xs font-bold italic uppercase">
+                                <span class="lang-content th active">Big C เวียงจันทน์</span>
+                                <span class="lang-content la">Big C ວຽງຈັນ</span>
+                                <span class="lang-content en">Big C Vientiane Venue</span>
+                            </div>
+                        </div>
+                        <div class="relative rounded-[2rem] overflow-hidden shadow-2xl image-hover h-72 border-4 border-red-600">
+                            <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=500&auto=format&fit=crop" class="w-full h-full object-cover">
+                            <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-white text-xs font-bold italic uppercase">
+                                <span class="lang-content th active">สร้างยอดขายจริง</span>
+                                <span class="lang-content la">ສ້າງຍອດຂາຍຈິງ</span>
+                                <span class="lang-content en">Proven Sales Growth</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-slate-50 px-6 border-y border-slate-200">
+        <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <span class="inline-block mb-4 px-5 py-2 rounded-full bg-green-100 text-green-700 font-bold text-sm tracking-widest">PHASE 1 · PROOF OF CONCEPT</span>
+                <span class="inline-block mb-4 px-5 py-2 rounded-full bg-green-100 text-green-700 font-bold text-xs tracking-[0.3em] uppercase">Phase 1 · Proof of Concept</span>
                 <div class="lang-content th active">
-                    <h2 class="text-4xl font-extrabold mb-6 italic">งานขอบคุณลูกค้า Big C เวียงจันทน์</h2>
-                    <p class="text-xl text-slate-600 max-w-3xl mx-auto">ไม่ใช่แค่งานแฟร์ทั่วไป แต่คือการ <strong>สร้าง Traffic จริง</strong> เพื่อปูทางสู่ VITH Hub ระยะยาว</p>
+                    <h2 class="text-4xl font-black mb-4 italic italic uppercase">งานขอบคุณลูกค้า Big C เวียงจันทน์</h2>
+                    <p class="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">ไม่ใช่เพียงแค่งานขายของ แต่เรากำลังสร้าง <strong>Data & Traffic</strong> <br>เพื่อการันตีความสำเร็จของแบรนด์ไทยใน VITH Hub</p>
                 </div>
                 <div class="lang-content la">
-                    <h2 class="text-4xl font-extrabold mb-6 italic">ງານຂອບໃຈລູກຄ້າ Big C ວຽງຈັນ</h2>
-                    <p class="text-xl text-slate-600 max-w-3xl mx-auto">ບໍ່ແມ່ນແຕ່ງານແຟທົ່ວໄປ ແຕ່ແມ່ນການ <strong>ສ້າງ Traffic ຈິງ</strong> ເພື່ອປູທາງສູ່ VITH Hub ໄລຍະຍາວ</p>
+                    <h2 class="text-4xl font-black mb-4 italic uppercase">ງານຂອບໃຈລູກຄ້າ Big C ວຽງຈັນ</h2>
+                    <p class="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">ບໍ່ແມ່ນແຕ່ການຂາຍຂອງ ແຕ່ພວກເຮົາກຳລັງສ້າງ <strong>Data & Traffic</strong> <br>ເພື່ອການັນຕີຄວາມສຳເລັດຂອງແບຣນໄທໃນ VITH Hub</p>
                 </div>
                 <div class="lang-content en">
-                    <h2 class="text-4xl font-extrabold mb-6 italic">Big C Vientiane Customer Appreciation</h2>
-                    <p class="text-xl text-slate-600 max-w-3xl mx-auto">Not just a fair, but a <strong>Traffic Generation</strong> event to pave the way for VITH Hub.</p>
+                    <h2 class="text-4xl font-black mb-4 italic uppercase">Customer Appreciation Fair</h2>
+                    <p class="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">More than just a sale event, we're building <strong>Data & Traffic</strong> <br>to guarantee Thai brand success in the VITH Hub.</p>
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12 items-center italic">
-                <div class="space-y-6 text-lg border-l-4 border-red-600 pl-8">
-                    <div class="lang-content th active">
-                        <p>🎯 <strong>กลุ่มเป้าหมาย:</strong> ลูกค้า Big C และชาวเวียงจันทน์ที่มีกำลังซื้อ</p>
-                        <p>📊 <strong>เป้าหมาย:</strong> ทดสอบพฤติกรรมผู้ซื้อและเก็บ Data จริง</p>
-                        <p>🏗️ <strong>โครงสร้าง:</strong> เป็นรากฐานสำคัญก่อนเปิดตัว VITH Hub เต็มรูปแบบ</p>
-                    </div>
-                    <div class="lang-content la">
-                        <p>🎯 <strong>ກຸ່ມເປົ້າໝາຍ:</strong> ລູກຄ້າ Big C ແລະ ຊາວວຽງຈັນທີ່ມີກຳລັງຊື້</p>
-                        <p>📊 <strong>ເປົ້າໝາຍ:</strong> ທົດສອບພຶດຕິກຳຜູ້ຊື້ ແລະ ເກັບຂໍ້ມູນຈິງ</p>
-                        <p>🏗️ <strong>ໂຄງສ້າງ:</strong> ເປັນຮາກຖານສຳຄັນກ່ອນເປີດຕົວ VITH Hub ເຕັມຮູບແບບ</p>
-                    </div>
-                    <div class="lang-content en">
-                        <p>🎯 <strong>Target:</strong> High-purchasing power customers at Big C Vientiane</p>
-                        <p>📊 <strong>Goal:</strong> Test consumer behavior and collect market data</p>
-                        <p>🏗️ <strong>Vision:</strong> The foundation for the permanent VITH Hub</p>
-                    </div>
+            <div class="grid md:grid-cols-3 gap-8 text-center italic">
+                <div class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100">
+                    <div class="text-4xl mb-6">🎯</div>
+                    <div class="lang-content th active font-bold">กลุ่มเป้าหมายมีกำลังซื้อสูง</div>
+                    <div class="lang-content la font-bold">ກຸ່ມເປົ້າຫມາຍມີກຳລັງຊື້ສູງ</div>
+                    <div class="lang-content en font-bold">High Spending Power</div>
                 </div>
-                <div class="bg-slate-900 text-white p-10 rounded-[2rem] shadow-2xl relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 text-6xl italic font-black">VITH</div>
-                    <div class="lang-content th active">
-                        <h4 class="font-bold text-red-500 mb-4 text-xl underline">ทำไมต้องงานนี้?</h4>
-                        <ul class="space-y-4">
-                            <li class="flex gap-3">✅ ทำเลชั้น 1 (Indoor) คนเห็นแน่นอน</li>
-                            <li class="flex gap-3">✅ การันตีคนเดินด้วยฐานลูกค้า Big C</li>
-                            <li class="flex gap-3">✅ ไม่ต้องจัดการเอกสารขนส่งเอง</li>
-                        </ul>
-                    </div>
-                    <div class="lang-content la">
-                        <h4 class="font-bold text-red-500 mb-4 text-xl underline">ເປັນຫຍັງຕ້ອງງານນີ້?</h4>
-                        <ul class="space-y-4">
-                            <li class="flex gap-3">✅ ທຳເລຊັ້ນ 1 (Indoor) ຄົນເຫັນແນ່ນອນ</li>
-                            <li class="flex gap-3">✅ ການັນຕີຄົນຍ່າງດ້ວຍຖານລູກຄ້າ Big C</li>
-                            <li class="flex gap-3">✅ ບໍ່ຕ້ອງຈັດການເອກະສານຂົນສົ່ງເອງ</li>
-                        </ul>
-                    </div>
-                    <div class="lang-content en">
-                        <h4 class="font-bold text-red-500 mb-4 text-xl underline">Why Participate?</h4>
-                        <ul class="space-y-4">
-                            <li class="flex gap-3">✅ Prime Location: 1st Floor Indoor</li>
-                            <li class="flex gap-3">✅ Guaranteed Traffic from Big C Members</li>
-                            <li class="flex gap-3">✅ Hassle-free Logistics & Customs</li>
-                        </ul>
-                    </div>
+                <div class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100">
+                    <div class="text-4xl mb-6">📊</div>
+                    <div class="lang-content th active font-bold">ทดสอบตลาดด้วย Data จริง</div>
+                    <div class="lang-content la font-bold">ທົດສອບຕະຫຼາດດ້ວຍຂໍ້ມູນຈິງ</div>
+                    <div class="lang-content en font-bold">Data-Driven Market Test</div>
+                </div>
+                <div class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100">
+                    <div class="text-4xl mb-6">🏗️</div>
+                    <div class="lang-content th active font-bold">รากฐานสู่ Hub ถาวร</div>
+                    <div class="lang-content la font-bold">ຮາກຖານສູ່ Hub ຖາວອນ</div>
+                    <div class="lang-content en font-bold">Long-term Hub Foundation</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-slate-50 px-6">
-        <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-4xl font-black mb-16 italic uppercase tracking-tighter">Packages</h2>
+    <section class="py-24 bg-white px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl font-black text-center mb-20 italic uppercase tracking-tighter">Packages</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col">
-                    <h3 class="text-xl font-bold text-slate-400 mb-2 uppercase">Starter</h3>
-                    <div class="text-4xl font-black mb-6 italic">฿8,500</div>
-                    <ul class="text-left space-y-4 mb-8 flex-grow lang-content th active">
-                        <li>• บูธมาตรฐาน (Kiosk)</li>
-                        <li>• ดูแลการขนส่งไทย-ลาว</li>
-                        <li>• พนักงานดูแลส่วนกลาง</li>
+                <div class="bg-white p-10 rounded-[2.5rem] border border-slate-200 shadow-sm flex flex-col">
+                    <h3 class="text-xl font-bold text-slate-400 mb-2 uppercase italic">Starter</h3>
+                    <div class="text-4xl font-black mb-8 italic">฿8,500</div>
+                    <ul class="text-left space-y-4 mb-10 flex-grow font-light">
+                        <li class="lang-content th active">✅ บูธมาตรฐาน (Kiosk)</li>
+                        <li class="lang-content th active">✅ บริการขนส่งไทย-ลาว</li>
+                        <li class="lang-content th active">✅ พนักงานรวมประจำโซน</li>
+                        
+                        <li class="lang-content la">✅ ບູດມາດຕະຖານ (Kiosk)</li>
+                        <li class="lang-content la">✅ ບໍລິການຂົນສົ່ງ ໄທ-ລາວ</li>
+                        <li class="lang-content la">✅ ພະນັກງານລວມປະຈຳໂຊນ</li>
+
+                        <li class="lang-content en">✅ Standard Kiosk</li>
+                        <li class="lang-content en">✅ Thai-Lao Logistics</li>
+                        <li class="lang-content en">✅ Shared Staff Support</li>
                     </ul>
-                    <ul class="text-left space-y-4 mb-8 flex-grow lang-content la">
-                        <li>• ບູດມາດຕະຖານ (Kiosk)</li>
-                        <li>• ເບິ່ງແຍງການຂົນສົ່ງ ໄທ-ລາວ</li>
-                        <li>• ພະນັກງານເບິ່ງແຍງສ່ວນກາງ</li>
-                    </ul>
-                    <ul class="text-left space-y-4 mb-8 flex-grow lang-content en">
-                        <li>• Standard Kiosk</li>
-                        <li>• Logistics Support</li>
-                        <li>• General Staff Support</li>
-                    </ul>
-                    <a href="#contact" class="block py-3 border-2 border-slate-900 rounded-xl font-bold hover:bg-slate-900 hover:text-white transition-all italic uppercase">Select</a>
+                    <a href="#contact" class="block py-4 border-2 border-slate-900 rounded-2xl font-black hover:bg-slate-900 hover:text-white transition-all text-center uppercase italic">Select</a>
                 </div>
 
-                <div class="bg-white p-8 rounded-3xl border-4 border-red-600 shadow-2xl flex flex-col scale-105 relative">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-red-600 text-white px-4 py-1 rounded-full text-xs font-black uppercase tracking-widest">Recommended</div>
+                <div class="bg-white p-10 rounded-[2.5rem] border-4 border-red-600 shadow-3xl flex flex-col scale-105 relative z-10">
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-red-600 text-white px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest">Recommended</div>
                     <h3 class="text-xl font-bold text-red-600 mb-2 uppercase italic">Business</h3>
-                    <div class="text-4xl font-black mb-6 italic">฿12,000</div>
-                    <ul class="text-left space-y-4 mb-8 flex-grow lang-content th active font-semibold">
-                        <li>• บูธตำแหน่ง Prime Zone</li>
-                        <li>• พนักงานช่วยขาย (1:1)</li>
-                        <li>• โปรโมทผ่านสื่อท้องถิ่น</li>
+                    <div class="text-4xl font-black mb-8 italic text-red-600 font-black">฿12,000</div>
+                    <ul class="text-left space-y-4 mb-10 flex-grow font-bold">
+                        <li class="lang-content th active">✅ ทำเล Prime Zone ที่สุด</li>
+                        <li class="lang-content th active">✅ พนักงานช่วยขายส่วนตัว</li>
+                        <li class="lang-content th active">✅ โปรโมทผ่าน Influencer ลาว</li>
+
+                        <li class="lang-content la">✅ ທຳເລ Prime Zone ທີ່ສຸດ</li>
+                        <li class="lang-content la">✅ ພະນັກງານຊ່ວຍຂາຍສ່ວນຕົວ</li>
+                        <li class="lang-content la">✅ ໂປຣໂມທຜ່ານ Influencer ລາວ</li>
+
+                        <li class="lang-content en">✅ Best Prime Zone Location</li>
+                        <li class="lang-content en">✅ Dedicated Private Staff</li>
+                        <li class="lang-content en">✅ Local Influencer Shoutout</li>
                     </ul>
-                    <ul class="text-left space-y-4 mb-8 flex-grow lang-content la font-semibold">
-                        <li>• ບູດທຳເລ Prime Zone</li>
-                        <li>• ພະນັກງານຊ່ວຍຂາຍ (1:1)</li>
-                        <li>• ໂປຣໂມທຜ່ານສື່ທ້ອງຖິ່ນ</li>
-                    </ul>
-                    <ul class="text-left space-y-4 mb-8 flex-grow lang-content en font-semibold">
-                        <li>• Prime Zone Location</li>
-                        <li>• Dedicated Sales Staff (1:1)</li>
-                        <li>• Local Media Promotion</li>
-                    </ul>
-                    <a href="#contact" class="block py-3 bg-red-600 text-white rounded-xl font-bold hover:bg-red-700 transition-all italic uppercase shadow-lg shadow-red-200">Book Now</a>
+                    <a href="#contact" class="block py-5 bg-red-600 text-white rounded-2xl font-black hover:bg-red-700 transition-all text-center uppercase italic shadow-xl shadow-red-200">Get Offer</a>
                 </div>
 
-                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col">
+                <div class="bg-white p-10 rounded-[2.5rem] border border-slate-200 shadow-sm flex flex-col">
                     <h3 class="text-xl font-bold text-slate-400 mb-2 uppercase italic">Partner</h3>
-                    <div class="text-4xl font-black mb-6 italic">฿15,000+</div>
-                    <ul class="text-left space-y-4 mb-8 flex-grow lang-content th active">
-                        <li>• สิทธิ์วางขาย VITH Hub ถาวร</li>
-                        <li>• ติดตั้ง Banner ขนาดใหญ่</li>
-                        <li>• ระบบ Distributor ทั่วลาว</li>
+                    <div class="text-4xl font-black mb-8 italic">฿15,000+</div>
+                    <ul class="text-left space-y-4 mb-10 flex-grow font-light italic underline decoration-red-200">
+                        <li class="lang-content th active">🔥 สิทธิ์ขายใน Hub ถาวร</li>
+                        <li class="lang-content th active">🔥 Banner ขนาดใหญ่รอบงาน</li>
+                        <li class="lang-content th active">🔥 เชื่อมต่อคู่ค้าทั่วลาว</li>
+
+                        <li class="lang-content la">🔥 ສິດວາງຂາຍໃນ Hub ຖາວອນ</li>
+                        <li class="lang-content la">🔥 ປ້າຍ Banner ຂະໜາດໃຫຍ່</li>
+                        <li class="lang-content la">🔥 ເຊື່ອມຕໍ່ຄູ່ຄ້າທົ່ວປະເທດລາວ</li>
+
+                        <li class="lang-content en">🔥 Permanent Hub Listing</li>
+                        <li class="lang-content en">🔥 Large Venue-wide Banners</li>
+                        <li class="lang-content en">🔥 Distribution Network Access</li>
                     </ul>
-                    <ul class="text-left space-y-4 mb-8 flex-grow lang-content la">
-                        <li>• ສິດວາງຂາຍ VITH Hub ຖາວອນ</li>
-                        <li>• ຕິດປ້າຍ Banner ຂະໜາດໃຫຍ່</li>
-                        <li>• ລະບົບ Distributor ທົ່ວລາວ</li>
-                    </ul>
-                    <ul class="text-left space-y-4 mb-8 flex-grow lang-content en">
-                        <li>• Permanent VITH Hub Listing</li>
-                        <li>• Large Banner Placement</li>
-                        <li>• Distribution Network access</li>
-                    </ul>
-                    <a href="#contact" class="block py-3 border-2 border-slate-900 rounded-xl font-bold hover:bg-slate-900 hover:text-white transition-all italic uppercase">Contact Us</a>
+                    <a href="#contact" class="block py-4 border-2 border-slate-900 rounded-2xl font-black hover:bg-slate-900 hover:text-white transition-all text-center uppercase italic">Consult</a>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="contact" class="py-24 bg-slate-900 px-6">
-        <div class="max-w-4xl mx-auto bg-white rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row shadow-3xl">
+        <div class="max-w-4xl mx-auto bg-white rounded-[3rem] overflow-hidden flex flex-col md:flex-row shadow-3xl">
             <div class="md:w-1/2 bg-red-600 p-12 text-white italic">
-                <h2 class="text-4xl font-black mb-6 leading-none">START YOUR JOURNEY.</h2>
-                <div class="lang-content th active italic">
-                    <p class="text-red-100">ลงทะเบียนเพื่อขอรับ Proposal และสิทธิพิเศษก่อนใคร ทีมงานจะติดต่อกลับภายใน 24 ชม.</p>
+                <h2 class="text-5xl font-black mb-8 leading-none uppercase tracking-tighter">Let's Cross <br>the Border.</h2>
+                <div class="lang-content th active">
+                    <p class="text-red-100 text-lg">ลงทะเบียนเพื่อขอรับ Proposal และรับสิทธิ์จองบูธตำแหน่งดีที่สุดก่อนใคร ทีมงานจะติดต่อกลับภายใน 24 ชม.</p>
                 </div>
-                <div class="lang-content la italic">
-                    <p class="text-red-100">ລົງທະບຽນເພື່ອຮັບ Proposal ແລະ ສິດພິເສດກ່ອນໃຜ ທີມງານຈະຕິດຕໍ່ກັບພາຍໃນ 24 ຊົ່ວໂມງ.</p>
+                <div class="lang-content la">
+                    <p class="text-red-100 text-lg">ລົງທະບຽນເພື່ອຮັບ Proposal ແລະ ຮັບສິດຈອງບູດທຳເລທີ່ດີທີ່ສຸດກ່ອນໃຜ ທີມງານຈະຕິດຕໍ່ກັບພາຍໃນ 24 ຊົ່ວໂມງ.</p>
                 </div>
-                <div class="lang-content en italic">
-                    <p class="text-red-100">Register now to receive the official proposal. Our team will contact you within 24 hours.</p>
+                <div class="lang-content en">
+                    <p class="text-red-100 text-lg">Sign up for the official proposal and secure the best booth locations. Our team will follow up within 24 hours.</p>
                 </div>
             </div>
-            <div class="md:w-1/2 p-12">
+            <div class="md:w-1/2 p-12 bg-slate-50">
                 <form class="space-y-6">
-                    <input class="w-full p-4 bg-slate-100 border-none rounded-2xl focus:ring-2 focus:ring-red-600 outline-none transition-all" placeholder="Name / Company">
-                    <input class="w-full p-4 bg-slate-100 border-none rounded-2xl focus:ring-2 focus:ring-red-600 outline-none transition-all" placeholder="LINE / Phone">
+                    <div>
+                        <label class="block text-[10px] font-black uppercase text-slate-400 mb-2 italic tracking-widest">Name / Company</label>
+                        <input class="w-full p-4 bg-white border border-slate-200 rounded-2xl focus:ring-2 focus:ring-red-600 outline-none transition-all font-bold" placeholder="Your Answer">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-black uppercase text-slate-400 mb-2 italic tracking-widest">Contact (LINE/PHONE)</label>
+                        <input class="w-full p-4 bg-white border border-slate-200 rounded-2xl focus:ring-2 focus:ring-red-600 outline-none transition-all font-bold" placeholder="@ID or Number">
+                    </div>
                     <button class="w-full bg-slate-900 text-white py-5 rounded-2xl font-black italic uppercase tracking-widest hover:bg-black transition-all shadow-xl active:scale-95">
                         Submit Request
                     </button>
@@ -221,21 +269,18 @@
         </div>
     </section>
 
-    <footer class="py-12 text-center text-slate-400 border-t border-slate-100 italic">
-        <p>© 2026 VITH HUB x Big C Vientiane. Your Gateway to Mekong Region.</p>
+    <footer class="py-16 text-center text-slate-400 bg-slate-950 italic">
+        <p class="mb-4 text-slate-100 font-bold uppercase tracking-[0.4em]">VITH x Big C</p>
+        <p class="text-xs uppercase font-bold tracking-widest">© 2026 VITH HUB Vientiane. Your Strategic Partner for Laos Market Expansion.</p>
     </footer>
 
     <script>
         function setLang(lang) {
-            // Content Toggle
-            document.querySelectorAll('.lang-content').forEach(el => {
-                el.classList.remove('active');
-            });
-            document.querySelectorAll('.lang-content.' + lang).forEach(el => {
-                el.classList.add('active');
-            });
+            // Content
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-content.' + lang).forEach(el => el.classList.add('active'));
 
-            // Button Styling Toggle
+            // Buttons
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('bg-white', 'shadow-sm', 'text-red-600');
                 btn.classList.add('text-slate-500');
