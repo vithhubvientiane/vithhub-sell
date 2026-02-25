@@ -1,294 +1,1486 @@
 <!DOCTYPE html>
 <html lang="th" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VITH x Big C Vientiane | Bridge to Laos Market</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;600;700&family=Noto+Sans+Lao:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Anuphan', 'Noto Sans Lao', sans-serif; }
-        .lang-content { display: none; }
-        .lang-content.active { display: block; }
-        .nav-glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); }
-        .image-hover:hover img { transform: scale(1.05); transition: all 0.5s ease; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VITH Hub × Big C Vientiane | สะพานการค้าไทย-ลาว</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sarabun:wght@300;400;600;700;800&family=Noto+Sans+Lao:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red: #E31E24;
+  --red-dark: #B01519;
+  --gold: #F5C842;
+  --black: #0D0D0D;
+  --off-white: #F5F2EC;
+  --slate: #1A1A2E;
+  --muted: #6B6B7B;
+  --border: rgba(255,255,255,0.08);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+  background: var(--black);
+  color: var(--off-white);
+  font-family: 'Sarabun', 'Noto Sans Lao', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ─── LANGUAGE SYSTEM ─── */
+[data-lang] { display: none; }
+[data-lang].active { display: block; }
+span[data-lang].active { display: inline; }
+
+/* ─── NOISE TEXTURE ─── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: 0.5;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(13,13,13,0.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.1em;
+  color: #fff;
+}
+.nav-logo span { color: var(--red); }
+
+.lang-switcher {
+  display: flex; gap: 4px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 4px;
+}
+.lang-btn {
+  background: none; border: none; cursor: pointer;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  padding: 6px 14px;
+  border-radius: 99px;
+  transition: all 0.2s;
+}
+.lang-btn.active { background: var(--red); color: #fff; }
+
+.nav-cta {
+  display: flex; align-items: center; gap: 1rem;
+}
+
+.nav-slots {
+  font-size: 0.7rem; font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.btn-nav {
+  background: var(--red);
+  color: #fff;
+  border: none; cursor: pointer;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 0.8rem; font-weight: 800;
+  padding: 8px 20px;
+  border-radius: 99px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.1s;
+  white-space: nowrap;
+}
+.btn-nav:hover { background: var(--red-dark); }
+.btn-nav:active { transform: scale(0.97); }
+
+/* ─── HERO ─── */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 7rem 2rem 5rem;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 15% 50%, rgba(227,30,36,0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 85% 20%, rgba(245,200,66,0.08) 0%, transparent 60%),
+    linear-gradient(180deg, #0D0D0D 0%, #110810 100%);
+}
+
+.hero-grid {
+  position: absolute; inset: 0; opacity: 0.04;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.hero-inner {
+  position: relative; z-index: 1;
+  max-width: 1000px; width: 100%;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(227,30,36,0.12);
+  border: 1px solid rgba(227,30,36,0.35);
+  color: #ff8a8e;
+  font-size: 0.72rem; font-weight: 800;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 8px 20px; border-radius: 99px;
+  margin-bottom: 2rem;
+  animation: fadeUp 0.8s ease both;
+}
+.badge-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--red);
+  animation: pulse 1.8s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.4); }
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(4rem, 12vw, 9rem);
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+  animation: fadeUp 0.8s 0.1s ease both;
+  margin-bottom: 0.5rem;
+}
+.hero-title .amp { color: var(--red); }
+.hero-title .sub { color: var(--gold); font-size: 0.55em; display: block; letter-spacing: 0.15em; }
+
+.hero-divider {
+  display: flex; align-items: center; justify-content: center; gap: 1rem;
+  margin: 1.5rem auto;
+  animation: fadeUp 0.8s 0.2s ease both;
+}
+.hero-divider::before, .hero-divider::after {
+  content: ''; flex: 1; max-width: 120px; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2));
+}
+.hero-divider::after { background: linear-gradient(90deg, rgba(255,255,255,0.2), transparent); }
+.hero-divider span { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--muted); }
+
+.hero-desc {
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  font-weight: 300; line-height: 1.7;
+  color: rgba(245,242,236,0.75);
+  max-width: 640px; margin: 0 auto 2.5rem;
+  animation: fadeUp 0.8s 0.25s ease both;
+}
+.hero-desc strong { color: #fff; font-weight: 700; }
+
+.hero-btns {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+  animation: fadeUp 0.8s 0.35s ease both;
+  margin-bottom: 3.5rem;
+}
+
+.btn-primary {
+  background: var(--red);
+  color: #fff;
+  border: none; cursor: pointer;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 1rem; font-weight: 800;
+  padding: 16px 36px; border-radius: 99px;
+  text-decoration: none; display: inline-block;
+  transition: all 0.2s;
+  box-shadow: 0 8px 32px rgba(227,30,36,0.35);
+}
+.btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(227,30,36,0.45); }
+
+.btn-secondary {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.15);
+  cursor: pointer;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 1rem; font-weight: 600;
+  padding: 16px 36px; border-radius: 99px;
+  text-decoration: none; display: inline-block;
+  transition: all 0.2s;
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+
+/* Hero Stats */
+.hero-stats {
+  display: flex; justify-content: center; gap: 0 3rem;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--border);
+  padding-top: 2.5rem;
+  animation: fadeUp 0.8s 0.45s ease both;
+}
+.stat { text-align: center; padding: 0.5rem 1.5rem; }
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem; line-height: 1;
+  color: #fff;
+}
+.stat-num span { color: var(--red); }
+.stat-label { font-size: 0.72rem; color: var(--muted); font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; }
+
+/* ─── SECTION COMMONS ─── */
+section { position: relative; z-index: 1; }
+.section-pad { padding: 6rem 2rem; }
+.section-center { max-width: 1100px; margin: 0 auto; }
+
+.section-eyebrow {
+  font-size: 0.7rem; font-weight: 800;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--red); margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1; letter-spacing: 0.03em;
+  margin-bottom: 1rem;
+}
+
+.section-sub {
+  font-size: 1.05rem; font-weight: 300; line-height: 1.7;
+  color: rgba(245,242,236,0.65);
+  max-width: 560px;
+}
+
+/* ─── WHY / MOAT ─── */
+#why { background: #111117; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+.moat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 3.5rem;
+}
+
+.moat-card {
+  background: #111117;
+  padding: 2.5rem 2rem;
+  transition: background 0.2s;
+}
+.moat-card:hover { background: #16161e; }
+
+.moat-icon { font-size: 2.2rem; margin-bottom: 1.2rem; }
+.moat-title { font-size: 1.05rem; font-weight: 800; margin-bottom: 0.6rem; color: #fff; }
+.moat-desc { font-size: 0.87rem; line-height: 1.7; color: rgba(245,242,236,0.6); }
+.moat-tag {
+  display: inline-block; margin-top: 1rem;
+  font-size: 0.62rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase;
+  background: rgba(245,200,66,0.1); color: var(--gold);
+  border: 1px solid rgba(245,200,66,0.25);
+  padding: 4px 10px; border-radius: 99px;
+}
+
+/* ─── PHASES ─── */
+#phases { background: var(--black); }
+
+.phases-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3.5rem; }
+
+@media (max-width: 760px) { .phases-wrap { grid-template-columns: 1fr; } }
+
+.phase-card {
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  position: relative; overflow: hidden;
+  transition: border-color 0.2s;
+}
+.phase-card:hover { border-color: rgba(255,255,255,0.15); }
+.phase-card.featured { border-color: var(--red); }
+
+.phase-accent {
+  position: absolute; top: -60px; right: -60px;
+  width: 160px; height: 160px; border-radius: 50%;
+  opacity: 0.12;
+}
+.phase-1 .phase-accent { background: var(--gold); }
+.phase-2 .phase-accent { background: var(--red); }
+
+.phase-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5rem; line-height: 1; color: rgba(255,255,255,0.06);
+  position: absolute; top: 1.2rem; right: 1.5rem;
+}
+
+.phase-tag {
+  display: inline-block; margin-bottom: 1.2rem;
+  font-size: 0.65rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 99px;
+}
+.phase-1 .phase-tag { background: rgba(245,200,66,0.1); color: var(--gold); border: 1px solid rgba(245,200,66,0.3); }
+.phase-2 .phase-tag { background: rgba(227,30,36,0.12); color: #ff8a8e; border: 1px solid rgba(227,30,36,0.3); }
+
+.phase-title { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.05em; margin-bottom: 0.4rem; }
+.phase-date { font-size: 0.78rem; color: var(--muted); font-weight: 600; margin-bottom: 1.5rem; letter-spacing: 0.05em; }
+
+.phase-items { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.phase-items li {
+  font-size: 0.9rem; color: rgba(245,242,236,0.75);
+  display: flex; gap: 0.6rem; align-items: flex-start;
+}
+.phase-items li::before { content: '→'; color: var(--red); flex-shrink: 0; margin-top: 2px; }
+
+.phase-profit {
+  margin-top: 2rem; padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  display: flex; align-items: baseline; gap: 0.4rem;
+}
+.phase-profit-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+.phase-profit-num { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--gold); }
+
+/* ─── PACKAGES ─── */
+#packages { background: #0a0a10; border-top: 1px solid var(--border); }
+
+.pkg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+  align-items: start;
+}
+
+.pkg-card {
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: all 0.25s;
+}
+.pkg-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.15); }
+.pkg-card.recommended {
+  border-color: var(--red);
+  background: linear-gradient(145deg, rgba(227,30,36,0.06) 0%, rgba(13,13,13,0.95) 60%);
+  transform: scale(1.02);
+}
+.pkg-card.recommended:hover { transform: scale(1.02) translateY(-4px); }
+
+.pkg-rec-badge {
+  position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+  background: var(--red);
+  font-size: 0.62rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase;
+  color: #fff; padding: 5px 16px;
+  border-radius: 0 0 10px 10px;
+}
+
+.pkg-tier { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; margin-top: 0.5rem; }
+.pkg-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem; line-height: 1; color: #fff;
+  margin-bottom: 0.25rem;
+}
+.pkg-price-sub { font-size: 0.8rem; color: var(--muted); margin-bottom: 1.8rem; }
+
+.pkg-features { list-style: none; flex: 1; display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 2rem; }
+.pkg-features li {
+  display: flex; gap: 0.6rem; align-items: flex-start;
+  font-size: 0.9rem; line-height: 1.5;
+  color: rgba(245,242,236,0.8);
+}
+.feat-check { color: var(--gold); flex-shrink: 0; font-size: 0.85rem; margin-top: 2px; }
+
+.pkg-btn {
+  display: block; text-align: center;
+  padding: 14px;
+  border-radius: 12px;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 0.9rem; font-weight: 800;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer; border: none;
+}
+.pkg-btn-outline {
+  background: none;
+  border: 1.5px solid rgba(255,255,255,0.2);
+  color: #fff;
+}
+.pkg-btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.05); }
+.pkg-btn-fill {
+  background: var(--red);
+  color: #fff;
+  box-shadow: 0 6px 24px rgba(227,30,36,0.3);
+}
+.pkg-btn-fill:hover { background: var(--red-dark); }
+
+/* ROI Strip */
+.roi-strip {
+  margin-top: 2.5rem;
+  background: rgba(245,200,66,0.06);
+  border: 1px solid rgba(245,200,66,0.2);
+  border-radius: 14px;
+  padding: 1.5rem 2rem;
+  display: flex; flex-wrap: wrap; gap: 1rem 3rem; align-items: center;
+}
+.roi-label { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.2rem; }
+.roi-val { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: #fff; }
+.roi-desc { font-size: 0.8rem; color: rgba(245,242,236,0.55); }
+
+/* ─── TEAM ─── */
+#team { background: var(--black); border-top: 1px solid var(--border); }
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 3rem;
+}
+
+.team-card {
+  background: var(--black);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: background 0.2s;
+}
+.team-card:hover { background: #111117; }
+.team-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+.team-dept { font-size: 0.7rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; color: var(--red); margin-bottom: 0.4rem; }
+.team-name { font-size: 0.92rem; font-weight: 700; margin-bottom: 0.5rem; }
+.team-resp { font-size: 0.78rem; line-height: 1.6; color: rgba(245,242,236,0.55); }
+
+/* ─── PARTNERS / CREDIBILITY ─── */
+#credibility { background: #0a0a10; border-top: 1px solid var(--border); }
+
+.cred-logos {
+  display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;
+  margin-top: 2.5rem;
+}
+.cred-logo {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  font-size: 0.85rem; font-weight: 700;
+  color: rgba(245,242,236,0.4);
+  letter-spacing: 0.08em;
+}
+
+.cred-numbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 3.5rem;
+}
+.cred-num-card {
+  background: #0a0a10;
+  padding: 2.5rem 2rem;
+}
+.cred-num-val {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem; color: #fff; line-height: 1;
+  margin-bottom: 0.4rem;
+}
+.cred-num-val span { color: var(--red); }
+.cred-num-label { font-size: 0.8rem; color: rgba(245,242,236,0.55); line-height: 1.5; }
+
+/* ─── CONTACT / LEAD FORM ─── */
+#contact { background: var(--black); border-top: 1px solid var(--border); padding: 6rem 2rem; }
+
+.contact-wrap {
+  max-width: 960px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+}
+@media (max-width: 700px) { .contact-wrap { grid-template-columns: 1fr; gap: 3rem; } }
+
+.contact-left .section-title { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1.5rem; }
+.contact-left .section-sub { margin-bottom: 2rem; }
+
+.contact-info { display: flex; flex-direction: column; gap: 0.75rem; }
+.contact-item {
+  display: flex; gap: 0.75rem; align-items: center;
+  font-size: 0.9rem; color: rgba(245,242,236,0.7);
+}
+.contact-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+/* ─── FORM ─── */
+.form-box {
+  background: #0f0f16;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+}
+.form-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; margin-bottom: 0.25rem; }
+.form-sub { font-size: 0.82rem; color: var(--muted); margin-bottom: 2rem; }
+
+.form-group { margin-bottom: 1.2rem; }
+.form-label {
+  display: block; margin-bottom: 0.4rem;
+  font-size: 0.72rem; font-weight: 800;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(245,242,236,0.5);
+}
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+  color: var(--off-white);
+  font-family: 'Sarabun', sans-serif;
+  font-size: 0.95rem;
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+}
+.form-select option { background: #111; color: #fff; }
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--red);
+}
+.form-textarea { resize: vertical; min-height: 90px; }
+
+.form-submit {
+  width: 100%;
+  background: var(--red);
+  color: #fff;
+  border: none; cursor: pointer;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 1rem; font-weight: 800;
+  padding: 15px;
+  border-radius: 10px;
+  transition: all 0.2s;
+  margin-top: 0.5rem;
+}
+.form-submit:hover { background: var(--red-dark); transform: translateY(-1px); }
+
+.form-note { font-size: 0.72rem; color: var(--muted); text-align: center; margin-top: 1rem; line-height: 1.6; }
+
+/* ─── FLOATING LINE CTA ─── */
+.line-float {
+  position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 200;
+  background: #06C755;
+  color: #fff;
+  border-radius: 99px;
+  padding: 12px 22px;
+  font-family: 'Sarabun', sans-serif;
+  font-size: 0.85rem; font-weight: 800;
+  box-shadow: 0 8px 30px rgba(6,199,85,0.4);
+  text-decoration: none;
+  display: flex; align-items: center; gap: 8px;
+  transition: all 0.2s;
+  animation: floatIn 0.8s 1s ease both;
+}
+.line-float:hover { transform: translateY(-3px); box-shadow: 0 12px 36px rgba(6,199,85,0.5); }
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── FOOTER ─── */
+footer {
+  background: #070709;
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 2rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+footer .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: rgba(255,255,255,0.15); margin-bottom: 0.5rem; letter-spacing: 0.15em; }
+
+/* ─── PROGRESS BAR ─── */
+.progress-bar {
+  position: fixed; top: 0; left: 0; z-index: 999;
+  height: 3px; background: var(--red);
+  width: 0%; transition: width 0.1s;
+}
+
+/* ─── SUCCESS TOAST ─── */
+.toast {
+  position: fixed; bottom: 6rem; right: 1.5rem; z-index: 300;
+  background: #0f0f16;
+  border: 1px solid rgba(6,199,85,0.4);
+  border-left: 4px solid #06C755;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  font-size: 0.9rem;
+  max-width: 300px;
+  transform: translateX(120%);
+  transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  pointer-events: none;
+}
+.toast.show { transform: translateX(0); }
+.toast-title { font-weight: 800; color: #06C755; margin-bottom: 0.2rem; }
+.toast-msg { color: rgba(245,242,236,0.7); font-size: 0.82rem; }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0; transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 600px) {
+  .hero-stats { gap: 0; }
+  .stat { padding: 0.5rem 0.8rem; }
+  .stat-num { font-size: 2rem; }
+  nav { padding: 0 1rem; }
+  .nav-slots { display: none; }
+}
+</style>
 </head>
+<body>
 
-<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+<!-- Progress Bar -->
+<div class="progress-bar" id="progressBar"></div>
 
-    <nav class="fixed top-0 w-full z-50 nav-glass border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
-            <div class="font-extrabold text-2xl tracking-tighter italic">
-                VITH <span class="text-red-600">HUB</span>
-            </div>
-            <div class="flex gap-2 bg-slate-100 p-1 rounded-full border border-slate-200">
-                <button onclick="setLang('th')" id="btn-th" class="lang-btn px-4 py-1 rounded-full text-xs font-bold transition-all bg-white shadow-sm text-red-600">TH</button>
-                <button onclick="setLang('la')" id="btn-la" class="lang-btn px-4 py-1 rounded-full text-xs font-bold transition-all text-slate-500">LAO</button>
-                <button onclick="setLang('en')" id="btn-en" class="lang-btn px-4 py-1 rounded-full text-xs font-bold transition-all text-slate-500">EN</button>
-            </div>
+<!-- Toast -->
+<div class="toast" id="toast">
+  <div class="toast-title">✅ ส่งข้อมูลสำเร็จ!</div>
+  <div class="toast-msg">ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมงครับ</div>
+</div>
+
+<!-- LINE Floating CTA -->
+<a class="line-float" href="https://line.me/YOUR_LINE_ID" target="_blank">
+  <svg width="18" height="18" viewBox="0 0 48 48" fill="none"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
+  <span data-lang="th" class="active">ติดต่อ LINE</span>
+  <span data-lang="la">ຕິດຕໍ່ LINE</span>
+  <span data-lang="en">Chat on LINE</span>
+</a>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-logo">VITH <span>HUB</span></div>
+  <div class="nav-cta">
+    <span class="nav-slots">🔴
+      <span data-lang="th" class="active">เหลือที่ว่าง 19 บูธ</span>
+      <span data-lang="la">ຍັງເຫຼືອ 19 ທີ່</span>
+      <span data-lang="en">19 slots left</span>
+    </span>
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('th')">TH</button>
+      <button class="lang-btn" onclick="setLang('la')">LAO</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="#contact" class="btn-nav">
+      <span data-lang="th" class="active">จองบูธ</span>
+      <span data-lang="la">ຈອງບູດ</span>
+      <span data-lang="en">Book Now</span>
+    </a>
+  </div>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      <span data-lang="th" class="active">เปิดรับสมัคร · มีนาคม 2026 · เวียงจันทน์</span>
+      <span data-lang="la">ເປີດຮັບສະໝັກ · ມີນາ 2026 · ວຽງຈັນ</span>
+      <span data-lang="en">Now Open · March 2026 · Vientiane</span>
+    </div>
+
+    <h1 class="hero-title">
+      <span class="sub">
+        <span data-lang="th" class="active">สะพานการค้า</span>
+        <span data-lang="la">ຂົວການຄ້າ</span>
+        <span data-lang="en">The Trade Bridge</span>
+      </span>
+      VITH <span class="amp">×</span> BIG C
+    </h1>
+
+    <div class="hero-divider"><span>Vientiane</span></div>
+
+    <p class="hero-desc">
+      <span data-lang="th" class="active">ยกสินค้าไทยไปขายกลางห้างใหญ่ที่สุดในลาว <strong>ไม่ต้องส่งทีมไปเอง</strong> เราจัดการขนส่ง บูธ และพนักงานให้ครบ</span>
+      <span data-lang="la">ຍົກສິນຄ້າໄທໄປຂາຍກາງຫ້າງໃຫຍ່ທີ່ສຸດໃນລາວ <strong>ບໍ່ຕ້ອງສົ່ງທີມໄປເອງ</strong> ພວກເຮົາຈັດການການຂົນສົ່ງ ບູດ ແລະ ພະນັກງານໃຫ້ຄົບ</span>
+      <span data-lang="en">Place your Thai brand at Laos' largest mall. <strong>No need to send your own team</strong> — we handle logistics, booths, and staff end-to-end.</span>
+    </p>
+
+    <div class="hero-btns">
+      <a href="#packages" class="btn-primary">
+        <span data-lang="th" class="active">ดูแพ็กเกจและราคา</span>
+        <span data-lang="la">ເບິ່ງແພັກເກັດ</span>
+        <span data-lang="en">View Packages</span>
+      </a>
+      <a href="#phases" class="btn-secondary">
+        <span data-lang="th" class="active">แผนงานทั้ง 2 Phase</span>
+        <span data-lang="la">ແຜນງານ 2 Phase</span>
+        <span data-lang="en">See Roadmap</span>
+      </a>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">25<span>+</span></div>
+        <div class="stat-label">
+          <span data-lang="th" class="active">บูธพร้อมขาย</span>
+          <span data-lang="la">ບູດທີ່ພ້ອມ</span>
+          <span data-lang="en">Booths Available</span>
         </div>
-    </nav>
-
-    <section class="relative min-h-screen flex items-center justify-center bg-slate-900 text-white pt-16">
-        <div class="absolute inset-0 opacity-30">
-            <div class="absolute top-20 left-10 w-64 h-64 bg-red-600 rounded-full blur-[100px]"></div>
-            <div class="absolute bottom-10 right-10 w-80 h-80 bg-blue-600 rounded-full blur-[120px]"></div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">2<span>×</span></div>
+        <div class="stat-label">
+          <span data-lang="th" class="active">Phase มีนา + พ.ค.</span>
+          <span data-lang="la">Phase ມີນາ + ພ.ພ.</span>
+          <span data-lang="en">Phase Mar + May</span>
         </div>
-        
-        <div class="relative max-w-5xl mx-auto px-6 text-center z-10">
-            <div class="lang-content th active">
-                <span class="inline-block py-1 px-4 rounded-full bg-red-600/20 text-red-400 text-sm font-bold mb-6 border border-red-600/30 uppercase tracking-widest">รับเพียง 25 แบรนด์เท่านั้น</span>
-                <h1 class="text-5xl md:text-8xl font-black mb-6 leading-tight uppercase italic">VITH <span class="text-red-500">x</span> Big C</h1>
-                <p class="text-2xl md:text-3xl text-slate-300 mb-10 font-light">ยกบูธไทย ไปตั้งกลางเวียงจันทน์ <br><span class="text-white font-bold underline decoration-red-600 underline-offset-8">เปิดตลาดลาวอย่างเป็นทางการ</span></p>
-            </div>
-            <div class="lang-content la">
-                <span class="inline-block py-1 px-4 rounded-full bg-red-600/20 text-red-400 text-sm font-bold mb-6 border border-red-600/30 uppercase tracking-widest">ຈຳກັດພຽງ 25 ແບຣນເທົ່ານັ້ນ</span>
-                <h1 class="text-5xl md:text-8xl font-black mb-6 leading-tight uppercase italic">VITH <span class="text-red-500">x</span> Big C</h1>
-                <p class="text-2xl md:text-3xl text-slate-300 mb-10 font-light">ຍົກບູດໄທ ໄປຕັ້ງກາງນະຄອນຫຼວງວຽງຈັນ <br><span class="text-white font-bold underline decoration-red-600 underline-offset-8">ເປີດຕະຫຼາດລາວຢ່າງເປັນທາງການ</span></p>
-            </div>
-            <div class="lang-content en">
-                <span class="inline-block py-1 px-4 rounded-full bg-red-600/20 text-red-400 text-sm font-bold mb-6 border border-red-600/30 uppercase tracking-widest">Limited to 25 Brands Only</span>
-                <h1 class="text-5xl md:text-8xl font-black mb-6 leading-tight uppercase italic">VITH <span class="text-red-500">x</span> Big C</h1>
-                <p class="text-2xl md:text-3xl text-slate-300 mb-10 font-light">Thai SME Showcase in Vientiane <br><span class="text-white font-bold underline decoration-red-600 underline-offset-8">Official Entry to Laos Market</span></p>
-            </div>
-            <a href="#contact" class="inline-block bg-red-600 hover:bg-red-700 hover:scale-105 transition-all px-12 py-5 rounded-full text-xl font-black italic shadow-2xl">
-                Register Now
-            </a>
+      </div>
+      <div class="stat">
+        <div class="stat-num">100<span>%</span></div>
+        <div class="stat-label">
+          <span data-lang="th" class="active">ถูกกฎหมาย</span>
+          <span data-lang="la">ຖືກກົດໝາຍ</span>
+          <span data-lang="en">Fully Legal</span>
         </div>
-    </section>
-
-    <section class="py-24 bg-white px-6">
-        <div class="max-w-6xl mx-auto">
-            <div class="flex flex-col lg:flex-row gap-16 items-center">
-                
-                <div class="lg:w-1/2">
-                    <div class="lang-content th active">
-                        <h2 class="text-4xl font-black mb-4 italic uppercase">Event Layout</h2>
-                        <p class="text-xl text-slate-600 mb-8 font-light italic">ทำเลทอง ชั้น 1 (Indoor) ติดประตูทางเข้าหลัก ฝั่งที่มีคนเดินหนาแน่นที่สุด</p>
-                    </div>
-                    <div class="lang-content la">
-                        <h2 class="text-4xl font-black mb-4 italic uppercase">Event Layout</h2>
-                        <p class="text-xl text-slate-600 mb-8 font-light italic">ທຳເລທອງ, ຊັ້ນ 1 (Indoor) ຕິດປະຕູທາງເຂົ້າຫຼັກ ຝັ່ງທີ່ມີຄົນຍ່າງຫນາແຫນ້ນທີ່ສຸດ</p>
-                    </div>
-                    <div class="lang-content en">
-                        <h2 class="text-4xl font-black mb-4 italic uppercase">Event Layout</h2>
-                        <p class="text-xl text-slate-600 mb-8 font-light italic">Prime Location, 1st Floor Indoor, situated near the main high-traffic entrance.</p>
-                    </div>
-
-                    <div class="relative bg-slate-900 rounded-[2.5rem] p-3 shadow-3xl">
-                        <div class="aspect-[4/3] bg-white rounded-[2rem] overflow-hidden border-2 border-slate-100 relative">
-                            <img src="https://images.unsplash.com/photo-1582653280643-e79c79219b19?q=80&w=1000&auto=format&fit=crop" alt="Floor Plan" class="w-full h-full object-cover opacity-50 grayscale">
-                            <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-900 p-8 text-center">
-                                <div class="w-16 h-16 bg-red-600 text-white rounded-full flex items-center justify-center mb-4 shadow-xl font-bold">MAP</div>
-                                <p class="font-black text-2xl italic uppercase tracking-tighter mb-2">Insert Floor Plan Image</p>
-                                <p class="text-sm text-slate-500 uppercase font-bold tracking-widest">( ชั้น 1 Big C เวียงจันทน์ )</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:w-1/2 grid grid-cols-2 gap-4">
-                    <div class="space-y-4">
-                        <div class="relative rounded-3xl overflow-hidden shadow-lg image-hover h-64 border-b-8 border-red-600">
-                            <img src="https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?q=80&w=500&auto=format&fit=crop" class="w-full h-full object-cover">
-                            <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-white text-xs font-bold italic uppercase">
-                                <span class="lang-content th active">บรรยากาศลูกค้าจริง</span>
-                                <span class="lang-content la">ບັນຍາກາດລູກຄ້າຈິງ</span>
-                                <span class="lang-content en">Real Shopper Traffic</span>
-                            </div>
-                        </div>
-                        <div class="relative rounded-3xl overflow-hidden shadow-lg image-hover h-48 border-l-4 border-slate-900">
-                            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=500&auto=format&fit=crop" class="w-full h-full object-cover">
-                            <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-white text-xs font-bold italic uppercase">
-                                <span class="lang-content th active">บูธตัวอย่างที่ทันสมัย</span>
-                                <span class="lang-content la">ບູດຕົວຢ່າງທີ່ທັນສະໄຫມ</span>
-                                <span class="lang-content en">Premium Booth Design</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="space-y-4 pt-8">
-                        <div class="relative rounded-3xl overflow-hidden shadow-lg image-hover h-48 border-r-4 border-slate-900">
-                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=500&auto=format&fit=crop" class="w-full h-full object-cover">
-                            <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-white text-xs font-bold italic uppercase">
-                                <span class="lang-content th active">Big C เวียงจันทน์</span>
-                                <span class="lang-content la">Big C ວຽງຈັນ</span>
-                                <span class="lang-content en">Big C Vientiane Venue</span>
-                            </div>
-                        </div>
-                        <div class="relative rounded-[2rem] overflow-hidden shadow-2xl image-hover h-72 border-4 border-red-600">
-                            <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=500&auto=format&fit=crop" class="w-full h-full object-cover">
-                            <div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-white text-xs font-bold italic uppercase">
-                                <span class="lang-content th active">สร้างยอดขายจริง</span>
-                                <span class="lang-content la">ສ້າງຍອດຂາຍຈິງ</span>
-                                <span class="lang-content en">Proven Sales Growth</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">0<span> THB</span></div>
+        <div class="stat-label">
+          <span data-lang="th" class="active">ค่าพื้นที่จาก Big C</span>
+          <span data-lang="la">ຄ່າພື້ນທີ່ Big C</span>
+          <span data-lang="en">Big C venue fee</span>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <section class="py-24 bg-slate-50 px-6 border-y border-slate-200">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <span class="inline-block mb-4 px-5 py-2 rounded-full bg-green-100 text-green-700 font-bold text-xs tracking-[0.3em] uppercase">Phase 1 · Proof of Concept</span>
-                <div class="lang-content th active">
-                    <h2 class="text-4xl font-black mb-4 italic italic uppercase">งานขอบคุณลูกค้า Big C เวียงจันทน์</h2>
-                    <p class="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">ไม่ใช่เพียงแค่งานขายของ แต่เรากำลังสร้าง <strong>Data & Traffic</strong> <br>เพื่อการันตีความสำเร็จของแบรนด์ไทยใน VITH Hub</p>
-                </div>
-                <div class="lang-content la">
-                    <h2 class="text-4xl font-black mb-4 italic uppercase">ງານຂອບໃຈລູກຄ້າ Big C ວຽງຈັນ</h2>
-                    <p class="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">ບໍ່ແມ່ນແຕ່ການຂາຍຂອງ ແຕ່ພວກເຮົາກຳລັງສ້າງ <strong>Data & Traffic</strong> <br>ເພື່ອການັນຕີຄວາມສຳເລັດຂອງແບຣນໄທໃນ VITH Hub</p>
-                </div>
-                <div class="lang-content en">
-                    <h2 class="text-4xl font-black mb-4 italic uppercase">Customer Appreciation Fair</h2>
-                    <p class="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">More than just a sale event, we're building <strong>Data & Traffic</strong> <br>to guarantee Thai brand success in the VITH Hub.</p>
-                </div>
-            </div>
+  </div>
+</section>
 
-            <div class="grid md:grid-cols-3 gap-8 text-center italic">
-                <div class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100">
-                    <div class="text-4xl mb-6">🎯</div>
-                    <div class="lang-content th active font-bold">กลุ่มเป้าหมายมีกำลังซื้อสูง</div>
-                    <div class="lang-content la font-bold">ກຸ່ມເປົ້າຫມາຍມີກຳລັງຊື້ສູງ</div>
-                    <div class="lang-content en font-bold">High Spending Power</div>
-                </div>
-                <div class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100">
-                    <div class="text-4xl mb-6">📊</div>
-                    <div class="lang-content th active font-bold">ทดสอบตลาดด้วย Data จริง</div>
-                    <div class="lang-content la font-bold">ທົດສອບຕະຫຼາດດ້ວຍຂໍ້ມູນຈິງ</div>
-                    <div class="lang-content en font-bold">Data-Driven Market Test</div>
-                </div>
-                <div class="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-100">
-                    <div class="text-4xl mb-6">🏗️</div>
-                    <div class="lang-content th active font-bold">รากฐานสู่ Hub ถาวร</div>
-                    <div class="lang-content la font-bold">ຮາກຖານສູ່ Hub ຖາວອນ</div>
-                    <div class="lang-content en font-bold">Long-term Hub Foundation</div>
-                </div>
-            </div>
+<!-- ─── WHY ─── -->
+<section id="why" class="section-pad">
+  <div class="section-center">
+    <div class="reveal">
+      <div class="section-eyebrow">
+        <span data-lang="th" class="active">ทำไมต้อง VITH Hub</span>
+        <span data-lang="la">ເປັນຫຍັງຕ້ອງ VITH Hub</span>
+        <span data-lang="en">Why VITH Hub</span>
+      </div>
+      <h2 class="section-title">
+        <span data-lang="th" class="active">จุดแข็งที่คู่แข่งทำไม่ได้</span>
+        <span data-lang="la">ຈຸດແຂງທີ່ຄູ່ແຂ່ງທຳບໍ່ໄດ້</span>
+        <span data-lang="en">Advantages No One Can Copy</span>
+      </h2>
+    </div>
+    <div class="moat-grid reveal">
+      <div class="moat-card">
+        <div class="moat-icon">🏢</div>
+        <div class="moat-title">
+          <span data-lang="th" class="active">Prime Location · Indoor</span>
+          <span data-lang="la">Prime Location · Indoor</span>
+          <span data-lang="en">Prime Indoor Location</span>
         </div>
-    </section>
-
-    <section class="py-24 bg-white px-6">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-5xl font-black text-center mb-20 italic uppercase tracking-tighter">Packages</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-10 rounded-[2.5rem] border border-slate-200 shadow-sm flex flex-col">
-                    <h3 class="text-xl font-bold text-slate-400 mb-2 uppercase italic">Starter</h3>
-                    <div class="text-4xl font-black mb-8 italic">฿8,500</div>
-                    <ul class="text-left space-y-4 mb-10 flex-grow font-light">
-                        <li class="lang-content th active">✅ บูธมาตรฐาน (Kiosk)</li>
-                        <li class="lang-content th active">✅ บริการขนส่งไทย-ลาว</li>
-                        <li class="lang-content th active">✅ พนักงานรวมประจำโซน</li>
-                        
-                        <li class="lang-content la">✅ ບູດມາດຕະຖານ (Kiosk)</li>
-                        <li class="lang-content la">✅ ບໍລິການຂົນສົ່ງ ໄທ-ລາວ</li>
-                        <li class="lang-content la">✅ ພະນັກງານລວມປະຈຳໂຊນ</li>
-
-                        <li class="lang-content en">✅ Standard Kiosk</li>
-                        <li class="lang-content en">✅ Thai-Lao Logistics</li>
-                        <li class="lang-content en">✅ Shared Staff Support</li>
-                    </ul>
-                    <a href="#contact" class="block py-4 border-2 border-slate-900 rounded-2xl font-black hover:bg-slate-900 hover:text-white transition-all text-center uppercase italic">Select</a>
-                </div>
-
-                <div class="bg-white p-10 rounded-[2.5rem] border-4 border-red-600 shadow-3xl flex flex-col scale-105 relative z-10">
-                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 bg-red-600 text-white px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest">Recommended</div>
-                    <h3 class="text-xl font-bold text-red-600 mb-2 uppercase italic">Business</h3>
-                    <div class="text-4xl font-black mb-8 italic text-red-600 font-black">฿12,000</div>
-                    <ul class="text-left space-y-4 mb-10 flex-grow font-bold">
-                        <li class="lang-content th active">✅ ทำเล Prime Zone ที่สุด</li>
-                        <li class="lang-content th active">✅ พนักงานช่วยขายส่วนตัว</li>
-                        <li class="lang-content th active">✅ โปรโมทผ่าน Influencer ลาว</li>
-
-                        <li class="lang-content la">✅ ທຳເລ Prime Zone ທີ່ສຸດ</li>
-                        <li class="lang-content la">✅ ພະນັກງານຊ່ວຍຂາຍສ່ວນຕົວ</li>
-                        <li class="lang-content la">✅ ໂປຣໂມທຜ່ານ Influencer ລາວ</li>
-
-                        <li class="lang-content en">✅ Best Prime Zone Location</li>
-                        <li class="lang-content en">✅ Dedicated Private Staff</li>
-                        <li class="lang-content en">✅ Local Influencer Shoutout</li>
-                    </ul>
-                    <a href="#contact" class="block py-5 bg-red-600 text-white rounded-2xl font-black hover:bg-red-700 transition-all text-center uppercase italic shadow-xl shadow-red-200">Get Offer</a>
-                </div>
-
-                <div class="bg-white p-10 rounded-[2.5rem] border border-slate-200 shadow-sm flex flex-col">
-                    <h3 class="text-xl font-bold text-slate-400 mb-2 uppercase italic">Partner</h3>
-                    <div class="text-4xl font-black mb-8 italic">฿15,000+</div>
-                    <ul class="text-left space-y-4 mb-10 flex-grow font-light italic underline decoration-red-200">
-                        <li class="lang-content th active">🔥 สิทธิ์ขายใน Hub ถาวร</li>
-                        <li class="lang-content th active">🔥 Banner ขนาดใหญ่รอบงาน</li>
-                        <li class="lang-content th active">🔥 เชื่อมต่อคู่ค้าทั่วลาว</li>
-
-                        <li class="lang-content la">🔥 ສິດວາງຂາຍໃນ Hub ຖາວອນ</li>
-                        <li class="lang-content la">🔥 ປ້າຍ Banner ຂະໜາດໃຫຍ່</li>
-                        <li class="lang-content la">🔥 ເຊື່ອມຕໍ່ຄູ່ຄ້າທົ່ວປະເທດລາວ</li>
-
-                        <li class="lang-content en">🔥 Permanent Hub Listing</li>
-                        <li class="lang-content en">🔥 Large Venue-wide Banners</li>
-                        <li class="lang-content en">🔥 Distribution Network Access</li>
-                    </ul>
-                    <a href="#contact" class="block py-4 border-2 border-slate-900 rounded-2xl font-black hover:bg-slate-900 hover:text-white transition-all text-center uppercase italic">Consult</a>
-                </div>
-            </div>
+        <p class="moat-desc">
+          <span data-lang="th" class="active">ชั้น 1 Big C เวียงจันทน์ ติดทางเข้าหลัก ไม่ร้อน ไม่กลัวฝน ทำเลที่ดีที่สุดในลาว เดินทางสะดวก</span>
+          <span data-lang="la">ຊັ້ນ 1 Big C ວຽງຈັນ ຕິດທາງເຂົ້າຫຼັກ ບໍ່ຮ້ອນ ບໍ່ຢ້ານຝົນ</span>
+          <span data-lang="en">Floor 1 of Big C Vientiane, adjacent to the main entrance — the most accessible indoor venue in Laos.</span>
+        </p>
+        <span class="moat-tag">Free Venue from Big C</span>
+      </div>
+      <div class="moat-card">
+        <div class="moat-icon">🚛</div>
+        <div class="moat-title">
+          <span data-lang="th" class="active">Logistics Master</span>
+          <span data-lang="la">Logistics Master</span>
+          <span data-lang="en">Logistics Master</span>
         </div>
-    </section>
-
-    <section id="contact" class="py-24 bg-slate-900 px-6">
-        <div class="max-w-4xl mx-auto bg-white rounded-[3rem] overflow-hidden flex flex-col md:flex-row shadow-3xl">
-            <div class="md:w-1/2 bg-red-600 p-12 text-white italic">
-                <h2 class="text-5xl font-black mb-8 leading-none uppercase tracking-tighter">Let's Cross <br>the Border.</h2>
-                <div class="lang-content th active">
-                    <p class="text-red-100 text-lg">ลงทะเบียนเพื่อขอรับ Proposal และรับสิทธิ์จองบูธตำแหน่งดีที่สุดก่อนใคร ทีมงานจะติดต่อกลับภายใน 24 ชม.</p>
-                </div>
-                <div class="lang-content la">
-                    <p class="text-red-100 text-lg">ລົງທະບຽນເພື່ອຮັບ Proposal ແລະ ຮັບສິດຈອງບູດທຳເລທີ່ດີທີ່ສຸດກ່ອນໃຜ ທີມງານຈະຕິດຕໍ່ກັບພາຍໃນ 24 ຊົ່ວໂມງ.</p>
-                </div>
-                <div class="lang-content en">
-                    <p class="text-red-100 text-lg">Sign up for the official proposal and secure the best booth locations. Our team will follow up within 24 hours.</p>
-                </div>
-            </div>
-            <div class="md:w-1/2 p-12 bg-slate-50">
-                <form class="space-y-6">
-                    <div>
-                        <label class="block text-[10px] font-black uppercase text-slate-400 mb-2 italic tracking-widest">Name / Company</label>
-                        <input class="w-full p-4 bg-white border border-slate-200 rounded-2xl focus:ring-2 focus:ring-red-600 outline-none transition-all font-bold" placeholder="Your Answer">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-black uppercase text-slate-400 mb-2 italic tracking-widest">Contact (LINE/PHONE)</label>
-                        <input class="w-full p-4 bg-white border border-slate-200 rounded-2xl focus:ring-2 focus:ring-red-600 outline-none transition-all font-bold" placeholder="@ID or Number">
-                    </div>
-                    <button class="w-full bg-slate-900 text-white py-5 rounded-2xl font-black italic uppercase tracking-widest hover:bg-black transition-all shadow-xl active:scale-95">
-                        Submit Request
-                    </button>
-                </form>
-            </div>
+        <p class="moat-desc">
+          <span data-lang="th" class="active">เราคุมการขนส่งเองผ่าน Royal Bridge 99 ขนสินค้าจากไทยถึงบูธแบบไร้รอยต่อ ไม่ต้องยุ่งกับพิธีศุลกากรเอง</span>
+          <span data-lang="la">ພວກເຮົາຄຸມການຂົນສົ່ງຜ່ານ Royal Bridge 99 ສ່ງສິນຄ້າຈາກໄທຮອດບູດ</span>
+          <span data-lang="en">We own the logistics chain via Royal Bridge 99. Seamless delivery from Thailand to your booth — no customs hassle.</span>
+        </p>
+        <span class="moat-tag">Royal Bridge 99</span>
+      </div>
+      <div class="moat-card">
+        <div class="moat-icon">👥</div>
+        <div class="moat-title">
+          <span data-lang="th" class="active">One-Stop Service</span>
+          <span data-lang="la">One-Stop Service</span>
+          <span data-lang="en">One-Stop Service</span>
         </div>
-    </section>
+        <p class="moat-desc">
+          <span data-lang="th" class="active">มีพนักงานช่วยขายและเฝ้าบูธให้ ผู้ประกอบการไม่ต้องส่งคนจากไทยมาเอง ลดต้นทุนดูแลบูธลงมหาศาล</span>
+          <span data-lang="la">ມີພະນັກງານຊ່ວຍຂາຍ ຜູ້ປະກອບການບໍ່ຕ້ອງສົ່ງຄົນຈາກໄທ</span>
+          <span data-lang="en">Dedicated booth staff included. Thai brands don't need to send anyone — massively reduces operational overhead.</span>
+        </p>
+        <span class="moat-tag">Staff Included</span>
+      </div>
+      <div class="moat-card">
+        <div class="moat-icon">🎯</div>
+        <div class="moat-title">
+          <span data-lang="th" class="active">Skill Center = Traffic Magnet</span>
+          <span data-lang="la">Skill Center = จุดดึงคน</span>
+          <span data-lang="en">Skill Center Traffic Magnet</span>
+        </div>
+        <p class="moat-desc">
+          <span data-lang="th" class="active">ศูนย์ข้อมูลไปทำงานไทยดึงคนลาวเข้าห้างฟรี ทำให้ Traffic สูงกว่างาน Exhibition ทั่วไปหลายเท่า</span>
+          <span data-lang="la">ສູນຂໍ້ມູນໄປເຮັດວຽກໄທດຶງຄົນລາວເຂົ້າຫ້າງຟຣີ Traffic ສູງກວ່າງານທົ່ວໄປ</span>
+          <span data-lang="en">A Thai labor information center draws massive organic Lao foot traffic — far exceeding standard exhibitions.</span>
+        </p>
+        <span class="moat-tag">Organic Traffic</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <footer class="py-16 text-center text-slate-400 bg-slate-950 italic">
-        <p class="mb-4 text-slate-100 font-bold uppercase tracking-[0.4em]">VITH x Big C</p>
-        <p class="text-xs uppercase font-bold tracking-widest">© 2026 VITH HUB Vientiane. Your Strategic Partner for Laos Market Expansion.</p>
-    </footer>
+<!-- ─── PHASES ─── -->
+<section id="phases" class="section-pad">
+  <div class="section-center">
+    <div class="reveal">
+      <div class="section-eyebrow">Roadmap</div>
+      <h2 class="section-title">
+        <span data-lang="th" class="active">แผนงาน 2 Phase</span>
+        <span data-lang="la">ແຜນງານ 2 Phase</span>
+        <span data-lang="en">2-Phase Launch Plan</span>
+      </h2>
+      <p class="section-sub">
+        <span data-lang="th" class="active">เริ่มเล็กเพื่อพิสูจน์ระบบ แล้วระเบิดใหญ่ในรอบ Grand Opening</span>
+        <span data-lang="la">ເລີ່ມນ້ອຍເພື່ອພິສູດລະບົບ ແລ້ວໃຫຍ່ຂຶ້ນໃນ Grand Opening</span>
+        <span data-lang="en">Start lean to validate, then scale big at Grand Opening.</span>
+      </p>
+    </div>
+    <div class="phases-wrap reveal">
+      <div class="phase-card phase-1">
+        <div class="phase-accent"></div>
+        <div class="phase-num">01</div>
+        <span class="phase-tag">Phase 1 · Sandbox</span>
+        <h3 class="phase-title">
+          <span data-lang="th" class="active">Thank You Fair</span>
+          <span data-lang="la">Thank You Fair</span>
+          <span data-lang="en">Thank You Fair</span>
+        </h3>
+        <p class="phase-date">
+          <span data-lang="th" class="active">📅 มีนาคม 2026 · 5 วัน · Big C เวียงจันทน์</span>
+          <span data-lang="la">📅 ມີນາ 2026 · 5 ວັນ · Big C ວຽງຈັນ</span>
+          <span data-lang="en">📅 March 2026 · 5 Days · Big C Vientiane</span>
+        </p>
+        <ul class="phase-items">
+          <li><span data-lang="th" class="active">ทดสอบระบบพื้นที่ & Logistics (Sandbox)</span><span data-lang="la">ທົດສອບລະບົບ & Logistics</span><span data-lang="en">System & logistics sandbox test</span></li>
+          <li><span data-lang="th" class="active">ดึงคนเข้าห้างด้วยโปรโมชั่นสินค้าราคาพิเศษ</span><span data-lang="la">ດຶງຄົນດ້ວຍໂປຣໂມຊັ່ນ</span><span data-lang="en">Drive foot traffic via special deals</span></li>
+          <li><span data-lang="th" class="active">เปิดตัว Skill Center จุดข้อมูลแรงงาน</span><span data-lang="la">ເປີດຕົວ Skill Center</span><span data-lang="en">Launch Skill Center (labor info hub)</span></li>
+          <li><span data-lang="th" class="active">กลุ่มเป้า: ซัพพลายเออร์ Big C + ร้านค้าท้องถิ่น</span><span data-lang="la">ເປົ້າໝາຍ: ຊັບພລາຍເຊີ Big C</span><span data-lang="en">Target: Big C suppliers + local shops</span></li>
+        </ul>
+        <div class="phase-profit">
+          <span class="phase-profit-label">
+            <span data-lang="th" class="active">เป้ากำไร</span>
+            <span data-lang="la">ເປົ້າກຳໄລ</span>
+            <span data-lang="en">Target Profit</span>
+          </span>
+          <span class="phase-profit-num">150K–200K</span>
+          <span style="font-size:0.8rem;color:var(--muted)">THB</span>
+        </div>
+      </div>
+      <div class="phase-card phase-2 featured">
+        <div class="phase-accent"></div>
+        <div class="phase-num">02</div>
+        <span class="phase-tag">Phase 2 · Grand Opening</span>
+        <h3 class="phase-title">
+          <span data-lang="th" class="active">VITH Hub Launch</span>
+          <span data-lang="la">VITH Hub Launch</span>
+          <span data-lang="en">VITH Hub Launch</span>
+        </h3>
+        <p class="phase-date">
+          <span data-lang="th" class="active">📅 พฤษภาคม 2026 · 7 วัน · งานระดับนานาชาติ</span>
+          <span data-lang="la">📅 ພ.ພ. 2026 · 7 ວັນ · ງານລະດັບສາກົນ</span>
+          <span data-lang="en">📅 May 2026 · 7 Days · International scale</span>
+        </p>
+        <ul class="phase-items">
+          <li><span data-lang="th" class="active">เปิดตัว Hub อย่างเป็นทางการ ระดับนานาชาติ</span><span data-lang="la">ເປີດຕົວ Hub ຢ່າງເປັນທາງການ</span><span data-lang="en">Official international-scale Hub launch</span></li>
+          <li><span data-lang="th" class="active">สมาคมแฟรนไชส์ + SME ภาคเหนือ</span><span data-lang="la">ສະມາຄົມແຟຣນໄຊ + SME ພາກເໜືອ</span><span data-lang="en">Franchise associations + Northern SMEs</span></li>
+          <li><span data-lang="th" class="active">เครื่องจักร B2B + Investor Group</span><span data-lang="la">ເຄື່ອງຈັກ B2B + Investor Group</span><span data-lang="en">B2B machinery + Investor groups</span></li>
+          <li><span data-lang="th" class="active">Influencer ลาว + TikTok/FB Campaign</span><span data-lang="la">Influencer ລາວ + TikTok/FB</span><span data-lang="en">Lao Influencers + TikTok/FB Ads</span></li>
+        </ul>
+        <div class="phase-profit">
+          <span class="phase-profit-label">
+            <span data-lang="th" class="active">เป้ากำไร</span>
+            <span data-lang="la">ເປົ້າກຳໄລ</span>
+            <span data-lang="en">Target Profit</span>
+          </span>
+          <span class="phase-profit-num">400K–600K</span>
+          <span style="font-size:0.8rem;color:var(--muted)">THB</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script>
-        function setLang(lang) {
-            // Content
-            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.lang-content.' + lang).forEach(el => el.classList.add('active'));
+<!-- ─── PACKAGES ─── -->
+<section id="packages" class="section-pad">
+  <div class="section-center">
+    <div class="reveal">
+      <div class="section-eyebrow">Packages</div>
+      <h2 class="section-title">
+        <span data-lang="th" class="active">เลือกแพ็กเกจที่เหมาะกับธุรกิจคุณ</span>
+        <span data-lang="la">ເລືອກແພັກເກັດທີ່ເຫມາະ</span>
+        <span data-lang="en">Choose Your Package</span>
+      </h2>
+      <p class="section-sub">
+        <span data-lang="th" class="active">ราคาออล-อิน ไม่มีค่าใช้จ่ายแอบแฝง รวมขนส่ง + บูธ + พนักงาน</span>
+        <span data-lang="la">ລາຄາ All-in ບໍ່ມີຄ່າໃຊ້ຈ່າຍຊ່ອນ ລວມຂົນສົ່ງ + ບູດ + ພະນັກງານ</span>
+        <span data-lang="en">All-in pricing. No hidden fees. Includes shipping + booth + staff.</span>
+      </p>
+    </div>
 
-            // Buttons
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('bg-white', 'shadow-sm', 'text-red-600');
-                btn.classList.add('text-slate-500');
-            });
-            const activeBtn = document.getElementById('btn-' + lang);
-            activeBtn.classList.remove('text-slate-500');
-            activeBtn.classList.add('bg-white', 'shadow-sm', 'text-red-600');
-        }
-    </script>
+    <div class="pkg-grid reveal">
+
+      <!-- Starter -->
+      <div class="pkg-card">
+        <div class="pkg-tier">Starter</div>
+        <div class="pkg-price">฿8,500</div>
+        <div class="pkg-price-sub">
+          <span data-lang="th" class="active">ต่อ 5 วัน (Phase 1)</span>
+          <span data-lang="la">ຕໍ່ 5 ວັນ</span>
+          <span data-lang="en">per 5-day event</span>
+        </div>
+        <ul class="pkg-features">
+          <li><span class="feat-check">✦</span>
+            <span data-lang="th" class="active">บูธ Kiosk มาตรฐาน (ชั้น 1 Indoor)</span>
+            <span data-lang="la">ບູດ Kiosk ມາດຕະຖານ</span>
+            <span data-lang="en">Standard Kiosk (Floor 1 Indoor)</span>
+          </li>
+          <li><span class="feat-check">✦</span>
+            <span data-lang="th" class="active">บริการขนส่งไทย → ลาว (Royal Bridge 99)</span>
+            <span data-lang="la">ບໍລິການຂົນສົ່ງ ໄທ → ລາວ</span>
+            <span data-lang="en">Thai→Laos logistics (Royal Bridge 99)</span>
+          </li>
+          <li><span class="feat-check">✦</span>
+            <span data-lang="th" class="active">พนักงานเฝ้าบูธรวม (shared staff)</span>
+            <span data-lang="la">ພະນັກງານລວມ</span>
+            <span data-lang="en">Shared booth staff</span>
+          </li>
+          <li><span class="feat-check">✦</span>
+            <span data-lang="th" class="active">รายงานยอดขายหลังงาน</span>
+            <span data-lang="la">ລາຍງານຍອດຂາຍ</span>
+            <span data-lang="en">Post-event sales report</span>
+          </li>
+        </ul>
+        <a href="#contact" class="pkg-btn pkg-btn-outline">
+          <span data-lang="th" class="active">เลือกแพ็กเกจนี้</span>
+          <span data-lang="la">ເລືອກ</span>
+          <span data-lang="en">Select</span>
+        </a>
+      </div>
+
+      <!-- Business (Recommended) -->
+      <div class="pkg-card recommended">
+        <div class="pkg-rec-badge">
+          <span data-lang="th" class="active">แนะนำ</span>
+          <span data-lang="la">ແນະນຳ</span>
+          <span data-lang="en">Best Value</span>
+        </div>
+        <div class="pkg-tier" style="color:var(--red)">Business</div>
+        <div class="pkg-price" style="color:var(--red)">฿12,000</div>
+        <div class="pkg-price-sub">
+          <span data-lang="th" class="active">ต่อ 5 วัน · ทำเล Prime Zone</span>
+          <span data-lang="la">ຕໍ່ 5 ວັນ · Prime Zone</span>
+          <span data-lang="en">per 5-day · Prime Zone</span>
+        </div>
+        <ul class="pkg-features">
+          <li><span class="feat-check">✦</span>
+            <span data-lang="th" class="active"><strong>ทำเล Prime Zone</strong> — ใกล้ทางเข้า หนาแน่นที่สุด</span>
+            <span data-lang="la"><strong>Prime Zone</strong> — ໃກ້ທາງເຂົ້າ</span>
+            <span data-lang="en"><strong>Prime Zone</strong> — highest foot traffic spot</span>
+          </li>
+          <li><span class="feat-check">✦</span>
+            <span data-lang="th" class="active">ทุกอย่างใน Starter +</span>
+            <span data-lang="la">ທຸກຢ່າງໃນ Starter +</span>
+            <span data-lang="en">Everything in Starter, plus:</span>
+          </li>
+          <li><span class="feat-check">✦</span>
+            <span data-lang="th" class="active">พนักงานช่วยขายส่วนตัว 1 คน</span>
+            <span data-lang="la">ພະນັກງານຊ່ວຍຂາຍສ່ວນຕົວ 1 ຄົນ</span>
+            <span data-lang="en">1 dedicated private sales staff</span>
+          </li>
+          <li><span class="feat-check">✦</span>
+            <span data-lang="th" class="active">โปรโมทผ่าน Influencer ลาว 1 รีวิว</span>
+            <span data-lang="la">ໂປຣໂມທ Influencer ລາວ 1 ລີວິວ</span>
+            <span data-lang="en">1 Lao Influencer review post</span>
+          </li>
+          <li><span class="feat-check">✦</span>
+            <span data-lang="th" class="active">ยิง TikTok/FB Ads เฉพาะแบรนด์คุณ</span>
+            <span data-lang="la">TikTok/FB Ads ສະເພາະ</span>
+            <span data-lang="en">Branded TikTok & FB ad push</span>
+          </li>
+        </ul>
+        <a href="#contact" class="pkg-btn pkg-btn-fill">
+          <span data-lang="th" class="active">จองด่วน — ที่เหลือน้อย</span>
+          <span data-lang="la">ຈອງດ່ວນ</span>
+          <span data-lang="en">Book Now — Limited Slots</span>
+        </a>
+      </div>
+
+      <!-- Partner -->
+      <div class="pkg-card">
+        <div class="pkg-tier">Partner+</div>
+        <div class="pkg-price">฿15,000<span style="font-size:1.2rem">+</span></div>
+        <div class="pkg-price-sub">
+          <span data-lang="th" class="active">พาร์ทเนอร์ถาวร · Hub ระยะยาว</span>
+          <span data-lang="la">ພາດເນີ ຖາວອນ</span>
+          <span data-lang="en">Permanent Hub Partner</span>
+        </div>
+        <ul class="pkg-features">
+          <li><span class="feat-check">✦</span>
+            <span data-lang="th" class="active">สิทธิ์ขายใน VITH Hub ถาวรหลังงาน</span>
+            <span data-lang="la">ສິດວາງຂາຍໃນ Hub ຖາວອນ</span>
+            <span data-lang="en">Permanent listing in the VITH Hub</span>
+          </li>
+          <li><span class="feat-check">✦</span>
+            <span data-lang="th" class="active">ทุกอย่างใน Business +</span>
+            <span data-lang="la">ທຸກຢ່າງໃນ Business +</span>
+            <span data-lang="en">Everything in Business, plus:</span>
+          </li>
+          <li><span class="feat-check">✦</span>
+            <span data-lang="th" class="active">Banner ขนาดใหญ่รอบงาน</span>
+            <span data-lang="la">ປ້າຍ Banner ຂະໜາດໃຫຍ່</span>
+            <span data-lang="en">Large venue-wide banners</span>
+          </li>
+          <li><span class="feat-check">✦</span>
+            <span data-lang="th" class="active">เชื่อมต่อเครือข่ายตัวแทนทั่วลาว</span>
+            <span data-lang="la">ເຊື່ອມຕໍ່ຕົວແທນທົ່ວລາວ</span>
+            <span data-lang="en">Access to nationwide Laos distribution network</span>
+          </li>
+          <li><span class="feat-check">✦</span>
+            <span data-lang="th" class="active">เข้าร่วม Phase 2 Grand Opening อัตโนมัติ</span>
+            <span data-lang="la">ເຂົ້າຮ່ວມ Grand Opening ອັດຕະໂນມັດ</span>
+            <span data-lang="en">Automatic Grand Opening inclusion</span>
+          </li>
+        </ul>
+        <a href="#contact" class="pkg-btn pkg-btn-outline">
+          <span data-lang="th" class="active">ปรึกษาทีมงาน</span>
+          <span data-lang="la">ປຶກສາທີມ</span>
+          <span data-lang="en">Consult Our Team</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- ROI Strip -->
+    <div class="roi-strip reveal">
+      <div>
+        <div class="roi-label">
+          <span data-lang="th" class="active">ตัวอย่าง ROI</span>
+          <span data-lang="la">ຕົວຢ່າງ ROI</span>
+          <span data-lang="en">Example ROI</span>
+        </div>
+        <div class="roi-val">5 วัน</div>
+        <div class="roi-desc">
+          <span data-lang="th" class="active">ระยะเวลาการขาย</span>
+          <span data-lang="la">ໄລຍະເວລາ</span>
+          <span data-lang="en">Selling period</span>
+        </div>
+      </div>
+      <div>
+        <div class="roi-label">Package</div>
+        <div class="roi-val">฿12K</div>
+        <div class="roi-desc">Business tier</div>
+      </div>
+      <div>
+        <div class="roi-label">
+          <span data-lang="th" class="active">ขายต่อวัน (ประมาณ)</span>
+          <span data-lang="la">ຂາຍຕໍ່ວັນ (ຄາດ)</span>
+          <span data-lang="en">Daily sales (estimate)</span>
+        </div>
+        <div class="roi-val">฿5K+</div>
+        <div class="roi-desc">
+          <span data-lang="th" class="active">ขึ้นกับสินค้า</span>
+          <span data-lang="la">ຂຶ້ນກັບສິນຄ້າ</span>
+          <span data-lang="en">Product-dependent</span>
+        </div>
+      </div>
+      <div>
+        <div class="roi-label">
+          <span data-lang="th" class="active">คืนทุนใน</span>
+          <span data-lang="la">ຄືນທຶນໃນ</span>
+          <span data-lang="en">Break-even in</span>
+        </div>
+        <div class="roi-val" style="color:var(--gold)">2–3 วัน</div>
+        <div class="roi-desc">
+          <span data-lang="th" class="active">กำไรตลอด 5 วัน</span>
+          <span data-lang="la">ກຳໄລ 5 ວັນ</span>
+          <span data-lang="en">Profit the rest of the run</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── TEAM ─── -->
+<section id="team" class="section-pad">
+  <div class="section-center">
+    <div class="reveal">
+      <div class="section-eyebrow">Team</div>
+      <h2 class="section-title">
+        <span data-lang="th" class="active">ทีมผู้เชี่ยวชาญครบวงจร</span>
+        <span data-lang="la">ທີມຜູ້ຊ່ຽວຊານ</span>
+        <span data-lang="en">Full Expert Team</span>
+      </h2>
+    </div>
+    <div class="team-grid reveal">
+      <div class="team-card">
+        <div class="team-icon">⚙️</div>
+        <div class="team-dept">Operations</div>
+        <div class="team-name">
+          <span data-lang="th" class="active">ปฏิบัติการ</span>
+          <span data-lang="la">ປະຕິບັດການ</span>
+          <span data-lang="en">Operations</span>
+        </div>
+        <div class="team-resp">
+          <span data-lang="th" class="active">จัดการพื้นที่ชั้น 1 ระบบไฟ ความสะอาด และการติดตั้งบูธ</span>
+          <span data-lang="la">ຈັດການພື້ນທີ່ ຊັ້ນ 1 ລະບົບໄຟ</span>
+          <span data-lang="en">Venue, lighting, booth install & cleanliness</span>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-icon">🚛</div>
+        <div class="team-dept">Logistics</div>
+        <div class="team-name">
+          <span data-lang="th" class="active">โลจิสติกส์</span>
+          <span data-lang="la">ໂລຈິສຕິກ</span>
+          <span data-lang="en">Logistics</span>
+        </div>
+        <div class="team-resp">
+          <span data-lang="th" class="active">วางแผนรับสินค้าจากไทย เดินรถขนส่ง คลังสินค้าหน้างาน</span>
+          <span data-lang="la">ຮັບສິນຄ້າຈາກໄທ ຄຄລັງສິນຄ້າ</span>
+          <span data-lang="en">Thai pickup, transport routing, on-site warehouse</span>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-icon">🤝</div>
+        <div class="team-dept">Sales & RM</div>
+        <div class="team-name">
+          <span data-lang="th" class="active">ขายและพาร์ทเนอร์</span>
+          <span data-lang="la">ຂາຍ & ພາດເນີ</span>
+          <span data-lang="en">Sales & Partners</span>
+        </div>
+        <div class="team-resp">
+          <span data-lang="th" class="active">ดิวสมาคมแฟรนไชส์ กลุ่ม SME ภาคเหนือ และซัพพลายเออร์</span>
+          <span data-lang="la">ດີວ ສະມາຄົມ SME</span>
+          <span data-lang="en">Franchise assoc., Northern SMEs, Big C suppliers</span>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-icon">📣</div>
+        <div class="team-dept">Marketing</div>
+        <div class="team-name">
+          <span data-lang="th" class="active">การตลาด</span>
+          <span data-lang="la">ການຕະຫຼາດ</span>
+          <span data-lang="en">Marketing</span>
+        </div>
+        <div class="team-resp">
+          <span data-lang="th" class="active">TikTok/FB Ads ในลาว ดิว Influencer รีวิวงาน Flash Sale</span>
+          <span data-lang="la">TikTok/FB Ads Influencer Flash Sale</span>
+          <span data-lang="en">TikTok/FB Ads, Influencer, Flash Sale events</span>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-icon">🎓</div>
+        <div class="team-dept">Skill Center</div>
+        <div class="team-name">
+          <span data-lang="th" class="active">พัฒนาแรงงาน</span>
+          <span data-lang="la">ພັດທະນາແຮງງານ</span>
+          <span data-lang="en">Labour Dev</span>
+        </div>
+        <div class="team-resp">
+          <span data-lang="th" class="active">ให้ข้อมูลการทำงานไทย เก็บฐานข้อมูลคนหางาน</span>
+          <span data-lang="la">ໃຫ້ຂໍ້ມູນ ເຮັດວຽກໄທ</span>
+          <span data-lang="en">Thai work info, job-seeker database collection</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CREDIBILITY ─── -->
+<section id="credibility" class="section-pad">
+  <div class="section-center">
+    <div class="reveal">
+      <div class="section-eyebrow">
+        <span data-lang="th" class="active">ความน่าเชื่อถือ</span>
+        <span data-lang="la">ຄວາມໜ້າເຊື່ອຖື</span>
+        <span data-lang="en">Credibility</span>
+      </div>
+      <h2 class="section-title">
+        <span data-lang="th" class="active">พาร์ทเนอร์ & ตัวเลขจริง</span>
+        <span data-lang="la">ພາດເນີ & ຕົວເລກຈິງ</span>
+        <span data-lang="en">Partners & Real Numbers</span>
+      </h2>
+    </div>
+    <div class="cred-logos reveal">
+      <div class="cred-logo">Big C Vientiane</div>
+      <div class="cred-logo">Royal Bridge 99</div>
+      <div class="cred-logo">
+        <span data-lang="th" class="active">สมาคมแฟรนไชส์ไทย</span>
+        <span data-lang="la">ສະມາຄົມແຟຣນໄຊ</span>
+        <span data-lang="en">Thai Franchise Assoc.</span>
+      </div>
+      <div class="cred-logo">
+        <span data-lang="th" class="active">SME ภาคเหนือ</span>
+        <span data-lang="la">SME ພາກເໜືອ</span>
+        <span data-lang="en">Northern SME Groups</span>
+      </div>
+      <div class="cred-logo">
+        <span data-lang="th" class="active">รัฐบาลลาว (ร่วมมือ)</span>
+        <span data-lang="la">ລັດຖະບານລາວ</span>
+        <span data-lang="en">Lao Government (Partner)</span>
+      </div>
+    </div>
+    <div class="cred-numbers reveal">
+      <div class="cred-num-card">
+        <div class="cred-num-val">30<span>+</span></div>
+        <div class="cred-num-label">
+          <span data-lang="th" class="active">บูธพร้อมในงาน Phase 2</span>
+          <span data-lang="la">ບູດໃນ Phase 2</span>
+          <span data-lang="en">Total booths in Phase 2</span>
+        </div>
+      </div>
+      <div class="cred-num-card">
+        <div class="cred-num-val">7<span> วัน</span></div>
+        <div class="cred-num-label">
+          <span data-lang="th" class="active">Grand Opening นานาชาติ</span>
+          <span data-lang="la">Grand Opening</span>
+          <span data-lang="en">International Grand Opening</span>
+        </div>
+      </div>
+      <div class="cred-num-card">
+        <div class="cred-num-val">100<span>%</span></div>
+        <div class="cred-num-label">
+          <span data-lang="th" class="active">ถูกกฎหมาย ทั้งไทยและลาว</span>
+          <span data-lang="la">ຖືກກົດໝາຍ ໄທ & ລາວ</span>
+          <span data-lang="en">Fully compliant — Thai & Lao law</span>
+        </div>
+      </div>
+      <div class="cred-num-card">
+        <div class="cred-num-val">0<span> บาท</span></div>
+        <div class="cred-num-label">
+          <span data-lang="th" class="active">ค่าเช่าพื้นที่จาก Big C (ฟรี!)</span>
+          <span data-lang="la">ຄ່າເຊົ່າ Big C (ຟຣີ)</span>
+          <span data-lang="en">Big C venue rental cost (Free!)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact">
+  <div class="contact-wrap">
+    <div class="contact-left reveal">
+      <div class="section-eyebrow">
+        <span data-lang="th" class="active">ติดต่อสมัคร</span>
+        <span data-lang="la">ຕິດຕໍ່ສະໝັກ</span>
+        <span data-lang="en">Get In Touch</span>
+      </div>
+      <h2 class="section-title">
+        <span data-lang="th" class="active">พร้อมพาคุณข้ามแดน</span>
+        <span data-lang="la">ພ້ອມພາທ່ານຂ້າມຊາຍແດນ</span>
+        <span data-lang="en">Let's Cross The Border Together</span>
+      </h2>
+      <p class="section-sub" style="margin-bottom:2rem;">
+        <span data-lang="th" class="active">ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมง พร้อม Proposal และตำแหน่งบูธที่ดีที่สุดที่ยังว่างอยู่</span>
+        <span data-lang="la">ທີມງານຈະຕິດຕໍ່ກັບພາຍໃນ 24 ຊົ່ວໂມງ</span>
+        <span data-lang="en">Our team will follow up within 24 hours with a full proposal and the best available booth positions.</span>
+      </p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-icon">📱</span>
+          <span>LINE: @vith_hub <span style="color:var(--muted)">(ตอบเร็วที่สุด)</span></span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📧</span>
+          <span>contact@vithhub.com</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <span>Big C Vientiane, Laos PDR</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">🕐</span>
+          <span>
+            <span data-lang="th" class="active">ตอบกลับภายใน 24 ชั่วโมง</span>
+            <span data-lang="la">ຕອບກັບພາຍໃນ 24 ຊົ່ວໂມງ</span>
+            <span data-lang="en">Reply within 24 hours</span>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-box reveal">
+      <div class="form-title">
+        <span data-lang="th" class="active">จองบูธ / ขอ Proposal</span>
+        <span data-lang="la">ຈອງບູດ</span>
+        <span data-lang="en">Book a Booth / Get Proposal</span>
+      </div>
+      <div class="form-sub">
+        <span data-lang="th" class="active">กรอกข้อมูลด้านล่าง ทีมงานจะส่ง Proposal ให้โดยเร็วที่สุด</span>
+        <span data-lang="la">ຕື່ມຂໍ້ມູນ ທີມງານຈະສົ່ງ Proposal</span>
+        <span data-lang="en">Fill in the form and we'll send your proposal ASAP.</span>
+      </div>
+
+      <div id="leadForm">
+        <div class="form-group">
+          <label class="form-label">
+            <span data-lang="th" class="active">ชื่อ / บริษัท</span>
+            <span data-lang="la">ຊື່ / ບໍລິສັດ</span>
+            <span data-lang="en">Name / Company</span>
+          </label>
+          <input class="form-input" id="f-name" type="text" placeholder="ชื่อ หรือ ชื่อแบรนด์ของคุณ">
+        </div>
+        <div class="form-group">
+          <label class="form-label">
+            <span data-lang="th" class="active">LINE ID หรือเบอร์โทร</span>
+            <span data-lang="la">LINE ID ຫຼື ເບີໂທ</span>
+            <span data-lang="en">LINE ID or Phone</span>
+          </label>
+          <input class="form-input" id="f-contact" type="text" placeholder="@line_id หรือ 08X-XXX-XXXX">
+        </div>
+        <div class="form-group">
+          <label class="form-label">
+            <span data-lang="th" class="active">สินค้าหรือธุรกิจของคุณ</span>
+            <span data-lang="la">ສິນຄ້າ / ທຸລະກິດ</span>
+            <span data-lang="en">Your Product / Business</span>
+          </label>
+          <input class="form-input" id="f-product" type="text" placeholder="เช่น อาหาร, เครื่องสำอาง, แฟรนไชส์">
+        </div>
+        <div class="form-group">
+          <label class="form-label">
+            <span data-lang="th" class="active">แพ็กเกจที่สนใจ</span>
+            <span data-lang="la">ແພັກເກັດ</span>
+            <span data-lang="en">Package Interest</span>
+          </label>
+          <select class="form-select" id="f-package">
+            <option value="">-- เลือก --</option>
+            <option value="starter">Starter (฿8,500)</option>
+            <option value="business">Business (฿12,000) — แนะนำ</option>
+            <option value="partner">Partner+ (฿15,000+)</option>
+            <option value="unsure">ยังไม่แน่ใจ ขอคุยก่อน</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">
+            <span data-lang="th" class="active">Phase ที่สนใจ</span>
+            <span data-lang="la">Phase ທີ່ສົນໃຈ</span>
+            <span data-lang="en">Phase Interest</span>
+          </label>
+          <select class="form-select" id="f-phase">
+            <option value="">-- เลือก --</option>
+            <option value="phase1">Phase 1 — มีนาคม 2026</option>
+            <option value="phase2">Phase 2 — พฤษภาคม 2026</option>
+            <option value="both">ทั้ง 2 Phase</option>
+          </select>
+        </div>
+        <button class="form-submit" onclick="submitLead()">
+          <span data-lang="th" class="active">ส่งข้อมูล — รับ Proposal ฟรี</span>
+          <span data-lang="la">ສົ່ງຂໍ້ມູນ — ຮັບ Proposal ຟຣີ</span>
+          <span data-lang="en">Submit — Get Free Proposal</span>
+        </button>
+        <p class="form-note">
+          <span data-lang="th" class="active">🔒 ข้อมูลของคุณปลอดภัย ไม่มีการขายข้อมูลให้บุคคลที่สาม</span>
+          <span data-lang="la">🔒 ຂໍ້ມູນຂອງທ່ານປອດໄພ</span>
+          <span data-lang="en">🔒 Your info is safe. We never share it with third parties.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-logo">VITH HUB × BIG C VIENTIANE</div>
+  <p>© 2026 VITH Hub. All rights reserved. · เวียงจันทน์, ลาว PDR</p>
+</footer>
+
+<script>
+// ─── LANGUAGE ───
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('[data-lang="' + lang + '"]').forEach(el => el.classList.add('active'));
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector('.lang-btn[onclick="setLang(\'' + lang + '\')"]').classList.add('active');
+  document.documentElement.lang = lang === 'la' ? 'lo' : lang;
+}
+
+// ─── SCROLL REVEAL ───
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ─── PROGRESS BAR ───
+window.addEventListener('scroll', () => {
+  const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+  document.getElementById('progressBar').style.width = pct + '%';
+});
+
+// ─── LEAD FORM ───
+function submitLead() {
+  const name = document.getElementById('f-name').value.trim();
+  const contact = document.getElementById('f-contact').value.trim();
+  const product = document.getElementById('f-product').value.trim();
+  const pkg = document.getElementById('f-package').value;
+  const phase = document.getElementById('f-phase').value;
+
+  if (!name || !contact) {
+    document.getElementById('f-name').style.borderColor = !name ? 'var(--red)' : '';
+    document.getElementById('f-contact').style.borderColor = !contact ? 'var(--red)' : '';
+    return;
+  }
+
+  // Build LINE message URL (deep link)
+  const msg = encodeURIComponent(
+    `สนใจจองบูธ VITH Hub\n` +
+    `ชื่อ/บริษัท: ${name}\n` +
+    `ติดต่อ: ${contact}\n` +
+    `สินค้า: ${product}\n` +
+    `Package: ${pkg}\n` +
+    `Phase: ${phase}`
+  );
+
+  // Show toast
+  const toast = document.getElementById('toast');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 4000);
+
+  // Swap form for thank-you
+  document.getElementById('leadForm').innerHTML = `
+    <div style="text-align:center;padding:2rem 1rem;">
+      <div style="font-size:3rem;margin-bottom:1rem;">🎉</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;margin-bottom:0.5rem;">ขอบคุณมากครับ!</div>
+      <p style="color:var(--muted);font-size:0.9rem;margin-bottom:1.5rem;line-height:1.6;">ทีมงานจะติดต่อกลับภายใน 24 ชั่วโมง<br>สามารถ inbox LINE เราได้เลยเพื่อความเร็วยิ่งขึ้น</p>
+      <a href="https://line.me/ti/p/YOUR_LINE_ID?text=${msg}" target="_blank"
+        style="display:inline-block;background:#06C755;color:#fff;padding:12px 28px;border-radius:99px;font-weight:800;font-size:0.95rem;text-decoration:none;">
+        💬 ส่งข้อมูลผ่าน LINE ทันที
+      </a>
+    </div>
+  `;
+}
+</script>
 </body>
 </html>
