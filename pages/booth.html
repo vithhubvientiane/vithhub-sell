@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booth Detail | VITH HUB 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Kanit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans','Kanit',sans-serif;background:#08111f;color:#fff;overflow-x:hidden;min-height:100vh}
+:root{
+  --navy:#0B1F3B;--navyL:#162d5a;
+  --gold:#C9A227;--gold2:#E4BC4A;--goldDk:#9B7A10;
+  --A:#3B82F6;--B:#818CF8;--P:#D4AF37;--C:#F97316;--D:#FBBF24;--N:#4a7fa8;
+  --border:rgba(255,255,255,.1);
+}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:400;height:60px;background:rgba(8,17,31,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-in{max-width:1200px;margin:0 auto;height:100%;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:'Kanit',sans-serif;font-size:1.2rem;font-weight:900;letter-spacing:.06em;text-decoration:none;color:#fff}
+.nav-logo span{color:var(--gold2)}
+.nav-sub{font-size:.55rem;font-weight:600;color:rgba(255,255,255,.3);letter-spacing:.18em;text-transform:uppercase}
+.nav-r{display:flex;gap:.75rem;align-items:center}
+.btn-back{font-family:'Kanit',sans-serif;font-size:.78rem;font-weight:700;color:rgba(255,255,255,.55);padding:7px 14px;border-radius:8px;border:1px solid var(--border);transition:all .2s;text-decoration:none}
+.btn-back:hover{color:#fff;border-color:rgba(255,255,255,.3)}
+.btn-fp{font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:800;background:linear-gradient(135deg,var(--goldDk),var(--gold));color:#0B1F3B;padding:8px 18px;border-radius:8px;text-decoration:none;transition:all .2s}
+.btn-fp:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(201,162,39,.4)}
+
+/* ── HERO BAND ── */
+.booth-hero{padding:2.5rem 1.5rem 1.75rem;background:linear-gradient(135deg,#060e1c,#0d1f38);border-bottom:1px solid var(--border);text-align:center}
+.eyebrow{font-family:'Kanit',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--gold2);margin-bottom:.6rem}
+.booth-id{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:clamp(2.5rem,6vw,4rem);line-height:1;margin-bottom:.25rem}
+.booth-tagline{font-family:'Kanit',sans-serif;font-size:.85rem;color:rgba(255,255,255,.4);margin-bottom:1.25rem}
+.status-badge{display:inline-block;padding:5px 16px;border-radius:20px;font-family:'Kanit',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.status-available{background:rgba(16,185,129,.15);color:#34d399;border:1px solid rgba(16,185,129,.35)}
+.status-reserved{background:rgba(239,68,68,.15);color:#f87171;border:1px solid rgba(239,68,68,.3)}
+.status-sold{background:rgba(107,114,128,.15);color:#9ca3af;border:1px solid rgba(107,114,128,.3)}
+
+/* ── MAIN LAYOUT ── */
+.page-body{max-width:1100px;margin:0 auto;padding:2rem 1.25rem 4rem;display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:start}
+@media(max-width:900px){.page-body{grid-template-columns:1fr}}
+
+/* ── INFO CARD ── */
+.info-card{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:18px;overflow:hidden;margin-bottom:1.5rem}
+.card-hd{padding:.875rem 1.25rem;border-bottom:1px solid var(--border);font-family:'Kanit',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2)}
+.card-body{padding:1.5rem}
+
+/* Booth visual preview */
+.booth-preview{width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#0d1f38,#162d5a);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;position:relative;border:1px solid var(--border)}
+.booth-preview-inner{text-align:center}
+.preview-icon{font-size:3rem;margin-bottom:.75rem}
+.preview-label{font-family:'Kanit',sans-serif;font-size:1rem;font-weight:700;color:rgba(255,255,255,.5)}
+.preview-sublabel{font-family:'Kanit',sans-serif;font-size:.75rem;color:rgba(255,255,255,.25);margin-top:.25rem}
+.booth-preview-badge{position:absolute;top:12px;right:12px;font-family:'Kanit',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:8px}
+
+/* Spec grid */
+.spec-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.spec-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:1rem}
+.spec-lbl{font-family:'Kanit',sans-serif;font-size:.6rem;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.3rem}
+.spec-val{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;font-weight:800}
+
+/* Includes list */
+.include-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.include-list li{display:flex;align-items:flex-start;gap:.625rem;font-family:'Kanit',sans-serif;font-size:.82rem;color:rgba(255,255,255,.65);line-height:1.5}
+.include-list li::before{content:"✓";font-weight:900;color:#34d399;flex-shrink:0;margin-top:.05rem}
+
+/* ── FORM CARD ── */
+.form-card{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:18px;overflow:hidden;position:sticky;top:72px}
+.form-hd{padding:1.1rem 1.5rem;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.form-hd-title{font-family:'Kanit',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2)}
+.form-hd-sub{font-family:'Kanit',sans-serif;font-size:.65rem;color:rgba(255,255,255,.3)}
+.form-body{padding:1.5rem;display:flex;flex-direction:column;gap:1rem}
+
+.field-group{display:flex;flex-direction:column;gap:.3rem}
+.field-group label{font-family:'Kanit',sans-serif;font-size:.68rem;font-weight:700;color:rgba(255,255,255,.45);letter-spacing:.06em;text-transform:uppercase}
+.field-group input,
+.field-group select,
+.field-group textarea{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:9px;
+  padding:.75rem 1rem;
+  color:#fff;
+  font-family:'Kanit',sans-serif;
+  font-size:.88rem;
+  transition:border .2s,background .2s;
+  outline:none;
+  width:100%;
+}
+.field-group input::placeholder,
+.field-group textarea::placeholder{color:rgba(255,255,255,.22)}
+.field-group select option{background:#0d1f38;color:#fff}
+.field-group input:focus,
+.field-group select:focus,
+.field-group textarea:focus{
+  border-color:rgba(201,162,39,.5);
+  background:rgba(201,162,39,.05);
+}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+
+.price-summary{background:rgba(201,162,39,.07);border:1px solid rgba(201,162,39,.2);border-radius:12px;padding:1rem}
+.price-row-s{display:flex;justify-content:space-between;align-items:center;font-family:'Kanit',sans-serif;font-size:.8rem;padding:.25rem 0}
+.price-row-s:last-child{border-top:1px solid rgba(201,162,39,.2);margin-top:.5rem;padding-top:.75rem;font-weight:800;font-size:.95rem}
+.price-row-s .lbl{color:rgba(255,255,255,.5)}
+.price-row-s .val{color:var(--gold2)}
+.price-row-s:last-child .lbl{color:#fff}
+.price-row-s:last-child .val{color:var(--gold2);font-size:1.1rem}
+
+.btn-submit{
+  width:100%;
+  font-family:'Kanit',sans-serif;
+  font-size:.95rem;
+  font-weight:800;
+  background:linear-gradient(135deg,var(--goldDk),var(--gold));
+  color:#0B1F3B;
+  padding:14px;
+  border-radius:12px;
+  border:none;
+  cursor:pointer;
+  transition:all .2s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  letter-spacing:.02em;
+}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(201,162,39,.45)}
+.btn-submit:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.form-note{text-align:center;font-family:'Kanit',sans-serif;font-size:.65rem;color:rgba(255,255,255,.25);line-height:1.6}
+
+/* Success state */
+.success-overlay{display:none;flex-direction:column;align-items:center;justify-content:center;padding:2.5rem 1.5rem;text-align:center;min-height:300px}
+.success-overlay.show{display:flex}
+.success-icon{font-size:3rem;margin-bottom:1rem}
+.success-title{font-family:'Kanit',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:.5rem;color:#34d399}
+.success-sub{font-family:'Kanit',sans-serif;font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.7;margin-bottom:1.5rem}
+.btn-back-fp{display:inline-block;font-family:'Kanit',sans-serif;font-size:.85rem;font-weight:700;background:rgba(255,255,255,.06);color:#fff;padding:10px 22px;border-radius:10px;text-decoration:none;transition:all .2s;border:1px solid var(--border)}
+.btn-back-fp:hover{background:rgba(255,255,255,.1)}
+
+/* Reserved overlay */
+.reserved-banner{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:12px;padding:1.25rem;text-align:center;margin-bottom:1rem;display:none}
+.reserved-banner.show{display:block}
+.reserved-banner-icon{font-size:1.75rem;margin-bottom:.5rem}
+.reserved-banner-title{font-family:'Kanit',sans-serif;font-size:.95rem;font-weight:800;color:#f87171;margin-bottom:.25rem}
+.reserved-banner-sub{font-family:'Kanit',sans-serif;font-size:.75rem;color:rgba(248,113,113,.6)}
+
+/* Sold overlay */
+.sold-banner{background:rgba(107,114,128,.1);border:1px solid rgba(107,114,128,.3);border-radius:12px;padding:1.25rem;text-align:center;margin-bottom:1rem;display:none}
+.sold-banner.show{display:block}
+.sold-banner-icon{font-size:1.75rem;margin-bottom:.5rem}
+.sold-banner-title{font-family:'Kanit',sans-serif;font-size:.95rem;font-weight:800;color:#9ca3af;margin-bottom:.25rem}
+.sold-banner-sub{font-family:'Kanit',sans-serif;font-size:.75rem;color:rgba(156,163,175,.6)}
+
+/* Floor map mini */
+.mini-map-link{display:flex;align-items:center;gap:.625rem;padding:1rem 1.25rem;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:12px;text-decoration:none;transition:all .2s;margin-bottom:1.5rem}
+.mini-map-link:hover{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.2)}
+.mini-map-icon{font-size:1.4rem;flex-shrink:0}
+.mini-map-text{font-family:'Kanit',sans-serif}
+.mini-map-text strong{display:block;font-size:.82rem;color:#fff;margin-bottom:.1rem}
+.mini-map-text span{font-size:.7rem;color:rgba(255,255,255,.35)}
+.mini-map-arrow{margin-left:auto;font-size:.9rem;color:rgba(255,255,255,.25)}
+
+@media(max-width:600px){
+  .spec-grid{grid-template-columns:1fr 1fr}
+  .field-row{grid-template-columns:1fr}
+  .nav-r .btn-back{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div id="nav-placeholder"></div>
+
+<!-- HERO -->
+<div class="booth-hero" id="boothHero">
+  <div class="eyebrow" id="heroZone">VITH HUB 2026 · Big C Vientiane · 28 May – 1 June</div>
+  <div class="booth-id" id="heroTitle" style="color:var(--gold2)">Booth —</div>
+  <div class="booth-tagline" id="heroZoneName">Loading booth information...</div>
+  <span class="status-badge status-available" id="statusBadge">✓ Available</span>
+</div>
+
+<div class="page-body">
+
+  <!-- LEFT: Info -->
+  <div>
+
+    <!-- Visual preview -->
+    <div class="info-card">
+      <div class="card-hd">Booth Preview</div>
+      <div class="card-body">
+        <div class="booth-preview" id="boothPreview">
+          <!-- Background image changes per zone type -->
+          <img id="boothBgImg" src="../images/booth-01.webp" alt="Exhibition booth" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35">
+          <div class="booth-preview-inner" style="position:relative;z-index:1">
+            <div class="preview-icon" id="previewIcon">🏪</div>
+            <div class="preview-label" id="previewLabel">Standard Booth</div>
+            <div class="preview-sublabel" id="previewSub">3m × 3m · Big C Vientiane</div>
+          </div>
+          <div class="booth-preview-badge" id="previewBadge" style="background:rgba(129,140,248,.25);color:#818cf8;position:relative;z-index:1">Standard B</div>
+        </div>
+
+        <!-- Spec grid -->
+        <div class="spec-grid">
+          <div class="spec-item">
+            <div class="spec-lbl">Zone</div>
+            <div class="spec-val" id="specZone" style="font-size:.95rem">—</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-lbl">Size</div>
+            <div class="spec-val" id="specSize">—</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-lbl">Price</div>
+            <div class="spec-val" id="specPrice" style="color:var(--gold2)">—</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-lbl">Commission</div>
+            <div class="spec-val" style="color:#34d399;font-size:.9rem">0%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- What's included -->
+    <div class="info-card">
+      <div class="card-hd" id="includesHd">What's Included</div>
+      <div class="card-body">
+        <ul class="include-list" id="includesList">
+          <li>Shell scheme booth (walls, flooring, fascia)</li>
+          <li>1 table + 2 chairs + power socket</li>
+          <li>Exhibitor badge × 2 persons (5 days)</li>
+          <li>Listing in VITH HUB 2026 official catalogue</li>
+          <li>Free logistics support: Nong Khai → Vientiane</li>
+          <li>Big C Distribution Consultation (free, 5 days)</li>
+          <li>Access to VITH HUB CUBE Business Matching</li>
+          <li>0% Commission on all sales during the event</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Back to map -->
+    <a href="floorplan.html" class="mini-map-link">
+      <div class="mini-map-icon">🗺️</div>
+      <div class="mini-map-text">
+        <strong>View Full Floor Plan</strong>
+        <span>Browse all available booths · Click to select</span>
+      </div>
+      <div class="mini-map-arrow">→</div>
+    </a>
+
+    <!-- Venue info -->
+    <div class="info-card">
+      <div class="card-hd">Event & Venue</div>
+      <div class="card-body" style="display:flex;flex-direction:column;gap:.75rem">
+        <div style="display:flex;align-items:flex-start;gap:.75rem">
+          <span style="font-size:1.25rem;flex-shrink:0">📅</span>
+          <div>
+            <div style="font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:700;margin-bottom:.15rem">28 May – 1 June 2026</div>
+            <div style="font-family:'Kanit',sans-serif;font-size:.73rem;color:rgba(255,255,255,.4)">5 วัน · 5 Days · Opening Ceremony 28 May 2026</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:.75rem">
+          <span style="font-size:1.25rem;flex-shrink:0">📍</span>
+          <div>
+            <div style="font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:700;margin-bottom:.15rem">Big C Vientiane, Laos PDR</div>
+            <div style="font-family:'Kanit',sans-serif;font-size:.73rem;color:rgba(255,255,255,.4)">Mekong Global Gateway · International Exhibition Hall</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:.75rem">
+          <span style="font-size:1.25rem;flex-shrink:0">✦</span>
+          <div>
+            <div style="font-family:'Kanit',sans-serif;font-size:.82rem;font-weight:700;margin-bottom:.15rem">Mekong Global Gateway 2026</div>
+            <div style="font-family:'Kanit',sans-serif;font-size:.73rem;color:rgba(255,255,255,.4)">Organized by VITH HUB · Co-hosted with LITSE Market</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT: Reservation form -->
+  <div class="form-card">
+    <div class="form-hd">
+      <div>
+        <div class="form-hd-title">Reserve This Booth</div>
+        <div class="form-hd-sub" id="formBoothSub">Fill in your details below</div>
+      </div>
+    </div>
+
+    <!-- Reserved notice (shown when booth is reserved) -->
+    <div class="reserved-banner" id="reservedBanner">
+      <div class="reserved-banner-icon">🔒</div>
+      <div class="reserved-banner-title">This Booth is Reserved</div>
+      <div class="reserved-banner-sub">Please select another booth from the floor plan</div>
+    </div>
+
+    <!-- Sold notice (shown when booth is sold) -->
+    <div class="sold-banner" id="soldBanner">
+      <div class="sold-banner-icon">✗</div>
+      <div class="sold-banner-title">This Booth is Sold Out</div>
+      <div class="sold-banner-sub">Please select another booth from the floor plan</div>
+    </div>
+
+    <!-- Form -->
+    <div class="form-body" id="formBody">
+
+      <div class="field-group">
+        <label>Full Name *</label>
+        <input type="text" id="fName" placeholder="Your full name" required>
+      </div>
+
+      <div class="field-group">
+        <label>Company / Brand Name *</label>
+        <input type="text" id="fCompany" placeholder="Company or brand name" required>
+      </div>
+
+      <div class="field-row">
+        <div class="field-group">
+          <label>Email *</label>
+          <input type="email" id="fEmail" placeholder="email@example.com" required>
+        </div>
+        <div class="field-group">
+          <label>Phone / WhatsApp *</label>
+          <input type="tel" id="fPhone" placeholder="+66 or +856..." required>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label>Product / Business Type *</label>
+        <select id="fType">
+          <option value="" disabled selected>Select your category</option>
+          <option>Food & Beverage</option>
+          <option>Franchise / F&B Brand</option>
+          <option>FMCG / Consumer Products</option>
+          <option>Health & Beauty</option>
+          <option>Agriculture / Organic</option>
+          <option>Fashion & Lifestyle</option>
+          <option>Tech & Electronics</option>
+          <option>Nation Pavilion / Government</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="field-group">
+        <label>Country of Origin</label>
+        <select id="fCountry">
+          <option value="" disabled selected>Select country</option>
+          <option>🇹🇭 Thailand</option>
+          <option>🇱🇦 Laos PDR</option>
+          <option>🇨🇳 China</option>
+          <option>🇻🇳 Vietnam</option>
+          <option>🇷🇺 Russia</option>
+          <option>🇪🇺 Europe</option>
+          <option>🇯🇵 Japan</option>
+          <option>🇰🇷 South Korea</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="field-group">
+        <label>Message / Special Requirements</label>
+        <textarea id="fMessage" rows="3" placeholder="Any special setup requirements, questions, or notes..."></textarea>
+      </div>
+
+      <div class="price-summary" id="priceSummary">
+        <div class="price-row-s"><span class="lbl" id="psBoothId">Booth —</span><span class="val" id="psZone">—</span></div>
+        <div class="price-row-s"><span class="lbl">Size</span><span class="val" id="psSize">—</span></div>
+        <div class="price-row-s"><span class="lbl">Commission</span><span class="val" style="color:#34d399">0%</span></div>
+        <div class="price-row-s"><span class="lbl">Logistics (Nong Khai → VTE)</span><span class="val" style="color:#34d399">Free</span></div>
+        <div class="price-row-s"><span class="lbl">Booth Fee</span><span class="val" id="psPrice" style="font-size:1.25rem">—</span></div>
+      </div>
+
+      <button class="btn-submit" id="btnSubmit" onclick="submitReservation()">
+        ✦ Submit Reservation Request
+      </button>
+
+      <div class="form-note">
+        ทีมงาน VITH HUB จะติดต่อกลับภายใน 24 ชั่วโมง<br>
+        Our team will follow up within 24 hours · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ed9e8c81889ead9b84998585988fc38c9e848c">[email&#160;protected]</a>
+      </div>
+
+    </div>
+
+    <!-- Success state -->
+    <div class="success-overlay" id="successOverlay">
+      <div class="success-icon">🎉</div>
+      <div class="success-title">Reservation Submitted!</div>
+      <div class="success-sub" id="successMsg">
+        Thank you! Our team will contact you within 24 hours<br>to confirm your booth reservation.<br><br>
+        <strong style="color:#fff"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="85f6e4e9e0f6c5f3ecf1ededf0e7abe4f6ece4">[email&#160;protected]</a></strong>
+      </div>
+      <a href="floorplan.html" class="btn-back-fp">← Back to Floor Plan</a>
+    </div>
+
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="booth-data.js"></script>
+<script>
+// ── INIT ────────────────────────────────────────────────────
+const params = new URLSearchParams(window.location.search);
+// Accept ?booth=A01  OR  ?id=A01 (both supported)
+const boothId = (params.get('booth') || params.get('id') || '').toUpperCase();
+const data = BOOTH_DATA[boothId];
+
+function fmt(n){ return '฿' + n.toLocaleString(); }
+
+if(data){
+  // Hero
+  document.getElementById('heroTitle').textContent = 'Booth ' + boothId;
+  document.getElementById('heroTitle').style.color = data.color.startsWith('var') ? '' : data.color;
+  document.getElementById('heroZoneName').textContent = data.zone + ' · ' + data.size + ' · Big C Vientiane';
+  document.title = 'Booth ' + boothId + ' | VITH HUB 2026';
+
+  const st = data.status || 'available';
+
+  if(st === 'reserved'){
+    document.getElementById('statusBadge').className = 'status-badge status-reserved';
+    document.getElementById('statusBadge').textContent = '🔒 Reserved';
+    document.getElementById('reservedBanner').classList.add('show');
+    document.getElementById('btnSubmit').disabled = true;
+    document.getElementById('btnSubmit').textContent = '🔒 This Booth is Reserved';
+  } else if(st === 'sold'){
+    document.getElementById('statusBadge').className = 'status-badge status-sold';
+    document.getElementById('statusBadge').textContent = '✗ Sold Out';
+    document.getElementById('soldBanner').classList.add('show');
+    document.getElementById('btnSubmit').disabled = true;
+    document.getElementById('btnSubmit').textContent = '✗ This Booth is Sold Out';
+    document.getElementById('btnSubmit').style.background = '#374151';
+    document.getElementById('btnSubmit').style.color = '#9ca3af';
+  }
+
+  // Preview
+  document.getElementById('previewIcon').textContent = data.icon;
+  document.getElementById('previewLabel').textContent = 'Booth ' + boothId + ' · ' + data.label;
+  document.getElementById('previewSub').textContent = data.size + ' · Big C Vientiane';
+  document.getElementById('previewBadge').textContent = data.label;
+
+  // Swap background image by zone
+  const bgImg = document.getElementById('boothBgImg');
+  if(bgImg){
+    const zoneBg = {
+      P: '../images/booth-02.webp',
+      A: '../images/booth-02.webp',
+      B: '../images/booth-01.webp',
+      N: '../images/indoor-01.webp',
+      C: '../images/slideshow03.webp',
+      D: '../images/slideshow04.webp',
+    };
+    bgImg.src = zoneBg[boothId[0]] || '../images/booth-01.webp';
+  }
+
+  document.getElementById('specZone').textContent = data.zone;
+  document.getElementById('specSize').textContent = data.size;
+  document.getElementById('specPrice').textContent = fmt(data.price);
+
+  // Price summary
+  document.getElementById('psBoothId').textContent = 'Booth ' + boothId;
+  document.getElementById('psZone').textContent = data.zone;
+  document.getElementById('psSize').textContent = data.size;
+  document.getElementById('psPrice').textContent = fmt(data.price);
+  document.getElementById('formBoothSub').textContent = 'Booth ' + boothId + ' · ' + fmt(data.price);
+
+  // Premium includes
+  if(boothId.startsWith('P')){
+    document.getElementById('includesList').innerHTML = `
+      <li>Shell scheme premium booth (double-wall, premium flooring)</li>
+      <li>2 tables + 4 chairs + power socket ×2</li>
+      <li>Exhibitor badge × 4 persons (5 days)</li>
+      <li>Premium placement in VITH HUB 2026 official catalogue</li>
+      <li>Free logistics support: Nong Khai → Vientiane</li>
+      <li>Big C Distribution Consultation (priority access)</li>
+      <li>Priority access to VITH HUB CUBE Business Matching</li>
+      <li>Social media spotlight feature (VITH HUB channels)</li>
+      <li>0% Commission on all sales during the event</li>
+    `;
+  }
+
+} else {
+  // No booth specified
+  document.getElementById('heroTitle').textContent = 'Select a Booth';
+  document.getElementById('heroZoneName').textContent = 'Go back to the floor plan to select a booth';
+  document.getElementById('statusBadge').style.display = 'none';
+  document.getElementById('formBody').innerHTML = `
+    <div style="text-align:center;padding:2rem 0">
+      <div style="font-size:2.5rem;margin-bottom:1rem">🗺️</div>
+      <div style="font-family:'Kanit',sans-serif;font-size:.9rem;color:rgba(255,255,255,.45);margin-bottom:1.5rem;line-height:1.7">No booth selected.<br>Please go back to the floor plan<br>and click on a booth to view its details.</div>
+      <a href="floorplan.html" style="display:inline-block;font-family:'Kanit',sans-serif;font-size:.9rem;font-weight:700;background:linear-gradient(135deg,var(--goldDk),var(--gold));color:#0B1F3B;padding:12px 24px;border-radius:10px;text-decoration:none">← Go to Floor Plan</a>
+    </div>
+  `;
+}
+
+// ── SUBMIT ───────────────────────────────────────────────────
+function markError(id, msg){
+  const el = document.getElementById(id);
+  el.style.borderColor = 'rgba(239,68,68,.6)';
+  el.style.background  = 'rgba(239,68,68,.05)';
+  el.setAttribute('title', msg);
+  setTimeout(()=>{ el.style.borderColor=''; el.style.background=''; el.removeAttribute('title'); }, 3000);
+}
+
+function submitReservation(){
+  const name    = document.getElementById('fName').value.trim();
+  const company = document.getElementById('fCompany').value.trim();
+  const email   = document.getElementById('fEmail').value.trim();
+  const phone   = document.getElementById('fPhone').value.trim();
+  const type    = document.getElementById('fType').value;
+
+  let valid = true;
+
+  if(!name)    { markError('fName','กรุณากรอกชื่อ'); valid=false; }
+  if(!company) { markError('fCompany','กรุณากรอกชื่อบริษัท'); valid=false; }
+
+  // Email validation — must match standard pattern
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!email || !emailRe.test(email)){
+    markError('fEmail','กรุณากรอก Email ให้ถูกต้อง เช่น name@example.com');
+    valid=false;
+  }
+
+  // Phone — digits, spaces, +, - only, min 8 chars
+  const phoneRe = /^[\d\s\+\-\(\)]{8,}$/;
+  if(!phone || !phoneRe.test(phone)){
+    markError('fPhone','กรุณากรอกเบอร์โทรที่ถูกต้อง (ตัวเลขเท่านั้น)');
+    valid=false;
+  }
+
+  if(!type) { markError('fType','กรุณาเลือกประเภทธุรกิจ'); valid=false; }
+
+  if(!valid) return;
+
+  const btn = document.getElementById('btnSubmit');
+  btn.disabled = true;
+  btn.innerHTML = '<span style="opacity:.6">⏳ Submitting...</span>';
+
+  // ── Submission via Fetch API → Google Sheets ──────────────
+  // Replace SHEET_URL with your Google Apps Script Web App URL
+  const SHEET_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+
+  const payload = {
+    booth:   boothId,
+    zone:    data ? data.zone : '—',
+    size:    data ? data.size : '—',
+    price:   data ? data.price : 0,
+    name,
+    company,
+    email,
+    phone,
+    type,
+    country:  document.getElementById('fCountry').value,
+    message:  document.getElementById('fMessage').value,
+    submitted: new Date().toISOString(),
+    source:   'vithhub.asia'
+  };
+
+  fetch(SHEET_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(payload)
+  })
+  .then(()=>{
+    showSuccess(name);
+  })
+  .catch(()=>{
+    // Fallback: mailto if fetch fails
+    const subject = encodeURIComponent(`[VITH HUB 2026] Booth ${boothId} Reservation`);
+    const body = encodeURIComponent(
+      `Booth: ${boothId} | Zone: ${data?.zone} | Price: ${fmt(data?.price||0)}\n` +
+      `Name: ${name} | Company: ${company}\n` +
+      `Email: ${email} | Phone: ${phone}\n` +
+      `Type: ${type} | Country: ${document.getElementById('fCountry').value}\n` +
+      `Message: ${document.getElementById('fMessage').value}\n` +
+      `Submitted: ${new Date().toLocaleString()}`
+    );
+    window.open(`mailto:sales@vithhub.asia?subject=${subject}&body=${body}`);
+    showSuccess(name);
+  });
+
+
+  showSuccess(name);
+}
+
+function showSuccess(name){
+  document.getElementById('formBody').style.display = 'none';
+  document.getElementById('successOverlay').classList.add('show');
+  document.getElementById('successMsg').innerHTML =
+    `ขอบคุณ <strong style="color:#fff">${name}</strong> มากครับ!<br>` +
+    `ทีมงาน VITH HUB จะติดต่อกลับภายใน 24 ชั่วโมง<br>` +
+    `เพื่อยืนยันการจองบูท <strong style="color:var(--gold2)">Booth ${boothId}</strong><br><br>` +
+    `<strong style="color:#fff">sales@vithhub.asia</strong>`;
+}
+
+</script>
+<div id="footer-placeholder"></div>
+<script src="../js/shared-nav.js"></script>
+<script src="../js/nav.js"></script>
+<script>injectNav('../');injectFooter('../');</script>
+</body>
+</html>
