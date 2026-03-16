@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Exhibitors 2026 | VITH HUB International Exhibition</title>
+<meta name="description" content="Meet the exhibitors at VITH HUB International Exhibition 2026. 100+ companies from Thailand, Laos, China, Vietnam, and beyond.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.page-hero{padding:5rem 0 3rem;background:linear-gradient(145deg,#0f1115,#130d1f);border-bottom:1px solid var(--border)}
+.filter-bar{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem;padding:1.25rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg)}
+.filter-btn{font-size:.78rem;font-weight:700;padding:7px 16px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--textSub);cursor:pointer;transition:.2s}
+.filter-btn:hover,.filter-btn.active{background:rgba(142,36,170,.2);border-color:var(--borderP);color:var(--primaryL)}
+.exhibitor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+@media(max-width:900px){.exhibitor-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.exhibitor-grid{grid-template-columns:repeat(2,1fr)}}
+.exhibitor-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.5rem;text-align:center;transition:.25s;cursor:pointer}
+.exhibitor-card:hover{border-color:var(--borderP);transform:translateY(-3px);box-shadow:var(--shadowP)}
+.exhibitor-logo{width:80px;height:60px;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.5rem}
+.exhibitor-name{font-size:.88rem;font-weight:700;color:#fff;margin-bottom:.25rem}
+.exhibitor-booth{font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:12px;display:inline-block;margin-bottom:.375rem}
+.exhibitor-cat{font-size:.7rem;color:var(--textDim)}
+.zone-P .exhibitor-booth{background:rgba(251,192,45,.15);color:var(--accentL)}
+.zone-A .exhibitor-booth{background:rgba(59,130,246,.15);color:var(--secondaryL)}
+.zone-B .exhibitor-booth{background:rgba(129,140,248,.15);color:#818cf8}
+.zone-C .exhibitor-booth{background:rgba(249,115,22,.15);color:#f97316}
+.zone-D .exhibitor-booth{background:rgba(251,191,36,.15);color:#fbbf24}
+.zone-N .exhibitor-booth{background:rgba(16,185,129,.15);color:#34d399}
+.empty-state{text-align:center;padding:4rem;color:var(--textDim)}
+.coming-soon-banner{background:rgba(142,36,170,.1);border:1px solid var(--borderP);border-radius:var(--r-lg);padding:2rem;text-align:center;margin-bottom:2rem}
+</style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="badge badge-primary">VITH HUB 2026</div>
+    <h1>Exhibitors <span class="text-accent">2026</span></h1>
+    <p class="mt-2" style="max-width:560px">Meet the companies exhibiting at VITH HUB International Exhibition. 100+ brands from Thailand, Laos, China, Vietnam, and beyond.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:1rem;margin-top:1.5rem">
+      <div class="hero-meta-item" style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--textSub)">🏪 <strong style="color:#fff">100+ Exhibitors</strong></div>
+      <div class="hero-meta-item" style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--textSub)">🌐 <strong style="color:#fff">5+ Countries</strong></div>
+      <div class="hero-meta-item" style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--textSub)">📅 <strong style="color:#fff">28 May – 1 Jun 2026</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<section class="section">
+  <div class="container">
+
+    <!-- Coming soon notice -->
+    <div class="coming-soon-banner">
+      <div style="font-size:2rem;margin-bottom:.75rem">🏗️</div>
+      <h3>Exhibitor List Coming Soon</h3>
+      <p class="mt-2">Booth reservations are open. Full exhibitor list will be published closer to the event date.</p>
+      <div style="display:flex;gap:.75rem;justify-content:center;margin-top:1.25rem;flex-wrap:wrap">
+        <a href="floorplan.html" class="btn btn-primary">🏪 Reserve a Booth</a>
+        <a href="contact.html"   class="btn btn-ghost">📩 Enquire to Exhibit</a>
+      </div>
+    </div>
+
+    <!-- Filter bar -->
+    <div class="filter-bar">
+      <span style="font-size:.78rem;font-weight:700;color:var(--textDim);margin-right:.5rem">Filter by Zone:</span>
+      <button class="filter-btn active" data-zone="ALL">All Zones</button>
+      <button class="filter-btn" data-zone="P">⭐ Premium P</button>
+      <button class="filter-btn" data-zone="A">☕ Franchise A</button>
+      <button class="filter-btn" data-zone="N">🌏 Nation N</button>
+      <button class="filter-btn" data-zone="B">🏪 Standard B</button>
+      <button class="filter-btn" data-zone="C">🍱 Food Dry C</button>
+      <button class="filter-btn" data-zone="D">🍽️ Food Center D</button>
+    </div>
+
+    <!-- Exhibitor Grid — placeholder cards -->
+    <div class="exhibitor-grid" id="exhibitorGrid">
+
+      <!-- Sample exhibitor cards — replace with real data -->
+      <div class="exhibitor-card zone-P" data-zone="P">
+        <div class="exhibitor-logo">⭐</div>
+        <div class="exhibitor-name">TBA — Premium Exhibitor</div>
+        <div class="exhibitor-booth">Booth P01</div>
+        <div class="exhibitor-cat">Premium Zone · Sponsor</div>
+      </div>
+      <div class="exhibitor-card zone-A" data-zone="A">
+        <div class="exhibitor-logo">☕</div>
+        <div class="exhibitor-name">TBA — Franchise Brand</div>
+        <div class="exhibitor-booth">Booth A01</div>
+        <div class="exhibitor-cat">Franchise Zone · F&B</div>
+      </div>
+      <div class="exhibitor-card zone-B" data-zone="B">
+        <div class="exhibitor-logo">🏪</div>
+        <div class="exhibitor-name">TBA — SME Exhibitor</div>
+        <div class="exhibitor-booth">Booth B01</div>
+        <div class="exhibitor-cat">Standard Zone · FMCG</div>
+      </div>
+      <div class="exhibitor-card zone-N" data-zone="N">
+        <div class="exhibitor-logo">🌏</div>
+        <div class="exhibitor-name">TBA — Nation Pavilion</div>
+        <div class="exhibitor-booth">Booth N01</div>
+        <div class="exhibitor-cat">Nation Pavilion · Trade Mission</div>
+      </div>
+      <div class="exhibitor-card zone-C" data-zone="C">
+        <div class="exhibitor-logo">🍱</div>
+        <div class="exhibitor-name">TBA — Food Brand</div>
+        <div class="exhibitor-booth">Booth C01</div>
+        <div class="exhibitor-cat">Food Dry Zone · Packaged Food</div>
+      </div>
+      <div class="exhibitor-card zone-D" data-zone="D">
+        <div class="exhibitor-logo">🍽️</div>
+        <div class="exhibitor-name">TBA — Food Court</div>
+        <div class="exhibitor-booth">Booth D01</div>
+        <div class="exhibitor-cat">Food Center · Thai Cuisine</div>
+      </div>
+      <div class="exhibitor-card zone-D" data-zone="D">
+        <div class="exhibitor-logo">🍽️</div>
+        <div class="exhibitor-name">TBA — Lao Pavilion</div>
+        <div class="exhibitor-booth">Booth D17</div>
+        <div class="exhibitor-cat">Food Center · Lao Cuisine</div>
+      </div>
+      <div class="exhibitor-card zone-P" data-zone="P">
+        <div class="exhibitor-logo">⭐</div>
+        <div class="exhibitor-name">TBA — Premium Sponsor</div>
+        <div class="exhibitor-booth">Booth P04</div>
+        <div class="exhibitor-cat">Premium Zone · Health & Beauty</div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-4">
+      <p style="color:var(--textDim);font-size:.85rem">Full exhibitor list will be announced soon · <a href="contact.html" style="color:var(--primaryL)">Contact us to exhibit →</a></p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section bg-alt">
+  <div class="container text-center">
+    <h2>Want to <span class="text-accent">Exhibit</span>?</h2>
+    <p class="mt-2" style="max-width:480px;margin:1rem auto">Secure your booth today. Limited spaces across all zones — booths are selling fast.</p>
+    <div style="display:flex;gap:.875rem;justify-content:center;flex-wrap:wrap;margin-top:2rem">
+      <a href="floorplan.html" class="btn btn-primary btn-lg">🏪 View Floor Plan & Book</a>
+      <a href="contact.html"   class="btn btn-ghost   btn-lg">📩 Contact Sales Team</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script src="../js/shared-nav.js"></script>
+<script src="../js/nav.js"></script>
+<script>
+injectNav('../');
+injectFooter('../');
+
+// Filter logic
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const zone = btn.dataset.zone;
+    document.querySelectorAll('.exhibitor-card').forEach(card => {
+      card.style.display = (zone === 'ALL' || card.dataset.zone === zone) ? '' : 'none';
+    });
+  });
+});
+</script>
+</body>
+</html>

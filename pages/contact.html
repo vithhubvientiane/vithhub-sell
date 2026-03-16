@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Contact Us | VITH HUB 2026</title>
+<meta name="description" content="Contact VITH HUB 2026. Booth enquiries, visitor registration, sponsorship, media. Email sales@vithhub.asia">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.page-hero{padding:5rem 0 3rem;background:linear-gradient(145deg,#0f1115,#130d1f);border-bottom:1px solid var(--border)}
+.contact-grid{display:grid;grid-template-columns:1fr 420px;gap:2.5rem;align-items:start}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}}
+.contact-form-card{background:var(--bg2);border:1px solid var(--borderP);border-radius:var(--r-xl);overflow:hidden;position:sticky;top:80px}
+.form-hd{padding:1.25rem 1.75rem;border-bottom:1px solid var(--border);background:rgba(142,36,170,.08)}
+.form-body{padding:1.75rem}
+.field-group{display:flex;flex-direction:column;gap:.375rem;margin-bottom:1rem}
+.field-group label{font-size:.68rem;font-weight:700;color:var(--textDim);letter-spacing:.08em;text-transform:uppercase}
+.field-group input,.field-group select,.field-group textarea{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--r-sm);padding:.75rem 1rem;color:#fff;font-size:.88rem;font-family:'Plus Jakarta Sans',sans-serif;outline:none;width:100%;transition:.2s}
+.field-group input:focus,.field-group select:focus,.field-group textarea:focus{border-color:rgba(142,36,170,.5);background:rgba(142,36,170,.05)}
+.field-group input::placeholder,.field-group textarea::placeholder{color:var(--textDim)}
+.field-group select option{background:#161a21}
+.contact-channel{display:flex;gap:.875rem;align-items:center;padding:1rem 1.25rem;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);transition:.2s;margin-bottom:.75rem;text-decoration:none}
+.contact-channel:hover{border-color:var(--borderP);background:rgba(142,36,170,.06)}
+.ch-icon{font-size:1.5rem;flex-shrink:0;width:40px;text-align:center}
+.ch-label{font-size:.7rem;font-weight:700;color:var(--textDim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.15rem}
+.ch-value{font-size:.9rem;font-weight:600;color:#fff}
+.ch-sub{font-size:.72rem;color:var(--textDim)}
+.success-box{display:none;text-align:center;padding:2.5rem 1rem}
+.success-box.show{display:block}
+</style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="badge badge-primary">Get In Touch</div>
+    <h1>Contact <span class="text-accent">VITH HUB</span></h1>
+    <p class="mt-2" style="max-width:520px">Booth enquiries, visitor registration, sponsorship packages, media accreditation — our team responds within 24 hours.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- LEFT: Channels -->
+      <div>
+        <h2 class="mb-3">Contact <span class="text-primary">Channels</span></h2>
+
+        <a href="mailto:sales@vithhub.asia" class="contact-channel">
+          <div class="ch-icon">📧</div>
+          <div><div class="ch-label">Email — Booth Sales</div><div class="ch-value">sales@vithhub.asia</div><div class="ch-sub">Booth reservations · Pricing · Availability</div></div>
+        </a>
+        <a href="mailto:info@vithhub.asia" class="contact-channel">
+          <div class="ch-icon">📨</div>
+          <div><div class="ch-label">Email — General</div><div class="ch-value">info@vithhub.asia</div><div class="ch-sub">General enquiries · Visitor information</div></div>
+        </a>
+        <a href="mailto:sponsor@vithhub.asia" class="contact-channel">
+          <div class="ch-icon">💼</div>
+          <div><div class="ch-label">Email — Sponsorship</div><div class="ch-value">sponsor@vithhub.asia</div><div class="ch-sub">Sponsorship packages · Partnership opportunities</div></div>
+        </a>
+        <a href="mailto:media@vithhub.asia" class="contact-channel">
+          <div class="ch-icon">📰</div>
+          <div><div class="ch-label">Media Accreditation</div><div class="ch-value">media@vithhub.asia</div><div class="ch-sub">Press passes · Media kit · Interview requests</div></div>
+        </a>
+        <a href="tel:+66" class="contact-channel">
+          <div class="ch-icon">📞</div>
+          <div><div class="ch-label">Phone — Thailand</div><div class="ch-value">+66 — (TH)</div><div class="ch-sub">Mon–Fri 9:00–18:00 ICT</div></div>
+        </a>
+        <a href="tel:+856" class="contact-channel">
+          <div class="ch-icon">📞</div>
+          <div><div class="ch-label">Phone — Laos</div><div class="ch-value">+856 — (LAO)</div><div class="ch-sub">Mon–Fri 9:00–18:00 ICT</div></div>
+        </a>
+
+        <!-- Quick links -->
+        <h3 class="mt-4 mb-2">Quick Links</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:.75rem">
+          <a href="floorplan.html" class="btn btn-primary btn-sm">🏪 Book a Booth</a>
+          <a href="visit.html"     class="btn btn-accent  btn-sm">🎟️ Register Visit</a>
+          <a href="partners.html"  class="btn btn-ghost   btn-sm">🤝 Sponsorship</a>
+          <a href="venue.html"     class="btn btn-ghost   btn-sm">📍 Venue</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Contact Form -->
+      <div class="contact-form-card">
+        <div class="form-hd">
+          <h3 style="font-size:1rem;margin:0">📩 Send a Message</h3>
+          <p style="font-size:.75rem;color:var(--textDim);margin-top:.25rem">We reply within 24 hours</p>
+        </div>
+        <div class="form-body">
+          <div id="contactForm">
+            <div class="field-group">
+              <label>Full Name *</label>
+              <input type="text" id="cName" placeholder="Your full name" required>
+            </div>
+            <div class="field-group">
+              <label>Email *</label>
+              <input type="email" id="cEmail" placeholder="email@example.com" required>
+            </div>
+            <div class="field-group">
+              <label>Phone</label>
+              <input type="tel" id="cPhone" placeholder="+66 or +856...">
+            </div>
+            <div class="field-group">
+              <label>Enquiry Type *</label>
+              <select id="cType">
+                <option value="" disabled selected>Select topic</option>
+                <option>🏪 Booth Reservation</option>
+                <option>🎟️ Visitor Registration</option>
+                <option>💼 Sponsorship / Partnership</option>
+                <option>📰 Media / Press</option>
+                <option>🌐 Trade Gateway Program</option>
+                <option>🚀 Accelerator Program</option>
+                <option>📍 Venue / Logistics</option>
+                <option>❓ General Enquiry</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label>Message *</label>
+              <textarea id="cMessage" rows="4" placeholder="Tell us how we can help..."></textarea>
+            </div>
+            <button class="btn btn-primary" style="width:100%;padding:14px" onclick="submitContact()">
+              📩 Send Message
+            </button>
+            <p style="text-align:center;font-size:.68rem;color:var(--textDim);margin-top:.75rem">We respond within 24 hours · Mon–Fri</p>
+          </div>
+
+          <div class="success-box" id="contactSuccess">
+            <div style="font-size:3rem;margin-bottom:1rem">✅</div>
+            <h3 style="color:#34d399">Message Sent!</h3>
+            <p class="mt-2">Thank you. Our team will reply within 24 hours at <strong style="color:#fff" id="successEmail"></strong></p>
+            <a href="../index.html" class="btn btn-ghost btn-sm mt-3">← Back to Home</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="../js/shared-nav.js"></script>
+<script src="../js/nav.js"></script>
+<script>
+injectNav('../');
+injectFooter('../');
+
+function submitContact(){
+  const name  = document.getElementById('cName').value.trim();
+  const email = document.getElementById('cEmail').value.trim();
+  const type  = document.getElementById('cType').value;
+  const msg   = document.getElementById('cMessage').value.trim();
+  if(!name||!email||!type||!msg){ alert('Please fill in all required fields.'); return; }
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!emailRe.test(email)){ alert('Please enter a valid email address.'); return; }
+  document.getElementById('contactForm').style.display='none';
+  document.getElementById('successEmail').textContent = email;
+  document.getElementById('contactSuccess').classList.add('show');
+}
+</script>
+</body>
+</html>
