@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Business Program 2026 | VITH HUB International Exhibition</title>
+<meta name="description" content="VITH HUB Business Programs: Startup Accelerator, Mekong Trade Gateway, Investor Matching, and Networking Events. 28 May–1 June 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.page-hero{padding:5rem 0 3rem;background:linear-gradient(145deg,#0f1115,#130d1f);border-bottom:1px solid var(--border)}
+.program-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem}
+.prog-tab{font-size:.85rem;font-weight:700;padding:10px 20px;border-radius:var(--r-md);border:1px solid var(--border);background:transparent;color:var(--textSub);cursor:pointer;transition:.2s}
+.prog-tab:hover,.prog-tab.active{background:rgba(142,36,170,.2);border-color:var(--borderP);color:var(--primaryL)}
+.prog-section{display:none}
+.prog-section.active{display:block}
+.prog-hero-card{background:var(--bg2);border:1px solid var(--borderP);border-radius:var(--r-xl);padding:2.5rem;margin-bottom:2rem;position:relative;overflow:hidden}
+.prog-hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primaryDk),var(--primary),var(--primaryL))}
+.schedule-day{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);margin-bottom:1rem;overflow:hidden}
+.schedule-day-hd{padding:1rem 1.5rem;display:flex;align-items:center;gap:1rem;cursor:pointer;user-select:none}
+.schedule-day-hd:hover{background:rgba(255,255,255,.03)}
+.day-badge{font-size:.7rem;font-weight:700;padding:4px 12px;border-radius:12px;background:rgba(142,36,170,.2);color:var(--primaryL);white-space:nowrap}
+.schedule-day-body{padding:0 1.5rem 1.25rem;display:none}
+.schedule-day-body.open{display:block}
+.sched-item{display:flex;gap:1rem;padding:.625rem 0;border-bottom:1px solid var(--border)}
+.sched-item:last-child{border-bottom:none}
+.sched-time{font-size:.75rem;font-weight:700;color:var(--primaryL);min-width:80px;flex-shrink:0;padding-top:.1rem}
+.sched-title{font-size:.85rem;font-weight:600;color:#fff;margin-bottom:.15rem}
+.sched-desc{font-size:.75rem;color:var(--textDim)}
+.benefit-list{display:flex;flex-direction:column;gap:.625rem;margin-top:1rem}
+.benefit-item{display:flex;align-items:flex-start;gap:.75rem;font-size:.85rem;color:var(--textSub)}
+.benefit-item::before{content:'✓';color:#34d399;font-weight:900;flex-shrink:0;margin-top:.1rem}
+</style>
+</head>
+<body>
+
+<div id="nav-placeholder"></div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <div class="badge badge-primary">VITH HUB 2026</div>
+    <h1>Business <span class="text-primary">Programs</span></h1>
+    <p class="mt-2" style="max-width:580px">More than just an exhibition. VITH HUB 2026 features a full ecosystem of business programs to connect, grow, and expand your brand across Mekong markets.</p>
+  </div>
+</section>
+
+<!-- MAIN -->
+<section class="section">
+  <div class="container">
+
+    <!-- Program Tabs -->
+    <div class="program-tabs">
+      <button class="prog-tab active" data-prog="gateway">🌐 Trade Gateway</button>
+      <button class="prog-tab"        data-prog="accelerator">🚀 Accelerator</button>
+      <button class="prog-tab"        data-prog="investor">💼 Investor Matching</button>
+      <button class="prog-tab"        data-prog="networking">🎤 Networking</button>
+      <button class="prog-tab"        data-prog="schedule">📅 Full Schedule</button>
+    </div>
+
+    <!-- TRADE GATEWAY -->
+    <div class="prog-section active" id="prog-gateway">
+      <div class="prog-hero-card">
+        <div style="font-size:3rem;margin-bottom:1rem">🌐</div>
+        <h2>Mekong Trade <span class="text-accent">Gateway</span></h2>
+        <p class="mt-2" style="max-width:560px">Your direct route into Laos, Vietnam, China, and Myanmar. Connect with verified importers, distributors, and retailers across CLMV + GMS regions.</p>
+        <div class="benefit-list">
+          <div class="benefit-item">Direct introductions to Big C Laos buyers and purchasing team</div>
+          <div class="benefit-item">Pre-arranged meetings with 50+ verified CLMV distributors</div>
+          <div class="benefit-item">Free logistics consultation: Nong Khai → Vientiane supply chain</div>
+          <div class="benefit-item">Export documentation support and regulatory guidance</div>
+          <div class="benefit-item">Product listing in VITH HUB official trade catalogue (print + digital)</div>
+        </div>
+        <a href="contact.html" class="btn btn-primary mt-4">Apply for Trade Gateway →</a>
+      </div>
+      <div class="grid-3">
+        <div class="card"><div style="font-size:1.75rem;margin-bottom:.75rem">🛒</div><h3>Big C Distribution</h3><p>Fast-track your products onto Big C Laos shelves. Priority access to purchasing meetings.</p></div>
+        <div class="card"><div style="font-size:1.75rem;margin-bottom:.75rem">📦</div><h3>Logistics Support</h3><p>Free freight advisory from Nong Khai to Vientiane. Customs clearing guidance included.</p></div>
+        <div class="card"><div style="font-size:1.75rem;margin-bottom:.75rem">📋</div><h3>Trade Catalogue</h3><p>Your product featured in the official VITH HUB 2026 trade catalogue distributed to 5,000+ buyers.</p></div>
+      </div>
+    </div>
+
+    <!-- ACCELERATOR -->
+    <div class="prog-section" id="prog-accelerator">
+      <div class="prog-hero-card">
+        <div style="font-size:3rem;margin-bottom:1rem">🚀</div>
+        <h2>Startup <span class="text-accent">Accelerator</span></h2>
+        <p class="mt-2" style="max-width:560px">Designed for early-stage startups and innovative SMEs ready to scale into Mekong markets. Get mentorship, pitch training, and access to regional investors.</p>
+        <div class="benefit-list">
+          <div class="benefit-item">3-day intensive workshop: Mekong market entry strategy</div>
+          <div class="benefit-item">1-on-1 mentorship with experienced regional entrepreneurs</div>
+          <div class="benefit-item">Pitch competition — win grants and investor introductions</div>
+          <div class="benefit-item">Access to VITH HUB Startup Network: 200+ alumni</div>
+          <div class="benefit-item">Exhibition booth included in program package</div>
+        </div>
+        <a href="contact.html" class="btn btn-primary mt-4">Apply for Accelerator →</a>
+      </div>
+      <div class="grid-3">
+        <div class="card"><div style="font-size:1.75rem;margin-bottom:.75rem">🎓</div><h3>Mentorship</h3><p>Weekly sessions with serial entrepreneurs, ex-investors, and regional market experts.</p></div>
+        <div class="card"><div style="font-size:1.75rem;margin-bottom:.75rem">🏆</div><h3>Pitch Competition</h3><p>Present your startup to a panel of CLMV investors. Top 3 win funding and media coverage.</p></div>
+        <div class="card"><div style="font-size:1.75rem;margin-bottom:.75rem">🌐</div><h3>Market Entry</h3><p>Guided entry into Laos, Vietnam, or Myanmar markets with local partner introductions.</p></div>
+      </div>
+    </div>
+
+    <!-- INVESTOR MATCHING -->
+    <div class="prog-section" id="prog-investor">
+      <div class="prog-hero-card">
+        <div style="font-size:3rem;margin-bottom:1rem">💼</div>
+        <h2>Investor <span class="text-accent">Matching</span></h2>
+        <p class="mt-2" style="max-width:560px">Pre-arranged, curated 1-on-1 meetings between verified investors and promising businesses. From seed to Series A — across all sectors.</p>
+        <div class="benefit-list">
+          <div class="benefit-item">10–15 curated investor meetings over 5 days</div>
+          <div class="benefit-item">Investors from Thailand, Laos, China, Vietnam, and Japan</div>
+          <div class="benefit-item">Sectors: F&B, FMCG, Tech, Agriculture, Retail, Healthcare</div>
+          <div class="benefit-item">Deal room available: private meeting spaces throughout the venue</div>
+          <div class="benefit-item">Post-event follow-up facilitation by VITH HUB team</div>
+        </div>
+        <a href="contact.html" class="btn btn-primary mt-4">Register for Investor Matching →</a>
+      </div>
+      <div class="grid-2">
+        <div class="card"><h3>For Investors</h3><p class="mt-2">Access 50+ pre-screened investment opportunities from verified Mekong-region businesses. Due diligence support provided.</p><a href="contact.html" class="btn btn-ghost btn-sm mt-3">Register as Investor →</a></div>
+        <div class="card"><h3>For Businesses</h3><p class="mt-2">Present your business to investors actively looking to deploy capital into CLMV and GMS markets. Pitch deck review included.</p><a href="contact.html" class="btn btn-ghost btn-sm mt-3">Apply for Matching →</a></div>
+      </div>
+    </div>
+
+    <!-- NETWORKING -->
+    <div class="prog-section" id="prog-networking">
+      <div class="prog-hero-card">
+        <div style="font-size:3rem;margin-bottom:1rem">🎤</div>
+        <h2>Networking <span class="text-accent">Events</span></h2>
+        <p class="mt-2" style="max-width:560px">5 days of structured and informal networking opportunities. From opening ceremony dinners to industry forums and cultural evenings.</p>
+        <div class="benefit-list">
+          <div class="benefit-item">Grand Opening Ceremony & Gala Dinner — 28 May 2026</div>
+          <div class="benefit-item">Industry Forums: F&B, FMCG, Tech, Agriculture (daily)</div>
+          <div class="benefit-item">Cultural Evening: Thai-Lao Exchange Night</div>
+          <div class="benefit-item">Closing Awards Ceremony — 1 June 2026</div>
+          <div class="benefit-item">VIP Lounge access for premium exhibitors and partners</div>
+        </div>
+        <a href="visit.html" class="btn btn-accent mt-4">Register to Attend →</a>
+      </div>
+      <div class="grid-3">
+        <div class="card"><div style="font-size:1.75rem;margin-bottom:.75rem">🥂</div><h3>Opening Gala</h3><p>Grand opening ceremony with government officials, business leaders, and media. 28 May · 6PM.</p></div>
+        <div class="card"><div style="font-size:1.75rem;margin-bottom:.75rem">🎙️</div><h3>Industry Forums</h3><p>Daily talks by industry experts. Topics: Mekong trade, F&B trends, digital commerce.</p></div>
+        <div class="card"><div style="font-size:1.75rem;margin-bottom:.75rem">🏆</div><h3>Awards Night</h3><p>Recognizing the best exhibitors, innovators, and partners. 1 June · Closing Ceremony.</p></div>
+      </div>
+    </div>
+
+    <!-- FULL SCHEDULE -->
+    <div class="prog-section" id="prog-schedule">
+      <h2 class="mb-3">Full Event <span class="text-accent">Schedule</span></h2>
+
+      <div class="schedule-day">
+        <div class="schedule-day-hd" onclick="toggleDay(this)">
+          <div class="day-badge">Day 1 · 28 May</div>
+          <div style="font-weight:700;color:#fff">Opening Day · Grand Ceremony</div>
+          <div style="margin-left:auto;color:var(--textDim)">▼</div>
+        </div>
+        <div class="schedule-day-body open">
+          <div class="sched-item"><div class="sched-time">09:00</div><div><div class="sched-title">Grand Opening Ceremony</div><div class="sched-desc">Official opening with government officials, organizers, and media</div></div></div>
+          <div class="sched-item"><div class="sched-time">10:00</div><div><div class="sched-title">Exhibition Halls Open to Public</div><div class="sched-desc">All zones open · Visitor registration at entrance</div></div></div>
+          <div class="sched-item"><div class="sched-time">14:00</div><div><div class="sched-title">Trade Gateway Forum</div><div class="sched-desc">Mekong market entry strategies · Main Stage</div></div></div>
+          <div class="sched-item"><div class="sched-time">18:00</div><div><div class="sched-title">Opening Gala Dinner</div><div class="sched-desc">VIP guests, sponsors, exhibitors · By invitation</div></div></div>
+        </div>
+      </div>
+
+      <div class="schedule-day">
+        <div class="schedule-day-hd" onclick="toggleDay(this)">
+          <div class="day-badge">Day 2 · 29 May</div>
+          <div style="font-weight:700;color:#fff">Business Day · Investor Matching</div>
+          <div style="margin-left:auto;color:var(--textDim)">▼</div>
+        </div>
+        <div class="schedule-day-body">
+          <div class="sched-item"><div class="sched-time">10:00</div><div><div class="sched-title">Exhibition Open</div><div class="sched-desc">All booths open</div></div></div>
+          <div class="sched-item"><div class="sched-time">11:00</div><div><div class="sched-title">Investor Matching Sessions</div><div class="sched-desc">1-on-1 curated meetings · VITH HUB CUBE</div></div></div>
+          <div class="sched-item"><div class="sched-time">14:00</div><div><div class="sched-title">F&B Industry Forum</div><div class="sched-desc">Trends in Mekong food & beverage markets</div></div></div>
+          <div class="sched-item"><div class="sched-time">16:00</div><div><div class="sched-title">Startup Pitch Round 1</div><div class="sched-desc">10 startups pitch to investor panel · Main Stage</div></div></div>
+        </div>
+      </div>
+
+      <div class="schedule-day">
+        <div class="schedule-day-hd" onclick="toggleDay(this)">
+          <div class="day-badge">Day 3 · 30 May</div>
+          <div style="font-weight:700;color:#fff">SME Day · Trade Forum</div>
+          <div style="margin-left:auto;color:var(--textDim)">▼</div>
+        </div>
+        <div class="schedule-day-body">
+          <div class="sched-item"><div class="sched-time">10:00</div><div><div class="sched-title">Exhibition Open</div><div class="sched-desc">All booths open</div></div></div>
+          <div class="sched-item"><div class="sched-time">13:00</div><div><div class="sched-title">SME Export Workshop</div><div class="sched-desc">How to export to Laos via Big C distribution</div></div></div>
+          <div class="sched-item"><div class="sched-time">15:00</div><div><div class="sched-title">Cultural Exchange Night</div><div class="sched-desc">Thai-Lao cultural performances · Food Center</div></div></div>
+        </div>
+      </div>
+
+      <div class="schedule-day">
+        <div class="schedule-day-hd" onclick="toggleDay(this)">
+          <div class="day-badge">Day 4 · 31 May</div>
+          <div style="font-weight:700;color:#fff">Public Day · Max Traffic</div>
+          <div style="margin-left:auto;color:var(--textDim)">▼</div>
+        </div>
+        <div class="schedule-day-body">
+          <div class="sched-item"><div class="sched-time">10:00</div><div><div class="sched-title">Exhibition Open</div><div class="sched-desc">Expected peak visitor day</div></div></div>
+          <div class="sched-item"><div class="sched-time">12:00</div><div><div class="sched-title">Live Cooking Demo</div><div class="sched-desc">Thai & Lao chefs · Food Center Stage</div></div></div>
+          <div class="sched-item"><div class="sched-time">16:00</div><div><div class="sched-title">Startup Pitch Finals</div><div class="sched-desc">Top 5 startups · Live audience voting</div></div></div>
+        </div>
+      </div>
+
+      <div class="schedule-day">
+        <div class="schedule-day-hd" onclick="toggleDay(this)">
+          <div class="day-badge">Day 5 · 1 June</div>
+          <div style="font-weight:700;color:#fff">Closing Day · Awards Ceremony</div>
+          <div style="margin-left:auto;color:var(--textDim)">▼</div>
+        </div>
+        <div class="schedule-day-body">
+          <div class="sched-item"><div class="sched-time">10:00</div><div><div class="sched-title">Exhibition Open — Last Day</div><div class="sched-desc">Final day deals and networking</div></div></div>
+          <div class="sched-item"><div class="sched-time">15:00</div><div><div class="sched-title">Best Booth Awards</div><div class="sched-desc">Recognizing outstanding exhibitors across all zones</div></div></div>
+          <div class="sched-item"><div class="sched-time">17:00</div><div><div class="sched-title">Closing Ceremony</div><div class="sched-desc">Thank you addresses · See you in 2027</div></div></div>
+          <div class="sched-item"><div class="sched-time">18:00</div><div><div class="sched-title">Exhibition Closes</div><div class="sched-desc">End of VITH HUB International Exhibition 2026</div></div></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section bg-alt">
+  <div class="container text-center">
+    <h2>Join the <span class="text-accent">Programs</span></h2>
+    <p class="mt-2" style="max-width:480px;margin:1rem auto">Reserve your booth and enroll in business programs today. Spaces are limited.</p>
+    <div style="display:flex;gap:.875rem;justify-content:center;flex-wrap:wrap;margin-top:2rem">
+      <a href="floorplan.html" class="btn btn-primary btn-lg">🏪 Book a Booth</a>
+      <a href="contact.html"   class="btn btn-accent   btn-lg">📩 Enquire About Programs</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script src="../js/shared-nav.js"></script>
+<script src="../js/nav.js"></script>
+<script>
+injectNav('../');
+injectFooter('../');
+
+// Tab switching
+document.querySelectorAll('.prog-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.prog-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.prog-section').forEach(s => s.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('prog-' + tab.dataset.prog).classList.add('active');
+  });
+});
+
+// Accordion days
+function toggleDay(hd){
+  const body = hd.nextElementSibling;
+  body.classList.toggle('open');
+  hd.querySelector('div:last-child').textContent = body.classList.contains('open') ? '▲' : '▼';
+}
+</script>
+</body>
+</html>

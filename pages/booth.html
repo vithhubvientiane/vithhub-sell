@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Booth Booking | VITH HUB International Exhibition 2026</title>
+<meta name="description" content="Book your exhibition booth at VITH HUB 2026. Standard ฿15,000 · Premium ฿25,000 · 0% commission · Free logistics. Big C Vientiane, 28 May–1 June 2026.">
+<meta property="og:title" content="Booth Booking | VITH HUB 2026">
+<meta property="og:image" content="../images/booth-01.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+.page-hero{position:relative;padding:4.5rem 0 3rem;background:var(--navy);overflow:hidden}
+.page-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.15}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,15,30,.92),rgba(11,31,58,.75))}
+.page-hero-inner{position:relative;z-index:2}
+/* Booking layout */
+.booking-layout{display:grid;grid-template-columns:1fr 400px;gap:2rem;align-items:start}
+@media(max-width:960px){.booking-layout{grid-template-columns:1fr}}
+/* Reservation form card */
+.form-card{background:#fff;border:1px solid var(--border);border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--shadowMd);position:sticky;top:80px}
+.form-card-hd{padding:1.25rem 1.75rem;background:var(--navy);color:#fff}
+.form-card-hd h3{color:#fff;font-size:1rem;margin-bottom:.2rem}
+.form-card-hd p{font-size:.75rem;color:rgba(255,255,255,.5);margin:0}
+.form-card-body{padding:1.75rem}
+.field{display:flex;flex-direction:column;gap:.35rem;margin-bottom:1rem}
+.field label{font-size:.68rem;font-weight:700;color:var(--textDim);letter-spacing:.08em;text-transform:uppercase}
+.field input,.field select,.field textarea{padding:.75rem 1rem;border:1.5px solid var(--border);border-radius:var(--r-sm);font-size:.88rem;font-family:'Plus Jakarta Sans',sans-serif;color:var(--text);background:#fff;outline:none;transition:.2s;width:100%}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(11,31,58,.06)}
+.field select option{background:#fff}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+/* Price summary */
+.price-box{background:var(--goldPale);border:1px solid var(--borderG);border-radius:var(--r-md);padding:1rem;margin-bottom:1.25rem}
+.price-line{display:flex;justify-content:space-between;font-size:.82rem;padding:.25rem 0}
+.price-line .lbl{color:var(--textSub)}
+.price-line .val{font-weight:700;color:var(--navy)}
+.price-total{border-top:1.5px solid var(--borderG);margin-top:.5rem;padding-top:.75rem;font-size:1rem;font-weight:800}
+.price-total .val{color:var(--goldDk);font-size:1.2rem}
+/* Reserved/Sold banners */
+.reserved-banner,.sold-banner{border-radius:var(--r-md);padding:1.1rem;text-align:center;margin-bottom:1.25rem;display:none}
+.reserved-banner.show,.sold-banner.show{display:block}
+.reserved-banner{background:#fef9c3;border:1px solid var(--reserved)}
+.reserved-banner-title{font-weight:800;color:#b45309;margin-bottom:.25rem}
+.sold-banner{background:#fee2e2;border:1px solid var(--sold)}
+.sold-banner-title{font-weight:800;color:#dc2626;margin-bottom:.25rem}
+.success-box{display:none;text-align:center;padding:2.5rem 1.5rem}
+.success-box.show{display:block}
+/* Booth preview */
+.booth-preview{width:100%;aspect-ratio:16/9;border-radius:var(--r-lg);overflow:hidden;background:var(--bg3);position:relative;margin-bottom:1.5rem;border:1px solid var(--border)}
+.booth-preview img{width:100%;height:100%;object-fit:cover;opacity:.6}
+.booth-preview-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1.5rem}
+.booth-preview-badge{position:absolute;top:12px;right:12px;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:8px}
+/* Download kit btn */
+.kit-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-md);padding:1rem;display:flex;align-items:center;gap:.875rem;margin-top:.75rem}
+.kit-icon{font-size:1.75rem;flex-shrink:0}
+.kit-text{font-size:.82rem;color:var(--textSub);flex:1}
+.kit-text strong{display:block;color:var(--navy);margin-bottom:.15rem;font-size:.88rem}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg" id="heroImg" style="background-image:url('../images/booth-01.webp')"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="container page-hero-inner">
+    <div class="badge badge-inv" style="margin-bottom:1rem" id="heroZone">VITH HUB 2026</div>
+    <h1 style="color:#fff;margin-bottom:.5rem" id="heroTitle">Booth —</h1>
+    <p style="color:rgba(255,255,255,.6);margin-bottom:1.25rem" id="heroZoneName">Loading booth information...</p>
+    <span id="statusBadge" style="display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;letter-spacing:.1em;padding:5px 14px;border-radius:20px;background:rgba(34,197,94,.15);color:#16a34a;border:1px solid rgba(34,197,94,.3)">✓ Available</span>
+  </div>
+</section>
+
+<!-- PRICING TABLE — shown when no booth selected -->
+<section class="section bg-light" id="pricingSection">
+  <div class="container">
+    <div class="section-hd">
+      <div class="badge badge-gold">Booth Packages</div>
+      <h2>Choose Your <span class="text-gold">Booth Package</span></h2>
+      <p>All packages include shell scheme, power, exhibitor badges, logistics support, and 0% commission.</p>
+    </div>
+    <div class="pricing-grid">
+
+      <!-- Standard -->
+      <div class="pricing-card">
+        <div class="pricing-hd">
+          <div class="pricing-name">Standard Booth B</div>
+          <div class="pricing-price">฿15,000</div>
+          <div class="pricing-period">per booth · 3×3m · 5 days</div>
+        </div>
+        <div class="pricing-body">
+          <div class="pricing-features">
+            <div class="pf-item"><span class="pf-check">✓</span>Shell scheme walls + flooring + fascia</div>
+            <div class="pf-item"><span class="pf-check">✓</span>1 table + 2 chairs + power socket</div>
+            <div class="pf-item"><span class="pf-check">✓</span>Exhibitor badge × 2 (5 days)</div>
+            <div class="pf-item"><span class="pf-check">✓</span>Official catalogue listing</div>
+            <div class="pf-item"><span class="pf-check">✓</span>Free logistics Nong Khai → Vientiane</div>
+            <div class="pf-item"><span class="pf-check">✓</span>0% commission on all sales</div>
+            <div class="pf-item"><span class="pf-check">✓</span>Business Matching access</div>
+            <div class="pf-item"><span class="pf-cross">–</span><span style="color:var(--textDim)">Speaking slot</span></div>
+            <div class="pf-item"><span class="pf-cross">–</span><span style="color:var(--textDim)">Priority catalogue placement</span></div>
+          </div>
+          <a href="floorplan.html?zone=B" class="btn btn-navy w-full" style="justify-content:center">Select Zone B Booth →</a>
+        </div>
+      </div>
+
+      <!-- Food Zone -->
+      <div class="pricing-card">
+        <div class="pricing-hd">
+          <div class="pricing-name">Food Zone C / D</div>
+          <div class="pricing-price">฿12,000</div>
+          <div class="pricing-period">per booth · 2×3m · 5 days</div>
+        </div>
+        <div class="pricing-body">
+          <div class="pricing-features">
+            <div class="pf-item"><span class="pf-check">✓</span>Shell scheme walls + flooring</div>
+            <div class="pf-item"><span class="pf-check">✓</span>1 table + 2 chairs + power socket</div>
+            <div class="pf-item"><span class="pf-check">✓</span>Exhibitor badge × 2 (5 days)</div>
+            <div class="pf-item"><span class="pf-check">✓</span>Official catalogue listing</div>
+            <div class="pf-item"><span class="pf-check">✓</span>Free logistics Nong Khai → Vientiane</div>
+            <div class="pf-item"><span class="pf-check">✓</span>0% commission on all sales</div>
+            <div class="pf-item"><span class="pf-check">✓</span>Maximum foot traffic · Food Court zone</div>
+            <div class="pf-item"><span class="pf-cross">–</span><span style="color:var(--textDim)">Speaking slot</span></div>
+          </div>
+          <a href="floorplan.html?zone=C" class="btn btn-navy w-full" style="justify-content:center">Select Food Zone →</a>
+        </div>
+      </div>
+
+      <!-- Premium -->
+      <div class="pricing-card featured">
+        <div class="pricing-hd gold-hd">
+          <div style="position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);font-size:.6rem;font-weight:800;padding:3px 14px;border-radius:0 0 8px 8px;letter-spacing:.12em;text-transform:uppercase">MOST POPULAR</div>
+          <div class="pricing-name" style="margin-top:.5rem">Premium Booth P</div>
+          <div class="pricing-price">฿25,000</div>
+          <div class="pricing-period">per booth · 3×6m double-wall · 5 days</div>
+        </div>
+        <div class="pricing-body">
+          <div class="pricing-features">
+            <div class="pf-item"><span class="pf-check">✓</span>Double-wall shell scheme · Premium flooring</div>
+            <div class="pf-item"><span class="pf-check">✓</span>2 tables + 4 chairs + power socket ×2</div>
+            <div class="pf-item"><span class="pf-check">✓</span>Exhibitor badge × 4 (5 days)</div>
+            <div class="pf-item"><span class="pf-check">✓</span><strong>Priority catalogue placement</strong></div>
+            <div class="pf-item"><span class="pf-check">✓</span>Free logistics Nong Khai → Vientiane</div>
+            <div class="pf-item"><span class="pf-check">✓</span>0% commission on all sales</div>
+            <div class="pf-item"><span class="pf-check">✓</span><strong>Main Stage speaking slot</strong></div>
+            <div class="pf-item"><span class="pf-check">✓</span><strong>Social media spotlight feature</strong></div>
+            <div class="pf-item"><span class="pf-check">✓</span>Big C Distribution consultation (priority)</div>
+            <div class="pf-item"><span class="pf-check">✓</span>Priority Business Matching access</div>
+          </div>
+          <a href="floorplan.html?zone=P" class="btn btn-gold w-full" style="justify-content:center">Select Premium Zone P →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Download Exhibitor Kit -->
+    <div class="kit-box mt-4" style="max-width:600px;margin:1.5rem auto 0">
+      <div class="kit-icon">📦</div>
+      <div class="kit-text">
+        <strong>Download Exhibitor Kit</strong>
+        Booth setup guide, logistics checklist, and exhibitor handbook — everything you need to prepare.
+      </div>
+      <a href="contact.html" class="btn btn-outline btn-sm">Download →</a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOTH DETAIL — shown when ?booth= param set -->
+<section class="section bg-white" id="boothDetailSection" style="display:none">
+  <div class="container">
+    <div class="booking-layout">
+
+      <!-- LEFT: Booth info -->
+      <div>
+        <a href="floorplan.html" style="display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--textSub);margin-bottom:1.5rem;transition:.2s" onmouseover="this.style.color='var(--navy)'" onmouseout="this.style.color='var(--textSub)'">
+          ← Back to Floor Plan
+        </a>
+
+        <!-- Booth preview -->
+        <div class="booth-preview">
+          <img id="boothBgImg" src="../images/booth-01.webp" alt="Booth preview">
+          <div class="booth-preview-overlay">
+            <div id="previewIcon" style="font-size:3rem;margin-bottom:.75rem">🏪</div>
+            <div id="previewLabel" style="font-size:1rem;font-weight:700;color:#fff">Standard Booth</div>
+            <div id="previewSub" style="font-size:.78rem;color:rgba(255,255,255,.6);margin-top:.25rem">3m × 3m · Big C Vientiane</div>
+          </div>
+          <div id="previewBadge" class="booth-preview-badge" style="background:rgba(129,140,248,.25);color:#818cf8">Standard B</div>
+        </div>
+
+        <!-- Spec grid -->
+        <div class="grid-2" style="margin-bottom:1.5rem">
+          <div class="card" style="padding:1rem">
+            <div style="font-size:.65rem;font-weight:700;color:var(--textDim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.35rem">Zone</div>
+            <div id="specZone" style="font-size:.9rem;font-weight:800;color:var(--navy)">—</div>
+          </div>
+          <div class="card" style="padding:1rem">
+            <div style="font-size:.65rem;font-weight:700;color:var(--textDim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.35rem">Size</div>
+            <div id="specSize" style="font-size:.9rem;font-weight:800;color:var(--navy)">—</div>
+          </div>
+          <div class="card" style="padding:1rem">
+            <div style="font-size:.65rem;font-weight:700;color:var(--textDim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.35rem">Price</div>
+            <div id="specPrice" style="font-size:.9rem;font-weight:800;color:var(--goldDk)">—</div>
+          </div>
+          <div class="card" style="padding:1rem">
+            <div style="font-size:.65rem;font-weight:700;color:var(--textDim);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.35rem">Commission</div>
+            <div style="font-size:.9rem;font-weight:800;color:var(--available)">0%</div>
+          </div>
+        </div>
+
+        <!-- What's included -->
+        <div class="card">
+          <div style="font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--textDim);margin-bottom:1rem">What's Included</div>
+          <ul id="includesList" class="pricing-features">
+            <li class="pf-item"><span class="pf-check">✓</span>Shell scheme booth (walls, flooring, fascia)</li>
+            <li class="pf-item"><span class="pf-check">✓</span>1 table + 2 chairs + power socket</li>
+            <li class="pf-item"><span class="pf-check">✓</span>Exhibitor badge × 2 persons (5 days)</li>
+            <li class="pf-item"><span class="pf-check">✓</span>Listing in VITH HUB 2026 official catalogue</li>
+            <li class="pf-item"><span class="pf-check">✓</span>Free logistics support: Nong Khai → Vientiane</li>
+            <li class="pf-item"><span class="pf-check">✓</span>Big C Distribution Consultation (free)</li>
+            <li class="pf-item"><span class="pf-check">✓</span>Business Matching access</li>
+            <li class="pf-item"><span class="pf-check">✓</span>0% Commission on all event sales</li>
+          </ul>
+        </div>
+
+        <!-- Back to map link -->
+        <a href="floorplan.html" style="display:flex;align-items:center;gap:.75rem;padding:1rem 1.25rem;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r-md);text-decoration:none;margin-top:1rem;transition:.2s" onmouseover="this.style.borderColor='var(--borderG)'" onmouseout="this.style.borderColor='var(--border)'">
+          <span style="font-size:1.4rem">🗺️</span>
+          <div>
+            <div style="font-size:.88rem;font-weight:700;color:var(--navy)">View Full Floor Plan</div>
+            <div style="font-size:.72rem;color:var(--textDim)">Browse all available booths · Click to select</div>
+          </div>
+          <span style="margin-left:auto;color:var(--textDim)">→</span>
+        </a>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="form-card">
+        <div class="form-card-hd">
+          <h3 id="formBoothTitle">Reserve Your Booth</h3>
+          <p id="formBoothSub">Fill in your details below</p>
+        </div>
+
+        <!-- Reserved / Sold banners -->
+        <div style="padding:0 1.75rem">
+          <div class="reserved-banner" id="reservedBanner">
+            <div style="font-size:1.5rem;margin-bottom:.5rem">🔒</div>
+            <div class="reserved-banner-title">This Booth is Reserved</div>
+            <div style="font-size:.78rem;color:#b45309">Please select another booth from the floor plan</div>
+          </div>
+          <div class="sold-banner" id="soldBanner">
+            <div style="font-size:1.5rem;margin-bottom:.5rem">✗</div>
+            <div class="sold-banner-title">This Booth is Sold Out</div>
+            <div style="font-size:.78rem;color:#dc2626">Please select another booth from the floor plan</div>
+          </div>
+        </div>
+
+        <!-- Form body -->
+        <div class="form-card-body" id="formBody">
+          <div class="field">
+            <label>Full Name *</label>
+            <input type="text" id="fName" placeholder="Your full name" required>
+          </div>
+          <div class="field">
+            <label>Company / Brand Name *</label>
+            <input type="text" id="fCompany" placeholder="Company or brand name" required>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label>Email *</label>
+              <input type="email" id="fEmail" placeholder="email@example.com" required>
+            </div>
+            <div class="field">
+              <label>Phone *</label>
+              <input type="tel" id="fPhone" placeholder="+66 or +856..." required>
+            </div>
+          </div>
+          <div class="field">
+            <label>Product / Business Type *</label>
+            <select id="fType">
+              <option value="" disabled selected>Select category</option>
+              <option>Food & Beverage</option>
+              <option>Franchise / F&B Brand</option>
+              <option>FMCG / Consumer Products</option>
+              <option>Health & Beauty</option>
+              <option>Agriculture / Organic</option>
+              <option>Fashion & Lifestyle</option>
+              <option>Technology</option>
+              <option>Nation Pavilion / Government</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Country of Origin</label>
+            <select id="fCountry">
+              <option value="" disabled selected>Select country</option>
+              <option>🇹🇭 Thailand</option>
+              <option>🇱🇦 Laos PDR</option>
+              <option>🇨🇳 China</option>
+              <option>🇻🇳 Vietnam</option>
+              <option>🇷🇺 Russia</option>
+              <option>🇯🇵 Japan</option>
+              <option>🇰🇷 South Korea</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Notes / Special Requirements</label>
+            <textarea id="fMessage" rows="2" placeholder="Any special setup needs..."></textarea>
+          </div>
+
+          <!-- Price summary -->
+          <div class="price-box" id="priceSummary">
+            <div class="price-line"><span class="lbl" id="psBoothId">Booth —</span><span class="val" id="psZone">—</span></div>
+            <div class="price-line"><span class="lbl">Size</span><span class="val" id="psSize">—</span></div>
+            <div class="price-line"><span class="lbl">Commission</span><span class="val" style="color:var(--available)">0%</span></div>
+            <div class="price-line"><span class="lbl">Logistics (Nong Khai→VTE)</span><span class="val" style="color:var(--available)">Free</span></div>
+            <div class="price-line price-total"><span class="lbl">Booth Fee</span><span class="val" id="psPrice">—</span></div>
+          </div>
+
+          <button class="btn btn-gold w-full" id="btnSubmit" onclick="submitReservation()" style="justify-content:center;padding:14px">
+            ✦ Submit Reservation Request
+          </button>
+          <p style="text-align:center;font-size:.68rem;color:var(--textDim);margin-top:.75rem">
+            Our team will confirm within 24 hours · <a href="mailto:sales@vithhub.asia" style="color:var(--goldDk)">sales@vithhub.asia</a>
+          </p>
+        </div>
+
+        <!-- Success state -->
+        <div class="success-box" id="successOverlay">
+          <div style="font-size:3rem;margin-bottom:1rem">🎉</div>
+          <h3 style="color:var(--available);margin-bottom:.5rem">Reservation Submitted!</h3>
+          <p id="successMsg">Our team will contact you within 24 hours.</p>
+          <a href="floorplan.html" class="btn btn-navy btn-sm mt-3">← Back to Floor Plan</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDES section (always shown) -->
+<section class="section bg-light">
+  <div class="container">
+    <div class="section-hd">
+      <div class="badge badge-gold">Every Booth Includes</div>
+      <h2>What You <span class="text-gold">Get</span></h2>
+    </div>
+    <div class="grid-4">
+      <div class="card text-center"><div style="font-size:1.75rem;margin-bottom:.75rem">🏗️</div><h3>Shell Scheme</h3><p>Walls, flooring, fascia with your company name. Ready from Day 1.</p></div>
+      <div class="card text-center"><div style="font-size:1.75rem;margin-bottom:.75rem">🪑</div><h3>Furniture</h3><p>Table + chairs + power socket. Standard booths get 2 items, Premium gets 4.</p></div>
+      <div class="card text-center"><div style="font-size:1.75rem;margin-bottom:.75rem">🚚</div><h3>Free Logistics</h3><p>Freight advisory: Nong Khai → Vientiane. Customs support included.</p></div>
+      <div class="card text-center"><div style="font-size:1.75rem;margin-bottom:.75rem">💰</div><h3>0% Commission</h3><p>All event revenue is yours. Zero deductions from any sales.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2 style="color:#fff">Ready to <span style="color:var(--goldL)">Exhibit</span>?</h2>
+    <p>Browse the interactive floor plan and secure your spot today.</p>
+    <div style="display:flex;gap:.875rem;justify-content:center;flex-wrap:wrap;margin-top:2rem">
+      <a href="floorplan.html" class="btn btn-gold btn-lg">🗺️ Browse Floor Plan</a>
+      <a href="contact.html"   class="btn btn-outline-inv btn-lg">📩 Contact Sales</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="booth-data.js"></script>
+<script src="../js/shared-nav.js"></script>
+<script src="../js/nav.js"></script>
+<script src="../js/i18n.js"></script>
+<script>
+injectNav('../'); injectFooter('../');
+
+const params  = new URLSearchParams(window.location.search);
+const boothId = (params.get('booth') || params.get('id') || '').toUpperCase();
+const data    = BOOTH_DATA[boothId];
+
+function fmt(n){ return '฿' + Number(n).toLocaleString(); }
+
+function markErr(id){ const el=document.getElementById(id); el.style.borderColor='var(--sold)'; setTimeout(()=>el.style.borderColor='',3000); }
+
+if(data){
+  /* Show booth detail section, hide pricing section */
+  document.getElementById('pricingSection').style.display = 'none';
+  document.getElementById('boothDetailSection').style.display = 'block';
+
+  const st = data.status || 'available';
+
+  /* Hero */
+  document.getElementById('heroTitle').textContent    = 'Booth ' + boothId;
+  document.getElementById('heroZoneName').textContent = data.zone + ' · ' + data.size + ' · Big C Vientiane';
+  document.title = 'Booth ' + boothId + ' | VITH HUB 2026';
+
+  /* Status badge */
+  const badge = document.getElementById('statusBadge');
+  if(st === 'reserved'){
+    badge.style.cssText = 'display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:20px;background:rgba(245,158,11,.12);color:#b45309;border:1px solid rgba(245,158,11,.35)';
+    badge.textContent = '🔒 Reserved';
+    document.getElementById('reservedBanner').classList.add('show');
+    document.getElementById('btnSubmit').disabled = true;
+    document.getElementById('btnSubmit').textContent = '🔒 This Booth is Reserved';
+    document.getElementById('btnSubmit').style.opacity = '.5';
+    document.getElementById('btnSubmit').style.cursor = 'not-allowed';
+  } else if(st === 'sold'){
+    badge.style.cssText = 'display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:20px;background:rgba(239,68,68,.12);color:#dc2626;border:1px solid rgba(239,68,68,.3)';
+    badge.textContent = '✗ Sold Out';
+    document.getElementById('soldBanner').classList.add('show');
+    document.getElementById('btnSubmit').disabled = true;
+    document.getElementById('btnSubmit').textContent = '✗ This Booth is Sold Out';
+    document.getElementById('btnSubmit').style.opacity = '.5';
+    document.getElementById('btnSubmit').style.cursor = 'not-allowed';
+  }
+
+  /* Preview */
+  const bgMap = {P:'../images/booth-02.webp',A:'../images/booth-02.webp',B:'../images/booth-01.webp',N:'../images/indoor-01.webp',C:'../images/slideshow03.webp',D:'../images/slideshow04.webp'};
+  document.getElementById('boothBgImg').src = bgMap[boothId[0]] || '../images/booth-01.webp';
+  document.getElementById('heroImg').style.backgroundImage = `url('${bgMap[boothId[0]] || "../images/booth-01.webp"}')`;
+  document.getElementById('previewIcon').textContent = data.icon;
+  document.getElementById('previewLabel').textContent = 'Booth ' + boothId + ' · ' + data.label;
+  document.getElementById('previewSub').textContent = data.size + ' · Big C Vientiane';
+  document.getElementById('previewBadge').textContent = data.label;
+
+  /* Specs */
+  document.getElementById('specZone').textContent  = data.zone;
+  document.getElementById('specSize').textContent  = data.size;
+  document.getElementById('specPrice').textContent = fmt(data.price);
+
+  /* Form labels */
+  document.getElementById('formBoothTitle').textContent = 'Reserve Booth ' + boothId;
+  document.getElementById('formBoothSub').textContent   = data.zone + ' · ' + fmt(data.price);
+
+  /* Price summary */
+  document.getElementById('psBoothId').textContent = 'Booth ' + boothId;
+  document.getElementById('psZone').textContent    = data.zone;
+  document.getElementById('psSize').textContent    = data.size;
+  document.getElementById('psPrice').textContent   = fmt(data.price);
+
+  /* Premium includes */
+  if(boothId.startsWith('P')){
+    document.getElementById('includesList').innerHTML = `
+      <li class="pf-item"><span class="pf-check">✓</span>Double-wall shell scheme · Premium flooring</li>
+      <li class="pf-item"><span class="pf-check">✓</span>2 tables + 4 chairs + power socket ×2</li>
+      <li class="pf-item"><span class="pf-check">✓</span>Exhibitor badge × 4 persons (5 days)</li>
+      <li class="pf-item"><span class="pf-check">✓</span><strong>Priority catalogue placement</strong></li>
+      <li class="pf-item"><span class="pf-check">✓</span>Free logistics Nong Khai → Vientiane</li>
+      <li class="pf-item"><span class="pf-check">✓</span>Big C Distribution Consultation (priority)</li>
+      <li class="pf-item"><span class="pf-check">✓</span><strong>Main Stage speaking slot</strong></li>
+      <li class="pf-item"><span class="pf-check">✓</span>Priority Business Matching access</li>
+      <li class="pf-item"><span class="pf-check">✓</span>Social media spotlight (VITH HUB channels)</li>
+      <li class="pf-item"><span class="pf-check">✓</span>0% Commission on all event sales</li>`;
+  }
+} else if(boothId){
+  /* Unknown booth ID */
+  document.getElementById('heroTitle').textContent = 'Booth Not Found';
+  document.getElementById('heroZoneName').textContent = 'Please go back and select a booth';
+}
+
+function submitReservation(){
+  const name    = document.getElementById('fName').value.trim();
+  const company = document.getElementById('fCompany').value.trim();
+  const email   = document.getElementById('fEmail').value.trim();
+  const phone   = document.getElementById('fPhone').value.trim();
+  const type    = document.getElementById('fType').value;
+  let valid = true;
+  if(!name)    { markErr('fName');    valid=false; }
+  if(!company) { markErr('fCompany'); valid=false; }
+  if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { markErr('fEmail'); valid=false; }
+  if(!phone || phone.replace(/\D/g,'').length < 8)          { markErr('fPhone'); valid=false; }
+  if(!type)    { markErr('fType');    valid=false; }
+  if(!valid) return;
+
+  const btn = document.getElementById('btnSubmit');
+  btn.disabled = true; btn.textContent = '⏳ Submitting...';
+
+  const SHEET_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+  const payload = { booth:boothId, zone:data?.zone, size:data?.size, price:data?.price, name, company, email, phone, type, country:document.getElementById('fCountry').value, message:document.getElementById('fMessage').value, submitted:new Date().toISOString() };
+
+  fetch(SHEET_URL, { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/json'}, body:JSON.stringify(payload) })
+    .then(()=>showSuccess(name))
+    .catch(()=>{
+      const sub = encodeURIComponent(`[VITH HUB 2026] Booth ${boothId} Reservation`);
+      const bod = encodeURIComponent(`Booth: ${boothId}\nName: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone: ${phone}`);
+      window.open(`mailto:sales@vithhub.asia?subject=${sub}&body=${bod}`);
+      showSuccess(name);
+    });
+}
+
+function showSuccess(name){
+  document.getElementById('formBody').style.display = 'none';
+  document.getElementById('successOverlay').classList.add('show');
+  document.getElementById('successMsg').innerHTML = `ขอบคุณ <strong>${name}</strong>!<br>ทีมงาน VITH HUB จะติดต่อกลับภายใน 24 ชั่วโมง<br><strong style="color:var(--goldDk)">Booth ${boothId}</strong> · <a href="mailto:sales@vithhub.asia" style="color:var(--goldDk)">sales@vithhub.asia</a>`;
+}
+</script>
+</body>
+</html>
