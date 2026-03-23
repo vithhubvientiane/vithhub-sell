@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Buyer Registration — Mekong Growth Expo 2026 | VITH HUB</title>
+<meta name="description" content="Register as a Buyer or Trade Professional at Mekong Growth Expo 2026. Meet Thai exhibitors, discover products and connect with suppliers from Thailand, Laos, China and Vietnam.">
+<meta property="og:title" content="Buyer Registration — Mekong Growth Expo 2026">
+<meta property="og:description" content="Register free and get matched with Thai exhibitors before the event.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'Inter','Noto Sans Thai','Plus Jakarta Sans',sans-serif;background:#0B1F3B;color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+button{cursor:pointer;font-family:inherit}
+
+:root{
+  --navy:#0B1F3B; --navy2:#0d2545; --navy3:#020d1f;
+  --gold:#C9A227; --gold2:#E4BC4A; --gold3:#F5D680; --goldDk:#9B7A10;
+  --sub:rgba(255,255,255,.55); --subl:rgba(255,255,255,.32);
+  --border:rgba(255,255,255,.1); --borderG:rgba(201,162,39,.22);
+  --max:1200px;
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes shimmer{0%{background-position:200% center}100%{background-position:-200% center}}
+@keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(201,162,39,.4)}50%{box-shadow:0 8px 36px rgba(201,162,39,.7)}}
+@keyframes blk{0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* ── NAV ── */
+.navbar{position:sticky;top:0;z-index:900;height:64px;background:rgba(11,31,59,.95);backdrop-filter:blur(24px);border-bottom:1px solid var(--borderG)}
+.navbar-inner{max-width:var(--max);margin:0 auto;height:64px;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.nav-logo{display:flex;align-items:center;gap:9px}
+.nav-logo-mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--goldDk),var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;color:var(--navy3)}
+.nav-logo-text{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:800;color:#fff;letter-spacing:-.01em}
+.nav-logo-text span{color:var(--gold2)}
+.nav-back{font-family:'Inter',sans-serif;font-size:.85rem;font-weight:600;color:var(--sub);display:flex;align-items:center;gap:6px;transition:color .2s}
+.nav-back:hover{color:var(--gold2)}
+.btn-exhibit{font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;font-weight:700;background:linear-gradient(135deg,var(--goldDk),var(--gold));color:var(--navy3);padding:8px 18px;border-radius:8px;transition:all .2s}
+.btn-exhibit:hover{transform:translateY(-1px)}
+
+/* ── HERO ── */
+.hero{position:relative;padding:80px 2rem 64px;text-align:center;background:linear-gradient(150deg,#050d1a,#0B1F3B,#0d2d54);overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 30%,rgba(201,162,39,.08) 0%,transparent 60%);pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,162,39,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,162,39,.04) 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
+.hero-inner{position:relative;z-index:1;max-width:640px;margin:0 auto}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);padding:6px 16px;border-radius:20px;border:1px solid var(--borderG);background:rgba(201,162,39,.07);margin-bottom:1.5rem;animation:fadeUp .7s .1s both}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--gold2);animation:blk 1.4s infinite}
+.hero-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2rem,5vw,3.25rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-.03em;margin-bottom:1rem;animation:fadeUp .7s .2s both}
+.hero-title span{background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold3));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 5s linear 1s infinite;background-size:200% auto}
+.hero-sub{font-family:'Inter',sans-serif;font-size:1.05rem;color:var(--sub);line-height:1.8;margin-bottom:2rem;animation:fadeUp .7s .3s both}
+.hero-badges{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;animation:fadeUp .7s .4s both;margin-bottom:2rem}
+.hero-badge{font-family:'Inter',sans-serif;font-size:.8rem;font-weight:600;padding:6px 14px;border-radius:20px;background:rgba(255,255,255,.06);border:1px solid var(--border);color:rgba(255,255,255,.75)}
+.hero-meta{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;font-family:'Inter',sans-serif;font-size:.9rem;font-weight:600;color:rgba(255,255,255,.65);animation:fadeUp .7s .45s both}
+
+/* ── MAIN FORM CARD ── */
+.form-section{padding:64px 2rem;background:#0B1F3B}
+.form-container{max-width:720px;margin:0 auto}
+.form-card{background:rgba(255,255,255,.04);border:1px solid var(--borderG);border-radius:20px;overflow:hidden}
+.form-card-top{background:linear-gradient(135deg,rgba(201,162,39,.12),rgba(201,162,39,.06));border-bottom:1px solid var(--borderG);padding:1.75rem 2rem}
+.form-card-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.125rem;font-weight:800;color:#fff;margin-bottom:.375rem}
+.form-card-sub{font-family:'Inter',sans-serif;font-size:.875rem;color:var(--sub)}
+.form-body{padding:2rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.f-group{display:flex;flex-direction:column;gap:.375rem}
+.f-label{font-family:'Inter',sans-serif;font-size:.75rem;font-weight:600;color:rgba(255,255,255,.65);letter-spacing:.04em}
+.f-label .req{color:var(--gold2)}
+.f-input{font-family:'Inter',sans-serif;font-size:.9rem;padding:12px 14px;border:1.5px solid rgba(255,255,255,.12);border-radius:10px;color:#fff;background:rgba(255,255,255,.06);width:100%;transition:all .2s;outline:none}
+.f-input:focus{border-color:var(--gold);background:rgba(255,255,255,.09);box-shadow:0 0 0 3px rgba(201,162,39,.1)}
+.f-input::placeholder{color:rgba(255,255,255,.25)}
+.f-input option{background:var(--navy2);color:#fff}
+.span2{grid-column:1/-1}
+.f-submit{grid-column:1/-1;font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:700;background:linear-gradient(135deg,var(--goldDk),var(--gold),var(--gold2));color:var(--navy3);padding:16px 24px;border-radius:10px;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(201,162,39,.4);display:flex;align-items:center;justify-content:center;gap:8px;animation:pulse 3s infinite}
+.f-submit:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(201,162,39,.55)}
+.f-note{grid-column:1/-1;font-family:'Inter',sans-serif;font-size:.7rem;color:var(--subl);text-align:center;line-height:1.7}
+
+/* ── WHO SHOULD REGISTER ── */
+.who-sec{padding:64px 2rem;background:rgba(255,255,255,.02);border-top:1px solid var(--border)}
+.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:var(--max);margin:2.5rem auto 0}
+.who-card{background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:14px;padding:1.5rem;transition:all .25s}
+.who-card:hover{border-color:var(--borderG);background:rgba(255,255,255,.07)}
+.who-icon{font-size:1.75rem;margin-bottom:.75rem}
+.who-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;font-weight:700;color:#fff;margin-bottom:.375rem}
+.who-text{font-family:'Inter',sans-serif;font-size:.825rem;color:var(--sub);line-height:1.6}
+
+/* ── WHAT YOU GET ── */
+.get-sec{padding:64px 2rem;background:#0B1F3B}
+.get-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;max-width:860px;margin:2.5rem auto 0}
+.get-item{display:flex;align-items:flex-start;gap:.875rem;padding:1.375rem;background:rgba(255,255,255,.04);border-radius:12px;border:1px solid var(--border)}
+.get-icon{width:36px;height:36px;border-radius:8px;background:rgba(201,162,39,.12);border:1px solid var(--borderG);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.get-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;font-weight:700;color:#fff;margin-bottom:.25rem}
+.get-text{font-family:'Inter',sans-serif;font-size:.825rem;color:var(--sub);line-height:1.5}
+
+/* ── TYPOGRAPHY UTILS ── */
+.sec-label{font-family:'Inter',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--goldDk);margin-bottom:.625rem;display:block;text-align:center}
+.sec-heading{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.5rem,3vw,2.25rem);font-weight:900;color:#fff;line-height:1.15;letter-spacing:-.025em;text-align:center;margin-bottom:.875rem}
+.sec-heading span{color:var(--gold2)}
+
+/* ── EVENT INFO BAR ── */
+.info-bar{background:rgba(201,162,39,.08);border-top:1px solid var(--borderG);border-bottom:1px solid var(--borderG);padding:1.25rem 2rem}
+.info-bar-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap}
+.info-bar-item{font-family:'Inter',sans-serif;font-size:.875rem;font-weight:600;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:.5rem}
+.info-bar-item strong{color:var(--gold2)}
+
+/* ── FOOTER ── */
+.footer{background:var(--navy3);border-top:1px solid var(--border);padding:2.5rem 2rem}
+.footer-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.footer-brand{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.25rem;font-weight:800;color:#fff}
+.footer-brand span{color:var(--gold2)}
+.footer-links{display:flex;gap:1.25rem;flex-wrap:wrap}
+.footer-links a{font-family:'Inter',sans-serif;font-size:.8rem;color:var(--subl);transition:color .2s}
+.footer-links a:hover{color:var(--gold2)}
+.footer-copy{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--subl)}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(80px);background:var(--navy);color:#fff;padding:12px 24px;border-radius:12px;font-family:'Inter',sans-serif;font-size:.88rem;font-weight:600;box-shadow:0 8px 32px rgba(0,0,0,.3);z-index:600;transition:transform .35s cubic-bezier(.34,1.56,.64,1),opacity .35s;opacity:0;border:1px solid var(--borderG)}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+
+@media(max-width:768px){
+  .form-grid{grid-template-columns:1fr}
+  .f-input.span2{grid-column:1}
+  .who-grid{grid-template-columns:1fr 1fr}
+  .get-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .who-grid{grid-template-columns:1fr}
+  .hero-meta{flex-direction:column;gap:.625rem;align-items:center}
+}
+</style>
+
+<meta property="og:image" content="https://vithhub.asia/images/hero-bigc.webp">
+<meta property="og:url" content="https://vithhub.asia/pages/buyers.html">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-mark">V</div>
+      <div class="nav-logo-text">VITH<span>HUB</span></div>
+    </a>
+    <a href="/pages/event.html" class="nav-back">← Back to Event</a>
+    <a href="/pages/event.html#register" class="btn-exhibit">🏪 Exhibit Instead</a>
+  </div>
+</nav>
+
+<!-- INFO BAR -->
+<div class="info-bar">
+  <div class="info-bar-inner">
+    <div class="info-bar-item">📅 <strong>28 May – 1 June 2026</strong></div>
+    <div class="info-bar-item">📍 <strong>Big C Vientiane</strong>, Laos PDR</div>
+    <div class="info-bar-item">🎟 <strong>Free</strong> Buyer Registration</div>
+    <div class="info-bar-item">🌐 Buyers from <strong>4 Countries</strong></div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <span class="hero-dot"></span>
+      Mekong Growth Expo 2026 · Buyer Registration
+    </div>
+    <h1 class="hero-title">Register as a<br><span>Buyer</span> or Trade Professional</h1>
+    <p class="hero-sub">Register free and get pre-matched with Thai exhibitors before the event. Meet suppliers, distributors and brands ready to enter your market — including brands selected for <strong style="color:var(--gold2)">Big C retail distribution</strong>.</p>
+    <div class="hero-badges">
+      <span class="hero-badge">🆓 Free to Attend</span>
+      <span class="hero-badge">🤝 Pre-Event B2B Matching</span>
+      <span class="hero-badge">🌏 4 Countries</span>
+      <span class="hero-badge">🏬 Big C Distribution Access</span>
+    </div>
+    <div class="hero-meta">
+      <span>📅 28 May – 1 June 2026</span>
+      <span>📍 Big C Vientiane, Laos PDR</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHO SHOULD REGISTER -->
+<section class="who-sec">
+  <div style="max-width:var(--max);margin:0 auto">
+    <span class="sec-label">Who Should Register</span>
+    <h2 class="sec-heading">Are You a <span>Trade Professional</span>?</h2>
+    <p style="text-align:center;font-family:'Inter',sans-serif;font-size:.9375rem;color:var(--sub);max-width:520px;margin:0 auto">This event is designed for trade buyers and professionals — not general consumers.</p>
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-icon">🏬</div>
+        <div class="who-title">Retail Buyers</div>
+        <div class="who-text">Purchasing managers sourcing Thai products for supermarkets, convenience stores and retail chains across Laos, Vietnam and China.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">📦</div>
+        <div class="who-title">Importers & Distributors</div>
+        <div class="who-text">Licensed importers and distribution agents looking for Thai consumer goods to distribute across CLMV markets.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">🚛</div>
+        <div class="who-title">Cross-Border Traders</div>
+        <div class="who-text">Established traders operating along Thailand-Laos-China corridors actively looking for new product lines.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">🏨</div>
+        <div class="who-title">Hotel & Hospitality</div>
+        <div class="who-text">Procurement officers from hotels, resorts, restaurants and food service operators across the Mekong region.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">📱</div>
+        <div class="who-title">E-commerce Operators</div>
+        <div class="who-text">Online marketplace sellers sourcing Thai products to sell on regional e-commerce platforms at scale.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-icon">🤝</div>
+        <div class="who-title">Business Investors</div>
+        <div class="who-text">Investors and business developers exploring franchise opportunities or partnership with Thai brands entering Laos.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="get-sec">
+  <div style="max-width:var(--max);margin:0 auto">
+    <span class="sec-label">What You Get</span>
+    <h2 class="sec-heading">Benefits of <span>Buyer Registration</span></h2>
+    <div class="get-grid">
+      <div class="get-item">
+        <div class="get-icon">🏬</div>
+        <div><div class="get-title">Big C Retail Access</div><div class="get-text">Source from brands evaluated for Big C distribution — connect directly with products ready for modern trade retail shelves.</div></div>
+      </div>
+      <div class="get-item">
+        <div class="get-icon">🎟</div>
+        <div><div class="get-title">Free Event Access</div><div class="get-text">Complimentary entry to all 5 days of Mekong Growth Expo at Big C Vientiane.</div></div>
+      </div>
+      <div class="get-item">
+        <div class="get-icon">🤝</div>
+        <div><div class="get-title">Pre-Event B2B Matching</div><div class="get-text">We match you with relevant Thai exhibitors before the event based on your industry and interests.</div></div>
+      </div>
+      <div class="get-item">
+        <div class="get-icon">📋</div>
+        <div><div class="get-title">Exhibitor Catalogue</div><div class="get-text">Receive the full exhibitor catalogue with product details and contact information ahead of the event.</div></div>
+      </div>
+      <div class="get-item">
+        <div class="get-icon">🌐</div>
+        <div><div class="get-title">VITH HUB Network Access</div><div class="get-text">Connect with the VITH HUB trade network — 6 international chambers of commerce, ongoing sourcing support.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RETAIL OPPORTUNITY CALLOUT -->
+<div style="background:linear-gradient(135deg,rgba(201,162,39,.1),rgba(201,162,39,.04));border-top:1px solid var(--borderG);border-bottom:1px solid var(--borderG);padding:1.5rem 2rem">
+  <div style="max-width:720px;margin:0 auto;display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap">
+    <div style="font-size:2rem;flex-shrink:0">🏬</div>
+    <div style="flex:1;min-width:200px">
+      <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;font-weight:800;color:var(--gold2);margin-bottom:.25rem">Access Brands Selected for Big C Distribution</div>
+      <div style="font-family:'Inter',sans-serif;font-size:.82rem;color:var(--sub);line-height:1.6">As a registered buyer, you'll be connected with Thai brands that have been screened and matched for modern trade retail opportunities — including Big C Vientiane.</div>
+    </div>
+    <a href="/pages/accelerator.html" style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.8rem;font-weight:700;color:var(--gold2);border:1px solid var(--borderG);padding:8px 16px;border-radius:8px;white-space:nowrap;flex-shrink:0;transition:all .2s">About Accelerator →</a>
+  </div>
+</div>
+
+<!-- REGISTRATION FORM -->
+<section class="form-section" id="register">
+  <div class="form-container">
+    <span class="sec-label">Buyer Registration</span>
+    <h2 class="sec-heading" style="margin-bottom:2rem">Register Now — <span>It's Free</span></h2>
+    <div class="form-card">
+      <div class="form-card-top">
+        <div class="form-card-title">🎟 Buyer & Trade Professional Registration</div>
+        <div class="form-card-sub">Mekong Growth Expo 2026 · 28 May–1 June · Big C Vientiane, Laos PDR</div>
+      </div>
+      <div class="form-body">
+        <div class="form-grid" id="buyerForm">
+
+          <div class="f-group">
+            <label class="f-label">Full Name <span class="req">*</span></label>
+            <input type="text" id="b-name" class="f-input" placeholder="Your full name">
+          </div>
+          <div class="f-group">
+            <label class="f-label">Company Name <span class="req">*</span></label>
+            <input type="text" id="b-company" class="f-input" placeholder="Your company or organization">
+          </div>
+          <div class="f-group">
+            <label class="f-label">Country <span class="req">*</span></label>
+            <select id="b-country" class="f-input">
+              <option value="">Select Country</option>
+              <option value="Laos">Laos 🇱🇦</option>
+              <option value="Thailand">Thailand 🇹🇭</option>
+              <option value="China">China 🇨🇳</option>
+              <option value="Vietnam">Vietnam 🇻🇳</option>
+              <option value="Russia">Russia 🇷🇺</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="f-group">
+            <label class="f-label">Industry / Type of Business <span class="req">*</span></label>
+            <select id="b-industry" class="f-input">
+              <option value="">Select Industry</option>
+              <option value="Retail / Supermarket">Retail / Supermarket</option>
+              <option value="Import / Distribution">Import / Distribution</option>
+              <option value="Cross-Border Trade">Cross-Border Trade</option>
+              <option value="Hotel / Hospitality">Hotel / Hospitality</option>
+              <option value="E-commerce">E-commerce</option>
+              <option value="Food Service / Restaurant">Food Service / Restaurant</option>
+              <option value="Investment / Franchise">Investment / Franchise</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="f-group">
+            <label class="f-label">Phone / WhatsApp</label>
+            <input type="tel" id="b-phone" class="f-input" placeholder="+856 or +66 or +86">
+          </div>
+          <div class="f-group">
+            <label class="f-label">Email</label>
+            <input type="email" id="b-email" class="f-input" placeholder="your@email.com">
+          </div>
+          <div class="f-group span2">
+            <label class="f-label">What Products Are You Looking For?</label>
+            <textarea id="b-interest" class="f-input" rows="3" placeholder="e.g. Thai food & beverage, beauty products, household goods, franchise opportunities…"></textarea>
+          </div>
+
+          <button type="button" class="f-submit" onclick="submitBuyer()">
+            🎟 Register as Buyer →
+          </button>
+          <div class="f-note">🔒 Registration is free · Your information is confidential · VITH HUB team will contact you within 24 hours with pre-event matching details</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:2rem;padding:1.5rem;background:rgba(255,255,255,.04);border-radius:14px;border:1px solid var(--border)">
+      <p style="font-family:'Inter',sans-serif;font-size:.875rem;color:var(--sub);margin-bottom:1rem">Prefer to register via LINE or WhatsApp?</p>
+      <div style="display:flex;gap:.875rem;justify-content:center;flex-wrap:wrap">
+        <a href="https://line.me/ti/p/@cef8930n" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#06C755;color:#fff;padding:10px 20px;border-radius:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.875rem">
+          <svg width="16" height="16" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
+          LINE: @cef8930n
+        </a>
+        <a href="https://wa.me/66855907666?text=Buyer+Registration+Mekong+Growth+Expo+2026" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:7px;background:#25D366;color:#fff;padding:10px 20px;border-radius:8px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.875rem">
+          📱 WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">VITH<span>HUB</span></div>
+      <div style="font-family:'Inter',sans-serif;font-size:.72rem;color:var(--subl);margin-top:.25rem">Mekong Growth Expo 2026</div>
+    </div>
+    <div class="footer-links">
+      <a href="/pages/event.html">Back to Event</a>
+      <a href="/pages/event.html#register">Exhibit at the Expo</a>
+      <a href="/pages/accelerator.html">Accelerator Program</a>
+      <a href="/pages/about.html">About VITH HUB</a>
+    </div>
+    <div class="footer-copy">© 2026 VITH HUB · vithhub.asia</div>
+        <br><span style="font-size:.68rem;color:rgba(255,255,255,.2)">หจก. รอยัล บริตจ์ 99 · ทะเบียนนิติบุคคล: 0413568000586 · อุดรธานี 41000 · <a href="/pages/policy.html" style="color:rgba(255,255,255,.3)">นโยบายการคืนเงิน</a></span>
+  </div>
+</footer>
+
+<div class="toast" id="toast">✦ Registration received — team will contact you within 24 hours</div>
+
+<script>
+// ── REVEAL ──
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); }});
+}, { rootMargin:'0px 0px -40px 0px', threshold:0 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzpN1z2qrSdaZv2AHJofeEYPHRyk7UNOqQq9uIHoEYVY_D5td0IOLK2PBnPw0vbjcw/exec';
+
+async function submitBuyer(){
+  const name=(document.getElementById('b-name')||{}).value?.trim()||'';
+  const company=(document.getElementById('b-company')||{}).value?.trim()||'';
+  const country=(document.getElementById('b-country')||{}).value||'';
+  const industry=(document.getElementById('b-industry')||{}).value||'';
+  const phone=(document.getElementById('b-phone')||{}).value?.trim()||'';
+  const email=(document.getElementById('b-email')||{}).value?.trim()||'';
+  const interest=(document.getElementById('b-interest')||{}).value?.trim()||'';
+
+  if(!name||!company){alert('Please enter your name and company name.');return;}
+  if(!country){alert('Please select your country.');return;}
+  if(!industry){alert('Please select your industry.');return;}
+
+  const submitBtn = document.querySelector('button.f-submit');
+  if(submitBtn){ submitBtn.disabled=true; submitBtn.innerHTML='⏳ Submitting...'; }
+
+  // Webhook — await ก่อนค่อยแสดง success
+  try {
+    await fetch(WEBHOOK_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      body: JSON.stringify({
+        form_type:        'Buyer_Registration',
+        brand_name:       company || name,
+        contact_name:     name,
+        product_category: industry,
+        phone:            phone,
+        email:            email,
+        source:           'buyers.html — Buyer Registration',
+        note:             'Country: ' + country + (interest ? ' | Interest: ' + interest : ''),
+        submitted_at:     new Date().toISOString()
+      }),
+      headers: {'Content-Type':'text/plain;charset=utf-8'}
+    });
+  } catch(err) { console.warn('Webhook failed:', err); }
+
+  const msg=encodeURIComponent(
+    'Buyer Registration — Mekong Growth Expo 2026\n'+
+    'Name: '+name+'\nCompany: '+company+'\nCountry: '+country+
+    '\nIndustry: '+industry+'\nPhone: '+phone+'\nEmail: '+email+
+    '\nLooking for: '+interest
+  );
+
+  document.getElementById('buyerForm').innerHTML=
+    '<div style="grid-column:1/-1;text-align:center;padding:3rem 1rem">'+
+    '<div style="font-size:3.5rem;margin-bottom:1rem">🎟</div>'+
+    '<div style="font-family:\'Plus Jakarta Sans\',sans-serif;font-size:1.75rem;font-weight:900;color:#fff;margin-bottom:.5rem">You\'re Registered!</div>'+
+    '<p style="color:rgba(255,255,255,.6);margin-bottom:1.75rem;font-family:\'Inter\',sans-serif;font-size:.95rem;line-height:1.7">Thank you, <strong style="color:#fff">'+name+'</strong>.<br>Our team will contact you within 24 hours with<br>pre-event B2B matching and exhibitor catalogue.</p>'+
+    '<a href="https://line.me/ti/p/@cef8930n?text='+msg+'" target="_blank" '+
+    'style="display:inline-flex;align-items:center;gap:8px;background:#06C755;color:#fff;'+
+    'padding:13px 24px;border-radius:10px;font-family:\'Plus Jakarta Sans\',sans-serif;font-weight:700;font-size:.95rem;'+
+    'box-shadow:0 4px 18px rgba(6,199,85,.35);text-decoration:none;margin-bottom:1rem">'+
+    '<svg width="18" height="18" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>'+
+    'Confirm via LINE Official</a>'+
+    '<div style="margin-top:1rem"><a href="/pages/event.html" style="font-family:\'Inter\',sans-serif;font-size:.85rem;color:rgba(255,255,255,.5);text-decoration:underline">← Back to Event Page</a></div>'+
+    '</div>';
+
+  const t=document.getElementById('toast');
+  if(t){t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4500);}
+}
+</script>
+</body>
+</html>

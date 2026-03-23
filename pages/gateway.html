@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<!--
+GOAL:
+Force user to choose a path within 5 seconds
+
+DO NOT:
+- Add long explanation
+- Add extra links
+- Distract user
+
+SUCCESS = Click to Retail Entry or Membership
+-->
+<!--
+UX RULE:
+- User must see buttons immediately (no scroll)
+- No paragraph longer than 2 lines
+- Buttons must be big (thumb friendly)
+- Mobile first priority
+- Limit thinking time → push click fast
+-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>VITH HUB — เริ่มขายต่างประเทศได้ทันที</title>
+<meta name="description" content="เลือกเส้นทางที่เหมาะกับธุรกิจของคุณ เริ่มขายทันที หรือ สร้างฐานธุรกิจระยะยาว ผ่าน VITH HUB Mekong Trade Gateway">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="prefetch" href="/pages/accelerator.html">
+<link rel="stylesheet" href="/assets/vith-design.css">
+<style>
+:root{
+  --navy:#0B1F3B;--navy2:#0d2545;--navy3:#071529;--navyL:#1a3560;
+  --gold:#C9A227;--gold2:#E4BC4A;--gold3:#F5D680;--goldDk:#9B7A10;
+  --green:#16a34a;--green2:#22c55e;
+  --sub:rgba(255,255,255,.55);--subl:rgba(255,255,255,.35);
+  --border:rgba(255,255,255,.08);--borderG:rgba(201,162,39,.2);
+  --r:10px;--rL:18px;--rXL:28px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#071529;color:#fff;font-family:'Inter','Noto Sans Thai',sans-serif;overflow-x:hidden}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes pulseGlow{0%{box-shadow:0 0 0 rgba(34,197,94,0)}50%{box-shadow:0 0 20px rgba(34,197,94,.35)}100%{box-shadow:0 0 0 rgba(34,197,94,0)}}
+.pulse{animation:pulseGlow 1.2s infinite}
+
+/* NAV — low opacity, don't distract */
+.gw-nav{position:fixed;top:0;left:0;right:0;z-index:900;height:52px}
+.gw-nav::before{content:'';position:absolute;inset:0;background:rgba(7,21,41,.65);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.05);transition:all .3s}
+.gw-nav.scrolled::before{background:rgba(7,21,41,.97);box-shadow:0 2px 20px rgba(0,0,0,.3)}
+.gw-nav-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;height:52px;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.gw-logo{display:flex;align-items:center;gap:.5rem;text-decoration:none}
+.gw-logo-mark{width:26px;height:26px;border-radius:6px;background:linear-gradient(135deg,#9B7A10,#C9A227);display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:.8rem;color:#071529;flex-shrink:0}
+.gw-logo-text{font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;font-weight:800;color:rgba(255,255,255,.7);letter-spacing:.05em}
+.gw-logo-text em{font-style:normal;color:#E4BC4A}
+.gw-nav-links{display:flex;align-items:center;gap:.1rem}
+.gw-nav-link{font-size:.72rem;font-weight:500;color:rgba(255,255,255,.35);padding:5px 9px;border-radius:7px;transition:all .2s;white-space:nowrap;text-decoration:none}
+.gw-nav-link:hover,.gw-nav-link.active{color:rgba(255,255,255,.8);background:rgba(255,255,255,.06)}
+.gw-nav-cta{font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;font-size:.72rem;font-weight:700;background:linear-gradient(135deg,#9B7A10,#C9A227);color:#071529;padding:6px 14px;border-radius:7px;transition:all .25s;white-space:nowrap;text-decoration:none}
+.gw-nav-cta:hover{transform:translateY(-1px)}
+.gw-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;cursor:pointer}
+.gw-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+.gw-mobile{display:none;position:fixed;top:52px;left:0;right:0;background:rgba(7,21,41,.98);backdrop-filter:blur(20px);padding:1.25rem;border-bottom:1px solid rgba(201,162,39,.2);flex-direction:column;gap:.375rem;z-index:898}
+.gw-mobile.open{display:flex}
+.gw-mob-link{font-size:.9rem;font-weight:600;color:rgba(255,255,255,.5);padding:10px 12px;border-radius:8px;text-decoration:none}
+.gw-mob-cta{font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;font-size:.9rem;font-weight:700;background:linear-gradient(135deg,#9B7A10,#C9A227);color:#071529;padding:12px 20px;border-radius:8px;text-align:center;margin-top:.5rem;text-decoration:none}
+
+/* TICKER */
+.gw-ticker{background:linear-gradient(90deg,#9B7A10,#C9A227,#9B7A10);overflow:hidden;height:30px;display:flex;align-items:center}
+.gw-ticker-track{display:flex;white-space:nowrap;animation:ticker 30s linear infinite}
+.gw-t-item{font-size:.65rem;font-weight:700;color:#071529;padding:0 2rem;letter-spacing:.06em}
+
+/* ── HERO = DECISION SCREEN ── */
+.gw-hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 20px;background:#071529;position:relative}
+.gw-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 65% 55% at 50% 45%,rgba(201,162,39,.06) 0%,transparent 65%);pointer-events:none}
+.gw-hero-inner{position:relative;z-index:1;max-width:580px;width:100%;animation:fadeUp .45s both}
+
+/* headline */
+.gw-headline{font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;font-size:clamp(24px,5vw,38px);font-weight:800;color:#fff;letter-spacing:-.025em;line-height:1.1;margin-bottom:8px}
+
+/* sub */
+.gw-sub{font-size:15px;color:rgba(255,255,255,.55);margin-bottom:14px;line-height:1.5}
+
+/* urgency bar */
+.gw-urgency-bar{display:inline-block;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.75);background:rgba(229,20,30,.1);border:1px solid rgba(229,20,30,.22);border-radius:20px;padding:4px 14px;margin-bottom:16px;letter-spacing:.02em}
+
+/* choice grid */
+.gw-choice{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+
+/* cards — whole card clickable */
+.gw-card{display:block;padding:18px 20px;border-radius:16px;text-align:left;text-decoration:none;transition:transform .2s,border-color .2s,background .2s,box-shadow .2s;cursor:pointer}
+.gw-card.fast{
+  border:2px solid rgba(22,163,74,.55);
+  background:rgba(22,163,74,.08);
+  transform:scale(1.03);
+  box-shadow:0 0 28px rgba(22,163,74,.2);
+}
+.gw-card.fast:hover{transform:scale(1.05) translateY(-3px);border-color:rgba(22,163,74,.8);background:rgba(22,163,74,.12);box-shadow:0 0 40px rgba(22,163,74,.3)}
+.gw-card.build{border:1px solid rgba(201,162,39,.22);background:rgba(201,162,39,.04)}
+.gw-card.build:hover{transform:translateY(-3px);border-color:rgba(201,162,39,.45);background:rgba(201,162,39,.08)}
+
+/* badge */
+.gw-badge{font-size:.6rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;display:inline-block;padding:3px 10px;border-radius:20px;margin-bottom:12px;background:rgba(22,163,74,.15);color:#22c55e;border:1px solid rgba(22,163,74,.25)}
+.gw-badge.gold{background:rgba(201,162,39,.12);color:#E4BC4A;border:1px solid rgba(201,162,39,.25)}
+
+/* card text */
+.gw-card h2{font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:6px;line-height:1.2}
+.gw-card p{font-size:.8rem;color:rgba(255,255,255,.48);line-height:1.55}
+
+/* btn label inside card */
+.gw-btn{display:inline-block;margin-top:14px;font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;font-size:.8rem;font-weight:700;color:#22c55e}
+.gw-btn.gold{color:#E4BC4A}
+
+/* micro text */
+.gw-micro{font-size:13px;color:rgba(255,255,255,.3);line-height:1.6;margin-top:8px}
+
+/* pre-frame hook */
+.gw-preframe{font-size:.7rem;color:rgba(255,255,255,.4);letter-spacing:.08em;margin-bottom:10px;text-transform:uppercase}
+
+/* micro trust line */
+.gw-trust{font-size:.75rem;color:rgba(255,255,255,.35);margin-top:16px;margin-bottom:4px}
+
+/* price anchor */
+.gw-price-anchor{font-size:.8rem;color:rgba(255,255,255,.4);margin-bottom:14px;line-height:1.5}
+.gw-price-anchor s{color:rgba(255,255,255,.25)}
+.gw-price-anchor strong{color:#22c55e;font-weight:700}
+
+/* social proof badge */
+.gw-social-proof{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:600;color:rgba(255,255,255,.5);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:4px 12px;margin-bottom:14px}
+
+/* FOOTER */
+.gw-footer{background:#071529;padding:2.5rem 1.5rem;border-top:1px solid rgba(255,255,255,.06)}
+.gw-footer-inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1.25rem;text-align:center}
+.gw-footer-logo{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.25rem;font-weight:800;color:#fff}
+.gw-footer-logo em{font-style:normal;color:#E4BC4A}
+.gw-footer-links{display:flex;flex-wrap:wrap;gap:.25rem;justify-content:center}
+.gw-footer-link{font-size:.82rem;color:rgba(255,255,255,.3);padding:5px 12px;border-radius:6px;text-decoration:none;transition:color .2s}
+.gw-footer-link:hover{color:rgba(255,255,255,.7)}
+.gw-footer-copy{font-size:.75rem;color:rgba(255,255,255,.2)}
+.gw-footer-disclaimer{font-size:.72rem;color:rgba(255,255,255,.15);max-width:800px;line-height:1.6}
+
+/* STICKY CTA */
+.gw-sticky{position:fixed;bottom:0;left:0;right:0;z-index:800;background:rgba(7,21,41,.97);backdrop-filter:blur(16px);border-top:1px solid rgba(201,162,39,.2);padding:10px 16px;display:flex;align-items:center;gap:10px;transform:translateY(100%);transition:transform .4s ease}
+.gw-sticky.show{transform:none}
+.gw-sticky-label{font-size:.72rem;color:rgba(255,255,255,.35);white-space:nowrap;flex-shrink:0;display:flex;align-items:center;gap:6px}
+.gw-sticky-dot{width:5px;height:5px;border-radius:50%;background:#22c55e;flex-shrink:0}
+.gw-sticky-btns{display:flex;gap:8px;flex:1;justify-content:flex-end}
+.gw-sticky-acc{font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;font-size:.82rem;font-weight:700;background:linear-gradient(135deg,#16a34a,#22c55e);color:#fff;padding:10px 20px;border-radius:8px;text-decoration:none;white-space:nowrap;transition:all .2s}
+.gw-sticky-mem{font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;font-size:.82rem;font-weight:600;color:rgba(255,255,255,.6);padding:10px 18px;border-radius:8px;border:1px solid rgba(255,255,255,.14);text-decoration:none;white-space:nowrap;transition:all .2s}
+.gw-sticky-mem:hover{color:#fff;border-color:rgba(255,255,255,.35)}
+
+/* LINE FLOAT */
+.gw-line{position:fixed;bottom:64px;right:20px;z-index:799;background:#06C755;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;padding:10px 18px;border-radius:30px;display:flex;align-items:center;gap:6px;box-shadow:0 4px 20px rgba(6,199,85,.3);text-decoration:none;transition:all .25s}
+.gw-line:hover{transform:translateY(-2px)}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  .gw-nav-links,.gw-nav-cta{display:none}
+  .gw-hamburger{display:flex}
+  .gw-choice{grid-template-columns:1fr}
+  .gw-headline{font-size:clamp(22px,6.5vw,32px)}
+  .gw-card{padding:14px 16px}
+  .gw-btn{margin-top:10px}
+  .gw-urgency-bar{margin-bottom:12px}
+  .gw-sub{margin-bottom:10px}
+  .gw-sticky-label{display:none}
+  .gw-sticky-btns{width:100%;justify-content:center}
+  .gw-sticky-acc,.gw-sticky-mem{flex:1;text-align:center;justify-content:center;display:flex}
+  .gw-line{bottom:62px;right:12px}
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="gw-ticker">
+  <div class="gw-ticker-track">
+    <span class="gw-t-item">🌏 Thailand → Laos → China → CLMV</span>
+    <span class="gw-t-item">✦ Big C Vientiane #1 Retail in Laos</span>
+    <span class="gw-t-item">✦ รับแค่ 26 บริษัท / รุ่น</span>
+    <span class="gw-t-item">✦ เริ่มขายได้ภายใน 90 วัน</span>
+    <span class="gw-t-item">✦ ไม่ต้องตั้งบริษัทในลาว</span>
+    <span class="gw-t-item">🌏 Thailand → Laos → China → CLMV</span>
+    <span class="gw-t-item">✦ Big C Vientiane #1 Retail in Laos</span>
+    <span class="gw-t-item">✦ รับแค่ 26 บริษัท / รุ่น</span>
+    <span class="gw-t-item">✦ เริ่มขายได้ภายใน 90 วัน</span>
+    <span class="gw-t-item">✦ ไม่ต้องตั้งบริษัทในลาว</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="gw-nav" id="vithNav">
+  <div class="gw-nav-inner">
+    <a href="/" class="gw-logo">
+      <div class="gw-logo-mark">V</div>
+      <div class="gw-logo-text">VITH<em>HUB</em></div>
+    </a>
+    <div class="gw-nav-links">
+      <a href="/index.html" class="gw-nav-link">Home</a>
+      <a href="/pages/gateway.html" class="gw-nav-link active">Gateway</a>
+      <a href="/pages/accelerator.html" class="gw-nav-link">Retail Entry</a>
+      <a href="/pages/event.html" class="gw-nav-link">Event</a>
+      <a href="/pages/membership.html" class="gw-nav-link">Membership</a>
+      <a href="/pages/about.html" class="gw-nav-link">About</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:.625rem">
+      <a href="/pages/accelerator.html" class="gw-nav-cta">เริ่มขายทันที →</a>
+      <button class="gw-hamburger" onclick="document.getElementById('gwMobile').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="gw-mobile" id="gwMobile">
+  <a href="/index.html" class="gw-mob-link">Home</a>
+  <a href="/pages/gateway.html" class="gw-mob-link active">Gateway</a>
+  <a href="/pages/accelerator.html" class="gw-mob-link">Retail Entry</a>
+  <a href="/pages/event.html" class="gw-mob-link">Event</a>
+  <a href="/pages/membership.html" class="gw-mob-link">Membership</a>
+  <a href="/pages/about.html" class="gw-mob-link">About</a>
+  <a href="/pages/accelerator.html" class="gw-mob-cta">🚀 เริ่มขายทันที →</a>
+</div>
+
+<!-- DECISION SCREEN — goal: user clicks within 5 seconds, no scroll needed -->
+<section class="gw-hero">
+  <div class="gw-hero-inner">
+
+    <!-- 2. Pre-frame hook -->
+    <div class="gw-preframe">Thailand → Laos → China Gateway สำหรับแบรนด์ไทย</div>
+
+    <!-- 3. Stronger headline -->
+    <h1 class="gw-headline">คุณจะ "เริ่มขายจริง" ใน 90 วัน<br>หรือแค่คิดต่อไป?</h1>
+
+    <!-- 3. Price anchor -->
+    <p class="gw-price-anchor"><s>ปกติ 300,000+ บาท</s> → <strong>ที่นี่เริ่มได้ทันที</strong></p>
+
+    <!-- 4. Social proof -->
+    <div class="gw-social-proof">⭐ 50+ แบรนด์ไทย · Big C Laos</div>
+
+    <p class="gw-sub">เริ่มขายทันที หรือ สร้างธุรกิจระยะยาว</p>
+
+    <div class="gw-urgency-bar">เหลือ 12 แบรนด์สำหรับรอบนี้</div>
+
+    <div class="gw-choice">
+
+      <!-- FAST PATH -->
+      <a href="/pages/accelerator.html"
+         class="gw-card fast"
+         onclick="track('gateway_retail_entry')">
+        <div class="gw-badge">START FAST</div>
+        <!-- 5. Icon in h2 -->
+        <h2>🚀 ขายทันที</h2>
+        <!-- 4. Clearer outcome -->
+        <p>เข้าร้านจริงในลาว ภายใน 90 วัน</p>
+        <span class="gw-btn">ไปเริ่มขาย →</span>
+      </a>
+
+      <!-- BUILD PATH -->
+      <a href="/pages/membership.html"
+         class="gw-card build"
+         onclick="track('gateway_membership')">
+        <div class="gw-badge gold">BUILD BRAND</div>
+        <!-- 5. Icon in h2 -->
+        <h2>🏢 สร้างแบรนด์ระยะยาว</h2>
+        <!-- 4. Clearer outcome -->
+        <p>สร้าง Distributor + ขยาย CLMV ระยะยาว</p>
+        <span class="gw-btn gold">ดู Membership →</span>
+      </a>
+
+    </div>
+
+    <p class="gw-trust">ใช้แล้วโดยแบรนด์ไทยที่ต้องการไปต่างประเทศ</p>
+
+    <p class="gw-micro">คนส่วนใหญ่เริ่มจาก "ขายทันที" แล้วค่อยขยาย</p>
+
+    <!-- Hard close — loss aversion -->
+    <p class="gw-micro" style="color:#ff6b6b;margin-top:6px">⚠️ รอบนี้ปิดรับเมื่อครบ 26 บริษัท</p>
+
+  </div>
+</section>
+
+<!-- FOOTER — no exit links on gateway -->
+<footer class="gw-footer">
+  <div class="gw-footer-inner">
+    <div class="gw-footer-logo">VITH<em>HUB</em></div>
+    <div class="gw-footer-copy">© 2026 VITH HUB · vithhub.asia</div>
+    <p class="gw-footer-disclaimer">*VITH HUB เป็นแพลตฟอร์มสนับสนุนการเข้าสู่ตลาด (Market Entry Platform) ไม่รับประกันยอดขายหรือผลกำไร มิได้ทำหน้าที่เป็นตัวแทนจำหน่าย (Distributor)</p>
+  </div>
+</footer>
+
+<!-- ⑧ STICKY CTA — ห้ามขาด ต้องเห็นตลอด -->
+<div class="gw-sticky" id="gwSticky">
+  <div class="gw-sticky-label">
+    <span class="gw-sticky-dot"></span>
+    รับแค่ 26 บริษัท / รุ่น
+  </div>
+  <div class="gw-sticky-btns">
+    <a href="/pages/accelerator.html" class="gw-sticky-acc" onclick="track('gateway_sticky_retail_entry')">🚀 เริ่มขายทันที</a>
+    <a href="/pages/membership.html" class="gw-sticky-mem" onclick="track('gateway_sticky_membership')">🏢 Membership</a>
+  </div>
+</div>
+
+<!-- LINE FLOAT -->
+<a href="https://line.me/ti/p/@cef8930n" target="_blank" rel="noopener" class="gw-line"
+   onclick="track('line_click_gateway')">
+  <svg width="15" height="15" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
+  LINE
+</a>
+
+<!-- JS -->
+<script>
+// GTM tracking
+function track(event) {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event: event });
+}
+
+// Page view event
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({ event: "gateway_view" });
+
+// Sticky + nav scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('vithNav').classList.toggle('scrolled', scrollY > 40);
+  document.getElementById('gwSticky').classList.toggle('show', scrollY > 60);
+  // cancel auto-redirect if user scrolls
+  clicked = true;
+});
+
+// 5. Show sticky after 1.5s regardless of scroll
+setTimeout(() => {
+  document.getElementById('gwSticky').classList.add('show');
+}, 1500);
+
+// Pulse fast card after 2.5s
+setTimeout(() => {
+  const fastCard = document.querySelector('.gw-card.fast');
+  if (fastCard) fastCard.classList.add('pulse');
+}, 2500);
+
+// BUG FIX 1 + 3: track all meaningful clicks including LINE
+let clicked = false;
+document.querySelectorAll('.gw-card, .gw-sticky-acc, .gw-sticky-mem, .gw-line').forEach(el => {
+  el.addEventListener('click', () => { clicked = true; });
+});
+
+// Auto-redirect if truly idle (no click, no scroll) for 8s
+setTimeout(() => {
+  if (!clicked) window.location.href = "/pages/accelerator.html";
+}, 5000);
+</script>
+
+<!-- BUG FIX 2: lead-modal.js โหลดก่อน exit intent ทำงาน -->
+<script src="/js/lead-modal.js"></script>
+
+<script>
+// Exit intent — ต้องรันหลัง lead-modal.js โหลดเสร็จ
+let exitFired = false;
+document.addEventListener("mouseleave", function(e) {
+  if (e.clientY < 0 && !exitFired) {
+    exitFired = true;
+    clicked = true; // cancel auto-redirect เมื่อ exit modal ขึ้น
+    if (typeof openLeadModal === 'function') {
+      openLeadModal("exit_gateway");
+    }
+  }
+});
+</script>
+</body>
+</html>

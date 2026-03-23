@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>VITH HUB — ยืนยันการสมัคร Retail Entry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1F3B;--navy2:#0d2545;--navy3:#071529;
+  --gold:#C9A227;--gold2:#E4BC4A;--goldDk:#9B7A10;
+  --green:#16a34a;--green2:#22c55e;
+  --sub:rgba(255,255,255,.55);
+  --border:rgba(255,255,255,.08);--borderG:rgba(201,162,39,.2);
+  --r:10px;--rL:18px;--rXL:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#071529;color:#fff;font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;min-height:100vh;display:flex;flex-direction:column}
+a{text-decoration:none;color:inherit}
+
+/* NAV minimal */
+.co-nav{height:56px;background:rgba(11,31,59,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--borderG);display:flex;align-items:center;padding:0 1.5rem;gap:1rem;position:sticky;top:0;z-index:100}
+.co-nav-logo{font-size:1rem;font-weight:800;color:#fff;letter-spacing:.05em}
+.co-nav-logo em{font-style:normal;color:var(--gold2)}
+.co-nav-step{font-size:.75rem;color:var(--sub);margin-left:auto}
+.co-nav-step strong{color:var(--gold2)}
+
+/* LAYOUT */
+.co-wrap{max-width:960px;margin:0 auto;padding:2.5rem 1.5rem;display:grid;grid-template-columns:1fr 420px;gap:2rem;flex:1}
+.co-left{}
+.co-right{}
+
+/* SECTION TITLE */
+.co-sec-title{font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sub);margin-bottom:1rem}
+
+/* ORDER SUMMARY */
+.co-summary{background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:var(--rXL);overflow:hidden;margin-bottom:1.5rem}
+.co-sum-head{padding:1.25rem 1.5rem;background:linear-gradient(135deg,rgba(201,162,39,.08),transparent);border-bottom:1px solid var(--border)}
+.co-sum-badge{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold2);background:rgba(201,162,39,.1);border:1px solid rgba(201,162,39,.2);padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:.5rem}
+.co-sum-title{font-size:1.25rem;font-weight:800;color:#fff;margin-bottom:.25rem}
+.co-sum-sub{font-size:.82rem;color:var(--sub)}
+.co-sum-body{padding:1.25rem 1.5rem}
+.co-sum-row{display:flex;align-items:center;gap:.75rem;padding:.625rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.co-sum-row:last-child{border:none}
+.co-sum-ck{color:var(--green2);font-size:.95rem;flex-shrink:0}
+.co-sum-text{font-size:.88rem;color:rgba(255,255,255,.8)}
+.co-sum-price{padding:1.25rem 1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.co-sum-price-lbl{font-size:.82rem;color:var(--sub)}
+.co-sum-price-val{font-size:1.75rem;font-weight:800;color:#fff;letter-spacing:-.03em}
+.co-sum-price-val span{color:var(--gold2)}
+
+/* BREAKDOWN */
+.co-breakdown{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:var(--rL);padding:1.125rem 1.25rem;margin-bottom:1.5rem}
+.co-bk-row{display:flex;justify-content:space-between;align-items:center;font-size:.82rem;padding:.375rem 0}
+.co-bk-row.total{border-top:1px solid var(--border);margin-top:.5rem;padding-top:.75rem;font-size:1rem;font-weight:700}
+.co-bk-lbl{color:var(--sub)}
+.co-bk-val{color:#fff;font-weight:600}
+.co-bk-row.total .co-bk-val{color:var(--gold2);font-size:1.125rem}
+.co-per-day{font-size:.72rem;color:rgba(255,255,255,.3);margin-top:.25rem;text-align:right}
+
+/* PAYMENT OPTIONS */
+.co-pay-grid{display:flex;flex-direction:column;gap:.875rem;margin-bottom:1.5rem}
+.co-pay-option{border-radius:var(--rL);padding:1.25rem 1.375rem;cursor:pointer;transition:all .25s;border:2px solid transparent;position:relative;overflow:hidden}
+.co-pay-option.full{background:linear-gradient(135deg,rgba(22,163,74,.1),rgba(22,163,74,.05));border-color:rgba(22,163,74,.3)}
+.co-pay-option.deposit{background:rgba(255,255,255,.04);border-color:var(--border)}
+.co-pay-option:hover{transform:translateY(-2px)}
+.co-pay-option.full:hover{border-color:rgba(22,163,74,.5);box-shadow:0 8px 32px rgba(22,163,74,.15)}
+.co-pay-option.deposit:hover{border-color:rgba(255,255,255,.2);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.co-pay-tag{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:.625rem}
+.co-pay-option.full .co-pay-tag{background:rgba(22,163,74,.15);color:var(--green2);border:1px solid rgba(22,163,74,.25)}
+.co-pay-option.deposit .co-pay-tag{background:rgba(255,255,255,.05);color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.1)}
+.co-pay-label{font-size:1rem;font-weight:700;color:#fff;margin-bottom:.25rem}
+.co-pay-price{font-size:1.5rem;font-weight:800;letter-spacing:-.025em;margin-bottom:.25rem}
+.co-pay-option.full .co-pay-price{color:var(--green2)}
+.co-pay-option.deposit .co-pay-price{color:#fff}
+.co-pay-note{font-size:.75rem;color:var(--sub)}
+.co-pay-btn{
+  width:100%;padding:14px;
+  font-family:'Plus Jakarta Sans','Noto Sans Thai',sans-serif;
+  font-size:1rem;font-weight:800;
+  border:none;border-radius:12px;cursor:pointer;
+  transition:all .25s;
+}
+.co-pay-btn.full{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;box-shadow:0 4px 20px rgba(22,163,74,.35)}
+.co-pay-btn.full:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(22,163,74,.5)}
+.co-pay-btn.deposit{background:rgba(255,255,255,.07);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.15)}
+.co-pay-btn.deposit:hover{background:rgba(255,255,255,.12);color:#fff}
+
+/* BANK ACCOUNT BOX */
+.co-bank{
+  background:rgba(22,163,74,.07);
+  border:1px solid rgba(22,163,74,.2);
+  border-radius:var(--rL);
+  padding:1.25rem;
+  margin-bottom:1.25rem;
+}
+.co-bank-title{font-size:.82rem;font-weight:700;color:#22c55e;margin-bottom:.875rem}
+.co-bank-row{display:flex;justify-content:space-between;align-items:center;padding:.375rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.co-bank-row:last-of-type{border:none}
+.co-bank-lbl{font-size:.78rem;color:rgba(255,255,255,.4)}
+.co-bank-val{font-size:.85rem;color:#fff;font-weight:600;text-align:right}
+.co-bank-num{cursor:pointer;color:#22c55e;font-size:.95rem;letter-spacing:.04em;display:flex;align-items:center;gap:.375rem}
+.co-bank-num:hover{text-decoration:underline}
+.co-copy-icon{font-size:.75rem;opacity:.6}
+.co-copy-msg{font-size:.75rem;color:#22c55e;text-align:center;margin-top:.625rem;padding:.375rem;background:rgba(22,163,74,.1);border-radius:6px}
+.co-bank-note{font-size:.72rem;color:rgba(255,255,255,.3);margin-top:.75rem;text-align:center;line-height:1.5}
+
+.co-contact a{color:var(--gold2)}
+
+/* RIGHT COLUMN */
+.co-trust{background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:var(--rXL);padding:1.5rem;margin-bottom:1.25rem}
+.co-trust-title{font-size:.88rem;font-weight:700;color:#fff;margin-bottom:1rem}
+.co-trust-item{display:flex;align-items:flex-start;gap:.625rem;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.co-trust-item:last-child{border:none}
+.co-trust-icon{font-size:1rem;flex-shrink:0;margin-top:.1rem}
+.co-trust-text{font-size:.82rem;color:var(--sub);line-height:1.55}
+.co-trust-text strong{color:rgba(255,255,255,.8);display:block;margin-bottom:2px}
+
+.co-payment-explain{background:rgba(22,163,74,.06);border:1px solid rgba(22,163,74,.15);border-radius:var(--rL);padding:1.25rem;margin-bottom:1.25rem}
+.co-pe-title{font-size:.88rem;font-weight:700;color:var(--green2);margin-bottom:.75rem}
+.co-pe-row{font-size:.82rem;color:rgba(255,255,255,.65);padding:.3rem 0;display:flex;align-items:center;gap:.5rem}
+.co-pe-row .ck{color:var(--green2)}
+
+.co-contact{text-align:center;padding:1rem;font-size:.78rem;color:rgba(255,255,255,.3)}
+.co-contact a{color:var(--gold2)}
+
+/* FOOTER */
+.co-footer{padding:1.25rem 1.5rem;border-top:1px solid rgba(255,255,255,.05);text-align:center;font-size:.72rem;color:rgba(255,255,255,.2)}
+
+@media(max-width:760px){
+  .co-wrap{grid-template-columns:1fr;padding:1.5rem 1rem}
+  .co-right{order:-1}
+}
+</style>
+
+<meta name="description" content="ยืนยันการสมัครโปรแกรม Retail Entry 90 วัน — ชำระเงินเพื่อล็อคสิทธิ์ 0% Commission ทีมงานติดต่อกลับภายใน 1 ชั่วโมง">
+<meta property="og:title" content="VITH HUB — ยืนยันการสมัคร Retail Entry">
+<meta property="og:description" content="ชำระเงินเพื่อล็อคสิทธิ์ Retail Entry 90 วัน — 0% Commission Big C Vientiane">
+<meta property="og:image" content="https://vithhub.asia/images/og-vith-hub.jpg">
+<meta property="og:url" content="https://vithhub.asia/pages/checkout.html">
+<meta property="og:type" content="website">
+<script>
+// Force HTTPS — checkout page must always be served over HTTPS
+if(location.protocol === 'http:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1'){
+  location.replace('https:' + location.href.substring(location.protocol.length));
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="co-nav">
+  <a href="/pages/accelerator.html" class="co-nav-logo" style="display:flex;align-items:center;gap:.5rem;text-decoration:none">
+    <span style="font-size:.8rem;color:rgba(255,255,255,.4)">←</span>
+    VITH<em>HUB</em>
+  </a>
+  <div style="font-size:.72rem;color:rgba(255,255,255,.3);margin-left:.5rem">← กลับไปอ่านรายละเอียด</div>
+  <div class="co-nav-step">ขั้นตอน <strong>2 / 2</strong> — ยืนยันการสมัคร</div>
+</nav>
+
+<div class="co-wrap">
+
+  <!-- LEFT: Order + Payment -->
+  <div class="co-left">
+
+    <div class="co-sec-title">รายละเอียดโปรแกรม</div>
+
+    <div class="co-summary">
+      <div class="co-sum-head">
+        <div class="co-sum-badge">Retail Entry</div>
+        <div class="co-sum-title">ยินดีด้วยครับ! <span id="co-brand-name" style="color:var(--gold2)"></span></div>
+        <div class="co-sum-sub">90 วัน · Big C Vientiane · Mekong Market</div>
+      </div>
+
+      <!-- Status Banner -->
+      <div style="padding:1rem 1.5rem;background:linear-gradient(135deg,rgba(201,162,39,.1),rgba(201,162,39,.04));border-bottom:1px solid rgba(201,162,39,.15)">
+        <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:.875rem">
+          <div style="width:36px;height:36px;border-radius:50%;background:rgba(201,162,39,.15);border:1.5px solid rgba(201,162,39,.4);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0">⏳</div>
+          <div>
+            <div style="font-size:.78rem;font-weight:700;color:var(--gold2);letter-spacing:.06em;text-transform:uppercase">รอการตรวจสอบสิทธิ์</div>
+            <div style="font-size:.75rem;color:rgba(255,255,255,.4);margin-top:1px">ทีมงานจะยืนยันภายใน 1 ชั่วโมง</div>
+          </div>
+        </div>
+        <!-- Progress steps -->
+        <div style="display:flex;align-items:center;gap:0">
+          <div style="text-align:center;flex:1">
+            <div style="width:28px;height:28px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto .375rem;font-size:.75rem;font-weight:800;color:#0a1628">1</div>
+            <div style="font-size:.65rem;color:var(--gold2);font-weight:700">ส่งข้อมูล</div>
+            <div style="font-size:.6rem;color:rgba(255,255,255,.35)">เสร็จแล้ว ✓</div>
+          </div>
+          <div style="flex:1;height:2px;background:linear-gradient(90deg,var(--gold),rgba(255,255,255,.1));margin-bottom:1.25rem"></div>
+          <div style="text-align:center;flex:1">
+            <div style="width:28px;height:28px;border-radius:50%;background:rgba(201,162,39,.2);border:1.5px solid rgba(201,162,39,.4);display:flex;align-items:center;justify-content:center;margin:0 auto .375rem;font-size:.75rem;font-weight:800;color:var(--gold2)">2</div>
+            <div style="font-size:.65rem;color:rgba(255,255,255,.5);font-weight:700">ตรวจสอบสิทธิ์</div>
+            <div style="font-size:.6rem;color:rgba(255,255,255,.25)">กำลังดำเนินการ</div>
+          </div>
+          <div style="flex:1;height:2px;background:rgba(255,255,255,.08);margin-bottom:1.25rem"></div>
+          <div style="text-align:center;flex:1">
+            <div style="width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;margin:0 auto .375rem;font-size:.75rem;font-weight:800;color:rgba(255,255,255,.3)">3</div>
+            <div style="font-size:.65rem;color:rgba(255,255,255,.3);font-weight:700">ยืนยันสิทธิ์</div>
+            <div style="font-size:.6rem;color:rgba(255,255,255,.2)">รอผล</div>
+          </div>
+          <div style="flex:1;height:2px;background:rgba(255,255,255,.08);margin-bottom:1.25rem"></div>
+          <div style="text-align:center;flex:1">
+            <div style="width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;margin:0 auto .375rem;font-size:.8rem;color:rgba(255,255,255,.25)">🏪</div>
+            <div style="font-size:.65rem;color:rgba(255,255,255,.3);font-weight:700">เริ่มโปรแกรม</div>
+            <div style="font-size:.6rem;color:rgba(255,255,255,.2)">Big C ลาว</div>
+          </div>
+        </div>
+      </div>
+      <div class="co-sum-body">
+        <div class="co-sum-row"><span class="co-sum-ck">✔</span><span class="co-sum-text">พื้นที่โชว์รูม + พื้นที่เก็บสินค้า ขนาด 200 ตร.ม. ใน Big C ลาว</span></div>
+        <div class="co-sum-row"><span class="co-sum-ck">✔</span><span class="co-sum-text">ทดสอบตลาดกับลูกค้าจริง + Sales Data</span></div>
+        <div class="co-sum-row"><span class="co-sum-ck">✔</span><span class="co-sum-text">มี buyer เข้าถึงโดยตรง 5+ ประเทศ</span></div>
+        <div class="co-sum-row"><span class="co-sum-ck">✔</span><span class="co-sum-text">ระบบวางบิล + รับเงินกลับเป็นเงินบาท</span></div>
+        <div class="co-sum-row"><span class="co-sum-ck">✔</span><span class="co-sum-text">ทีมดูแลในพื้นที่ลาวตลอด 90 วัน</span></div>
+      </div>
+      <div class="co-sum-price">
+        <div>
+          <div class="co-sum-price-lbl">ราคาโปรแกรม</div>
+          <div style="font-size:.75rem;color:rgba(255,255,255,.25);text-decoration:line-through;margin-top:2px">มูลค่ารวม 170,000+ บาท</div>
+        </div>
+        <div class="co-sum-price-val">฿<span>39,000</span></div>
+      </div>
+    </div>
+
+    <div class="co-sec-title">เลือกวิธีดำเนินการ</div>
+
+    <!-- PRIMARY CTA: ปรึกษาก่อน -->
+    <div style="margin-bottom:1rem">
+      <button class="co-pay-btn" onclick="askLine()" style="width:100%;background:linear-gradient(135deg,#06C755,#04a846);color:#fff;font-size:1rem;padding:16px;border-radius:12px;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;box-shadow:0 4px 20px rgba(6,199,85,.35);transition:all .25s">
+        <svg width="20" height="20" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
+        รอการตอบกลับ / ปรึกษาทีมก่อน
+      </button>
+      <div style="font-size:.75rem;color:rgba(255,255,255,.3);text-align:center;margin-top:.5rem">ทีมติดต่อกลับภายใน 1 ชั่วโมง · จันทร์–เสาร์ 9:00–18:00</div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:1rem;margin:1rem 0">
+      <div style="flex:1;height:1px;background:rgba(255,255,255,.08)"></div>
+      <div style="font-size:.75rem;color:rgba(255,255,255,.25)">หรือชำระเงินได้เลย</div>
+      <div style="flex:1;height:1px;background:rgba(255,255,255,.08)"></div>
+    </div>
+
+    <div class="co-pay-grid">
+
+      <!-- FULL PAYMENT -->
+      <div class="co-pay-option full">
+        <div class="co-pay-tag">แนะนำ · ประหยัดสุด</div>
+        <div class="co-pay-label">ชำระเต็มจำนวน</div>
+        <div class="co-pay-price">฿39,000</div>
+        <div class="co-pay-note">≈ 433 บาท/วัน · ถูกกว่าการออกบูธ 1 ครั้ง</div>
+        <br>
+        <button class="co-pay-btn full" onclick="payFull()">ชำระเต็ม ฿39,000 →</button>
+      </div>
+
+      <!-- DEPOSIT -->
+      <div class="co-pay-option deposit">
+        <div class="co-pay-tag">จองสิทธิ์ก่อน</div>
+        <div class="co-pay-label">มัดจำจองสิทธิ์</div>
+        <div class="co-pay-price">฿9,900</div>
+        <div class="co-pay-note">ส่วนที่เหลือ ฿29,100 ชำระก่อนเริ่มโปรแกรม</div>
+        <br>
+        <button class="co-pay-btn deposit" onclick="payDeposit()">จองสิทธิ์ด้วยมัดจำ ฿9,900 →</button>
+      </div>
+
+    </div>
+
+    <div class="co-breakdown">
+      <div class="co-bk-row"><span class="co-bk-lbl">Retail Entry 90 วัน</span><span class="co-bk-val">฿39,000</span></div>
+      <div class="co-bk-row"><span class="co-bk-lbl">Commission</span><span class="co-bk-val" style="color:#22c55e">฿0 (0%)</span></div>
+      <div class="co-bk-row total"><span class="co-bk-lbl">รวมทั้งหมด</span><span class="co-bk-val">฿39,000</span></div>
+      <div class="co-per-day">≈ 433 บาท / วัน</div>
+    </div>
+
+    <div class="co-guarantee">
+      🔒 การชำระเงินปลอดภัย · ไม่มีค่า commission · ทีมยืนยันภายใน 1 ชั่วโมง<br>
+      มีข้อสงสัย? <a href="https://line.me/ti/p/@cef8930n" target="_blank" style="color:var(--gold2)">LINE: @cef8930n</a>
+    </div>
+
+  </div>
+
+  <!-- RIGHT: Trust + Payment Explain -->
+  <div class="co-right">
+
+    <!-- BANK ACCOUNT -->
+    <div class="co-bank">
+      <div class="co-bank-title">📋 โอนเงินมาที่บัญชีนี้</div>
+
+      <!-- Mobile-friendly account number with big tap target -->
+      <div style="background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2);border-radius:10px;padding:1rem;margin-bottom:.875rem;text-align:center;cursor:pointer" onclick="copyAcct()">
+        <div style="font-size:.7rem;color:rgba(255,255,255,.4);margin-bottom:.375rem;letter-spacing:.06em;text-transform:uppercase">กดเพื่อคัดลอกเลขบัญชี</div>
+        <div style="font-size:1.5rem;font-weight:800;color:#22c55e;letter-spacing:.08em;font-family:'DM Serif Display',serif">227-3-74334-3</div>
+        <div style="font-size:.75rem;color:rgba(255,255,255,.4);margin-top:.25rem">กสิกรไทย · หจก. รอยัล บริตจ์ 99</div>
+        <div id="copyMsg" class="co-copy-msg" style="display:none;margin-top:.5rem">✅ คัดลอกเลขบัญชีแล้ว</div>
+      </div>
+
+      <div class="co-bank-row">
+        <span class="co-bank-lbl">ธนาคาร</span>
+        <span class="co-bank-val">กสิกรไทย (KBank)</span>
+      </div>
+      <div class="co-bank-row">
+        <span class="co-bank-lbl">ชื่อบัญชี</span>
+        <span class="co-bank-val">หจก. รอยัล บริตจ์ 99</span>
+      </div>
+      <div class="co-bank-row">
+        <span class="co-bank-lbl">สาขา</span>
+        <span class="co-bank-val">ถนนประจักษ์ อุดรธานี</span>
+      </div>
+
+      <!-- PromptPay QR -->
+      <div style="margin-top:.875rem;padding:1rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);border-radius:10px;text-align:center">
+        <div style="background:#f8f7f4;border:1px solid #DDD8CC;border-radius:10px;padding:.875rem 1rem;margin:1rem 0">
+  <label style="display:flex;align-items:flex-start;gap:.75rem;cursor:pointer">
+    <input type="checkbox" id="co-policy" style="margin-top:3px;accent-color:#C9A227;width:16px;height:16px;flex-shrink:0">
+    <span style="font-family:'Inter',sans-serif;font-size:.8rem;color:#4a5c78;line-height:1.6">
+      ข้าพเจ้าได้อ่านและยอมรับ
+      <a href="/pages/policy.html" target="_blank" style="color:#9B7A10;font-weight:600">นโยบายการยกเลิกและการคืนเงิน</a>
+      รวมถึงข้อกำหนดของโปรแกรม Retail Entry 90 วัน <span style="color:#e5141e">*</span>
+    </span>
+  </label>
+</div>
+<div style="font-size:.7rem;color:rgba(255,255,255,.3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.625rem">PromptPay QR Code · สแกนจ่ายได้เลย</div>
+        <!-- QR file: /images/promptpay-qr.png -->
+        <img src="/images/promptpay-qr.png" alt="PromptPay QR Code"
+          style="width:160px;height:160px;border-radius:10px;object-fit:contain;background:#fff;padding:8px;display:block;margin:0 auto"
+          onerror="this.style.display='none';document.getElementById('qr-fallback').style.display='flex'">
+        <div id="qr-fallback" style="display:none;width:160px;height:160px;margin:0 auto;background:rgba(255,255,255,.06);border-radius:10px;align-items:center;justify-content:center;flex-direction:column;gap:.375rem;border:2px dashed rgba(255,255,255,.12)">
+          <div style="font-size:2.5rem">📱</div>
+          <div style="font-size:.68rem;color:rgba(255,255,255,.3)">วาง QR ที่นี่</div>
+          <div style="font-size:.62rem;color:rgba(255,255,255,.2)">/images/promptpay-qr.png</div>
+        </div>
+        <div style="font-size:.72rem;color:rgba(255,255,255,.35);margin-top:.5rem">PromptPay · 085-590-7666</div>
+      </div>
+
+      <div class="co-bank-note">หลังโอน → ส่งสลิปผ่าน WhatsApp หรือ LINE</div>
+    </div>
+
+    <div class="co-payment-explain">
+      <div class="co-pe-title">💸 ขายได้ → รับเงินกลับไทยได้</div>
+      <div class="co-pe-row"><span class="ck">✔</span> วางบิลให้ฟรี 90 วันแรก</div>
+      <div class="co-pe-row"><span class="ck">✔</span> โอนกลับเป็นเงินบาท</div>
+      <div class="co-pe-row"><span class="ck">✔</span> หรือรับตรงผ่านบัญชีลาว</div>
+      <div class="co-pe-row"><span class="ck">✔</span> ไม่มีค่า commission</div>
+    </div>
+
+    <div class="co-trust">
+      <div class="co-trust-title">ทำไมต้องเชื่อ VITH HUB?</div>
+      <div class="co-trust-item">
+        <span class="co-trust-icon">🏪</span>
+        <div class="co-trust-text"><strong>Big C Vientiane #1</strong>ห้างค้าปลีกใหญ่สุดในลาว ผู้บริโภค 50,000+ คน/เดือน</div>
+      </div>
+      <div class="co-trust-item">
+        <span class="co-trust-icon">🤝</span>
+        <div class="co-trust-text"><strong>Partner อย่างเป็นทางการ</strong>LITSE · RB99 · สมาคมการค้า 6 ประเทศ</div>
+      </div>
+      <div class="co-trust-item">
+        <span class="co-trust-icon">📦</span>
+        <div class="co-trust-text"><strong>ระบบครบ</strong>Showroom + Logistics + Payment + Local Team</div>
+      </div>
+      <div class="co-trust-item">
+        <span class="co-trust-icon">📊</span>
+        <div class="co-trust-text"><strong>+20–40% Margin</strong>สินค้าไทยขายได้ราคาพรีเมียมในลาว</div>
+      </div>
+    </div>
+
+    <div class="co-contact">
+      มีคำถาม? ส่งสลิปได้ที่<br>
+      <a href="https://line.me/ti/p/@cef8930n" target="_blank">LINE: @cef8930n</a> &nbsp;·&nbsp;
+      <a href="https://wa.me/8562056605450" target="_blank">WhatsApp +856 20 566 05450</a>
+    </div>
+
+  </div>
+</div>
+
+<footer class="co-footer">
+  © 2026 VITH HUB · vithhub.asia &nbsp;·&nbsp;
+  *ไม่รับประกันยอดขาย · มิได้เป็น Distributor · Market Entry Platform เท่านั้น
+</footer>
+
+<script>
+const PAYMENT_LINK_FULL    = "YOUR_PAYMENT_LINK_FULL";
+const PAYMENT_LINK_DEPOSIT = "YOUR_PAYMENT_LINK_DEPOSIT";
+const LINE_OA = "https://line.me/ti/p/@cef8930n";
+const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzpN1z2qrSdaZv2AHJofeEYPHRyk7UNOqQq9uIHoEYVY_D5td0IOLK2PBnPw0vbjcw/exec";
+
+// อ่านชื่อแบรนด์จาก URL param ?brand=xxx
+const params = new URLSearchParams(window.location.search);
+const brandName = params.get('brand') || '';
+const brandEl = document.getElementById('co-brand-name');
+if(brandEl && brandName){
+  brandEl.textContent = 'แบรนด์ ' + decodeURIComponent(brandName) + ' ได้ส่งข้อมูลให้ทีมงานเพื่อตรวจสอบสิทธิ์แล้ว';
+} else if(brandEl){
+  brandEl.closest('.co-sum-title').textContent = 'เริ่มขายในต่างประเทศ';
+}
+
+// ── Auto-Save: บันทึกว่าใครเข้าถึงหน้า Checkout แล้ว ──
+(function autoSaveCheckoutVisit(){
+  const brand = brandName ? decodeURIComponent(brandName) : '(ไม่ระบุ)';
+  const timestamp = new Date().toLocaleString('th-TH', {timeZone:'Asia/Bangkok'});
+  fetch(WEBHOOK_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {'Content-Type':'text/plain;charset=utf-8'},
+    body: JSON.stringify({
+      form_type:    'Checkout_Visit',
+      brand_name:   brand,
+      contact_name: brand,
+      source:       'Checkout Page',
+      note:         'เข้าหน้า Checkout แล้ว — ยังไม่ได้ชำระเงิน | เข้าหน้า Checkout เมื่อ ' + timestamp
+    })
+  }).catch(()=>{});
+})();
+
+function copyAcct() {
+  navigator.clipboard.writeText('227-3-74334-3').then(() => {
+    const msg = document.getElementById('copyMsg');
+    msg.style.display = 'block';
+    setTimeout(() => msg.style.display = 'none', 2500);
+  }).catch(() => {
+    // Fallback สำหรับ browser ที่ไม่รองรับ clipboard API
+    const el = document.createElement('textarea');
+    el.value = '227-3-74334-3';
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+    const msg = document.getElementById('copyMsg');
+    msg.style.display = 'block';
+    setTimeout(() => msg.style.display = 'none', 2500);
+  });
+}
+
+function track(event, data) {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event, ...data });
+}
+
+function askLine() {
+  const msg = encodeURIComponent('สนใจโปรแกรม Retail Entry' + (brandName ? ' | แบรนด์: ' + decodeURIComponent(brandName) : '') + ' | ขอให้ทีมติดต่อกลับครับ');
+  window.open(LINE_OA + '?text=' + msg, '_blank');
+  // เปิด Thank You page ใน tab ใหม่ให้ลูกค้าเห็น Next Steps
+  setTimeout(() => window.open('/pages/thankyou.html', '_blank'), 800);
+}
+
+function payFull() {
+  track('checkout_full', { value: 39000, currency: 'THB' });
+  if(PAYMENT_LINK_FULL !== 'YOUR_PAYMENT_LINK_FULL'){
+    window.location.href = PAYMENT_LINK_FULL;
+  } else {
+    const msg = encodeURIComponent('สนใจชำระเต็ม ฿39,000' + (brandName ? ' | แบรนด์: ' + decodeURIComponent(brandName) : '') + ' | Retail Entry');
+    window.location.href = LINE_OA + '?text=' + msg;
+  }
+}
+
+function payDeposit() {
+  track('checkout_deposit', { value: 9900, currency: 'THB' });
+  if(PAYMENT_LINK_DEPOSIT !== 'YOUR_PAYMENT_LINK_DEPOSIT'){
+    window.location.href = PAYMENT_LINK_DEPOSIT;
+  } else {
+    const msg = encodeURIComponent('สนใจจองมัดจำ ฿9,900' + (brandName ? ' | แบรนด์: ' + decodeURIComponent(brandName) : '') + ' | Retail Entry');
+    window.location.href = LINE_OA + '?text=' + msg;
+  }
+}
+</script>
+</body>
+</html>

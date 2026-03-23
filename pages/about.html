@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VITH HUB — Our Alliance & Partners | vithhub.asia</title>
+<meta name="description" content="พันธมิตรหลักของ VITH HUB ได้แก่ Big C Vientiane, LITSE, RB99 และหอการค้านานาชาติ 6 ประเทศ เพื่อเชื่อมธุรกิจไทยสู่ตลาดสากล">
+<meta name="keywords" content="VITH HUB partners, Big C Vientiane, LITSE, Thai SME Laos, Mekong Business">
+<meta property="og:title" content="VITH HUB Alliance & Partners">
+<meta property="og:description" content="กลุ่มความร่วมมือรัฐ-เอกชน ไทย·ลาว·นานาชาติ">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:    #0B1F3B;
+  --navy2:   #0d2545;
+  --navy3:   #071529;
+  --navyL:   #1a3560;
+  --gold:    #C9A227;
+  --gold2:   #E4BC4A;
+  --gold3:   #F5D680;
+  --goldDk:  #9B7A10;
+  --red:     #e5141e;
+  --white:   #ffffff;
+  --sub:     rgba(255,255,255,.55);
+  --subl:    rgba(255,255,255,.32);
+  --border:  rgba(255,255,255,.08);
+  --borderG: rgba(201,162,39,.22);
+  --max:     1200px;
+  --green:   #22c55e;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Inter', 'Noto Sans Thai', system-ui, sans-serif;
+  background: var(--navy3);
+  color: #fff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; font-family: inherit; }
+
+@keyframes fadeUp   { from { opacity:0; transform:translateY(28px) } to { opacity:1; transform:none } }
+@keyframes shimmer  { 0% { background-position:200% center } 100% { background-position:-200% center } }
+@keyframes ticker   { 0% { transform:translateX(0) } 100% { transform:translateX(-50%) } }
+@keyframes pulseDot { 0%,100%{opacity:1} 50%{opacity:0.3} }
+@keyframes floatY   { 0%,100% { transform:translateY(0) } 50% { transform:translateY(-10px) } }
+
+.reveal { opacity:0; transform:translateY(24px); transition:opacity .65s cubic-bezier(.4,0,.2,1), transform .65s cubic-bezier(.4,0,.2,1); }
+.reveal.in { opacity:1; transform:none; }
+.d1{transition-delay:.1s} .d2{transition-delay:.2s} .d3{transition-delay:.3s}
+.d4{transition-delay:.4s} .d5{transition-delay:.5s}
+
+/* ── MULTILINGUAL ── */
+[data-lang]{display:none}
+[data-lang].active{display:inline}
+
+/* ── TICKER ── */
+.ticker {
+  height: 36px;
+  background: linear-gradient(90deg, var(--goldDk), var(--gold), var(--gold2), var(--gold), var(--goldDk));
+  background-size: 200% auto;
+  animation: shimmer 6s linear infinite;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.ticker-track { display:flex; white-space:nowrap; animation: ticker 38s linear infinite; }
+.ticker-item {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--navy);
+  padding: 0 28px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+.ticker-dot { display:inline-block; width:4px; height:4px; border-radius:50%; background:var(--navy); vertical-align:middle; margin-right:8px; opacity:.5; }
+
+/* ── STANDARD VITH NAV ── */
+.vith-nav{position:fixed;top:0;left:0;right:0;z-index:900;height:64px;background:rgba(7,21,41,.96);backdrop-filter:blur(24px) saturate(1.4);-webkit-backdrop-filter:blur(24px) saturate(1.4);border-bottom:1px solid var(--borderG);transition:all .3s}
+.vith-nav.scrolled{background:rgba(5,14,28,.98);box-shadow:0 2px 28px rgba(0,0,0,.3)}
+.vith-nav-inner{max-width:var(--max);margin:0 auto;height:64px;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.vith-nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;text-decoration:none}
+.vith-nav-logo-mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--goldDk),var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;color:var(--navy3);box-shadow:0 2px 10px rgba(201,162,39,.3)}
+.vith-nav-logo-stack{display:flex;flex-direction:column}
+.vith-nav-logo-text{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.05rem;font-weight:800;color:#fff;letter-spacing:-.01em;line-height:1}
+.vith-nav-logo-text em{font-style:normal;color:var(--gold2)}
+.vith-nav-logo-sub{font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--subl);display:block;margin-top:2px}
+.vith-nav-links{display:flex;align-items:center;gap:2px}
+.vith-nav-a{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:var(--sub);padding:7px 12px;border-radius:8px;transition:all .2s;white-space:nowrap;text-decoration:none}
+.vith-nav-a:hover,.vith-nav-a.active{color:#fff;background:rgba(255,255,255,.08)}
+.vith-nav-right{display:flex;align-items:center;gap:10px}
+.vith-lang-wrap{display:flex;gap:3px}
+.vith-lang-btn{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;padding:5px 9px;border-radius:6px;border:1px solid rgba(255,255,255,.15);background:transparent;cursor:pointer;color:var(--sub);transition:all .2s}
+.vith-lang-btn.active,.vith-lang-btn:hover{background:var(--gold);color:var(--navy3);border-color:var(--gold)}
+.vith-nav-cta{font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;background:linear-gradient(135deg,var(--goldDk),var(--gold),var(--gold2));color:var(--navy3);padding:9px 20px;border-radius:8px;transition:all .25s;white-space:nowrap;box-shadow:0 2px 10px rgba(201,162,39,.25);text-decoration:none}
+.vith-nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(201,162,39,.4)}
+.vith-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;cursor:pointer}
+.vith-hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.8);border-radius:2px}
+.vith-mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(5,14,28,.99);backdrop-filter:blur(20px);padding:20px;border-bottom:1px solid var(--borderG);flex-direction:column;gap:4px;z-index:898;box-shadow:0 16px 40px rgba(0,0,0,.3)}
+.vith-mobile-menu.open{display:flex}
+.vith-mob-link{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:600;color:rgba(255,255,255,.65);padding:11px 14px;border-radius:8px;text-decoration:none;transition:all .2s}
+.vith-mob-link:hover,.vith-mob-link.active{color:#fff;background:rgba(255,255,255,.08)}
+.vith-mob-cta{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;background:linear-gradient(135deg,var(--goldDk),var(--gold));color:var(--navy3);padding:13px 20px;border-radius:8px;text-align:center;margin-top:8px;text-decoration:none}
+@media(max-width:900px){.vith-nav-links{display:none!important}.vith-hamburger{display:flex}}
+@media(max-width:640px){.vith-nav-cta{display:none}}
+
+/* ── HERO ── */
+.page-hero {
+  position: relative;
+  padding: 140px 2rem 80px;
+  text-align: center;
+  overflow: hidden;
+  background: var(--navy3);
+}
+.page-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,162,39,.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 80% at 10% 80%, rgba(26,53,96,.5) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 90% 20%, rgba(7,21,41,.8) 0%, transparent 50%);
+  pointer-events: none;
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(201,162,39,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,162,39,.03) 1px, transparent 1px);
+  background-size: 72px 72px;
+  pointer-events: none;
+}
+.hero-slash {
+  position: absolute;
+  top: -10%; right: 18%;
+  width: 1px; height: 130%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(201,162,39,.12) 30%, rgba(201,162,39,.06) 70%, transparent 100%);
+  transform: rotate(12deg);
+  pointer-events: none;
+}
+.page-hero-inner { position:relative; z-index:1; max-width:720px; margin:0 auto; }
+.page-eyebrow {
+  font-family:'Inter',sans-serif; font-size:11px; font-weight:700;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--gold2);
+  margin-bottom:.75rem;
+  display:flex; align-items:center; justify-content:center; gap:10px;
+}
+.page-eyebrow::before, .page-eyebrow::after {
+  content:''; width:32px; height:1px; background:var(--borderG);
+}
+.page-title {
+  font-family:'Plus Jakarta Sans',sans-serif; font-weight:900;
+  font-size:clamp(2.75rem,7vw,4.5rem);
+  color:#fff; line-height:1.05; margin-bottom:1rem;
+  letter-spacing:-.02em;
+}
+.page-title span {
+  background:linear-gradient(90deg,var(--gold),var(--gold2),var(--gold3));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.page-sub {
+  font-size:1rem; color:var(--sub); max-width:560px; margin:0 auto 2rem;
+  line-height:1.8;
+}
+.hero-cta-row {
+  display:flex; gap:.75rem; justify-content:center; flex-wrap:wrap;
+}
+.btn-gold {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:14px; font-weight:700;
+  background:linear-gradient(135deg,var(--goldDk),var(--gold),var(--gold2));
+  color:var(--navy3);
+  padding:12px 26px; border-radius:9px;
+  display:inline-flex; align-items:center; gap:7px;
+  transition:all .25s;
+  box-shadow:0 4px 20px rgba(201,162,39,.3);
+}
+.btn-gold:hover { transform:translateY(-2px); box-shadow:0 10px 36px rgba(201,162,39,.5); }
+.btn-ghost {
+  font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:14px; font-weight:600; color:rgba(255,255,255,.7);
+  padding:11px 22px; border-radius:9px;
+  border:1px solid rgba(255,255,255,.15);
+  display:inline-flex; align-items:center; gap:7px;
+  background:rgba(255,255,255,.04);
+  transition:all .25s;
+}
+.btn-ghost:hover { color:#fff; border-color:rgba(255,255,255,.3); background:rgba(255,255,255,.08); transform:translateY(-1px); }
+
+/* ── STATUS STRIP ── */
+.status-strip {
+  background: rgba(255,255,255,.04);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: .75rem 2rem;
+  display: flex; gap: 1rem; align-items: center; justify-content: center; flex-wrap: wrap;
+}
+.status-badge {
+  display:inline-flex; align-items:center; gap:7px;
+  padding:5px 13px; border-radius:99px;
+  font-family:'Inter',sans-serif; font-size:11.5px; font-weight:700;
+  border:1px solid;
+}
+.status-badge.active{background:rgba(34,197,94,.12);border-color:rgba(34,197,94,.35);color:#4ade80}
+.status-badge.building{background:rgba(245,158,11,.12);border-color:rgba(245,158,11,.35);color:#fbbf24}
+.status-badge.upcoming{background:rgba(96,165,250,.1);border-color:rgba(96,165,250,.3);color:#93c5fd}
+.status-dot{width:6px;height:6px;border-radius:50%;background:currentColor;animation:pulseDot 1.4s ease-in-out infinite}
+
+/* ── LAYOUT ── */
+.container { max-width:var(--max); margin:0 auto; padding:0 2rem; }
+.section { padding:80px 2rem; }
+.section-alt { background:rgba(255,255,255,.025); }
+
+/* ── SECTION HEADER ── */
+.sec-label {
+  font-family:'Inter',sans-serif; font-size:10.5px; font-weight:700;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--gold2);
+  margin-bottom:.5rem; display:block;
+}
+.sec-heading {
+  font-family:'Plus Jakarta Sans',sans-serif; font-weight:900;
+  font-size:clamp(1.5rem,3.5vw,2.25rem); color:#fff;
+  line-height:1.15; margin-bottom:1rem;
+}
+.sec-heading span { color:var(--gold2); }
+.sec-desc { font-size:.9375rem; color:var(--sub); line-height:1.8; max-width:600px; }
+
+/* ── PARTNER CARDS ── */
+.partner-card {
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:2rem;
+  margin-bottom:1.5rem;
+  display:grid; grid-template-columns:200px 1fr; gap:2rem; align-items:start;
+  transition:all .3s;
+}
+.partner-card:hover { box-shadow:0 12px 48px rgba(0,0,0,.3); border-color:var(--borderG); }
+@media(max-width:640px){.partner-card{grid-template-columns:1fr}}
+.partner-logo-box {
+  background: #fff;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 16px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: all .3s;
+  box-shadow: 0 2px 16px rgba(0,0,0,.25);
+}
+.partner-card:hover .partner-logo-box {
+  box-shadow: 0 8px 32px rgba(0,0,0,.4);
+  transform: translateY(-2px);
+}
+.partner-logo-box img {
+  width: 82%;
+  height: 82%;
+  object-fit: contain;
+  display: block;
+  transition: transform .3s;
+}
+.partner-logo-box img:hover { transform: scale(1.05); }
+.partner-logo-fallback {
+  font-family:'Plus Jakarta Sans',sans-serif; font-weight:900;
+  font-size:1.5rem; color:#9B7A10; letter-spacing:.05em;
+  display:none;
+  align-items:center; justify-content:center;
+  width:100%; height:100%; text-align:center;
+}
+.partner-num {
+  font-family:'Plus Jakarta Sans',sans-serif; font-weight:900;
+  font-size:3rem; color:rgba(255,255,255,.06); line-height:1;
+  margin-bottom:.25rem;
+}
+.partner-tag {
+  display:inline-flex; align-items:center; gap:5px;
+  font-family:'Inter',sans-serif; font-size:10.5px; font-weight:700;
+  letter-spacing:.1em; text-transform:uppercase; padding:3px 10px; border-radius:99px;
+  margin-bottom:.625rem;
+}
+.tag-venue{background:rgba(96,165,250,.15);color:#93c5fd;border:1px solid rgba(96,165,250,.25)}
+.tag-gov{background:rgba(34,197,94,.12);color:#4ade80;border:1px solid rgba(34,197,94,.25)}
+.tag-org{background:rgba(201,162,39,.15);color:var(--gold2);border:1px solid var(--borderG)}
+.tag-logistics{background:rgba(192,132,252,.12);color:#c084fc;border:1px solid rgba(192,132,252,.25)}
+.tag-agri{background:rgba(74,222,128,.12);color:#4ade80;border:1px solid rgba(74,222,128,.25)}
+.partner-name-big {
+  font-family:'Plus Jakarta Sans',sans-serif; font-weight:900;
+  font-size:1.375rem; color:#fff; margin-bottom:.25rem;
+}
+.partner-role-text { font-size:.875rem; color:var(--sub); margin-bottom:.75rem; }
+.partner-desc-text { font-size:.875rem; color:var(--sub); line-height:1.8; margin-bottom:1rem; }
+.partner-stats { display:flex; gap:1.5rem; flex-wrap:wrap; }
+.p-stat { text-align:center; }
+.p-stat-num {
+  font-family:'Plus Jakarta Sans',sans-serif; font-weight:900; font-size:1.25rem;
+  color:var(--gold2); line-height:1;
+}
+.p-stat-label { font-size:.68rem; color:var(--subl); letter-spacing:.05em; margin-top:3px; }
+
+/* ── PROGRESS ── */
+.progress-wrap { margin-top:.75rem; }
+.progress-label {
+  display:flex; justify-content:space-between;
+  font-family:'Inter',sans-serif; font-size:.7rem; color:var(--subl); margin-bottom:5px;
+}
+.progress-bar { height:5px; background:rgba(255,255,255,.08); border-radius:99px; overflow:hidden; }
+.progress-fill {
+  height:100%; border-radius:99px;
+  background:linear-gradient(90deg,var(--goldDk),var(--gold2));
+  transition:width 1.2s ease; width:0%;
+}
+
+/* ── COMPANY DETAILS BOX ── */
+.detail-box {
+  margin-top:1rem; padding:.875rem 1rem;
+  background:rgba(255,255,255,.04);
+  border-radius:10px; border:1px solid var(--border);
+}
+.detail-box-head {
+  font-family:'Inter',sans-serif; font-size:.68rem; font-weight:700;
+  letter-spacing:.1em; text-transform:uppercase;
+  color:var(--gold2); margin-bottom:.375rem;
+}
+.detail-box-body {
+  font-size:.8rem; color:var(--sub); line-height:2;
+}
+.detail-box-body a { color:var(--gold2); font-weight:600; }
+
+/* ── TIMELINE ── */
+.timeline-wrap { position:relative; padding-left:2.5rem; margin-top:2.5rem; }
+.timeline-wrap::before {
+  content:''; position:absolute; left:11px; top:8px; bottom:8px;
+  width:2px; background:linear-gradient(to bottom,var(--gold),rgba(201,162,39,.15));
+  border-radius:2px;
+}
+.tl-item {
+  position:relative; margin-bottom:1.75rem;
+  padding:1.25rem 1.5rem;
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--border); border-radius:14px;
+  transition:all .25s;
+}
+.tl-item:hover { box-shadow:0 6px 28px rgba(0,0,0,.25); border-color:var(--borderG); }
+.tl-dot {
+  position:absolute; left:-2.1rem; top:1.4rem;
+  width:18px; height:18px; border-radius:50%;
+  border:3px solid var(--navy3); box-shadow:0 0 0 2px var(--subl);
+  background:rgba(255,255,255,.2); z-index:1;
+}
+.tl-dot.done { background:var(--green); box-shadow:0 0 0 2px var(--green); }
+.tl-dot.current { background:var(--gold2); box-shadow:0 0 0 2px var(--gold2); animation:pulseDot 2s ease infinite; }
+.tl-date {
+  font-family:'Inter',sans-serif; font-size:.72rem; font-weight:700;
+  color:var(--subl); letter-spacing:.1em; text-transform:uppercase; margin-bottom:.375rem;
+}
+.tl-title {
+  font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:1rem;
+  color:#fff; margin-bottom:.25rem;
+}
+.tl-desc { font-size:.875rem; color:var(--sub); line-height:1.7; }
+.tl-status {
+  display:inline-flex; align-items:center; gap:5px; margin-top:.625rem;
+  font-family:'Inter',sans-serif; font-size:.72rem; font-weight:700;
+  padding:3px 10px; border-radius:99px;
+}
+.tl-status.done{background:rgba(34,197,94,.12);color:#4ade80;border:1px solid rgba(34,197,94,.25)}
+.tl-status.current{background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.25)}
+.tl-status.upcoming{background:rgba(96,165,250,.1);color:#93c5fd;border:1px solid rgba(96,165,250,.2)}
+
+/* ── TEAM CARDS ── */
+.team-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2rem;
+}
+@media(max-width:720px){.team-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.team-grid{grid-template-columns:1fr}}
+.team-card {
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--border); border-radius:16px;
+  padding:1.75rem; text-align:center; transition:all .25s;
+}
+.team-card:hover { box-shadow:0 10px 36px rgba(0,0,0,.3); border-color:var(--borderG); transform:translateY(-3px); }
+.team-avatar {
+  width:76px; height:76px; border-radius:50%;
+  background:linear-gradient(135deg,var(--goldDk),var(--gold));
+  margin:0 auto 1rem;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.75rem;
+  box-shadow:0 4px 20px rgba(201,162,39,.3);
+}
+.team-name {
+  font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:1rem;
+  color:#fff; margin-bottom:.25rem;
+}
+.team-pos { font-size:.8125rem; color:var(--sub); margin-bottom:.875rem; line-height:1.5; }
+.team-linkedin {
+  display:inline-flex; align-items:center; gap:5px;
+  background:rgba(255,255,255,.08);
+  color:var(--gold2);
+  font-family:'Inter',sans-serif; font-size:.72rem; font-weight:700;
+  padding:6px 14px; border-radius:99px; text-decoration:none;
+  border:1px solid var(--borderG);
+  transition:all .2s;
+}
+.team-linkedin:hover { background:var(--gold); color:var(--navy3); }
+
+/* ── CHAMBERS ── */
+.chambers-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:2rem;
+}
+@media(max-width:640px){.chambers-grid{grid-template-columns:1fr 1fr}}
+.chamber-card {
+  background:rgba(255,255,255,.04);
+  border:1px solid var(--border); border-radius:14px;
+  padding:1.375rem; text-align:center; transition:all .25s;
+}
+.chamber-card:hover { box-shadow:0 6px 24px rgba(0,0,0,.25); border-color:var(--borderG); transform:translateY(-2px); }
+.chamber-flag { font-size:2rem; margin-bottom:.5rem; }
+.chamber-name {
+  font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:.875rem;
+  color:#fff; margin-bottom:.25rem;
+}
+.chamber-country { font-size:.75rem; color:var(--subl); }
+
+/* ── FOOTER ── */
+.site-footer {
+  background:rgba(5,14,28,.98);
+  border-top:1px solid var(--borderG);
+  padding:3rem 2rem 2rem;
+}
+.footer-inner { max-width:var(--max); margin:0 auto; }
+.footer-top {
+  display:grid; grid-template-columns:1fr 1fr; gap:2.5rem;
+  padding-bottom:2rem; margin-bottom:2rem;
+  border-bottom:1px solid var(--border);
+}
+@media(max-width:640px){.footer-top{grid-template-columns:1fr}}
+.footer-logo-name {
+  font-family:'Plus Jakarta Sans',sans-serif; font-size:1.5rem; font-weight:900;
+  color:#fff; letter-spacing:-.01em;
+}
+.footer-logo-name em { font-style:normal; color:var(--gold2); }
+.footer-tagline { font-size:.8rem; color:var(--subl); margin-top:.25rem; }
+.footer-nav { display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.25rem; }
+.footer-nav a {
+  font-size:.8125rem; font-weight:600; color:var(--sub);
+  transition:color .2s;
+}
+.footer-nav a:hover { color:var(--gold2); }
+.footer-partner-head {
+  font-size:.7rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase;
+  color:var(--gold2); margin-bottom:.625rem;
+}
+.footer-partner-name { font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; color:#fff; font-size:.9rem; margin-bottom:.375rem; }
+.footer-partner-detail { font-size:.8rem; color:var(--subl); line-height:2; }
+.footer-partner-detail a { color:var(--sub); }
+.footer-partner-detail a:hover { color:var(--gold2); }
+.footer-bottom {
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;
+}
+.footer-legal { font-size:.72rem; color:var(--subl); }
+.footer-legal a { color:var(--subl); text-decoration:underline; }
+
+/* ── STICKY MOBILE CTA ── */
+.sticky-apply {
+  display:none;
+  position:fixed; bottom:0; left:0; right:0; z-index:500;
+  background:linear-gradient(90deg,var(--navy),var(--navy2));
+  border-top:1px solid var(--borderG);
+  padding:.875rem 1.5rem;
+  align-items:center; justify-content:space-between; gap:1rem;
+}
+@media(max-width:768px){.sticky-apply{display:flex}}
+.sticky-apply-text { font-family:'Inter',sans-serif; font-size:.875rem; font-weight:700; color:#fff; }
+.sticky-apply-text span { color:var(--gold2); }
+.sticky-apply-btn {
+  background:linear-gradient(90deg,var(--goldDk),var(--gold2)); color:var(--navy3);
+  font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:.875rem;
+  padding:10px 20px; border-radius:8px; text-decoration:none; white-space:nowrap;
+  box-shadow:0 4px 14px rgba(201,162,39,.4);
+}
+
+/* ── FLOAT CTA ── */
+.float-cta {
+  position:fixed; bottom:1.25rem; right:1.25rem; z-index:500;
+  display:flex; flex-direction:column; gap:.625rem; align-items:flex-end;
+}
+@media(max-width:768px){.float-cta{display:none}}
+.float-btn {
+  font-family:'Plus Jakarta Sans',sans-serif; font-weight:700; font-size:.875rem;
+  padding:11px 20px; border-radius:50px;
+  display:inline-flex; align-items:center; gap:8px; min-height:46px;
+  box-shadow:0 4px 20px rgba(0,0,0,.3); transition:all .25s; text-decoration:none;
+}
+.float-btn:hover { transform:translateY(-2px); }
+.float-btn.gold { background:linear-gradient(90deg,var(--goldDk),var(--gold2)); color:var(--navy3); }
+.float-btn.line { background:#06C755; color:#fff; }
+
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker" style="margin-top:0">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="ticker-dot"></span>Big C Vientiane — Venue Partner · Showroom 200 sqm</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>LITSE — Official Government Partner สปป.ลาว</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Royal Bridge 99 — Logistics TH→LA · ฟรี 100 KG/เดือน</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>6 International Chambers · Cross-border B2B Network</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Mekong Business Connect · Phase 1 กำลังดำเนินการ</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Big C Vientiane — Venue Partner · Showroom 200 sqm</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>LITSE — Official Government Partner สปป.ลาว</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Royal Bridge 99 — Logistics TH→LA · ฟรี 100 KG/เดือน</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>6 International Chambers · Cross-border B2B Network</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Mekong Business Connect · Phase 1 กำลังดำเนินการ</span>
+  </div>
+</div>
+
+<!-- NAV — Standard -->
+<nav class="vith-nav" id="mainNav">
+  <div class="vith-nav-inner">
+    <a href="/index.html" class="vith-nav-logo">
+      <div class="vith-nav-logo-mark">V</div>
+      <div class="vith-nav-logo-stack">
+        <div class="vith-nav-logo-text">VITH<em>HUB</em></div>
+        <span class="vith-nav-logo-sub">Mekong Trade Gateway</span>
+      </div>
+    </a>
+    <div class="vith-nav-links">
+      <a href="/index.html"             class="vith-nav-a">Home</a>
+      <a href="/pages/gateway.html"     class="vith-nav-a">Gateway</a>
+      <a href="/pages/accelerator.html" class="vith-nav-a">Accelerator</a>
+      <a href="/pages/event.html"       class="vith-nav-a">Event</a>
+      <a href="/pages/membership.html"  class="vith-nav-a">Membership</a>
+      <a href="/pages/about.html"       class="vith-nav-a active">About</a>
+    </div>
+    <div class="vith-nav-right">
+      <div class="vith-lang-wrap">
+        <button onclick="setLang('th')" class="vith-lang-btn active" id="vLangTH">TH</button>
+        <button onclick="setLang('la')" class="vith-lang-btn" id="vLangLA">LAO</button>
+        <button onclick="setLang('en')" class="vith-lang-btn" id="vLangEN">EN</button>
+      </div>
+      <a href="/pages/membership.html" class="vith-nav-cta">👑 Founder Member</a>
+      <button class="vith-hamburger" onclick="document.getElementById('vithMobileMenu').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="vith-mobile-menu" id="vithMobileMenu">
+  <a href="/index.html"             class="vith-mob-link">Home</a>
+  <a href="/pages/gateway.html"     class="vith-mob-link">Gateway</a>
+  <a href="/pages/accelerator.html" class="vith-mob-link">Accelerator</a>
+  <a href="/pages/event.html"       class="vith-mob-link">Event</a>
+  <a href="/pages/membership.html"  class="vith-mob-link">Membership</a>
+  <a href="/pages/about.html"       class="vith-mob-link active">About</a>
+  <a href="/pages/membership.html"  class="vith-mob-cta">👑 สมัคร Founder Member</a>
+</div>
+
+<!-- STATUS STRIP -->
+<div class="status-strip" style="margin-top:64px">
+  <div class="status-badge done"><span class="status-dot"></span>
+    MOU Signed · มกราคม 2026
+  </div>
+  <div class="status-badge building"><span class="status-dot"></span>
+    Phase 1: Mekong Business Connect — <span data-lang="th" class="active">กำลังดำเนินการ</span><span data-lang="la">ກຳລັງດຳເນີນການ</span><span data-lang="en">In Progress</span>
+  </div>
+  <div class="status-badge upcoming"><span class="status-dot"></span>
+    Phase 2: <span data-lang="th" class="active">พฤษภาคม 2026</span><span data-lang="la">ພຶດສະພາ 2026</span><span data-lang="en">May 2026</span> — Coming Soon
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="hero-grid"></div>
+  <div class="hero-slash"></div>
+  <div class="page-hero-inner">
+    <div class="page-eyebrow">
+      <span data-lang="th" class="active">🌐 พันธมิตรและเครือข่าย</span>
+      <span data-lang="la">🌐 ເຄືອຂ່າຍພັນທະມິດ</span>
+      <span data-lang="en">🌐 Our Alliance Network</span>
+    </div>
+    <h1 class="page-title reveal">
+      <span data-lang="th" class="active">พันธมิตร<span>&เครือข่าย</span></span>
+      <span data-lang="la">ພັນທະ<span>ມິດ</span></span>
+      <span data-lang="en">Partners <span>& Alliance</span></span>
+    </h1>
+    <p class="page-sub reveal d1">
+      <span data-lang="th" class="active">กลุ่มความร่วมมือระหว่างภาครัฐและเอกชน ไทย · ลาว · นานาชาติ เพื่อผลักดันการค้า การตลาด และเทคโนโลยีระหว่างกัน</span>
+      <span data-lang="la">ການຮ່ວມມືລະຫວ່າງພາກລັດ-ເອກະຊົນ ໄທ · ລາວ · ສາກົນ ເພື່ອສົ່ງເສີມການຄ້າ ການຕະຫຼາດ ແລະເຕັກໂນໂລຊີ</span>
+      <span data-lang="en">Public-private cooperation between Thailand · Laos · International partners to drive trade, marketing and technology exchange.</span>
+    </p>
+    <div class="hero-cta-row reveal d2">
+      <a href="/pages/event.html" class="btn-ghost">
+        <span data-lang="th" class="active">📅 ดูงาน Event</span>
+        <span data-lang="la">📅 ເບິ່ງງານ</span>
+        <span data-lang="en">📅 View Event</span>
+      </a>
+      <a href="/pages/membership.html" class="btn-gold">
+        <span data-lang="th" class="active">👑 สมัคร Founder Member</span>
+        <span data-lang="la">👑 ສະໝັກ Founder</span>
+        <span data-lang="en">👑 Apply Founder Member</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 1: STRATEGIC PARTNERS ══ -->
+<section class="section" id="strategic">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:2.5rem">
+      <span class="sec-label">⭐ Strategic Partners</span>
+      <h2 class="sec-heading">
+        <span data-lang="th" class="active">พันธมิตร<span>หลัก</span></span>
+        <span data-lang="la">ພັນທະ<span>ມິດຫຼັກ</span></span>
+        <span data-lang="en">Strategic <span>Partners</span></span>
+      </h2>
+      <p class="sec-desc" style="margin:0 auto">
+        <span data-lang="th" class="active">องค์กรชั้นนำที่ร่วมสร้างระบบนิเวศการค้า ไทย–ลาว อย่างครบวงจร</span>
+        <span data-lang="la">ອົງກອນຊັ້ນນຳທີ່ຮ່ວມສ້າງລະບົບການຄ້າ ໄທ–ລາວ</span>
+        <span data-lang="en">Leading organizations building a complete Thai–Lao trade ecosystem together.</span>
+      </p>
+    </div>
+
+    <!-- Big C -->
+    <div class="partner-card reveal">
+      <div>
+        <div class="partner-logo-box">
+          <img src="/images/Big_C.svg" alt="Big C Vientiane" loading="eager"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="partner-logo-fallback">BIG C</div>
+        </div>
+        <div class="progress-wrap" style="margin-top:1rem">
+          <div class="progress-label"><span>Showroom Setup</span><span>65%</span></div>
+          <div class="progress-bar"><div class="progress-fill" data-width="65"></div></div>
+        </div>
+        <div class="status-badge building" style="margin-top:.75rem;font-size:.7rem">
+          <span class="status-dot"></span>กำลังติดตั้ง · มิ.ย. 2026
+        </div>
+      </div>
+      <div>
+        <div class="partner-num">01</div>
+        <div class="partner-tag tag-venue">📍 สถานที่จัดงาน</div>
+        <div class="partner-name-big">Big C Vientiane</div>
+        <div class="partner-role-text">ห้างค้าปลีกอันดับ 1 ในเวียงจันทน์ สปป.ลาว</div>
+        <p class="partner-desc-text">Big C เวียงจันทน์คือจุดศูนย์รวมการค้าและผู้บริโภคที่ใหญ่ที่สุดในลาว ทำเลที่ตั้ง Showroom 200 ตร.ม. ของ VITH HUB อยู่ใจกลางห้างที่มีผู้เข้าชมหลักหมื่นรายต่อสัปดาห์</p>
+        <div class="partner-stats">
+          <div class="p-stat"><div class="p-stat-num">200</div><div class="p-stat-label">ตร.ม. Showroom</div></div>
+          <div class="p-stat"><div class="p-stat-num">#1</div><div class="p-stat-label">Retail in Laos</div></div>
+          <div class="p-stat"><div class="p-stat-num">มิ.ย.</div><div class="p-stat-label">เปิด 2026</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LITSE -->
+    <div class="partner-card reveal d1">
+      <div>
+        <div class="partner-logo-box">
+          <img src="/images/LITSE.png" alt="LITSE" loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="partner-logo-fallback">LITSE</div>
+        </div>
+        <div class="status-badge active" style="margin-top:.75rem;font-size:.7rem">
+          <span class="status-dot"></span>Active Partner
+        </div>
+      </div>
+      <div>
+        <div class="partner-num">02</div>
+        <div class="partner-tag tag-gov">🏛️ หน่วยงานรัฐลาว</div>
+        <div class="partner-name-big">LITSE</div>
+        <div class="partner-role-text">Lao Institute of Trade and SME Development</div>
+        <p class="partner-desc-text">หน่วยงานภาครัฐของสปป.ลาวที่รับผิดชอบด้านการพัฒนาการค้าและ SME เป็นผู้ออกใบอนุญาตและรับรองงานแสดงสินค้านานาชาติของ VITH HUB อย่างเป็นทางการ</p>
+        <div class="partner-stats">
+          <div class="p-stat"><div class="p-stat-num">Gov</div><div class="p-stat-label">Official</div></div>
+          <div class="p-stat"><div class="p-stat-num">MOU</div><div class="p-stat-label">Signed 2025</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VITH -->
+    <div class="partner-card reveal d2">
+      <div>
+        <div class="partner-logo-box">
+          <img src="/images/VITH.webp" alt="VITH Hub" loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="partner-logo-fallback">VITH</div>
+        </div>
+        <div class="status-badge active" style="margin-top:.75rem;font-size:.7rem">
+          <span class="status-dot"></span>Main Organizer
+        </div>
+      </div>
+      <div>
+        <div class="partner-num">03</div>
+        <div class="partner-tag tag-org">🎯 ผู้จัดงานหลัก</div>
+        <div class="partner-name-big">VITH Hub</div>
+        <div class="partner-role-text">Platform Operator & Event Organizer</div>
+        <p class="partner-desc-text">VITH HUB เป็นผู้ดำเนินการหลักในการจัดงาน Mekong Business Connect รับผิดชอบการคัดเลือกผู้แสดงสินค้า B2B Matching และบริหารจัดการ Managed Showroom ครบวงจร</p>
+        <div class="partner-stats">
+          <div class="p-stat"><div class="p-stat-num">80+</div><div class="p-stat-label">Exhibitors</div></div>
+          <div class="p-stat"><div class="p-stat-num">6</div><div class="p-stat-label">ประเทศ</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RB99 -->
+    <div class="partner-card reveal">
+      <div>
+        <div class="partner-logo-box">
+          <img src="/images/RB99.svg" alt="Royal Bridge 99" loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="partner-logo-fallback">RB99</div>
+        </div>
+        <div class="status-badge active" style="margin-top:.75rem;font-size:.7rem">
+          <span class="status-dot"></span>Active · Logistics Ready
+        </div>
+      </div>
+      <div>
+        <div class="partner-num">04</div>
+        <div class="partner-tag tag-logistics">🚚 Logistics Partner</div>
+        <div class="partner-name-big">Royal Bridge 99</div>
+        <div class="partner-role-text">Limited Partnership — Udon Thani, Thailand</div>
+        <p class="partner-desc-text">ผู้ให้บริการด้านโลจิสติกส์และขนส่งสินค้าข้ามพรมแดนไทย-ลาว รับผิดชอบการขนส่งสินค้าจากโรงงานไทยถึง Big C เวียงจันทน์ ฟรี 100 KG ต่อเดือนสำหรับ Founder Members</p>
+        <div class="partner-stats">
+          <div class="p-stat"><div class="p-stat-num">100</div><div class="p-stat-label">KG ฟรี/เดือน</div></div>
+          <div class="p-stat"><div class="p-stat-num">TH→LA</div><div class="p-stat-label">Cross-border</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Boualapha -->
+    <div class="partner-card reveal">
+      <div>
+        <div class="partner-logo-box">
+          <img src="/images/BP.webp" alt="Boualapha Khao-Khaoak" loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="partner-logo-fallback">BP</div>
+        </div>
+        <div class="progress-wrap" style="margin-top:1rem">
+          <div class="progress-label"><span>Partnership Active</span><span>100%</span></div>
+          <div class="progress-bar"><div class="progress-fill" data-width="100"></div></div>
+        </div>
+        <div class="status-badge active" style="margin-top:.75rem;font-size:.7rem">
+          <span class="status-dot"></span>Active · Lao Partner
+        </div>
+      </div>
+      <div>
+        <div class="partner-num">05</div>
+        <div class="partner-tag tag-agri">🌾 Agri Development</div>
+        <div class="partner-name-big">Boualapha Khao-Khaoak</div>
+        <div class="partner-role-text">Agricultural Development Co., Ltd. — สปป.ลาว</div>
+        <p class="partner-desc-text">ผู้เชี่ยวชาญด้านสินค้าเกษตรแปรรูปและวัตถุดิบในสปป.ลาว เป็นพันธมิตรหลักด้านการจัดซื้อและกระจายสินค้าเกษตรคุณภาพสูงระหว่างลาว–ไทย พร้อมเชื่อมเครือข่ายเกษตรกรและผู้ประกอบการท้องถิ่นกับตลาดนานาชาติผ่าน VITH HUB</p>
+        <div class="partner-stats">
+          <div class="p-stat"><div class="p-stat-num">🌾</div><div class="p-stat-label">Agri Export</div></div>
+          <div class="p-stat"><div class="p-stat-num">LAO</div><div class="p-stat-label">Local Expert</div></div>
+          <div class="p-stat"><div class="p-stat-num">MOU</div><div class="p-stat-label">Signed</div></div>
+        </div>
+        <div class="detail-box">
+          <div class="detail-box-head">Company Details</div>
+          <div class="detail-box-body">
+            🏢 Business Code: <strong style="color:#fff">17-00000261</strong><br>
+            🧾 Tax ID: <strong style="color:#fff">111516312900</strong><br>
+            📞 <a href="tel:+8562056605450">+856 20 56605450</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ SECTION 2: TIMELINE ══ -->
+<section class="section section-alt" id="timeline">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:.5rem">
+      <span class="sec-label">📋 Process Flow</span>
+      <h2 class="sec-heading">Operational <span>Roadmap</span></h2>
+      <p class="sec-desc" style="margin:0 auto;text-align:center">
+        <span data-lang="th" class="active">ขั้นตอนการนำสินค้าไทยสู่ตลาดลาวผ่าน VITH HUB ตั้งแต่ต้นจนจบ</span>
+        <span data-lang="la">ຂັ້ນຕອນການນຳສິນຄ້າໄທສູ່ຕະຫຼາດລາວຜ່ານ VITH HUB</span>
+        <span data-lang="en">Step-by-step process for bringing Thai products to the Lao market through VITH HUB.</span>
+      </p>
+    </div>
+    <div class="timeline-wrap reveal d1">
+
+      <div class="tl-item">
+        <div class="tl-dot done"></div>
+        <div class="tl-date">มกราคม 2026</div>
+        <div class="tl-title">🤝 MOU & Partnership Signed</div>
+        <div class="tl-desc">ลงนามบันทึกความเข้าใจกับ Big C Vientiane, LITSE และพันธมิตรหอการค้านานาชาติ ยืนยันความพร้อมเปิดตลาดอย่างเป็นทางการ</div>
+        <div class="tl-status done">✓ เสร็จสิ้น</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot done"></div>
+        <div class="tl-date">กุมภาพันธ์ 2026</div>
+        <div class="tl-title">📋 Booth Registration Open</div>
+        <div class="tl-desc">เปิดรับสมัครผู้แสดงสินค้า Phase 1 พร้อมระบบ B2B Matching กับผู้ซื้อจาก 6 ประเทศ</div>
+        <div class="tl-status done">✓ เสร็จสิ้น</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot current"></div>
+        <div class="tl-date">ปัจจุบัน — กำลังดำเนินการ</div>
+        <div class="tl-title">🏪 Phase 1: Mekong Business Connect</div>
+        <div class="tl-desc">งานแสดงสินค้านานาชาติ 5 วัน ณ Big C เวียงจันทน์ 60-80 บูท B2B Matching และ Chamber Networking</div>
+        <div class="tl-status current">⚡ กำลังดำเนินการ</div>
+        <div class="progress-wrap" style="margin-top:.75rem;max-width:300px">
+          <div class="progress-label"><span>Event Readiness</span><span>85%</span></div>
+          <div class="progress-bar"><div class="progress-fill" data-width="85"></div></div>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">เมษายน 2026</div>
+        <div class="tl-title">🏬 Managed Showroom Launch</div>
+        <div class="tl-desc">เปิด Showroom 200 ตร.ม. ถาวรใน Big C พร้อม Lao Staff ดูแลและระบบขายออนไลน์ภายในห้าง</div>
+        <div class="tl-status upcoming">⏳ เร็วๆ นี้</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">พฤษภาคม 2026</div>
+        <div class="tl-title">🚀 Phase 2: Scale Up</div>
+        <div class="tl-desc">ขยาย Showroom และเปิดรับ Founder Members เต็มรูปแบบ พร้อมเชื่อมเส้นทางรถไฟลาว-จีนสู่คุนหมิง</div>
+        <div class="tl-status upcoming">⏳ Coming Soon</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-date">Q3–Q4 2026</div>
+        <div class="tl-title">🌏 Mekong Distribution Network</div>
+        <div class="tl-desc">ขยายเครือข่ายสู่ตลาดจีน รัสเซีย และยุโรป ผ่านพันธมิตรหอการค้าที่ร่วมมือกว่า 6 ประเทศ</div>
+        <div class="tl-status upcoming">📅 วางแผน</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 3: TEAM ══ -->
+<section class="section" id="team">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:.5rem">
+      <span class="sec-label">👥 Executive Team</span>
+      <h2 class="sec-heading">
+        <span data-lang="th" class="active">ทีมผู้ก่อตั้ง<span> & ผู้บริหาร</span></span>
+        <span data-lang="la">ທີມ<span>ຜູ້ກໍ່ຕັ້ງ</span></span>
+        <span data-lang="en">Founders <span>& Executives</span></span>
+      </h2>
+      <p class="sec-desc" style="margin:0 auto;text-align:center">
+        <span data-lang="th" class="active">ทีมงานที่มีประสบการณ์ด้านการค้าระหว่างประเทศ โลจิสติกส์ และการพัฒนาธุรกิจในภูมิภาคอาเซียน</span>
+        <span data-lang="la">ທີມງານທີ່ມີປະສົບການດ້ານການຄ້າສາກົນ ໂລຈິສຕິກ ແລະການພັດທະນາທຸລະກິດໃນພາກພື້ນອາຊຽນ</span>
+        <span data-lang="en">Experienced team in international trade, logistics and ASEAN business development.</span>
+      </p>
+    </div>
+    <div class="team-grid reveal d1">
+      <div class="team-card">
+        <div class="team-avatar">👨‍💼</div>
+        <div class="team-name">ทีมผู้จัดการ</div>
+        <div class="team-pos">Chief Executive Officer<br>VITH HUB Platform</div>
+        <a href="https://linkedin.com" target="_blank" rel="noopener" class="team-linkedin">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">👩‍💼</div>
+        <div class="team-name">ทีมปฏิบัติการ</div>
+        <div class="team-pos">Head of Operations<br>Laos & Cross-border</div>
+        <a href="https://linkedin.com" target="_blank" rel="noopener" class="team-linkedin">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">🤝</div>
+        <div class="team-name">ทีมพันธมิตร</div>
+        <div class="team-pos">Business Development<br>B2B & Chamber Relations</div>
+        <a href="https://linkedin.com" target="_blank" rel="noopener" class="team-linkedin">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SECTION 4: CHAMBERS ══ -->
+<section class="section section-alt" id="chambers">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:.5rem">
+      <span class="sec-label">🌐 Alliance Network</span>
+      <h2 class="sec-heading">
+        <span data-lang="th" class="active">หอการค้า<span>พันธมิตร</span></span>
+        <span data-lang="la">ຫໍການຄ້າ<span>ພັນທະມິດ</span></span>
+        <span data-lang="en">Chamber <span>Alliance</span></span>
+      </h2>
+      <p class="sec-desc" style="margin:0 auto;text-align:center">
+        <span data-lang="th" class="active">เครือข่ายหอการค้านานาชาติที่ร่วมมือกับ VITH HUB เพื่อเชื่อมผู้ซื้อและผู้ขายข้ามพรมแดน</span>
+        <span data-lang="la">ເຄືອຂ່າຍຫໍການຄ້າສາກົນທີ່ຮ່ວມມືກັບ VITH HUB ເພື່ອເຊື່ອມຜູ້ຊື້ ຜູ້ຂາຍຂ້າມຊາຍແດນ</span>
+        <span data-lang="en">International chambers partnering with VITH HUB to connect cross-border buyers and sellers.</span>
+      </p>
+    </div>
+    <div class="chambers-grid reveal d1">
+      <div class="chamber-card">
+        <div class="chamber-flag">🇱🇦</div>
+        <div class="chamber-name">LNCCI</div>
+        <div class="chamber-country">Lao National Chamber of Commerce</div>
+      </div>
+      <div class="chamber-card">
+        <div class="chamber-flag">🇹🇭</div>
+        <div class="chamber-name">Thai Business Association</div>
+        <div class="chamber-country">Thailand Business in Laos</div>
+      </div>
+      <div class="chamber-card">
+        <div class="chamber-flag">🇪🇺</div>
+        <div class="chamber-name">ECCIL</div>
+        <div class="chamber-country">European Chamber of Commerce in Laos</div>
+      </div>
+      <div class="chamber-card">
+        <div class="chamber-flag">🇨🇳</div>
+        <div class="chamber-name">Chinese Chamber</div>
+        <div class="chamber-country">Chinese Chamber of Commerce, Laos</div>
+      </div>
+      <div class="chamber-card">
+        <div class="chamber-flag">🇦🇺</div>
+        <div class="chamber-name">AustCham Laos</div>
+        <div class="chamber-country">Australian Chamber of Commerce</div>
+      </div>
+      <div class="chamber-card">
+        <div class="chamber-flag">🇰🇷</div>
+        <div class="chamber-name">Korean Chamber</div>
+        <div class="chamber-country">Korean Business Association, Laos</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo-name">VITH<em>HUB</em></div>
+        <div class="footer-tagline">Gateway for Thai SMEs to International Markets</div>
+        <div class="footer-nav">
+          <a href="/index.html">หน้าหลัก</a>
+          <a href="/pages/event.html">Event</a>
+          <a href="/pages/membership.html">👑 Founder Member</a>
+          <a href="/salesdeck">Sales Deck</a>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
+        <div>
+          <div class="footer-partner-head">🇹🇭 Thailand</div>
+          <div class="footer-partner-name">Royal Bridge 99 Ltd. Partnership</div>
+          <div class="footer-partner-detail">
+            211 Moo 3, T.Ban Chan<br>A.Muang, Udon Thani 41000<br>
+            <a href="tel:+66855907666">+66 85 590 7666</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-partner-head">🇱🇦 Laos</div>
+          <div class="footer-partner-name">Boualapha Khao-Khaoak Agri. Dev. Co., Ltd.</div>
+          <div class="footer-partner-detail">
+            Business: 17-00000261<br>
+            Tax ID: 111516312900<br>
+            <a href="tel:+8562056605450">+856 20 56605450</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-legal">
+        <a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms & Conditions</a>
+        <span style="margin-left:.75rem">© 2026 VITH HUB · vithhub.asia</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY CTA -->
+<div class="sticky-apply">
+  <div class="sticky-apply-text">👑 Founder Member · <span><span data-lang="th" class="active">เหลือ 20 Slots</span><span data-lang="la">ເຫຼືອ 20 Slots</span><span data-lang="en">20 Slots Left</span></span></div>
+  <a href="/pages/membership.html" class="sticky-apply-btn">
+    <span data-lang="th" class="active">สมัครตอนนี้ →</span>
+    <span data-lang="la">ສະໝັກດຽວນີ້ →</span>
+    <span data-lang="en">Apply Now →</span>
+  </a>
+</div>
+
+<!-- DESKTOP FLOATING CTA -->
+<div class="float-cta">
+  <a href="/pages/membership.html" class="float-btn gold">👑 Apply for Founder</a>
+  <a href="https://line.me/ti/p/@cef8930n" class="float-btn line" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
+    LINE
+  </a>
+</div>
+
+<script>
+// ── LANG ──
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.dataset.lang === lang);
+  });
+  ['vLangTH','vLangLA','vLangEN'].forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.classList.toggle('active', el.textContent.toLowerCase().replace('lao','la') === lang || (id==='vLangTH'&&lang==='th') || (id==='vLangLA'&&lang==='la') || (id==='vLangEN'&&lang==='en'));
+  });
+  localStorage.setItem('vith-lang', lang);
+}
+document.addEventListener('DOMContentLoaded', () => {
+  const s = localStorage.getItem('vith-lang');
+  if(['th','la','en'].includes(s)) setLang(s);
+});
+
+// ── NAV SCROLL ──
+const nav = document.getElementById('mainNav');
+if(nav) window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// ── REVEAL ──
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('in'); });
+}, {threshold:0.07});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// ── PROGRESS BARS ──
+const progObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      const fill = e.target.querySelector('.progress-fill');
+      if(fill) fill.style.width = fill.dataset.width + '%';
+      progObs.unobserve(e.target);
+    }
+  });
+}, {threshold:0.3});
+document.querySelectorAll('.progress-wrap').forEach(el => progObs.observe(el));
+</script>
+</body>
+</html>
