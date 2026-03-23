@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=5.0">
+<title>ยื่นใบสมัคร — VITH HUB | Mekong Growth Expo · Retail Entry · Membership</title>
+<meta name="description" content="ยื่นใบสมัครกับ VITH HUB — เลือกโปรแกรมที่เหมาะกับธุรกิจของคุณ: ออกบูท Expo 2026, Retail Entry 90 วัน, หรือ Membership รายปี">
+<meta property="og:title" content="สมัครออกบูท — Mekong Growth Expo 2026">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Kanit:wght@400;600;700;800;900&family=Noto+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:'Inter','Noto Sans Thai','Plus Jakarta Sans',sans-serif;color:#0B1F3B;background:#06111f;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;font-family:inherit}
+
+:root{
+  --navy:#0B1F3B; --navy2:#0d2545; --navy3:#020d1f;
+  --gold:#C9A227; --gold2:#E4BC4A; --gold3:#F5D680; --goldDk:#9B7A10;
+  --red:#e5141e;
+  --white:#fff; --off:#F7F5F0; --gray:#F0EDE8;
+  --sub:#4a5c78; --border:#DDD8CC;
+  --r:10px; --rLg:18px;
+  --shadow:0 4px 28px rgba(11,31,59,.10); --shadowLg:0 16px 56px rgba(11,31,59,.16);
+  --max:1200px;
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes shimmer{0%{background-position:200% center}100%{background-position:-200% center}}
+@keyframes blk{0%,100%{opacity:1}50%{opacity:.2}}
+@keyframes pulseGold{0%,100%{box-shadow:0 4px 20px rgba(201,162,39,.4)}50%{box-shadow:0 8px 36px rgba(201,162,39,.7)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ── NAV ── */
+:root{--vn-bg:rgba(15,23,42,.96);--vn-border:rgba(234,179,8,.18);--vn-gold:#EAB308;--vn-gold2:#FCD34D;--vn-goldDk:#A16207}
+.vith-nav{position:sticky;top:0;z-index:900;height:64px;background:var(--vn-bg);backdrop-filter:blur(24px) saturate(1.5);-webkit-backdrop-filter:blur(24px) saturate(1.5);border-bottom:1px solid var(--vn-border);transition:all .25s}
+.vith-nav.scrolled{background:rgba(2,6,23,.97);box-shadow:0 2px 24px rgba(0,0,0,.3)}
+.vith-nav-inner{max-width:1200px;margin:0 auto;height:64px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.vith-nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;text-decoration:none}
+.vith-nav-logo-mark{width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,var(--vn-goldDk),var(--vn-gold),var(--vn-gold2));display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1rem;color:#020617;flex-shrink:0;box-shadow:0 2px 12px rgba(234,179,8,.3)}
+.vith-nav-logo-stack{display:flex;flex-direction:column}
+.vith-nav-logo-text{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:800;color:#fff;letter-spacing:-.01em;line-height:1}
+.vith-nav-logo-text span{color:var(--vn-gold2)}
+.vith-nav-logo-sub{font-family:'Inter',sans-serif;font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);display:block;margin-top:2px}
+.vith-nav-links{display:flex;align-items:center;gap:2px}
+.vith-nav-a{font-family:'Inter',sans-serif;font-size:13.5px;font-weight:500;color:rgba(255,255,255,.58);padding:7px 13px;border-radius:8px;transition:all .25s;white-space:nowrap;text-decoration:none}
+.vith-nav-a:hover,.vith-nav-a.active{color:#fff;background:rgba(255,255,255,.08)}
+.vith-nav-right{display:flex;align-items:center;gap:10px}
+.vith-nav-cta{font-family:'Plus Jakarta Sans',sans-serif;font-size:13.5px;font-weight:700;background:linear-gradient(135deg,var(--vn-goldDk),var(--vn-gold),var(--vn-gold2));color:#020617;padding:9px 20px;border-radius:8px;border:none;display:inline-flex;align-items:center;gap:6px;transition:all .25s;text-decoration:none;letter-spacing:-.01em;box-shadow:0 2px 10px rgba(234,179,8,.25)}
+.vith-nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 32px rgba(234,179,8,.3)}
+.vith-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;cursor:pointer}
+.vith-hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.8);border-radius:2px;transition:all .25s}
+.vith-mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:rgba(2,6,23,.99);backdrop-filter:blur(20px);padding:20px;border-bottom:1px solid rgba(234,179,8,.2);flex-direction:column;gap:4px;z-index:898;box-shadow:0 16px 40px rgba(0,0,0,.3)}
+.vith-mobile-menu.open{display:flex}
+.vith-mob-link{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:600;color:rgba(255,255,255,.65);padding:11px 14px;border-radius:8px;text-decoration:none;transition:all .2s}
+.vith-mob-link:hover,.vith-mob-link.active{color:#fff;background:rgba(255,255,255,.08)}
+.vith-mob-cta{font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:700;background:linear-gradient(135deg,var(--vn-goldDk),var(--vn-gold));color:#020617;padding:13px 20px;border-radius:8px;text-align:center;margin-top:10px;text-decoration:none}
+@media(max-width:900px){.vith-nav-links{display:none}.vith-hamburger{display:flex}}
+@media(max-width:600px){.vith-nav-cta{display:none}}
+
+/* ── ANNOUNCE BAR ── */
+.announce-bar{background:linear-gradient(90deg,var(--navy),var(--navy2));color:rgba(255,255,255,.88);text-align:center;padding:10px 1.5rem;font-family:'Kanit',sans-serif;font-size:.8rem;font-weight:500;display:flex;align-items:center;justify-content:center;gap:.75rem;flex-wrap:wrap;position:relative;z-index:500}
+.announce-bar strong{color:var(--gold2)}
+.announce-bar a{color:var(--gold2);font-weight:700;text-decoration:underline}
+.a-dot{width:6px;height:6px;border-radius:50%;background:var(--gold2);flex-shrink:0;animation:blk 1.4s infinite}
+
+/* ── HERO ── */
+.apply-hero{position:relative;padding:80px 20px 60px;background:linear-gradient(150deg,#050d1a 0%,#0B1F3B 60%,#0d2d54 100%);overflow:hidden}
+.apply-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(201,162,39,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,162,39,.04) 1px,transparent 1px);background-size:64px 64px;pointer-events:none}
+.apply-hero-glow{position:absolute;top:-10%;left:50%;transform:translateX(-50%);width:900px;height:600px;background:radial-gradient(ellipse,rgba(201,162,39,.07) 0%,transparent 65%);pointer-events:none}
+.apply-hero-inner{position:relative;z-index:1;max-width:760px;margin:0 auto;text-align:center}
+.apply-hero-badge{display:inline-flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);padding:6px 16px;border-radius:20px;border:1px solid rgba(201,162,39,.38);background:rgba(201,162,39,.07);margin-bottom:1.5rem;animation:fadeUp .8s .1s both}
+.apply-hero-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:900;font-size:clamp(2rem,5vw,3.25rem);letter-spacing:-1.5px;line-height:1.06;color:#fff;margin-bottom:.625rem;animation:fadeUp .8s .2s both}
+.apply-hero-title .shimmer{background:linear-gradient(90deg,#fff 0%,#D4AF37 40%,#F5D680 55%,#D4AF37 70%,#fff 100%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 4s linear 1.5s infinite}
+.apply-hero-sub{font-family:'Inter',sans-serif;font-size:1rem;color:rgba(255,255,255,.58);line-height:1.7;margin-bottom:2rem;animation:fadeUp .8s .3s both}
+
+/* Trust logos bar */
+.trust-bar{display:flex;align-items:center;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:2.5rem;animation:fadeUp .8s .35s both}
+.trust-logo-pill{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:30px;padding:8px 16px}
+.trust-logo-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:.8rem;font-weight:700;color:rgba(255,255,255,.75)}
+.trust-logo-mark{width:24px;height:24px;border-radius:6px;background:linear-gradient(135deg,#6aaa1e,#4d8a16);display:flex;align-items:center;justify-content:center;font-family:'Arial Black',sans-serif;font-size:.55rem;font-weight:900;color:#FFD000;flex-shrink:0}
+.trust-vith-mark{background:linear-gradient(135deg,var(--goldDk),var(--gold));color:#020617;font-family:'Plus Jakarta Sans',sans-serif;font-size:.65rem;font-weight:800;width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+/* ── STEPPER ── */
+.stepper-wrap{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:2.5rem;animation:fadeUp .8s .4s both}
+.step-item{display:flex;align-items:center;gap:0}
+.step-circle{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Plus Jakarta Sans',sans-serif;font-size:.8rem;font-weight:800;transition:all .35s;flex-shrink:0}
+.step-circle.active{background:linear-gradient(135deg,var(--goldDk),var(--gold));color:#020617;box-shadow:0 4px 16px rgba(201,162,39,.45)}
+.step-circle.done{background:rgba(201,162,39,.15);border:1.5px solid var(--gold);color:var(--gold2)}
+.step-circle.idle{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.15);color:rgba(255,255,255,.35)}
+.step-label{font-family:'Inter',sans-serif;font-size:.72rem;font-weight:600;color:rgba(255,255,255,.45);margin-left:8px;white-space:nowrap;transition:color .35s}
+.step-label.active{color:var(--gold2)}
+.step-label.done{color:rgba(255,255,255,.6)}
+.step-connector{width:48px;height:1.5px;background:rgba(255,255,255,.12);margin:0 8px;flex-shrink:0;transition:background .35s}
+.step-connector.done{background:linear-gradient(90deg,var(--gold),var(--gold2))}
+@media(max-width:480px){.step-label{display:none}.step-connector{width:28px}}
+
+/* ── FORM CARD ── */
+.form-section{padding:40px 20px 80px;background:#06111f}
+.form-card{max-width:720px;margin:0 auto;background:#fff;border-radius:20px;box-shadow:0 24px 80px rgba(0,0,0,.5),0 0 0 1px rgba(201,162,39,.1);overflow:hidden}
+.form-card-head{background:linear-gradient(135deg,var(--navy),var(--navy2));padding:1.75rem 2rem;position:relative;overflow:hidden}
+.form-card-head::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.form-card-head::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(201,162,39,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,162,39,.04) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
+.fch-eyebrow{font-family:'Inter',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold2);margin-bottom:.375rem;position:relative;z-index:1}
+.fch-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.35rem;font-weight:800;color:#fff;letter-spacing:-.02em;position:relative;z-index:1}
+.fch-sub{font-family:'Inter',sans-serif;font-size:.82rem;color:rgba(255,255,255,.5);margin-top:.35rem;position:relative;z-index:1}
+.fch-progress{margin-top:1.25rem;position:relative;z-index:1}
+.fch-prog-bar{height:4px;background:rgba(255,255,255,.1);border-radius:4px;overflow:hidden;margin-top:.5rem}
+.fch-prog-fill{height:100%;background:linear-gradient(90deg,var(--goldDk),var(--gold2));border-radius:4px;transition:width .5s ease}
+.fch-prog-labels{display:flex;justify-content:space-between;font-family:'Inter',sans-serif;font-size:.65rem;color:rgba(255,255,255,.35);margin-top:.35rem}
+
+/* ── FORM BODY ── */
+.form-body{padding:2rem}
+.form-step{display:none}
+.form-step.active{display:block;animation:fadeUp .4s ease}
+
+/* Form fields */
+.field-group{margin-bottom:1.25rem}
+.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.f-label{font-family:'Inter',sans-serif;font-size:.75rem;font-weight:600;color:var(--navy);margin-bottom:.4rem;display:flex;align-items:center;gap:5px}
+.f-label .req{color:var(--red);font-size:.7rem}
+.f-input,.f-select,.f-textarea{font-family:'Inter','Noto Sans Thai',sans-serif;font-size:.875rem;padding:11px 14px;border:1.5px solid var(--border);border-radius:10px;color:var(--navy);background:#fff;width:100%;transition:all .2s;outline:none}
+.f-input:focus,.f-select:focus,.f-textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,39,.12)}
+.f-input::placeholder,.f-textarea::placeholder{color:rgba(11,31,59,.28)}
+.f-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234a5c78' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;cursor:pointer}
+.f-textarea{resize:vertical;min-height:90px;line-height:1.6}
+.span-2{grid-column:1/-1}
+.f-hint{font-family:'Inter',sans-serif;font-size:.68rem;color:rgba(11,31,59,.4);margin-top:.3rem;line-height:1.5}
+.f-input.invalid,.f-select.invalid,.f-textarea.invalid{border-color:var(--red)!important;box-shadow:0 0 0 3px rgba(229,20,30,.1)!important}
+.f-input.invalid:focus,.f-select.invalid:focus{border-color:var(--red)!important}
+.field-err{font-family:'Inter',sans-serif;font-size:.68rem;color:var(--red);margin-top:.35rem;display:none;align-items:center;gap:4px}
+.field-err.show{display:flex}
+@keyframes shake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-5px)}40%,80%{transform:translateX(5px)}}
+
+/* Radio / Checkbox pills */
+.pill-group{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+.pill-input{display:none}
+.pill-label{font-family:'Inter',sans-serif;font-size:.8rem;font-weight:500;color:var(--sub);padding:8px 14px;border:1.5px solid var(--border);border-radius:20px;cursor:pointer;transition:all .2s;user-select:none}
+.pill-input:checked + .pill-label{background:linear-gradient(135deg,rgba(201,162,39,.1),rgba(201,162,39,.08));border-color:var(--gold);color:var(--navy);font-weight:700}
+
+/* ── PRE-STEP PROGRAM PICKER ── */
+.pre-prog-wrap{width:100%;max-width:660px;margin:0 auto 2.5rem;animation:fadeUp .8s .4s both}
+.pre-prog-label{font-family:'Inter',sans-serif;font-size:.78rem;font-weight:700;color:rgba(255,255,255,.55);letter-spacing:.04em;margin-bottom:.875rem;text-align:center}
+.pre-prog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:.625rem}
+.pre-prog-card{position:relative;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.12);border-radius:14px;padding:1.25rem .875rem 1rem;cursor:pointer;transition:all .25s;text-align:center;user-select:none}
+.pre-prog-card:hover{border-color:rgba(201,162,39,.4);background:rgba(201,162,39,.06);transform:translateY(-2px)}
+.pre-prog-card.chosen{border-color:var(--gold);background:rgba(201,162,39,.1);box-shadow:0 4px 20px rgba(201,162,39,.2)}
+.pre-prog-star{border-color:rgba(201,162,39,.3);background:rgba(201,162,39,.05)}
+.pre-prog-badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--goldDk),var(--gold2));color:#020617;font-family:'Plus Jakarta Sans',sans-serif;font-size:.58rem;font-weight:800;padding:3px 12px;border-radius:20px;white-space:nowrap;letter-spacing:.08em}
+.pre-prog-check{width:20px;height:20px;border-radius:50%;border:1.5px solid rgba(255,255,255,.2);background:transparent;margin:0 auto .625rem;transition:all .25s;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:800;color:transparent}
+.pre-prog-card.chosen .pre-prog-check{background:var(--gold);border-color:var(--gold);color:#020617}
+.pre-prog-icon{font-size:1.5rem;margin-bottom:.375rem}
+.pre-prog-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;font-weight:800;color:#fff;line-height:1.2;margin-bottom:.25rem}
+.pre-prog-sub{font-family:'Inter',sans-serif;font-size:.68rem;color:rgba(255,255,255,.45);line-height:1.4}
+.pre-prog-err{font-family:'Inter',sans-serif;font-size:.72rem;color:#f87171;text-align:center;margin-bottom:.625rem;display:none}
+.pre-prog-err.show{display:block}
+.pre-prog-btn{display:block;width:100%;font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:700;background:linear-gradient(135deg,var(--goldDk),var(--gold),var(--gold2));color:#020617;padding:14px 24px;border-radius:10px;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(201,162,39,.4);transition:all .3s;animation:pulseGold 2.5s infinite}
+.pre-prog-btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(201,162,39,.55)}
+@media(max-width:500px){.pre-prog-grid{grid-template-columns:1fr}.pre-prog-card{display:flex;align-items:center;gap:.875rem;text-align:left;padding:.875rem 1rem}.pre-prog-check{margin:0;flex-shrink:0}.pre-prog-icon{font-size:1.25rem;margin:0;flex-shrink:0}.pre-prog-badge{top:-10px}}
+.prog-select-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.875rem;margin-bottom:.375rem}
+.prog-card{position:relative;border:1.5px solid var(--border);border-radius:14px;padding:1.375rem 1.125rem 1.125rem;cursor:pointer;transition:all .25s;background:#fff;display:flex;flex-direction:column;gap:.5rem}
+.prog-card:hover{border-color:var(--gold);box-shadow:0 4px 20px rgba(201,162,39,.1);transform:translateY(-2px)}
+.prog-card.selected{border-color:var(--gold);background:rgba(201,162,39,.04);box-shadow:0 4px 20px rgba(201,162,39,.18)}
+.prog-card.prog-featured{border-color:rgba(201,162,39,.35);box-shadow:0 4px 16px rgba(201,162,39,.12)}
+.prog-featured-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--goldDk),var(--gold2));color:#020617;font-family:'Plus Jakarta Sans',sans-serif;font-size:.6rem;font-weight:800;padding:3px 14px;border-radius:20px;white-space:nowrap;letter-spacing:.08em;box-shadow:0 2px 8px rgba(201,162,39,.35)}
+.prog-tag{display:inline-flex;align-items:center;gap:5px;font-family:'Inter',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:20px;border:1px solid;width:fit-content}
+.prog-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:.975rem;font-weight:800;color:var(--navy);letter-spacing:-.015em;line-height:1.2}
+.prog-desc{font-family:'Inter',sans-serif;font-size:.75rem;color:var(--sub);line-height:1.6;flex:1}
+.prog-date{font-family:'Inter',sans-serif;font-size:.7rem;color:rgba(11,31,59,.4);font-weight:500}
+.prog-price-row{display:flex;align-items:baseline;gap:.375rem;margin-top:.25rem}
+.prog-price{font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:900;color:var(--navy)}
+.prog-price-note{font-family:'Inter',sans-serif;font-size:.68rem;color:var(--sub)}
+.prog-detail-link{font-family:'Inter',sans-serif;font-size:.72rem;font-weight:600;color:var(--goldDk);margin-top:.25rem;align-self:flex-start;text-decoration:underline;position:relative;z-index:2}
+.prog-detail-link:hover{color:var(--gold)}
+@media(max-width:620px){.prog-select-grid{grid-template-columns:1fr}}
+.pkg-select-card{position:relative;border:1.5px solid var(--border);border-radius:14px;padding:1.25rem;cursor:pointer;transition:all .25s;background:#fff}
+.pkg-select-card:hover{border-color:var(--gold);box-shadow:0 4px 20px rgba(201,162,39,.1)}
+.pkg-select-card.selected{border-color:var(--gold);background:rgba(201,162,39,.05);box-shadow:0 4px 20px rgba(201,162,39,.15)}
+.pkg-select-radio{position:absolute;opacity:0;width:0;height:0}
+.pkg-sel-check{position:absolute;top:12px;right:12px;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--border);background:#fff;transition:all .25s;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:transparent}
+.pkg-select-card.selected .pkg-sel-check,
+.prog-card.selected .pkg-sel-check{background:var(--gold);border-color:var(--gold);color:#020617}
+.pkg-sel-zone{font-family:'Inter',sans-serif;font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--goldDk);margin-bottom:.3rem}
+.pkg-sel-name{font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:800;color:var(--navy);margin-bottom:.2rem}
+.pkg-sel-size{font-family:'Inter',sans-serif;font-size:.75rem;color:var(--sub);margin-bottom:.625rem}
+.pkg-sel-price{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.25rem;font-weight:900;color:var(--navy)}
+.pkg-sel-price span{font-size:.75rem;font-weight:500;color:var(--sub)}
+.pkg-sel-avail{font-family:'Inter',sans-serif;font-size:.7rem;color:var(--red);font-weight:600;margin-top:.3rem}
+.pkg-premium-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--goldDk),var(--gold2));color:#020617;font-family:'Plus Jakarta Sans',sans-serif;font-size:.6rem;font-weight:800;padding:3px 12px;border-radius:20px;letter-spacing:.08em;white-space:nowrap;box-shadow:0 2px 8px rgba(201,162,39,.35)}
+@media(max-width:480px){.pkg-select-grid{grid-template-columns:1fr}}
+
+/* Drive link box */
+.drive-link-box{background:rgba(201,162,39,.04);border:1.5px solid rgba(201,162,39,.2);border-radius:12px;padding:1.125rem 1.25rem;display:flex;flex-direction:column;gap:.75rem}
+.dlb-row{display:flex;align-items:center;gap:.75rem}
+.dlb-icon{font-size:1.5rem;flex-shrink:0}
+.dlb-text{font-family:'Plus Jakarta Sans',sans-serif;font-size:.875rem;font-weight:700;color:var(--navy)}
+.dlb-sub{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--sub);line-height:1.55;margin-top:.15rem}
+.dlb-or{text-align:center;font-family:'Inter',sans-serif;font-size:.72rem;color:rgba(11,31,59,.3);font-weight:600;letter-spacing:.06em}
+.dlb-line-row{display:flex;align-items:center;gap:.75rem;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;padding:.875rem 1rem}
+.dlb-line-icon{width:32px;height:32px;border-radius:8px;background:#06C755;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.dlb-line-text{font-family:'Inter',sans-serif;font-size:.78rem;color:#14532d;line-height:1.55}
+.dlb-line-text strong{color:#15803d}
+
+/* Section divider inside form */
+.form-section-label{font-family:'Plus Jakarta Sans',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--goldDk);padding-bottom:.625rem;border-bottom:1px solid rgba(201,162,39,.2);margin-bottom:1.25rem;display:flex;align-items:center;gap:6px}
+
+/* Nav buttons */
+.form-nav{display:flex;align-items:center;justify-content:space-between;gap:.875rem;margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid var(--gray)}
+.btn-back{font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;font-weight:700;background:none;border:1.5px solid var(--border);color:var(--sub);padding:12px 22px;border-radius:10px;transition:all .2s;cursor:pointer}
+.btn-back:hover{border-color:var(--navy);color:var(--navy)}
+.btn-next,.btn-submit{font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;font-weight:700;background:linear-gradient(135deg,var(--goldDk),var(--gold),var(--gold2));color:var(--navy);padding:14px 28px;border-radius:10px;border:none;cursor:pointer;transition:all .3s;box-shadow:0 4px 20px rgba(201,162,39,.4);display:flex;align-items:center;gap:8px;margin-left:auto}
+.btn-next:hover,.btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(201,162,39,.55)}
+.btn-submit{animation:pulseGold 2.5s infinite}
+.btn-submit:disabled{opacity:.6;cursor:not-allowed;animation:none;transform:none!important}
+
+/* ── THANK YOU STATE ── */
+.thankyou-state{display:none;text-align:center;padding:3rem 1.5rem}
+.ty-icon{font-size:3.5rem;margin-bottom:1.25rem}
+.ty-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.75rem;font-weight:900;color:var(--navy);margin-bottom:.5rem;letter-spacing:-.02em}
+.ty-sub{font-family:'Inter',sans-serif;font-size:.95rem;color:var(--sub);line-height:1.7;margin-bottom:1.75rem}
+.ty-ref{display:inline-block;background:var(--off);border:1px solid var(--border);border-radius:10px;padding:.625rem 1.25rem;font-family:'Inter',sans-serif;font-size:.8rem;color:var(--sub);margin-bottom:1.75rem}
+.ty-ref strong{color:var(--navy)}
+.ty-actions{display:flex;flex-direction:column;align-items:center;gap:.875rem}
+.ty-line-btn{display:inline-flex;align-items:center;gap:8px;background:#06C755;color:#fff;padding:13px 24px;border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.95rem;box-shadow:0 4px 18px rgba(6,199,85,.35);text-decoration:none;transition:all .25s}
+.ty-line-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(6,199,85,.45)}
+.ty-back{font-family:'Inter',sans-serif;font-size:.8rem;color:var(--sub)}
+.ty-back a{color:var(--goldDk);font-weight:600}
+
+/* ── INFO SIDEBAR (below card on mobile, side on desktop) ── */
+.page-layout{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:minmax(0,720px) 1fr;gap:2.5rem;padding:0 20px;align-items:start}
+@media(max-width:880px){.page-layout{grid-template-columns:1fr;max-width:720px}.form-sidebar{margin-top:2rem}}
+.form-sidebar{padding-top:4px}
+.sidebar-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1.5rem;margin-bottom:1.25rem}
+.sc-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;font-weight:800;color:var(--gold2);margin-bottom:1rem;display:flex;align-items:center;gap:7px}
+.sc-item{display:flex;align-items:flex-start;gap:.75rem;padding:.625rem 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.sc-item:last-child{border-bottom:none;padding-bottom:0}
+.sc-icon{font-size:1rem;flex-shrink:0;margin-top:.05rem}
+.sc-text{font-family:'Inter',sans-serif;font-size:.78rem;color:rgba(255,255,255,.55);line-height:1.55}
+.sc-text strong{color:rgba(255,255,255,.8)}
+.sidebar-contact{background:linear-gradient(135deg,rgba(201,162,39,.08),rgba(201,162,39,.04));border:1px solid rgba(201,162,39,.2);border-radius:16px;padding:1.25rem}
+.sco-line{display:flex;align-items:center;gap:.625rem;font-family:'Inter',sans-serif;font-size:.78rem;color:rgba(255,255,255,.65);margin-bottom:.625rem}
+.sco-line:last-child{margin-bottom:0}
+.sco-line a{color:var(--gold2)}
+
+/* ── FOOTER ── */
+.site-footer{background:var(--navy3);padding:3rem 2rem 2rem}
+.footer-inner{max-width:var(--max);margin:0 auto}
+.footer-bottom{padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;font-family:'Inter',sans-serif;font-size:.72rem;color:rgba(255,255,255,.3)}
+.footer-bottom a{color:rgba(255,255,255,.4)}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(80px);background:var(--navy);color:#fff;padding:12px 24px;border-radius:12px;font-family:'Inter',sans-serif;font-size:.88rem;font-weight:600;box-shadow:0 8px 32px rgba(0,0,0,.3);z-index:600;transition:transform .35s cubic-bezier(.34,1.56,.64,1),opacity .35s;opacity:0;border:1px solid rgba(201,162,39,.3)}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+
+/* ── SPINNER ── */
+.spinner{width:18px;height:18px;border:2.5px solid rgba(11,31,59,.25);border-top-color:var(--navy);border-radius:50%;animation:spin .8s linear infinite;flex-shrink:0}
+
+@media(max-width:640px){
+  .field-grid{grid-template-columns:1fr}
+  .form-body{padding:1.25rem}
+  .form-card-head{padding:1.25rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCE BAR -->
+<div class="announce-bar">
+  <div class="a-dot"></div>
+  <strong>Mekong Growth Expo 2026</strong>
+  <span>· 28 May–1 June · Big C Vientiane ·</span>
+  <a href="/pages/event.html">ดูรายละเอียดงาน →</a>
+  <span>·</span>
+  <a href="/pages/buyers.html">Register as Buyer →</a>
+</div>
+
+<!-- NAV -->
+<nav class="vith-nav" id="vithNav">
+  <div class="vith-nav-inner">
+    <a href="/index.html" class="vith-nav-logo">
+      <div class="vith-nav-logo-mark">V</div>
+      <div class="vith-nav-logo-stack">
+        <div class="vith-nav-logo-text">VITH<span>HUB</span></div>
+        <span class="vith-nav-logo-sub">Mekong Trade Gateway</span>
+      </div>
+    </a>
+    <div class="vith-nav-links">
+      <a href="/index.html" class="vith-nav-a">Home</a>
+      <a href="/pages/gateway.html" class="vith-nav-a">Gateway</a>
+      <a href="/pages/accelerator.html" class="vith-nav-a">Retail Entry</a>
+      <a href="/pages/event.html" class="vith-nav-a">Event</a>
+      <a href="/pages/membership.html" class="vith-nav-a">Membership</a>
+      <a href="/pages/about.html" class="vith-nav-a">About</a>
+      <a href="/pages/apply.html" class="vith-nav-a active">สมัคร ✦</a>
+    </div>
+    <div class="vith-nav-right">
+      <a href="/pages/event.html" class="vith-nav-cta">🗓 Event 2026</a>
+      <button class="vith-hamburger" onclick="vithToggleNav()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="vith-mobile-menu" id="vithMobileMenu">
+  <a href="/index.html" class="vith-mob-link">Home</a>
+  <a href="/pages/gateway.html" class="vith-mob-link">Gateway</a>
+  <a href="/pages/accelerator.html" class="vith-mob-link">Retail Entry</a>
+  <a href="/pages/event.html" class="vith-mob-link">Event</a>
+  <a href="/pages/membership.html" class="vith-mob-link">Membership</a>
+  <a href="/pages/about.html" class="vith-mob-link">About</a>
+  <a href="/pages/buyers.html" class="vith-mob-link">🎟 Register as Buyer</a>
+  <a href="/pages/event.html" class="vith-mob-cta">🗓 Event 2026 →</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="apply-hero">
+  <div class="apply-hero-glow"></div>
+  <div class="apply-hero-inner">
+    <div class="apply-hero-badge">
+      <span style="width:6px;height:6px;border-radius:50%;background:var(--gold2);animation:blk 1.4s infinite;flex-shrink:0"></span>
+      ยื่นใบสมัคร · VITH HUB Programs
+    </div>
+    <h1 class="apply-hero-title">ลงทะเบียนคัดกรอง<br><span class="shimmer">เข้าสู่ VITH HUB โปรแกรม</span></h1>
+    <p class="apply-hero-sub">3 ขั้นตอนง่าย · ทีมงานพิจารณาและติดต่อกลับภายใน 48 ชั่วโมง<br>Expo 2026 · Retail Entry 90 วัน · VITH HUB Membership</p>
+
+    <!-- Trust logos -->
+    <div class="trust-bar">
+      <div class="trust-logo-pill">
+        <div class="trust-logo-mark">C</div>
+        <span class="trust-logo-label">Big C Vientiane</span>
+      </div>
+      <div class="trust-logo-pill">
+        <div class="trust-vith-mark">V</div>
+        <span class="trust-logo-label">VITH HUB</span>
+      </div>
+      <div class="trust-logo-pill">
+        <span style="font-size:.9rem">🤝</span>
+        <span class="trust-logo-label">0% Commission</span>
+      </div>
+      <div class="trust-logo-pill">
+        <span style="font-size:.9rem">⏱</span>
+        <span class="trust-logo-label">ติดต่อกลับ 48 ชม.</span>
+      </div>
+    </div>
+
+
+    <!-- ── PRE-STEP: เลือกโปรแกรมก่อนเริ่ม ── -->
+    <div class="pre-prog-wrap" id="preProgWrap">
+      <div class="pre-prog-label">เลือกโปรแกรมที่สนใจก่อนเริ่มกรอกข้อมูล <span style="color:var(--gold2)">*</span></div>
+      <div class="pre-prog-grid">
+
+        <div class="pre-prog-card" id="preProg-expo" onclick="preselectProg('expo')">
+          <div class="pre-prog-check" id="preCheck-expo">✓</div>
+          <div class="pre-prog-icon">🏪</div>
+          <div class="pre-prog-name">ออกบูท Expo 2026</div>
+          <div class="pre-prog-sub">งานแสดงสินค้า 5 วัน</div>
+        </div>
+
+        <div class="pre-prog-card pre-prog-star" id="preProg-retail90" onclick="preselectProg('retail90')">
+          <div class="pre-prog-badge">⭐ แนะนำ</div>
+          <div class="pre-prog-check" id="preCheck-retail90">✓</div>
+          <div class="pre-prog-icon">🚀</div>
+          <div class="pre-prog-name">โปรแกรม 90 วัน</div>
+          <div class="pre-prog-sub">Retail Entry · Big C จริง</div>
+        </div>
+
+        <div class="pre-prog-card" id="preProg-member" onclick="preselectProg('member')">
+          <div class="pre-prog-check" id="preCheck-member">✓</div>
+          <div class="pre-prog-icon">🏛</div>
+          <div class="pre-prog-name">VITH HUB Member</div>
+          <div class="pre-prog-sub">Showroom ถาวร & B2B</div>
+        </div>
+
+      </div>
+      <!-- Floor plan teaser — แสดงเมื่อเลือก Expo -->
+      <div style="text-align:center;margin-bottom:.5rem">
+        <button onclick="document.getElementById('applyFpModal').style.display='flex'"
+          style="background:none;border:none;font-family:'Inter',sans-serif;font-size:.75rem;font-weight:600;color:rgba(255,255,255,.4);cursor:pointer;display:inline-flex;align-items:center;gap:5px;padding:4px 0;text-decoration:underline;text-underline-offset:3px;transition:color .2s"
+          onmouseover="this.style.color='var(--gold2)'" onmouseout="this.style.color='rgba(255,255,255,.4)'">
+          📐 ดูผังงานเบื้องต้นก่อนตัดสินใจ
+        </button>
+      </div>
+      <div class="pre-prog-err" id="preProgErr">⚠ กรุณาเลือกโปรแกรมก่อนเริ่มลงทะเบียน</div>
+      <button class="pre-prog-btn" onclick="startForm()">เริ่มลงทะเบียน →</button>
+    </div>
+
+    <!-- Stepper — แสดงหลังเลือกโปรแกรมแล้ว -->
+    <div id="stepperArea" style="display:none;width:100%">
+
+    <!-- Compact label for very small screens (< 380px) -->
+    <div id="stepperCompact" style="display:none;font-family:'Inter',sans-serif;font-size:.8rem;font-weight:700;color:var(--gold2);margin-bottom:2rem;letter-spacing:.04em;animation:fadeUp .8s .4s both">
+      <span id="stepCompactText">Step 1 / 3 — ข้อมูลบริษัท</span>
+    </div>
+
+    <!-- Full stepper for normal screens -->
+    <div class="stepper-wrap" id="stepper">
+      <div class="step-item">
+        <div class="step-circle active" id="sc1">1</div>
+        <span class="step-label active" id="sl1">ข้อมูลบริษัท</span>
+      </div>
+      <div class="step-connector" id="con1"></div>
+      <div class="step-item">
+        <div class="step-circle idle" id="sc2">2</div>
+        <span class="step-label" id="sl2">ความพร้อมตลาด</span>
+      </div>
+      <div class="step-connector" id="con2"></div>
+      <div class="step-item">
+        <div class="step-circle idle" id="sc3">3</div>
+        <span class="step-label" id="sl3">เลือกโปรแกรม</span>
+      </div>
+    </div>
+
+    </div><!-- /stepperArea -->
+  </div>
+</section>
+
+<!-- ══ FORM SECTION ══ -->
+<div class="form-section">
+  <div class="page-layout">
+
+    <!-- FORM CARD -->
+    <div>
+      <div class="form-card" id="formCard" style="display:none">
+
+        <!-- Card Header -->
+        <div class="form-card-head">
+          <div class="fch-eyebrow" id="fchEyebrow">ขั้นที่ 1 จาก 3</div>
+          <div class="fch-title" id="fchTitle">ข้อมูลนิติบุคคล / Business Profile</div>
+          <div class="fch-sub" id="fchSub">กรอกข้อมูลบริษัทเพื่อให้ทีมงานตรวจสอบคุณสมบัติเบื้องต้น</div>
+          <div class="fch-progress">
+            <div class="fch-prog-bar"><div class="fch-prog-fill" id="progFill" style="width:33%"></div></div>
+            <div class="fch-prog-labels">
+              <span id="progLbl">Step 1: Business Profile</span>
+              <span id="progPct">33%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- FORM BODY -->
+        <div class="form-body" id="formBody">
+
+          <!-- ════ STEP 1: Business Profile ════ -->
+          <div class="form-step active" id="step1">
+
+            <div class="form-section-label">🏢 ข้อมูลนิติบุคคล</div>
+
+            <div class="field-grid">
+              <div class="field-group">
+                <label class="f-label">ชื่อบริษัท / แบรนด์ <span class="req">*</span></label>
+                <input type="text" id="s1-brand" class="f-input" placeholder="เช่น บริษัท สยาม ฟู้ดส์ จำกัด">
+                <div class="field-err" id="err-s1-brand">⚠ กรุณากรอกชื่อบริษัท / แบรนด์</div>
+              </div>
+              <div class="field-group">
+                <label class="f-label">เลขทะเบียนนิติบุคคล <span class="req">*</span></label>
+                <input type="text" id="s1-regno" class="f-input" placeholder="เช่น 0105560012345">
+                <div class="f-hint">13 หลัก — เพื่อยืนยันตัวตนธุรกิจ</div>
+                <div class="field-err" id="err-s1-regno">⚠ กรุณากรอกเลขทะเบียนนิติบุคคล</div>
+              </div>
+            </div>
+
+            <div class="field-grid">
+              <div class="field-group">
+                <label class="f-label">หมวดหมู่สินค้าหลัก <span class="req">*</span></label>
+                <select id="s1-category" class="f-select">
+                  <option value="">— เลือกหมวดหมู่ —</option>
+                  <option>🍱 Food &amp; Beverage</option>
+                  <option>💄 Beauty &amp; Cosmetics</option>
+                  <option>🌿 Health &amp; Herbal</option>
+                  <option>🏠 Lifestyle &amp; Household</option>
+                  <option>💡 Innovative Consumer Products</option>
+                  <option>🧴 Personal Care</option>
+                  <option>🐾 Pet Products</option>
+                  <option>📦 Other</option>
+                </select>
+                <div class="field-err" id="err-s1-category">⚠ กรุณาเลือกหมวดหมู่สินค้า</div>
+              </div>
+              <div class="field-group">
+                <label class="f-label">ประเทศที่จดทะเบียน <span class="req">*</span></label>
+                <select id="s1-country" class="f-select">
+                  <option value="">— เลือกประเทศ —</option>
+                  <option>🇹🇭 Thailand</option>
+                  <option>🇱🇦 Laos PDR</option>
+                  <option>🇨🇳 China</option>
+                  <option>🇻🇳 Vietnam</option>
+                  <option>🇲🇲 Myanmar</option>
+                  <option>🇰🇭 Cambodia</option>
+                  <option>Other</option>
+                </select>
+                <div class="field-err" id="err-s1-country">⚠ กรุณาเลือกประเทศที่จดทะเบียน</div>
+              </div>
+            </div>
+
+            <div class="form-section-label" style="margin-top:.5rem">👤 ผู้ติดต่อหลัก</div>
+
+            <div class="field-grid">
+              <div class="field-group">
+                <label class="f-label">ชื่อ-นามสกุล <span class="req">*</span></label>
+                <input type="text" id="s1-name" class="f-input" placeholder="ชื่อผู้ติดต่อ">
+                <div class="field-err" id="err-s1-name">⚠ กรุณากรอกชื่อผู้ติดต่อ</div>
+              </div>
+              <div class="field-group">
+                <label class="f-label">ตำแหน่ง</label>
+                <input type="text" id="s1-title" class="f-input" placeholder="เช่น ผู้จัดการฝ่ายส่งออก">
+              </div>
+            </div>
+
+            <div class="field-grid">
+              <div class="field-group">
+                <label class="f-label">เบอร์โทรศัพท์ <span class="req">*</span></label>
+                <input type="tel" id="s1-phone" class="f-input" placeholder="+66 8x-xxx-xxxx">
+                <div class="field-err" id="err-s1-phone">⚠ กรุณากรอกเบอร์โทรศัพท์ที่ถูกต้อง (อย่างน้อย 8 ตัว)</div>
+              </div>
+              <div class="field-group">
+                <label class="f-label">อีเมล <span class="req">*</span></label>
+                <input type="email" id="s1-email" class="f-input" placeholder="email@company.com">
+                <div class="field-err" id="err-s1-email">⚠ กรุณากรอก Email ให้ถูกต้อง เช่น <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f99798949cb99a969489989780d79a9694">[email&#160;protected]</a></div>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label class="f-label">LINE ID / WhatsApp</label>
+              <input type="text" id="s1-line" class="f-input" placeholder="LINE ID หรือ เบอร์ WhatsApp">
+              <div class="f-hint">เพื่อนัดหมายและยืนยันสิทธิ์ได้รวดเร็วขึ้น</div>
+            </div>
+
+            <div class="form-nav">
+              <div></div>
+              <button class="btn-next" onclick="goStep(2)">ถัดไป: ความพร้อมตลาด →</button>
+            </div>
+          </div>
+
+          <!-- ════ STEP 2: Market Readiness ════ -->
+          <div class="form-step" id="step2">
+
+            <div class="form-section-label">📋 เอกสารมาตรฐาน</div>
+
+            <div class="field-group">
+              <label class="f-label">มีเอกสาร อย. / มอก. / FDA หรือไม่? <span class="req">*</span></label>
+              <select id="s2-fda" class="f-select">
+                <option value="">— เลือกสถานะ —</option>
+                <option value="ready">✅ มีพร้อมสำหรับสินค้าทุกตัว</option>
+                <option value="partial">🔄 มีบางส่วน / อยู่ระหว่างดำเนินการ</option>
+                <option value="none">❌ ยังไม่มี</option>
+                <option value="exempt">⚪ สินค้าไม่ต้องขึ้นทะเบียน (ประเภทสินค้า)</option>
+              </select>
+              <div class="f-hint">ใช้สำหรับประเมินความพร้อมเข้าช่องทาง Modern Trade</div>
+              <div class="field-err" id="err-s2-fda">⚠ กรุณาเลือกสถานะเอกสาร อย./มอก.</div>
+            </div>
+
+            <div class="field-grid">
+              <div class="field-group">
+                <label class="f-label">กำลังการผลิตต่อเดือน <span class="req">*</span></label>
+                <select id="s2-capacity" class="f-select">
+                  <option value="">— เลือกช่วง —</option>
+                  <option>น้อยกว่า 1,000 หน่วย/เดือน</option>
+                  <option>1,000 – 10,000 หน่วย/เดือน</option>
+                  <option>10,001 – 50,000 หน่วย/เดือน</option>
+                  <option>50,001 – 200,000 หน่วย/เดือน</option>
+                  <option>มากกว่า 200,000 หน่วย/เดือน</option>
+                </select>
+                <div class="field-err" id="err-s2-capacity">⚠ กรุณาเลือกกำลังการผลิต</div>
+              </div>
+              <div class="field-group">
+                <label class="f-label">ประสบการณ์ส่งออก (ลาว/CLMV) <span class="req">*</span></label>
+                <select id="s2-export" class="f-select">
+                  <option value="">— เลือก —</option>
+                  <option value="yes-laos">✅ เคยส่งออกไปลาวแล้ว</option>
+                  <option value="yes-clmv">✅ เคยส่งออกไปประเทศ CLMV อื่น</option>
+                  <option value="no-planning">🔄 ยังไม่เคย แต่มีแผน</option>
+                  <option value="no">❌ ยังไม่เคยส่งออก</option>
+                </select>
+                <div class="field-err" id="err-s2-export">⚠ กรุณาเลือกประสบการณ์ส่งออก</div>
+              </div>
+            </div>
+
+            <div class="form-section-label" style="margin-top:.5rem">🌏 แหล่งที่มาและประสบการณ์</div>
+
+            <div class="field-group">
+              <label class="f-label">สินค้าของคุณเคยวางขายใน Modern Trade หรือไม่?</label>
+              <div class="pill-group">
+                <input type="radio" name="modern-trade" id="mt-yes" class="pill-input" value="yes">
+                <label for="mt-yes" class="pill-label">✅ เคย (Big C / Lotus / Makro ฯลฯ)</label>
+                <input type="radio" name="modern-trade" id="mt-no" class="pill-input" value="no">
+                <label for="mt-no" class="pill-label">❌ ยังไม่เคย</label>
+                <input type="radio" name="modern-trade" id="mt-online" class="pill-input" value="online-only">
+                <label for="mt-online" class="pill-label">🛒 ออนไลน์อย่างเดียว</label>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label class="f-label">สิ่งที่คาดหวังจากการออกบูท <span class="req">*</span></label>
+              <div class="pill-group">
+                <input type="checkbox" id="exp-dist" class="pill-input" value="distributor">
+                <label for="exp-dist" class="pill-label">🤝 หา Distributor ลาว</label>
+                <input type="checkbox" id="exp-bigc" class="pill-input" value="bigc">
+                <label for="exp-bigc" class="pill-label">🏬 เข้า Big C Vientiane</label>
+                <input type="checkbox" id="exp-test" class="pill-input" value="test-market">
+                <label for="exp-test" class="pill-label">📊 ทดสอบตลาด</label>
+                <input type="checkbox" id="exp-sales" class="pill-input" value="direct-sales">
+                <label for="exp-sales" class="pill-label">💰 ยอดขายตรง</label>
+                <input type="checkbox" id="exp-brand" class="pill-input" value="branding">
+                <label for="exp-brand" class="pill-label">📣 สร้าง Brand Awareness</label>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label class="f-label">รู้จักงานนี้ผ่านช่องทางใด?</label>
+              <select id="s2-source" class="f-select">
+                <option value="">— เลือก —</option>
+                <option>Facebook / Social Media</option>
+                <option>LINE Official @cef8930n</option>
+                <option>เพื่อน / คนรู้จักแนะนำ</option>
+                <option>สมาคม / หอการค้า</option>
+                <option>Google Search</option>
+                <option>อื่น ๆ</option>
+              </select>
+            </div>
+
+            <div class="form-nav">
+              <button class="btn-back" onclick="goStep(1)">← ย้อนกลับ</button>
+              <button class="btn-next" onclick="goStep(3)">ถัดไป: เลือกแพ็กเกจ →</button>
+            </div>
+          </div>
+
+          <!-- ════ STEP 3: Program + Submit ════ -->
+          <div class="form-step" id="step3">
+
+            <!-- Screening notice -->
+            <div style="background:linear-gradient(135deg,rgba(201,162,39,.07),rgba(201,162,39,.03));border:1px solid rgba(201,162,39,.25);border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.5rem;display:flex;align-items:flex-start;gap:.75rem">
+              <span style="font-size:1.1rem;flex-shrink:0">📋</span>
+              <p style="font-family:'Inter',sans-serif;font-size:.8rem;color:var(--sub);line-height:1.65;margin:0">
+                <strong style="color:var(--navy);display:block;margin-bottom:.2rem">กระบวนการคัดกรอง</strong>
+                กรุณากรอกข้อมูลเพื่อรับการพิจารณาเบื้องต้น ทีมงานจะติดต่อกลับเพื่อแจ้งผลการคัดเลือกและขั้นตอนการชำระเงิน<strong>ภายใน 48 ชั่วโมง</strong>
+              </p>
+            </div>
+
+            <div class="form-section-label">🎯 เลือกโปรแกรมที่สนใจ <span class="req">*</span></div>
+
+            <!-- 3-Program Selector -->
+            <div class="prog-select-grid" id="progGrid">
+
+              <!-- 1: Expo Booth -->
+              <div class="prog-card" id="progCard-expo" onclick="selectProg('expo')">
+                <input type="radio" name="program" value="expo" class="pkg-select-radio" id="prog-expo">
+                <div class="pkg-sel-check">✓</div>
+                <div class="prog-tag" style="background:rgba(229,20,30,.08);color:#c01019;border-color:rgba(229,20,30,.2)">🏪 Expo 2026</div>
+                <div class="prog-name">ออกบูท Mekong Growth Expo</div>
+                <div class="prog-desc">งานแสดงสินค้านานาชาติ 5 วัน พบ Buyers จาก 4 ประเทศ · Big C Vientiane</div>
+                <div class="prog-date">📅 28 พ.ค. – 1 มิ.ย. 2569</div>
+                <div class="prog-price-row">
+                  <span class="prog-price">฿12,000 – ฿50,000</span>
+                  <span class="prog-price-note">ตามโซนบูท</span>
+                </div>
+                <a href="/pages/event.html#booths" onclick="event.stopPropagation()" class="prog-detail-link">ดูแพ็กเกจ →</a>
+                <button onclick="event.stopPropagation();document.getElementById('applyFpModal').style.display='flex'"
+                  style="background:none;border:none;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:600;color:var(--goldDk);cursor:pointer;padding:0;margin-top:2px;text-decoration:underline;text-underline-offset:3px;text-align:left">
+                  📐 ดูผังงานเบื้องต้น
+                </button>
+              </div>
+
+              <!-- 2: Retail Entry 90 Days -->
+              <div class="prog-card prog-featured" id="progCard-retail90" onclick="selectProg('retail90')">
+                <div class="prog-featured-badge">⭐ แนะนำ</div>
+                <input type="radio" name="program" value="retail90" class="pkg-select-radio" id="prog-retail90">
+                <div class="pkg-sel-check">✓</div>
+                <div class="prog-tag" style="background:rgba(201,162,39,.1);color:var(--goldDk);border-color:rgba(201,162,39,.3)">🚀 โปรแกรม 90 วัน</div>
+                <div class="prog-name">Retail Entry Program</div>
+                <div class="prog-desc">วางสินค้าบนชั้น Big C จริง 90 วัน พร้อมระบบและทีมครบ ไม่ต้องเริ่มจากศูนย์</div>
+                <div class="prog-date">📦 เปิดรับ 20 แบรนด์/รอบ · ปิดเมื่อเต็ม</div>
+                <div class="prog-price-row">
+                  <span class="prog-price">฿39,000</span>
+                  <span class="prog-price-note">เหมาจ่าย · 0% commission</span>
+                </div>
+                <a href="/pages/accelerator.html" onclick="event.stopPropagation()" class="prog-detail-link">ดูโปรแกรม →</a>
+              </div>
+
+              <!-- 3: Membership -->
+              <div class="prog-card" id="progCard-member" onclick="selectProg('member')">
+                <input type="radio" name="program" value="member" class="pkg-select-radio" id="prog-member">
+                <div class="pkg-sel-check">✓</div>
+                <div class="prog-tag" style="background:rgba(11,31,59,.06);color:var(--navy);border-color:rgba(11,31,59,.15)">🏛 Membership</div>
+                <div class="prog-name">VITH HUB Member</div>
+                <div class="prog-desc">Showroom ถาวรใน Mekong Showroom · B2B Matching · สิทธิประโยชน์รายปีครบชุด</div>
+                <div class="prog-date">🌏 ต่ออายุรายปี · เข้าถึง Network ทั่วภูมิภาค</div>
+                <div class="prog-price-row">
+                  <span class="prog-price">สอบถามราคา</span>
+                  <span class="prog-price-note">ทีมงานติดต่อกลับ</span>
+                </div>
+                <a href="/pages/membership.html" onclick="event.stopPropagation()" class="prog-detail-link">ดูสิทธิประโยชน์ →</a>
+              </div>
+
+            </div>
+            <div class="field-err" id="err-program" style="margin-top:.5rem">⚠ กรุณาเลือกโปรแกรมที่สนใจ</div>
+
+            <div class="field-group" style="margin-top:1.5rem">
+              <label class="f-label">งบประมาณที่เตรียมไว้ <span class="req">*</span></label>
+              <select id="s3-budget" class="f-select">
+                <option value="">— เลือกช่วงงบประมาณ —</option>
+                <option>ต่ำกว่า ฿15,000</option>
+                <option>฿15,000 – ฿39,000</option>
+                <option>฿39,001 – ฿100,000</option>
+                <option>มากกว่า ฿100,000</option>
+              </select>
+              <div class="f-hint">ใช้ประเมินความพร้อมเบื้องต้น — ไม่มีผลต่อการพิจารณาคุณสมบัติ</div>
+            </div>
+
+            <div class="form-section-label" style="margin-top:.5rem">📁 เอกสารประกอบ</div>
+
+            <div class="field-group">
+              <label class="f-label">แนบ Company Profile / Catalog (ถ้ามี)</label>
+              <div class="drive-link-box">
+                <div class="dlb-row">
+                  <div class="dlb-icon">🔗</div>
+                  <div>
+                    <div class="dlb-text">วาง Google Drive / Dropbox Link</div>
+                    <div class="dlb-sub">Share PDF หรือรูปภาพแบบ "Anyone with the link can view" แล้วนำลิงก์มาวางด้านล่าง</div>
+                  </div>
+                </div>
+                <input type="url" id="s3-drivelink" class="f-input" placeholder="https://drive.google.com/file/d/...">
+                <div class="dlb-or">— หรือ —</div>
+                <div class="dlb-line-row">
+                  <div class="dlb-line-icon">
+                    <svg width="18" height="18" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
+                  </div>
+                  <div class="dlb-line-text">
+                    <strong>ส่งไฟล์ทาง LINE แทนได้เลย</strong> — หลังกดส่งใบสมัครแล้ว ปุ่ม "ยืนยันผ่าน LINE" จะเปิดให้คุณแนบไฟล์ส่งหาทีมงานโดยตรงได้ทันที
+                  </div>
+                </div>
+              </div>
+              <div class="f-hint">ช่วยให้ทีมงานประเมินสินค้าของคุณได้ดีขึ้น — ไม่บังคับ</div>
+            </div>
+
+            <div class="field-group">
+              <label class="f-label">ข้อความเพิ่มเติม / คำถาม</label>
+              <textarea id="s3-note" class="f-textarea" placeholder="ข้อมูลเพิ่มเติมที่ต้องการให้ทีมงานทราบ เช่น ต้องการพื้นที่เฉพาะ มีอุปกรณ์พิเศษ หรือสอบถามเพิ่มเติม"></textarea>
+            </div>
+
+            <!-- Terms -->
+            <div style="background:var(--off);border:1px solid var(--border);border-radius:10px;padding:1rem 1.125rem;margin-top:.5rem">
+              <label style="display:flex;align-items:flex-start;gap:.75rem;cursor:pointer">
+                <input type="checkbox" id="s3-agree" style="margin-top:2px;accent-color:var(--gold);width:16px;height:16px;flex-shrink:0">
+                <span style="font-family:'Inter',sans-serif;font-size:.78rem;color:var(--sub);line-height:1.6">
+                  ข้าพเจ้ายืนยันว่าข้อมูลข้างต้นเป็นความจริง และยินยอมให้ VITH HUB ติดต่อกลับเพื่อยืนยันการสมัครและดำเนินการต่อไป <span class="req">*</span>
+                </span>
+              </label>
+            </div>
+
+            <div class="form-nav">
+              <button class="btn-back" onclick="goStep(2)">← ย้อนกลับ</button>
+              <button class="btn-submit" id="submitBtn" onclick="submitApp()">
+                ส่งใบสมัคร ✦
+              </button>
+            </div>
+          </div>
+
+          <!-- ════ THANK YOU STATE ════ -->
+          <div class="thankyou-state" id="thankyouState">
+            <div class="ty-icon">✦</div>
+            <div class="ty-title">ส่งข้อมูลสำเร็จ!</div>
+
+            <!-- Screening notice box -->
+            <div style="background:linear-gradient(135deg,rgba(11,31,59,.05),rgba(11,31,59,.02));border:1.5px solid rgba(11,31,59,.12);border-radius:14px;padding:1.5rem 1.75rem;margin-bottom:1.25rem;text-align:left">
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--goldDk);margin-bottom:.75rem">📋 สถานะการสมัคร</div>
+              <p style="font-family:'Inter',sans-serif;font-size:.92rem;color:var(--navy);line-height:1.75;font-weight:500;margin-bottom:.875rem">
+                ทีมงาน VITH HUB กำลังตรวจสอบโปรไฟล์ธุรกิจของท่าน<br>เพื่อให้สอดคล้องกับมาตรฐานของ <strong>Big C Vientiane</strong>
+              </p>
+              <div style="background:rgba(201,162,39,.08);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:.75rem 1rem;font-family:'Inter',sans-serif;font-size:.82rem;color:var(--sub);line-height:1.65">
+                เราจะ<strong style="color:var(--navy)">ส่งรายละเอียดราคาและลิงก์จองพื้นที่ให้ท่านทาง LINE</strong> หลังจากผ่านการอนุมัติเบื้องต้น
+              </div>
+            </div>
+
+            <!-- Floor Plan Preview — image only, no booking button -->
+            <div style="background:var(--off);border:1px solid var(--border);border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.25rem;text-align:left">
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.75rem;font-weight:700;color:var(--sub);margin-bottom:.625rem;display:flex;align-items:center;gap:6px">
+                📐 <span>ดูตัวอย่างผังงานเบื้องต้น</span>
+              </div>
+              <p style="font-family:'Inter',sans-serif;font-size:.78rem;color:var(--sub);line-height:1.6;margin-bottom:.75rem">
+                ดูผังงานคร่าวๆ เพื่อวางแผนล่วงหน้า — ตำแหน่งที่แน่นอนจะได้รับเมื่อผ่านการอนุมัติ
+              </p>
+              <img src="/images/Floor_1.png" alt="Floor Plan Preview"
+                style="width:100%;border-radius:8px;border:1px solid var(--border);display:block"
+                onerror="this.style.display='none'">
+            </div>
+
+            <div class="ty-ref">หมายเลขอ้างอิง: <strong id="tyRef">—</strong></div>
+
+            <div class="ty-actions">
+              <a id="tyLineBtn" href="https://line.me/ti/p/@cef8930n" target="_blank" class="ty-line-btn">
+                <svg width="18" height="18" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
+                ติดตามสถานะผ่าน LINE
+              </a>
+              <div class="ty-back">
+                <a href="/pages/event.html">← กลับหน้าหลักงาน</a>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /form-body -->
+      </div><!-- /form-card -->
+    </div><!-- /left col -->
+
+    <!-- SIDEBAR -->
+    <div class="form-sidebar">
+
+      <div class="sidebar-card">
+        <div class="sc-title">🎯 โปรแกรมที่สมัครได้</div>
+        <div class="sc-item">
+          <span class="sc-icon">🏪</span>
+          <div class="sc-text"><strong>Mekong Growth Expo 2026</strong><br>ออกบูทระยะสั้น 5 วัน · Big C Vientiane · 28 พ.ค.–1 มิ.ย. 2569</div>
+        </div>
+        <div class="sc-item">
+          <span class="sc-icon">🚀</span>
+          <div class="sc-text"><strong>Retail Entry Program — 90 วัน</strong><br>วางสินค้าบนชั้น Big C จริง · ฿39,000 · รับเพียง 20 แบรนด์/รอบ</div>
+        </div>
+        <div class="sc-item">
+          <span class="sc-icon">🏛</span>
+          <div class="sc-text"><strong>VITH HUB Membership</strong><br>Showroom ถาวร · B2B Network · สิทธิประโยชน์รายปีครบชุด</div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sc-title">⏰ ขั้นตอนหลังสมัคร</div>
+        <div class="sc-item">
+          <span class="sc-icon">📋</span>
+          <div class="sc-text"><strong>ภายใน 48 ชม.</strong><br>ทีมงานตรวจสอบคุณสมบัติและติดต่อกลับ</div>
+        </div>
+        <div class="sc-item">
+          <span class="sc-icon">✅</span>
+          <div class="sc-text"><strong>แจ้งผลการคัดเลือก</strong><br>พร้อมขั้นตอนและรายละเอียดการชำระเงิน</div>
+        </div>
+        <div class="sc-item">
+          <span class="sc-icon">💳</span>
+          <div class="sc-text"><strong>ชำระเงินภายใน 7 วัน</strong><br>เพื่อยืนยันสิทธิ์และล็อคโปรแกรม</div>
+        </div>
+      </div>
+
+      <div class="sidebar-contact">
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.82rem;font-weight:700;color:var(--gold2);margin-bottom:.875rem">📞 ติดต่อทีมงาน</div>
+        <div class="sco-line">
+          <span>💬</span>
+          <span>LINE: <a href="https://line.me/ti/p/@cef8930n" target="_blank">@cef8930n</a></span>
+        </div>
+        <div class="sco-line">
+          <span>📱</span>
+          <span>WhatsApp: <a href="https://wa.me/66855907666" target="_blank">+66 85 590 7666</a></span>
+        </div>
+        <div class="sco-line">
+          <span>📞</span>
+          <span>Tel: <a href="tel:+66855907666">+66 85 590 7666</a></span>
+        </div>
+        <div class="sco-line" style="margin-top:.375rem;font-size:.7rem;color:rgba(255,255,255,.35)">
+          <span>⏰</span>
+          <span>จ.–ศ. 9:00–18:00 น.</span>
+        </div>
+      </div>
+
+    </div><!-- /sidebar -->
+  </div><!-- /page-layout -->
+</div><!-- /form-section -->
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <span>© 2026 VITH HUB · Mekong Growth Expo · vithhub.asia</span>
+      <span>*VITH HUB is a market entry platform and does not guarantee sales or profits.</span>
+    </div>
+    <div style="text-align:center;margin-top:.75rem;font-size:.68rem;color:rgba(255,255,255,.22);line-height:1.8">
+      หจก. รอยัล บริตจ์ 99 · ทะเบียนนิติบุคคล: 0413568000586 · อุดรธานี 41000 ·
+      <a href="/pages/policy.html" style="color:rgba(255,255,255,.38)">นโยบายการคืนเงิน</a>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── WEBHOOK ──
+// Primary webhook (main GAS sheet — same as accelerator & buyers)
+const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzpN1z2qrSdaZv2AHJofeEYPHRyk7UNOqQq9uIHoEYVY_D5td0IOLK2PBnPw0vbjcw/exec";
+// Fallback / secondary deployment: AKfycbx68-i0Xz0UDRVeGmJwoTHLYL0bG61f5d7OZDyYJnMyOoEn18yTqSpK9petM9q6vfOY
+
+let currentStep = 1;
+
+// ── FIX 3: Compact stepper for very small screens ──
+const compactLabels = { 1:'Step 1 / 3 — ข้อมูลบริษัท', 2:'Step 2 / 3 — ความพร้อมตลาด', 3:'Step 3 / 3 — เลือกโปรแกรม', 4:'✦ ส่งใบสมัครสำเร็จ' };
+function updateCompactStepper(step) {
+  const compact = document.getElementById('stepperCompact');
+  const full    = document.getElementById('stepper');
+  if (!compact) return;
+  if (window.innerWidth < 381) {
+    compact.style.display = 'block';
+    full.style.display    = 'none';
+  } else {
+    compact.style.display = 'none';
+    full.style.display    = 'flex';
+  }
+  document.getElementById('stepCompactText').textContent = compactLabels[step] || '';
+}
+window.addEventListener('resize', () => updateCompactStepper(currentStep));
+
+// ── STEPPER ──
+function updateStepper(step) {
+  [1,2,3].forEach(i => {
+    const sc = document.getElementById('sc'+i);
+    const sl = document.getElementById('sl'+i);
+    const con = document.getElementById('con'+i);
+    if (i < step) {
+      sc.className = 'step-circle done'; sc.textContent = '✓';
+      sl.className = 'step-label done';
+      if (con) con.className = 'step-connector done';
+    } else if (i === step) {
+      sc.className = 'step-circle active'; sc.textContent = i;
+      sl.className = 'step-label active';
+      if (con) con.className = 'step-connector';
+    } else {
+      sc.className = 'step-circle idle'; sc.textContent = i;
+      sl.className = 'step-label';
+      if (con) con.className = 'step-connector';
+    }
+  });
+  updateCompactStepper(step);
+}
+
+const stepMeta = {
+  1: { eyebrow:'ขั้นที่ 1 จาก 3', title:'ข้อมูลนิติบุคคล / Business Profile', sub:'กรอกข้อมูลบริษัทเพื่อให้ทีมงานตรวจสอบคุณสมบัติเบื้องต้น', pct:'33%', lbl:'Step 1: Business Profile' },
+  2: { eyebrow:'ขั้นที่ 2 จาก 3', title:'การประเมินความพร้อมตลาด', sub:'ข้อมูลนี้ช่วยให้ทีมงานจับคู่แบรนด์ของคุณกับ Buyer ที่เหมาะสม', pct:'66%', lbl:'Step 2: Market Readiness' },
+  3: { eyebrow:'ขั้นที่ 3 จาก 3', title:'เลือกโปรแกรมและส่งใบสมัคร', sub:'เลือกโปรแกรมที่เหมาะกับธุรกิจของคุณ — ทีมงานจะติดต่อยืนยันและแจ้งขั้นตอนชำระเงินภายใน 48 ชม.', pct:'100%', lbl:'Step 3: Select Program' },
+};
+
+function goStep(n) {
+  if (n > currentStep && !validateStep(currentStep)) return;
+  document.getElementById('step'+currentStep).classList.remove('active');
+  document.getElementById('step'+n).classList.add('active');
+  currentStep = n;
+  updateStepper(n);
+  const m = stepMeta[n];
+  document.getElementById('fchEyebrow').textContent = m.eyebrow;
+  document.getElementById('fchTitle').textContent   = m.title;
+  document.getElementById('fchSub').textContent     = m.sub;
+  document.getElementById('progFill').style.width   = m.pct;
+  document.getElementById('progPct').textContent    = m.pct;
+  document.getElementById('progLbl').textContent    = m.lbl;
+  window.scrollTo({top: document.getElementById('formCard').offsetTop - 80, behavior:'smooth'});
+}
+
+// ── FIX 2: Field-level validation helpers ──
+function g(id) { return (document.getElementById(id)||{}).value || ''; }
+function v(id) { return g(id).trim() !== ''; }
+
+function setFieldOk(id) {
+  const el = document.getElementById(id);
+  if (el) el.classList.remove('invalid');
+  const errEl = document.getElementById('err-'+id);
+  if (errEl) errEl.classList.remove('show');
+}
+function setFieldErr(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.classList.add('invalid');
+    el.style.animation = 'none';
+    requestAnimationFrame(() => { el.style.animation = 'shake .35s ease'; });
+  }
+  const errEl = document.getElementById('err-'+id);
+  if (errEl) errEl.classList.add('show');
+}
+function clearAllErrors(ids) { ids.forEach(id => { setFieldOk(id); }); }
+
+function validateStep(s) {
+  let ok = true;
+
+  if (s === 1) {
+    const fields1 = ['s1-brand','s1-regno','s1-category','s1-country','s1-name','s1-phone','s1-email'];
+    clearAllErrors(fields1);
+
+    if (!v('s1-brand'))    { setFieldErr('s1-brand');    ok = false; }
+    if (!v('s1-regno'))    { setFieldErr('s1-regno');    ok = false; }
+    if (!v('s1-category')) { setFieldErr('s1-category'); ok = false; }
+    if (!v('s1-country'))  { setFieldErr('s1-country');  ok = false; }
+    if (!v('s1-name'))     { setFieldErr('s1-name');     ok = false; }
+    const phone = g('s1-phone').replace(/[\s\-\+\(\)]/g,'');
+    if (!phone || phone.length < 8) { setFieldErr('s1-phone'); ok = false; }
+    if (!v('s1-email') || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(g('s1-email'))) { setFieldErr('s1-email'); ok = false; }
+
+    if (!ok) {
+      // Scroll to first invalid field
+      const first = document.querySelector('#step1 .invalid');
+      if (first) first.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+  }
+
+  if (s === 2) {
+    clearAllErrors(['s2-fda','s2-capacity','s2-export']);
+    if (!v('s2-fda'))      { setFieldErr('s2-fda');      ok = false; }
+    if (!v('s2-capacity')) { setFieldErr('s2-capacity'); ok = false; }
+    if (!v('s2-export'))   { setFieldErr('s2-export');   ok = false; }
+
+    if (!ok) {
+      const first = document.querySelector('#step2 .invalid');
+      if (first) first.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+  }
+
+  return ok;
+}
+
+// Clear error on input/change
+['s1-brand','s1-regno','s1-category','s1-country','s1-name','s1-phone','s1-email',
+ 's2-fda','s2-capacity','s2-export'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('input', () => setFieldOk(id));
+  if (el) el.addEventListener('change', () => setFieldOk(id));
+});
+
+// ── PRE-STEP: เลือกโปรแกรมก่อนเริ่ม ──
+let preSelectedProg = null;
+
+function preselectProg(prog) {
+  preSelectedProg = prog;
+  ['expo','retail90','member'].forEach(p => {
+    document.getElementById('preProg-'+p).classList.toggle('chosen', p === prog);
+  });
+  document.getElementById('preProgErr').classList.remove('show');
+  // Mirror into step 3 radio immediately
+  selectProg(prog);
+}
+
+function startForm() {
+  if (!preSelectedProg) {
+    document.getElementById('preProgErr').classList.add('show');
+    return;
+  }
+  // Hide pre-step, show stepper + form
+  document.getElementById('preProgWrap').style.display = 'none';
+  document.getElementById('stepperArea').style.display = 'block';
+  document.getElementById('formCard').style.display = 'block';
+  updateCompactStepper(1);
+  window.scrollTo({top: document.getElementById('formCard').offsetTop - 80, behavior:'smooth'});
+}
+function selectProg(prog) {
+  ['expo','retail90','member'].forEach(p => {
+    const card = document.getElementById('progCard-'+p);
+    if (card) card.classList.toggle('selected', p === prog);
+    const radio = document.getElementById('prog-'+p);
+    if (radio) radio.checked = (p === prog);
+  });
+  setFieldOk('program');
+}
+
+// ── URL PRE-SELECT handled in INIT block below ──
+
+// ── SUBMIT ──
+async function submitApp() {
+  if (!validateStep(2)) return;
+
+  // Step 3 validation
+  const progEl = document.querySelector('input[name="program"]:checked');
+  if (!progEl) {
+    setFieldErr('program');
+    showToast('⚠ กรุณาเลือกโปรแกรมที่สนใจ');
+    return;
+  }
+  if (!v('s3-budget')) { showToast('⚠ กรุณาเลือกช่วงงบประมาณ'); return; }
+  if (!document.getElementById('s3-agree').checked) { showToast('⚠ กรุณายืนยันความถูกต้องของข้อมูล'); return; }
+
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<div class="spinner"></div> กำลังส่ง...';
+
+  const expects = ['exp-dist','exp-bigc','exp-test','exp-sales','exp-brand']
+    .filter(id => document.getElementById(id).checked)
+    .map(id => document.getElementById(id).value).join(', ');
+
+  const progLabel = { expo:'Mekong Growth Expo 2026 (บูทระยะสั้น)', retail90:'Retail Entry Program — 90 วัน', member:'VITH HUB Membership (Annual)' };
+
+  const payload = {
+    form_type:           'VITH_HUB_Application',
+    program:             progLabel[progEl.value] || progEl.value,
+    brand_name:          g('s1-brand'),
+    reg_number:          g('s1-regno'),
+    product_category:    g('s1-category'),
+    country:             g('s1-country'),
+    contact_name:        g('s1-name'),
+    contact_title:       g('s1-title'),
+    phone:               g('s1-phone'),
+    email:               g('s1-email'),
+    line_wa:             g('s1-line'),
+    fda_status:          g('s2-fda'),
+    production_capacity: g('s2-capacity'),
+    export_experience:   g('s2-export'),
+    modern_trade:        document.querySelector('input[name="modern-trade"]:checked')?.value || '',
+    expectations:        expects,
+    source:              g('s2-source'),
+    budget:              g('s3-budget'),
+    catalog_link:        g('s3-drivelink'),
+    note:                g('s3-note'),
+    source_page:         'apply.html — VITH_HUB',
+    submitted_at:        new Date().toISOString()
+  };
+
+  // Track
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({event:'lead_submit', path:'apply', program: progEl.value, page: window.location.pathname});
+
+  try {
+    await fetch(WEBHOOK_URL, {
+      method: 'POST', mode: 'no-cors',
+      body: JSON.stringify(payload),
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' }
+    });
+  } catch(e) {
+    console.warn('Webhook failed:', e);
+    // Still show success to user — GAS no-cors doesn't throw on success either
+  }
+
+  const ref = 'VH2026-' + Date.now().toString(36).toUpperCase().slice(-6);
+  document.getElementById('tyRef').textContent = ref;
+
+  const lineMsg = encodeURIComponent(
+    'ใบสมัคร VITH HUB — ' + (progLabel[progEl.value] || progEl.value) + '\n' +
+    'Ref: ' + ref + '\n' +
+    'แบรนด์: ' + g('s1-brand') + '\n' +
+    'หมวดหมู่: ' + g('s1-category') + '\n' +
+    'ผู้ติดต่อ: ' + g('s1-name') + '\n' +
+    'โทร: ' + g('s1-phone') + '\n' +
+    'Email: ' + g('s1-email') + '\n' +
+    'งบประมาณ: ' + g('s3-budget') + '\n' +
+    (g('s3-drivelink') ? 'Catalog: ' + g('s3-drivelink') + '\n' : '') +
+    (g('s3-note') ? 'หมายเหตุ: ' + g('s3-note') : '')
+  );
+  document.getElementById('tyLineBtn').href = 'https://line.me/ti/p/@cef8930n?text=' + lineMsg;
+
+  ['step1','step2','step3'].forEach(id => { document.getElementById(id).style.display='none'; });
+  document.getElementById('thankyouState').style.display = 'block';
+
+  document.getElementById('fchEyebrow').textContent = '✦ ส่งใบสมัครสำเร็จ';
+  document.getElementById('fchTitle').textContent   = 'อยู่ระหว่างการตรวจสอบ';
+  document.getElementById('fchSub').textContent     = 'ทีมงานจะติดต่อกลับภายใน 48 ชั่วโมง';
+  document.getElementById('progFill').style.width   = '100%';
+  document.getElementById('progPct').textContent    = '✓ Done';
+  document.getElementById('progLbl').textContent    = 'Application Submitted';
+  updateStepper(4);
+
+  showToast('✦ ส่งใบสมัครแล้ว — ทีมงานติดต่อกลับใน 48 ชม.');
+  window.scrollTo({top: document.getElementById('formCard').offsetTop - 80, behavior:'smooth'});
+}
+
+// ── TOAST ──
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 4500);
+}
+
+// ── NAV ──
+function vithToggleNav() { document.getElementById('vithMobileMenu').classList.toggle('open'); }
+window.addEventListener("scroll", () => { document.getElementById("vithNav").classList.toggle("scrolled", scrollY > 40); });
+
+// ── INIT ──
+updateCompactStepper(1);
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  // Support both ?program= and ?pkg= (alias)
+  const pkgMap = { expo:'expo', retail:'retail90', retail90:'retail90', member:'member' };
+  const raw = params.get('program') || params.get('pkg') || '';
+  const p = pkgMap[raw] || '';
+  if (p) {
+    preselectProg(p);
+    startForm();
+  }
+})();
+</script>
+
+<!-- ══ FLOOR PLAN PREVIEW MODAL (apply.html) ══ -->
+<div id="applyFpModal" onclick="if(event.target===this)this.style.display='none'"
+  style="display:none;position:fixed;inset:0;background:rgba(2,6,23,.9);z-index:2000;align-items:center;justify-content:center;padding:1.25rem;backdrop-filter:blur(12px)">
+  <div style="background:#fff;border-radius:18px;overflow:hidden;max-width:860px;width:100%;box-shadow:0 40px 100px rgba(0,0,0,.5)">
+    <!-- Header -->
+    <div style="background:linear-gradient(135deg,var(--navy),var(--navy2));padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;position:relative">
+      <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)"></div>
+      <div>
+        <div style="font-family:'Inter',sans-serif;font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold2);margin-bottom:2px">📐 ผังงาน Mekong Growth Expo 2026</div>
+        <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:.92rem;font-weight:800;color:#fff">Preview Floor Plan · Big C Vientiane</div>
+      </div>
+      <button onclick="document.getElementById('applyFpModal').style.display='none'"
+        style="background:rgba(255,255,255,.1);border:none;color:rgba(255,255,255,.7);width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0">✕</button>
+    </div>
+    <!-- Image -->
+    <div style="padding:1.25rem 1.25rem .75rem;background:#f8f7f4">
+      <img src="/images/Floor_1.png" alt="Mekong Growth Expo 2026 — Floor Plan"
+        style="width:100%;border-radius:10px;display:block"
+        onerror="this.parentNode.innerHTML='<div style=\'padding:4rem;text-align:center;font-family:Inter,sans-serif;color:#64748b\'>📐 Floor Plan · /images/Floor_1.png</div>'">
+      <p style="font-family:'Inter',sans-serif;font-size:.75rem;text-align:center;margin-top:.75rem;line-height:1.6;background:#fff3cd;border:1px solid #fde68a;border-radius:8px;padding:.5rem 1rem;color:#92400e">
+        📌 <strong>ผังงานเบื้องต้น</strong> — จองพื้นที่ได้หลังผ่านการอนุมัติจาก VITH HUB เท่านั้น
+      </p>
+    </div>
+    <!-- Footer -->
+    <div style="background:#fff;padding:.875rem 1.5rem;border-top:1px solid var(--gray);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem">
+      <p style="font-family:'Inter',sans-serif;font-size:.78rem;color:var(--sub);line-height:1.5">ตำแหน่งที่แน่นอนจะได้รับหลังใบสมัครผ่านการอนุมัติ<br>ทีมงานจะส่งลิงก์เลือกบูทให้ผ่าน LINE</p>
+      <button onclick="document.getElementById('applyFpModal').style.display='none'"
+        style="font-family:'Inte

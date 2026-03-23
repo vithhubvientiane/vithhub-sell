@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VITH HUB Membership — Showroom ถาวรใน Big C เวียงจันทน์</title>
+<meta name="description" content="VITH HUB Membership — Showroom 200 ตร.ม. ใน Big C เวียงจันทน์ พร้อม Local Staff, Logistics และ B2B Matching ตลอดปี สมัครเพื่อรับการพิจารณา">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,300&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ── RESET ── */
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:16px;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'DM Sans','Noto Sans Thai','Noto Sans Thai',sans-serif;background:#fff;color:#0a0a0a;overflow-x:hidden;line-height:1.55}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;font-family:inherit}
+
+/* ── TOKENS ── */
+:root{
+  --black:#0a0a0a;--white:#fff;
+  --gray-50:#f9f9f9;--gray-100:#f3f3f3;--gray-200:#e8e8e8;
+  --gray-400:#9a9a9a;--gray-600:#5a5a5a;--gray-800:#2a2a2a;
+  --red:#e5141e;--red-dark:#c01019;--red-light:#fff0f0;
+  --green:#16a34a;--green-light:#f0fdf4;
+  --gold:#C9A227;--gold-light:#fffbeb;
+  --r-sm:6px;--r:10px;--r-lg:16px;--r-xl:24px;
+  --sh-sm:0 1px 3px rgba(0,0,0,.08);
+  --sh:0 4px 16px rgba(0,0,0,.08),0 2px 6px rgba(0,0,0,.05);
+  --sh-lg:0 16px 48px rgba(0,0,0,.1),0 6px 20px rgba(0,0,0,.06);
+  --max:1100px;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes pulse-gold{0%,100%{box-shadow:0 0 0 0 rgba(201,162,39,.4)}70%{box-shadow:0 0 0 12px rgba(201,162,39,0)}}
+@keyframes pulse-red{0%,100%{box-shadow:0 0 0 0 rgba(229,20,30,.4)}70%{box-shadow:0 0 0 12px rgba(229,20,30,0)}}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+
+/* ── TOP BAR ── */
+.top-bar{background:var(--gold);color:#1a0800;text-align:center;padding:.6rem 1.5rem;font-size:.8rem;font-weight:700;letter-spacing:.04em;position:relative;z-index:1000}
+.top-bar span{opacity:.65;margin:0 .75rem}
+
+/* ── TICKER ── */
+.ticker-wrap{background:var(--black);overflow:hidden;height:36px;display:flex;align-items:center}
+.ticker-inner{display:flex;white-space:nowrap;animation:ticker 30s linear infinite}
+.ticker-item{font-size:.72rem;font-weight:500;color:rgba(255,255,255,.65);padding:0 2.5rem;letter-spacing:.05em}
+.ticker-item span{color:var(--gold)}
+
+/* ── NAV ── */
+:root{--vn-bg:rgba(15,23,42,.96);--vn-border:rgba(234,179,8,.18);--vn-gold:#EAB308;--vn-gold2:#FCD34D;--vn-goldDk:#A16207}
+.vith-nav{position:fixed;top:72px;left:0;right:0;z-index:900;height:60px;background:var(--vn-bg);backdrop-filter:blur(24px) saturate(1.5);-webkit-backdrop-filter:blur(24px) saturate(1.5);border-bottom:1px solid var(--vn-border);transition:all .25s}
+.vith-nav.scrolled{background:rgba(2,6,23,.97);box-shadow:0 2px 24px rgba(0,0,0,.3)}
+.vith-nav-inner{max-width:1200px;margin:0 auto;height:60px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.vith-nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;text-decoration:none}
+.vith-nav-logo-mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--vn-goldDk),var(--vn-gold),var(--vn-gold2));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1rem;color:#020617;flex-shrink:0}
+.vith-nav-logo-text{font-family:'DM Serif Display',serif;font-size:1.05rem;color:#fff;line-height:1}
+.vith-nav-logo-text span{color:var(--vn-gold2)}
+.vith-nav-logo-sub{font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);display:block;margin-top:2px}
+.vith-nav-links{display:flex;align-items:center;gap:2px}
+.vith-nav-a{font-size:.82rem;font-weight:500;color:rgba(255,255,255,.55);padding:6px 12px;border-radius:6px;transition:all .2s;white-space:nowrap}
+.vith-nav-a:hover,.vith-nav-a.active{color:#fff;background:rgba(255,255,255,.08)}
+.vith-nav-right{display:flex;align-items:center;gap:10px}
+.vith-nav-cta{font-size:.82rem;font-weight:600;background:var(--gold);color:#1a0800;padding:8px 18px;border-radius:6px;border:none;display:inline-flex;align-items:center;gap:6px;transition:all .2s}
+.vith-nav-cta:hover{filter:brightness(1.1);transform:translateY(-1px)}
+.vith-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;cursor:pointer}
+.vith-hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.8);border-radius:2px}
+.vith-mobile-menu{display:none;position:fixed;top:132px;left:0;right:0;background:rgba(2,6,23,.99);backdrop-filter:blur(20px);padding:20px;border-bottom:1px solid rgba(234,179,8,.2);flex-direction:column;gap:4px;z-index:898}
+.vith-mobile-menu.open{display:flex}
+.vith-mob-link{font-size:15px;font-weight:600;color:rgba(255,255,255,.65);padding:11px 14px;border-radius:8px;text-decoration:none}
+.vith-mob-link.active{color:#fff;background:rgba(255,255,255,.08)}
+.vith-mob-cta{font-size:15px;font-weight:700;background:var(--gold);color:#1a0800;padding:13px 20px;border-radius:8px;text-align:center;margin-top:10px;border:none;cursor:pointer}
+@media(max-width:768px){.vith-nav-links{display:none}.vith-hamburger{display:flex}}
+
+/* ── SHARED ── */
+.wrap{max-width:var(--max);margin:0 auto}
+.section{padding:5.5rem 1.5rem}
+.eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:8px;margin-bottom:.875rem}
+.eyebrow::before{content:'';width:18px;height:1.5px;background:var(--red);flex-shrink:0}
+.eyebrow.gold-eye{color:var(--gold)}
+.eyebrow.gold-eye::before{background:var(--gold)}
+.eyebrow.center{justify-content:center}
+.eyebrow.center::before{display:none}
+.h2{font-family:'DM Serif Display',serif;font-size:clamp(1.9rem,3.2vw,2.6rem);color:var(--black);line-height:1.15;letter-spacing:-.02em;margin-bottom:.875rem}
+.h2 em{font-style:italic;color:var(--gray-600)}
+.lead{font-size:1rem;color:var(--gray-600);line-height:1.75;max-width:540px}
+.sec-head{margin-bottom:3rem}
+.sec-head.center{text-align:center}
+.sec-head.center .lead{margin:0 auto}
+.btn-gold{font-size:.95rem;font-weight:700;background:var(--gold);color:#1a0800;padding:14px 28px;border-radius:var(--r-sm);display:inline-flex;align-items:center;gap:8px;border:none;transition:all .22s;animation:pulse-gold 3s 2s infinite;cursor:pointer}
+.btn-gold:hover{filter:brightness(1.1);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,162,39,.4)}
+.btn-outline{font-size:.9rem;font-weight:500;color:rgba(255,255,255,.7);padding:14px 22px;border-radius:var(--r-sm);border:1.5px solid rgba(255,255,255,.18);background:none;cursor:pointer;transition:all .22s;display:inline-flex;align-items:center;gap:8px}
+.btn-outline:hover{color:#fff;border-color:rgba(255,255,255,.45)}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;background:var(--black);overflow:hidden;padding-top:132px}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.15;filter:saturate(.5)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,10,10,.97) 0%,rgba(10,10,10,.72) 60%,rgba(10,10,10,.92) 100%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+.hero-stripe{position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(to bottom,transparent,var(--gold),transparent);opacity:.5}
+.hero-inner{position:relative;z-index:10;max-width:var(--max);width:100%;margin:0 auto;padding:5rem 1.5rem 6rem;display:grid;grid-template-columns:1fr 400px;gap:4rem;align-items:center}
+.hero-badge-blink{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);padding:5px 14px;border:1.5px solid rgba(201,162,39,.4);border-radius:20px;background:rgba(201,162,39,.08);margin-bottom:1.5rem;animation:fadeUp .6s .1s both}
+.hero-badge-blink-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 1.3s infinite}
+.hero-h1{font-family:'DM Serif Display',serif;font-size:clamp(2.6rem,5vw,4rem);color:#fff;line-height:1.1;letter-spacing:-.025em;margin-bottom:1.25rem;animation:fadeUp .6s .15s both}
+.hero-h1 em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,.58);line-height:1.72;max-width:460px;margin-bottom:1.75rem;animation:fadeUp .6s .25s both}
+.hero-sub strong{color:rgba(255,255,255,.92)}
+.hero-btns{display:flex;gap:.875rem;flex-wrap:wrap;margin-bottom:1.5rem;animation:fadeUp .6s .35s both}
+.trust-bar{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap;animation:fadeUp .6s .45s both;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.07)}
+.trust-item{font-size:.72rem;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:6px}
+.trust-dot-gold{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+/* Slot card */
+.slot-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-xl);overflow:hidden;animation:fadeUp .7s .3s both;position:relative}
+.slot-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.sc-head{padding:1.5rem 1.75rem 1.25rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.sc-badge{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:6px;margin-bottom:.875rem}
+.sc-title{font-family:'DM Serif Display',serif;font-size:1.2rem;color:#fff;margin-bottom:.5rem}
+.sc-slots-big{font-family:'DM Serif Display',serif;font-size:4rem;color:var(--gold);line-height:1;text-align:center;padding:.75rem 0}
+.sc-slots-sub{font-size:.72rem;color:rgba(255,255,255,.35);text-align:center}
+.sc-bar-wrap{width:100%;height:5px;background:rgba(255,255,255,.08);border-radius:99px;margin:.75rem 0;overflow:hidden}
+.sc-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold),#fde68a);border-radius:99px;transition:width 1s ease}
+.sc-body{padding:1.25rem 1.75rem}
+.sc-row{display:flex;align-items:center;gap:8px;font-size:.82rem;color:rgba(255,255,255,.6);margin-bottom:.625rem}
+.sc-check{color:var(--gold);flex-shrink:0;font-size:.7rem}
+.sc-sep{height:1px;background:rgba(255,255,255,.07);margin:1rem 0}
+.sc-cta{width:100%;background:var(--gold);color:#1a0800;font-size:.95rem;font-weight:700;padding:13px;border-radius:var(--r-sm);border:none;cursor:pointer;transition:all .22s}
+.sc-cta:hover{filter:brightness(1.08)}
+
+/* ── BENEFIT GRID ── */
+.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.125rem}
+.benefit-card{background:#fff;border:1.5px solid var(--gray-200);border-top:3px solid var(--red);border-radius:var(--r-lg);padding:1.625rem;box-shadow:var(--sh-sm);transition:all .25s}
+.benefit-card.gold-top{border-top-color:var(--gold)}
+.benefit-card:hover{transform:translateY(-3px);box-shadow:var(--sh)}
+.benefit-icon{font-size:1.875rem;margin-bottom:.875rem}
+.benefit-title{font-weight:700;font-size:.92rem;color:var(--black);margin-bottom:.35rem}
+.benefit-desc{font-size:.8rem;color:var(--gray-600);line-height:1.65}
+
+/* ── PRICING ── */
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
+.plan-card{border-radius:var(--r-xl);overflow:hidden;border:1.5px solid var(--gray-200);transition:all .28s}
+.plan-card:hover{transform:translateY(-4px);box-shadow:var(--sh-lg)}
+.plan-card.featured{border-color:var(--gold);box-shadow:0 8px 40px rgba(201,162,39,.2)}
+.plan-head{padding:1.75rem 1.5rem;color:#fff;text-align:center;position:relative}
+.plan-head.gray{background:linear-gradient(135deg,#475569,#334155)}
+.plan-head.blue{background:linear-gradient(135deg,#1E3A8A,#2563eb)}
+.plan-head.dark{background:linear-gradient(135deg,#0f172a,#1e1b4b)}
+.plan-badge-feat{position:absolute;top:10px;right:10px;background:var(--gold);color:#1a0800;font-size:.62rem;font-weight:800;padding:3px 10px;border-radius:99px;letter-spacing:.06em}
+.plan-type{font-size:.65rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin-bottom:.3rem}
+.plan-name{font-family:'DM Serif Display',serif;font-size:1.5rem;margin-bottom:.3rem}
+.plan-price{font-family:'DM Serif Display',serif;font-size:3rem;color:var(--gold);line-height:1}
+.plan-period{font-size:.75rem;opacity:.6;margin-top:.25rem}
+.plan-body{padding:1.5rem}
+.plan-feats{list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.25rem}
+.plan-feats li{font-size:.88rem;color:var(--gray-600);display:flex;gap:.5rem;line-height:1.55;align-items:flex-start}
+.feat-yes{color:var(--green);font-weight:700;flex-shrink:0}
+.feat-star{color:var(--gold);font-weight:700;flex-shrink:0}
+.feat-no{color:var(--gray-200);flex-shrink:0}
+.plan-btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;border-radius:var(--r-sm);font-weight:700;font-size:.9rem;border:none;cursor:pointer;transition:all .22s}
+.plan-btn.gold-btn{background:var(--gold);color:#1a0800}
+.plan-btn.gold-btn:hover{filter:brightness(1.08)}
+.plan-btn.outline-btn{background:transparent;border:1.5px solid var(--gray-200);color:var(--gray-600)}
+.plan-btn.outline-btn:hover{border-color:var(--red);color:var(--red)}
+
+/* ── TIMELINE ── */
+.tl-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:2.5rem}
+.tl-row::before{content:'';position:absolute;top:27px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,var(--gold),var(--red));z-index:0;opacity:.4}
+.tl-item{text-align:center;padding:0 .75rem;position:relative;z-index:1}
+.tl-dot-gold{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#fde68a);display:flex;align-items:center;justify-content:center;margin:0 auto .875rem;font-size:1.25rem;box-shadow:0 4px 16px rgba(201,162,39,.35)}
+.tl-dot-navy{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#1E3A8A,#2563eb);display:flex;align-items:center;justify-content:center;margin:0 auto .875rem;font-size:1.25rem;box-shadow:0 4px 16px rgba(30,58,138,.25)}
+.tl-date{font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.25rem}
+.tl-title{font-weight:700;font-size:.88rem;color:var(--black);margin-bottom:.2rem}
+.tl-desc{font-size:.75rem;color:var(--gray-600);line-height:1.55}
+
+/* ── BRIDGE BOX ── */
+.bridge-box{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:2px solid rgba(201,162,39,.35);border-radius:var(--r-lg);padding:1.5rem 1.75rem;margin-bottom:2.5rem}
+.bridge-box h3{font-weight:700;font-size:1rem;color:#92400e;margin-bottom:.4rem}
+.bridge-box p{font-size:.9rem;color:#78350f;line-height:1.65}
+
+/* ── FORM ── */
+.form-section{background:linear-gradient(135deg,#0f172a 0%,#1E3A8A 100%);padding:5.5rem 1.5rem}
+.form-box{max-width:660px;margin:0 auto;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-xl);padding:2.5rem 2rem;backdrop-filter:blur(12px)}
+.form-title{font-family:'DM Serif Display',serif;font-size:2rem;color:#fff;margin-bottom:.3rem}
+.form-title span{color:var(--gold)}
+.form-sub{color:rgba(255,255,255,.55);font-size:.9rem;margin-bottom:2rem;line-height:1.65}
+.form-2col{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{margin-bottom:1rem}
+.form-label{display:block;font-size:.78rem;font-weight:600;color:rgba(255,255,255,.7);margin-bottom:.4rem;letter-spacing:.04em}
+.form-label .req{color:var(--gold);margin-left:2px}
+.form-input,.form-select{width:100%;min-height:46px;background:rgba(255,255,255,.09);border:1.5px solid rgba(255,255,255,.15);border-radius:var(--r-sm);padding:10px 13px;color:#fff;font-family:inherit;font-size:.9rem;transition:all .2s;outline:none}
+.form-input::placeholder{color:rgba(255,255,255,.28);font-size:.85rem}
+.form-input:focus,.form-select:focus{border-color:var(--gold);background:rgba(255,255,255,.12)}
+.form-select option{background:#1E3A8A;color:#fff}
+.form-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23fbbf24' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center}
+.fulfill-row{display:flex;gap:.75rem;margin-top:.375rem}
+.fulfill-btn{flex:1;min-height:44px;padding:10px;border-radius:var(--r-sm);border:1.5px solid rgba(255,255,255,.15);background:rgba(255,255,255,.05);color:rgba(255,255,255,.6);font-size:.85rem;cursor:pointer;transition:all .2s}
+.fulfill-btn.active{border-color:var(--gold);background:rgba(201,162,39,.15);color:var(--gold);font-weight:700}
+.form-submit{width:100%;min-height:52px;background:var(--gold);color:#1a0800;font-size:1rem;font-weight:800;border:none;border-radius:var(--r-sm);cursor:pointer;transition:all .22s;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:1.5rem}
+.form-submit:hover{filter:brightness(1.08);transform:translateY(-1px);box-shadow:0 10px 36px rgba(201,162,39,.4)}
+.form-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.form-note{text-align:center;margin-top:.875rem;font-size:.75rem;color:rgba(255,255,255,.35);line-height:1.6}
+.form-err{display:none;color:#fca5a5;font-size:.85rem;margin-top:.5rem;padding:.75rem;background:rgba(220,38,38,.15);border-radius:var(--r-sm)}
+
+/* Slip step */
+.slip-step{display:none}
+.account-box{background:rgba(201,162,39,.1);border:1px solid rgba(201,162,39,.3);border-radius:var(--r);padding:1.125rem;margin-bottom:1.25rem}
+.acct-label{font-size:.68rem;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.4);margin-bottom:.2rem}
+.acct-value{font-weight:700;color:var(--gold);font-size:.95rem}
+.slip-dropzone{background:rgba(255,255,255,.05);border:2px dashed rgba(201,162,39,.35);border-radius:var(--r);padding:1.5rem;text-align:center;margin-bottom:1.25rem}
+.slip-dropzone h3{font-weight:700;color:#fff;font-size:.95rem;margin-bottom:.375rem}
+.slip-dropzone p{font-size:.78rem;color:rgba(255,255,255,.4);margin-bottom:.875rem}
+.file-btn-wrap{position:relative;display:inline-block;width:100%}
+.file-btn-wrap input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.file-btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.2);color:#fff;font-weight:600;font-size:.9rem;border-radius:var(--r-sm);cursor:pointer}
+.file-name-display{margin-top:.5rem;font-size:.78rem;color:var(--gold);text-align:center}
+
+/* Success */
+.success-step{display:none;text-align:center;padding:.5rem 0}
+.success-icon{font-size:3rem;margin-bottom:.875rem}
+.success-title{font-family:'DM Serif Display',serif;font-size:2rem;color:var(--gold);margin-bottom:.5rem}
+.member-id{background:rgba(201,162,39,.15);border:1px solid rgba(201,162,39,.4);border-radius:var(--r);padding:1rem;margin:1.25rem 0;font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--gold);letter-spacing:.1em}
+.success-desc{color:rgba(255,255,255,.65);font-size:.9rem;line-height:1.75}
+
+/* ── TRUST STRIP ── */
+.trust-strip{background:var(--gray-50);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);padding:2.5rem 1.5rem}
+.trust-strip-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap}
+.trust-item-strip{text-align:center}
+.trust-item-icon{font-size:1.5rem;margin-bottom:.375rem}
+.trust-item-label{font-weight:700;font-size:.82rem;color:var(--black)}
+.trust-item-sub{font-size:.72rem;color:var(--gray-600);margin-top:.1rem}
+
+/* ── STICKY ── */
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:800;background:rgba(10,10,10,.95);backdrop-filter:blur(12px);border-top:1px solid rgba(201,162,39,.2);padding:.875rem 1.5rem;display:none;align-items:center;justify-content:space-between;gap:1rem}
+.sticky-cta.show{display:flex}
+.sticky-cta-text{font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.4}
+.sticky-cta-text strong{color:#fff;display:block;font-size:.88rem}
+.sticky-cta-btn{flex-shrink:0;background:var(--gold);color:#1a0800;font-size:.88rem;font-weight:800;padding:11px 22px;border-radius:var(--r-sm);border:none;cursor:pointer;white-space:nowrap;animation:pulse-gold 3s infinite;letter-spacing:.01em;transition:all .2s}
+
+.float-contact{position:fixed;bottom:5rem;right:1.25rem;z-index:799;display:flex;flex-direction:column;gap:.5rem}
+.float-btn{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.22);transition:all .22s;text-decoration:none}
+.float-btn:hover{transform:translateY(-3px)}
+.float-line{background:#06C755}
+.float-wa{background:#25D366}
+
+/* ── DISCLAIMER ── */
+.disclaimer{background:var(--green-light);border:1.5px solid rgba(22,163,74,.2);border-radius:var(--r);padding:1rem 1.25rem;font-size:.85rem;color:#166534;margin-top:1.5rem;line-height:1.6}
+.footer{background:var(--black);padding:2.5rem 1.5rem;border-top:1px solid rgba(255,255,255,.06)}
+.footer-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'DM Serif Display',serif;font-size:1rem;color:#fff}
+.footer-logo span{color:var(--red)}
+.footer-links{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-link{font-size:.76rem;color:rgba(255,255,255,.32);transition:color .2s}
+.footer-link:hover{color:rgba(255,255,255,.7)}
+.footer-copy{font-size:.7rem;color:rgba(255,255,255,.18)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;max-width:600px;gap:2.5rem}
+  .slot-card{max-width:400px}
+  .pricing-grid{grid-template-columns:1fr}
+  .benefit-grid{grid-template-columns:1fr 1fr}
+  .tl-row{grid-template-columns:1fr 1fr;gap:1.5rem}
+  .tl-row::before{display:none}
+}
+@media(max-width:768px){
+  .benefit-grid{grid-template-columns:1fr}
+  .form-2col{grid-template-columns:1fr}
+  .sticky-cta-text{display:none}
+  .sticky-cta{justify-content:center}
+  .float-contact{bottom:5.5rem}
+}
+@media(max-width:480px){
+  .hero-btns{flex-direction:column}
+  .tl-row{grid-template-columns:1fr}
+  .trust-strip-inner{gap:1.5rem}
+}
+</style>
+
+<meta property="og:title" content="VITH HUB Membership — Showroom ถาวรใน Big C เวียงจันทน์">
+<meta property="og:description" content="Founder Member Showroom 200 ตร.ม. ใน Big C เวียงจันทน์ · ยื่นโปรไฟล์เพื่อรับการพิจารณา">
+<meta property="og:image" content="https://vithhub.asia/images/vithshop.webp">
+<meta property="og:url" content="https://vithhub.asia/pages/membership.html">
+<meta property="og:type" content="website">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  👑 Founder Membership 2026<span>·</span>เหลือ <span id="topbarSlots">20</span> Slots<span>·</span>เปิด Showroom มิถุนายน 2026
+</div>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span class="ticker-item">🏪 VITH HUB <span>Showroom 200 ตร.ม.</span></span>
+    <span class="ticker-item">📍 Big C Vientiane · ลาว</span>
+    <span class="ticker-item">👑 <span>Founder Member</span> — 12 เดือน</span>
+    <span class="ticker-item">🔥 Limited <span>20 Brands</span> Only</span>
+    <span class="ticker-item">🚀 เปิด <span>มิถุนายน 2026</span></span>
+    <span class="ticker-item">✦ Exclusive · 0% Commission</span>
+    <span class="ticker-item">🏪 VITH HUB <span>Showroom 200 ตร.ม.</span></span>
+    <span class="ticker-item">📍 Big C Vientiane · ลาว</span>
+    <span class="ticker-item">👑 <span>Founder Member</span> — 12 เดือน</span>
+    <span class="ticker-item">🔥 Limited <span>20 Brands</span> Only</span>
+    <span class="ticker-item">🚀 เปิด <span>มิถุนายน 2026</span></span>
+    <span class="ticker-item">✦ Exclusive · 0% Commission</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="vith-nav" id="mainNav">
+  <div class="vith-nav-inner">
+    <a href="/index.html" class="vith-nav-logo">
+      <div class="vith-nav-logo-mark">V</div>
+      <div style="display:flex;flex-direction:column">
+        <div class="vith-nav-logo-text">VITH<span>HUB</span></div>
+        <span class="vith-nav-logo-sub">Mekong Trade Gateway</span>
+      </div>
+    </a>
+    <div class="vith-nav-links">
+      <a href="/index.html" class="vith-nav-a">Home</a>
+      <a href="/pages/gateway.html" class="vith-nav-a">Gateway</a>
+      <a href="/pages/accelerator.html" class="vith-nav-a">Retail Entry</a>
+      <a href="/pages/event.html" class="vith-nav-a">Event</a>
+      <a href="/pages/membership.html" class="vith-nav-a active">Membership</a>
+      <a href="/pages/about.html" class="vith-nav-a">About</a>
+    </div>
+    <div class="vith-nav-right">
+      <button class="vith-nav-cta" onclick="goToApply('12months')">👑 จองสิทธิ์ →</button>
+      <button class="vith-hamburger" onclick="vithToggleNav()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div class="vith-mobile-menu" id="vithMobileMenu">
+  <a href="/index.html" class="vith-mob-link">Home</a>
+  <a href="/pages/gateway.html" class="vith-mob-link">Gateway</a>
+  <a href="/pages/accelerator.html" class="vith-mob-link">Retail Entry</a>
+  <a href="/pages/event.html" class="vith-mob-link">Event</a>
+  <a href="/pages/membership.html" class="vith-mob-link active">Membership</a>
+  <a href="/pages/about.html" class="vith-mob-link">About</a>
+  <button class="vith-mob-cta" onclick="goToApply('12months')">👑 จองสิทธิ์ Founder →</button>
+</div>
+
+<!-- ══════════════════════════
+     HERO
+══════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-bg"><img src="/images/vithshop.webp" alt="VITH HUB Showroom Big C Vientiane" loading="eager"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-stripe"></div>
+
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge-blink">
+        <span class="hero-badge-blink-dot"></span>
+        จบงาน 5 วัน... แล้วไปไหนต่อ?
+      </div>
+      <h1 class="hero-h1">
+        Keep Your Brand in Laos<br><em>Year-Round</em>
+      </h1>
+      <p class="hero-sub">
+        VITH HUB Membership = <strong>Showroom ถาวร 200 ตร.ม.</strong> ใน Big C เวียงจันทน์<br>พร้อม Local Staff ดูแลทุกวัน ไม่ต้องบินไปเอง
+      </p>
+      <div class="hero-btns">
+        <button class="btn-gold" onclick="goToApply('12months')">👑 จองสิทธิ์ Founder →</button>
+        <button class="btn-outline" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polygon points="10,8 16,12 10,16"/></svg>
+          ดูแพ็กเกจ
+        </button>
+      </div>
+      <div class="trust-bar">
+        <div class="trust-item"><span class="trust-dot-gold"></span>Showroom 200 ตร.ม.</div>
+        <div class="trust-item"><span class="trust-dot-gold"></span>Big C Vientiane</div>
+        <div class="trust-item"><span class="trust-dot-gold"></span>0% Commission</div>
+        <div class="trust-item"><span class="trust-dot-gold"></span>Limited 20 Brands</div>
+      </div>
+    </div>
+
+    <!-- Slot Card -->
+    <div class="slot-card">
+      <div class="sc-head">
+        <div class="sc-badge">
+          <svg width="8" height="8" viewBox="0 0 10 10"><circle cx="5" cy="5" r="5" fill="#C9A227"/></svg>
+          Founder Member 2026
+        </div>
+        <div class="sc-title">🔥 <span data-th="Slots คงเหลือ" data-en="Slots Remaining">Slots คงเหลือ</span></div>
+        <div class="sc-slots-big" id="slotHero">20</div>
+        <div class="sc-slots-sub">จาก 20 ที่ · จองแล้ว <span id="bookedHero">0</span> ราย</div>
+        <div class="sc-bar-wrap"><div class="sc-bar-fill" id="slotBarHero" style="width:100%"></div></div>
+      </div>
+      <div class="sc-body">
+        <div class="sc-row"><span class="sc-check">★</span>Showroom 200 ตร.ม. ใน Big C ลาว</div>
+        <div class="sc-row"><span class="sc-check">★</span>Lao Staff Full-time ดูแลทุกวัน</div>
+        <div class="sc-row"><span class="sc-check">★</span>ขนส่งฟรี 100 KG + ส่วนลด 15%</div>
+        <div class="sc-row"><span class="sc-check">★</span>B2B Matching ครบวงจร</div>
+        <div class="sc-sep"></div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem">
+          <div>
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;color:var(--gold2);letter-spacing:.08em">ราคาแบ่งตามแผน — ติดต่อทีมงาน</div>
+            <div style="font-size:.72rem;color:rgba(255,255,255,.4);margin-top:.2rem">/ 12 เดือน · Founder Price</div>
+          </div>
+          <div style="text-align:right">
+            
+          </div>
+        </div>
+        <button class="sc-cta" onclick="goToApply('12months')">👑 จองสิทธิ์ Founder Member →</button>
+        <div style="text-align:center;font-size:.68rem;color:rgba(255,255,255,.25);margin-top:.75rem;line-height:1.6">🔒 ปลอดภัย · ไม่รับ % ยอดขาย · ทีมยืนยันภายใน 1 ชั่วโมง</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     BRIDGE LOGIC
+══════════════════════════ -->
+<section style="background:var(--gray-50);padding:5rem 1.5rem;border-bottom:1px solid var(--gray-200)">
+  <div class="wrap">
+    <div class="bridge-box reveal">
+      <h3>💡 ต่อยอดจาก Event ได้เลยทันที</h3>
+      <p>ลูกค้าที่เจอคุณในงาน Expo 5 วัน จะจำแบรนด์คุณได้นานแค่ไหน ถ้าไม่มีหน้าร้านให้กลับมา?<br>
+      <strong>Membership = ทำให้พวกเขาเจอคุณซ้ำทุกสัปดาห์ ตลอดทั้งปี</strong></p>
+    </div>
+    <!-- Flow -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;max-width:720px;margin:0 auto" class="reveal d1">
+      <div style="position:absolute;top:27px;left:12.5%;right:12.5%;height:2px;background:linear-gradient(90deg,var(--gold),var(--red));opacity:.35;z-index:0"></div>
+      <div style="text-align:center;padding:0 .75rem;position:relative;z-index:1">
+        <div class="tl-dot-gold" style="width:54px;height:54px;font-size:1.25rem">🎪</div>
+        <div style="font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.25rem">Phase 1</div>
+        <div style="font-weight:700;font-size:.82rem;color:var(--black)">Expo</div>
+        <div style="font-size:.72rem;color:var(--gray-600);margin-top:.2rem;line-height:1.5">เปิดตัว 5 วัน<br>3,000+ คน</div>
+      </div>
+      <div style="text-align:center;padding:0 .75rem;position:relative;z-index:1">
+        <div class="tl-dot-navy" style="width:54px;height:54px;font-size:1.25rem">🏪</div>
+        <div style="font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.25rem">Phase 2</div>
+        <div style="font-weight:700;font-size:.82rem;color:var(--black)">Showroom</div>
+        <div style="font-size:.72rem;color:var(--gray-600);margin-top:.2rem;line-height:1.5">เจอซ้ำทุกสัปดาห์<br>ตลอดปี</div>
+      </div>
+      <div style="text-align:center;padding:0 .75rem;position:relative;z-index:1">
+        <div class="tl-dot-navy" style="width:54px;height:54px;font-size:1.25rem">🤝</div>
+        <div style="font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.25rem">Phase 3</div>
+        <div style="font-weight:700;font-size:.82rem;color:var(--black)">Buyer</div>
+        <div style="font-size:.72rem;color:var(--gray-600);margin-top:.2rem;line-height:1.5">B2B Matching<br>5+ ประเทศ</div>
+      </div>
+      <div style="text-align:center;padding:0 .75rem;position:relative;z-index:1">
+        <div class="tl-dot-gold" style="width:54px;height:54px;font-size:1.25rem">🛒</div>
+        <div style="font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.25rem">Phase 4</div>
+        <div style="font-weight:700;font-size:.82rem;color:var(--black)">Retail</div>
+        <div style="font-size:.72rem;color:var(--gray-600);margin-top:.2rem;line-height:1.5">กระจายทั่ว<br>สปป.ลาว</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     WHAT YOU GET
+══════════════════════════ -->
+<section class="section" style="background:#fff">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow gold-eye center">สิทธิประโยชน์จริง</div>
+      <h2 class="h2" style="text-align:center">Founder Member <em>ได้อะไรบ้าง</em></h2>
+      <p class="lead" style="text-align:center;margin:0 auto">ไม่ใช่แค่ชื่อ — แต่คือ physical assets จริงในลาว</p>
+    </div>
+    <div class="benefit-grid" style="margin-top:2.5rem">
+      <div class="benefit-card gold-top reveal d1">
+        <div class="benefit-icon">🏪</div>
+        <div class="benefit-title">Showroom + คลังสินค้า</div>
+        <div class="benefit-desc">โซนแสดงสินค้าตัวอย่าง 200 ตร.ม. พร้อมพื้นที่เก็บสินค้า <strong>1 พาเลท</strong> ใน Big C เวียงจันทน์</div>
+      </div>
+      <div class="benefit-card gold-top reveal d2">
+        <div class="benefit-icon">👥</div>
+        <div class="benefit-title">Lao Staff Full-time</div>
+        <div class="benefit-desc">พนักงานท้องถิ่น Bilingual ดูแล Showroom 8 ชม./วัน ไม่ต้องบินไปเองแม้แต่ครั้งเดียว</div>
+      </div>
+      <div class="benefit-card gold-top reveal d3">
+        <div class="benefit-icon">🚚</div>
+        <div class="benefit-title">ขนส่งครั้งแรก 100 KG ฟรี</div>
+        <div class="benefit-desc">ส่งฟรี 100 KG ครั้งแรก — ส่วนเกิน <strong>25 ฿/KG</strong> · ครั้งต่อไปลด 15% ตลอดปี</div>
+      </div>
+      <div class="benefit-card gold-top reveal d1">
+        <div class="benefit-icon">🛵</div>
+        <div class="benefit-title">กระจายทั่ว สปป.ลาว</div>
+        <div class="benefit-desc">ส่งกระจายทั่วลาวผ่านพันธมิตรขนส่งมาตรฐาน ค่าบริการตามจริง ไม่มีค่า Management</div>
+      </div>
+      <div class="benefit-card gold-top reveal d2">
+        <div class="benefit-icon">🤝</div>
+        <div class="benefit-title">B2B Matching</div>
+        <div class="benefit-desc">เชื่อมกับ Buyer และ Distributor ทั่วลาวและ 5+ ประเทศ — VITH HUB อำนวยความสะดวก คุณบริหารยอดขายเอง 100%</div>
+      </div>
+      <div class="benefit-card gold-top reveal d3">
+        <div class="benefit-icon">👑</div>
+        <div class="benefit-title">Founder Member ID</div>
+        <div class="benefit-desc">รหัสสมาชิกพิเศษ unlock on-demand services และสิทธิ์เพิ่มเติมในอนาคต พร้อมสิทธิ์ต่ออายุก่อนใคร</div>
+      </div>
+    </div>
+    <div class="disclaimer reveal">
+      ✅ <strong>หมายเหตุสำคัญ:</strong> VITH HUB เป็นเพียงแพลตฟอร์มอำนวยความสะดวก —
+      ไม่รับ % ยอดขายหรือ Commission ใดๆ ทั้งสิ้น ลูกค้าบริหารการตลาดและยอดขายเอง 100%
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     SHOWROOM PROOF
+══════════════════════════ -->
+<section style="background:var(--black);padding:5.5rem 1.5rem;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:40px 40px;pointer-events:none"></div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <div class="sec-head reveal">
+      <div class="eyebrow gold-eye">หลักฐานจริง</div>
+      <h2 class="h2" style="color:#fff">Your Physical Space<br><em style="color:rgba(255,255,255,.4)">Inside Big C Vientiane</em></h2>
+    </div>
+    <div style="border-radius:var(--r-xl);overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.4);margin-bottom:1.5rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);aspect-ratio:16/7;display:flex;align-items:center;justify-content:center;position:relative" class="reveal">
+      <img src="/images/vithshop.png" alt="VITH HUB Showroom Big C Vientiane" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0">
+      <div style="position:relative;z-index:1;text-align:center;padding:2rem">
+        <div style="font-size:3rem;margin-bottom:.75rem;opacity:.35">🏪</div>
+        <div style="font-size:.82rem;color:rgba(255,255,255,.3);letter-spacing:.06em;text-transform:uppercase">Showroom photo will display here</div>
+      </div>
+    </div>
+    <div style="font-size:.82rem;color:rgba(255,255,255,.38);text-align:center;margin-bottom:2.5rem;font-style:italic">Your physical presence in Laos — a permanent home for your brand</div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.125rem;max-width:560px;margin:0 auto" class="reveal d1">
+      <div style="text-align:center;padding:1.375rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-lg)">
+        <div style="font-family:'DM Serif Display',serif;font-size:2rem;color:#fff;line-height:1">200</div>
+        <div style="font-size:.7rem;color:rgba(255,255,255,.38);margin-top:.25rem;letter-spacing:.06em">ตร.ม. Showroom</div>
+      </div>
+      <div style="text-align:center;padding:1.375rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-lg)">
+        <div style="font-family:'DM Serif Display',serif;font-size:1.25rem;color:#fff;line-height:1.2">Big C</div>
+        <div style="font-size:.7rem;color:rgba(255,255,255,.38);margin-top:.25rem;letter-spacing:.06em">เวียงจันทน์ ลาว</div>
+      </div>
+      <div style="text-align:center;padding:1.375rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-lg)">
+        <div style="font-family:'DM Serif Display',serif;font-size:2rem;color:#fff;line-height:1">มิ.ย.<span style="color:var(--gold)">2026</span></div>
+        <div style="font-size:.7rem;color:rgba(255,255,255,.38);margin-top:.25rem;letter-spacing:.06em">เปิดอย่างเป็นทางการ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     MEMBER PAYMENT SUPPORT
+══════════════════════════ -->
+<section style="background:var(--black);padding:5.5rem 1.5rem;border-top:1px solid rgba(255,255,255,.06)">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;max-width:900px;margin:0 auto">
+      <div class="reveal">
+        <div class="eyebrow gold-eye">สมาชิก Membership</div>
+        <h2 class="h2" style="color:#fff">รองรับการเติบโต<br><em style="color:rgba(255,255,255,.4)">ระยะยาวในตลาดต่างประเทศ</em></h2>
+        <p class="lead" style="color:rgba(255,255,255,.5)">หลังจากผ่าน Retail Entry Package สมาชิกสามารถใช้บริการต่อเนื่องเพื่อขยายยอดขายและบริหารระบบในลาว</p>
+        <div style="margin-top:1.75rem;padding:1.125rem 1.375rem;background:rgba(201,162,39,.08);border:1px solid rgba(201,162,39,.2);border-radius:var(--r-sm)">
+          <p style="font-size:.85rem;color:rgba(255,255,255,.55);line-height:1.65">ค่าดำเนินการ <strong style="color:var(--gold)">3–7%</strong> ของยอดขาย<br>เฉพาะสมาชิก Membership เท่านั้น</p>
+        </div>
+      </div>
+      <div class="reveal d2">
+        <div style="display:flex;flex-direction:column;gap:.75rem">
+          <div style="display:flex;align-items:center;gap:.875rem;padding:1rem 1.125rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-lg)">
+            <span style="color:var(--gold);font-size:1.1rem;flex-shrink:0">★</span>
+            <span style="font-size:.88rem;color:rgba(255,255,255,.7)">Billing support กับ Retail</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.875rem;padding:1rem 1.125rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-lg)">
+            <span style="color:var(--gold);font-size:1.1rem;flex-shrink:0">★</span>
+            <span style="font-size:.88rem;color:rgba(255,255,255,.7)">Payment coordination</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.875rem;padding:1rem 1.125rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-lg)">
+            <span style="color:var(--gold);font-size:1.1rem;flex-shrink:0">★</span>
+            <span style="font-size:.88rem;color:rgba(255,255,255,.7)">Bank account setup support</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.875rem;padding:1rem 1.125rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-lg)">
+            <span style="color:var(--gold);font-size:1.1rem;flex-shrink:0">★</span>
+            <span style="font-size:.88rem;color:rgba(255,255,255,.7)">Local operations support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Link Accelerator box -->
+    <div style="max-width:620px;margin:3rem auto 0;padding:1.5rem 2rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-xl);display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap" class="reveal">
+      <div>
+        <div style="font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:.375rem">ระบบ 2 ขั้น</div>
+        <p style="font-size:.9rem;color:rgba(255,255,255,.7);line-height:1.65"><strong style="color:#fff">Retail Entry Package</strong> คือจุดเริ่มต้น (90 วัน)<br><strong style="color:var(--gold)">Membership</strong> คือระบบระยะยาว (12 เดือน)</p>
+      </div>
+      <a href="/pages/accelerator.html" style="flex-shrink:0;display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:600;color:var(--red);padding:9px 18px;border:1.5px solid rgba(229,20,30,.3);border-radius:var(--r-sm);text-decoration:none;white-space:nowrap;transition:all .2s">
+        ดู Retail Entry →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     COMMITMENT + QC
+══════════════════════════ -->
+<section style="background:var(--gray-50);padding:5rem 1.5rem;border-top:1px solid var(--gray-200)">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;max-width:900px;margin:0 auto">
+
+      <!-- Commitment -->
+      <div class="reveal d1">
+        <div class="eyebrow gold-eye">เงื่อนไข</div>
+        <h3 style="font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--black);margin-bottom:.875rem;letter-spacing:-.02em">เงื่อนไขการเข้าร่วม</h3>
+        <div style="display:flex;flex-direction:column;gap:.625rem;margin-bottom:1.125rem">
+          <div style="display:flex;align-items:flex-start;gap:.75rem;font-size:.88rem;color:var(--gray-800);line-height:1.55">
+            <span style="color:var(--gold);font-weight:700;flex-shrink:0">★</span>
+            <span>ระยะเวลาเริ่มต้น 12 เดือน</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:.75rem;font-size:.88rem;color:var(--gray-800);line-height:1.55">
+            <span style="color:var(--gold);font-weight:700;flex-shrink:0">★</span>
+            <span>สามารถต่ออายุได้ตามต้องการ</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:.75rem;font-size:.88rem;color:var(--gray-800);line-height:1.55">
+            <span style="color:var(--gold);font-weight:700;flex-shrink:0">★</span>
+            <span>ทีมช่วยประเมินความพร้อมก่อนเริ่ม</span>
+          </div>
+        </div>
+        <div style="padding:.875rem 1rem;background:#fff;border:1px solid var(--gray-200);border-left:3px solid var(--gold);border-radius:var(--r-sm);font-size:.78rem;color:var(--gray-600);line-height:1.65">*ในกรณีสินค้ามีข้อจำกัดด้านกฎระเบียบ ทีมจะช่วยให้คำแนะนำก่อนเริ่มโปรแกรม</div>
+      </div>
+
+      <!-- QC -->
+      <div class="reveal d2">
+        <div class="eyebrow gold-eye">คุณภาพสินค้า</div>
+        <h3 style="font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--black);margin-bottom:.875rem;letter-spacing:-.02em">การตรวจสอบสินค้า</h3>
+        <p style="font-size:.88rem;color:var(--gray-600);margin-bottom:.875rem;line-height:1.65">ทีม VITH HUB จะช่วยตรวจสอบเบื้องต้น และให้คำแนะนำเพื่อให้สินค้าเหมาะสมกับตลาดลาว</p>
+        <p style="font-size:.88rem;color:var(--gray-600);margin-bottom:1.125rem;line-height:1.65">หากสินค้ามีข้อจำกัดด้านกฎหมายหรือการนำเข้า ทีมจะประสานงานและแนะนำแนวทางแก้ไข</p>
+        <div style="padding:.875rem 1rem;background:var(--green-light);border:1px solid rgba(22,163,74,.18);border-radius:var(--r-sm);font-size:.8rem;color:#166534;line-height:1.65">✅ ทีมงานดูแลทุกขั้นตอนด้านกฎระเบียบและการนำเข้า — คุณไม่ต้องเผชิญกับความเสี่ยงด้านกฎหมายเพียงลำพัง</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     B2B MATCHING
+══════════════════════════ -->
+<section style="background:var(--black);padding:5.5rem 1.5rem;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:40px 40px;pointer-events:none"></div>
+  <div class="wrap" style="position:relative;z-index:1">
+    <div class="sec-head reveal">
+      <div class="eyebrow gold-eye">B2B Matching</div>
+      <h2 class="h2" style="color:#fff">ไม่ใช่แค่ขายปลีก<br><em style="color:rgba(255,255,255,.4)">— แต่หาพาร์ทเนอร์ให้คุณ</em></h2>
+      <p class="lead" style="color:rgba(255,255,255,.5)">VITH HUB ไม่ได้เป็นแค่ showroom แต่เป็น platform ที่ช่วยเชื่อมต่อคุณกับ Distributor และ Buyer ในลาว</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.125rem;margin-top:1rem">
+      <div class="reveal d1" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-lg);padding:1.625rem">
+        <div style="font-size:1.875rem;margin-bottom:.875rem">🤝</div>
+        <div style="font-weight:700;font-size:.92rem;color:#fff;margin-bottom:.35rem">Business Matching ตลอดปี</div>
+        <div style="font-size:.8rem;color:rgba(255,255,255,.45);line-height:1.65">นัดพบ Buyer และ Distributor ผ่านระบบ 1-on-1 ตลอด 12 เดือน</div>
+      </div>
+      <div class="reveal d2" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-lg);padding:1.625rem">
+        <div style="font-size:1.875rem;margin-bottom:.875rem">🌏</div>
+        <div style="font-weight:700;font-size:.92rem;color:#fff;margin-bottom:.35rem">เข้าถึง Buyer ในพื้นที่</div>
+        <div style="font-size:.8rem;color:rgba(255,255,255,.45);line-height:1.65">เครือข่าย Buyer จาก 5+ ประเทศที่ไม่เปิดรับทั่วไป</div>
+      </div>
+      <div class="reveal d3" style="background:rgba(229,20,30,.08);border:1.5px solid rgba(229,20,30,.2);border-radius:var(--r-lg);padding:1.625rem">
+        <div style="font-size:1.875rem;margin-bottom:.875rem">📈</div>
+        <div style="font-weight:700;font-size:.92rem;color:#fff;margin-bottom:.35rem">โอกาสขยาย Distribution จริง</div>
+        <div style="font-size:.8rem;color:rgba(255,255,255,.5);line-height:1.65">จากขายปลีก → สู่ Distribution ทั่วลาวและ CLMV</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     FULFILLMENT TIERS
+══════════════════════════ -->
+<section style="background:#fff;padding:5.5rem 1.5rem;border-top:1px solid var(--gray-200)">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow gold-eye center">Fulfillment</div>
+      <h2 class="h2" style="text-align:center">ระบบ Fulfillment<em> รองรับการเติบโต</em></h2>
+      <p class="lead" style="text-align:center;margin:0 auto">เลือกระดับที่เหมาะกับธุรกิจของคุณ — ปรับได้เมื่อยอดขายโต</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:2.5rem">
+      <div class="reveal d1" style="border-radius:var(--r-xl);overflow:hidden;border:1.5px solid var(--gray-200);transition:all .25s">
+        <div style="padding:1.5rem;background:linear-gradient(135deg,#475569,#334155);color:#fff;text-align:center">
+          <div style="font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-bottom:.3rem">Bronze</div>
+          <div style="font-family:'DM Serif Display',serif;font-size:1.25rem">Basic</div>
+        </div>
+        <div style="padding:1.375rem">
+          <div style="font-weight:600;font-size:.88rem;color:var(--black);margin-bottom:.375rem">จัดการพื้นฐาน / เก็บสินค้า</div>
+          <div style="font-size:.8rem;color:var(--gray-600);line-height:1.65">เก็บสินค้าในคลัง + จัดแสดงใน Showroom</div>
+        </div>
+      </div>
+      <div class="reveal d2" style="border-radius:var(--r-xl);overflow:hidden;border:1.5px solid var(--gray-200);transition:all .25s">
+        <div style="padding:1.5rem;background:linear-gradient(135deg,#1E3A8A,#2563eb);color:#fff;text-align:center">
+          <div style="font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-bottom:.3rem">Silver</div>
+          <div style="font-family:'DM Serif Display',serif;font-size:1.25rem">Standard</div>
+        </div>
+        <div style="padding:1.375rem">
+          <div style="font-weight:600;font-size:.88rem;color:var(--black);margin-bottom:.375rem">จัดส่ง + ประสานงาน</div>
+          <div style="font-size:.8rem;color:var(--gray-600);line-height:1.65">จัดส่งทั่วลาว + ประสานงาน Buyer และ Retail</div>
+        </div>
+      </div>
+      <div class="reveal d3" style="border-radius:var(--r-xl);overflow:hidden;border:1.5px solid var(--gold);box-shadow:0 8px 32px rgba(201,162,39,.15);transition:all .25s">
+        <div style="padding:1.5rem;background:linear-gradient(135deg,#0f172a,#1e1b4b);color:#fff;text-align:center;position:relative">
+          <div style="position:absolute;top:8px;right:8px;background:var(--gold);color:#1a0800;font-size:.6rem;font-weight:800;padding:2px 8px;border-radius:99px">แนะนำ</div>
+          <div style="font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem">Gold</div>
+          <div style="font-family:'DM Serif Display',serif;font-size:1.25rem">End-to-End</div>
+        </div>
+        <div style="padding:1.375rem">
+          <div style="font-weight:700;font-size:.88rem;color:var(--black);margin-bottom:.375rem">บริหารเต็มระบบ (End-to-End)</div>
+          <div style="font-size:.8rem;color:var(--gray-600);line-height:1.65">ครอบคลุมทุกอย่าง — ตั้งแต่รับสินค้าถึงเงินเข้าบัญชี</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     BRAND UPGRADE
+══════════════════════════ -->
+<section style="background:var(--gray-50);padding:5rem 1.5rem;border-top:1px solid var(--gray-200)">
+  <div class="wrap" style="max-width:720px;margin:0 auto;text-align:center">
+    <div class="reveal">
+      <div class="eyebrow gold-eye center">Brand Positioning</div>
+      <h2 class="h2" style="text-align:center">ยกระดับแบรนด์ของคุณ<br><em>สู่ตลาดต่างประเทศ</em></h2>
+      <p class="lead" style="margin:0 auto 2rem;text-align:center">การมี showroom และระบบในต่างประเทศ ทำให้แบรนด์ของคุณดูน่าเชื่อถือและพร้อมสำหรับการเติบโตระดับสากล</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
+        <div style="padding:1.375rem;background:#fff;border:1.5px solid var(--gray-200);border-radius:var(--r-lg);text-align:center">
+          <div style="font-size:1.75rem;margin-bottom:.625rem">🏪</div>
+          <div style="font-weight:700;font-size:.82rem;color:var(--black)">Showroom จริง</div>
+          <div style="font-size:.75rem;color:var(--gray-400);margin-top:.2rem">ใน Big C เวียงจันทน์</div>
+        </div>
+        <div style="padding:1.375rem;background:#fff;border:1.5px solid var(--gray-200);border-radius:var(--r-lg);text-align:center">
+          <div style="font-size:1.75rem;margin-bottom:.625rem">🌏</div>
+          <div style="font-weight:700;font-size:.82rem;color:var(--black)">International Presence</div>
+          <div style="font-size:.75rem;color:var(--gray-400);margin-top:.2rem">แบรนด์อยู่ในลาวจริงๆ</div>
+        </div>
+        <div style="padding:1.375rem;background:#fff;border:1.5px solid var(--gray-200);border-radius:var(--r-lg);text-align:center">
+          <div style="font-size:1.75rem;margin-bottom:.625rem">📈</div>
+          <div style="font-weight:700;font-size:.82rem;color:var(--black)">Scale-Ready</div>
+          <div style="font-size:.75rem;color:var(--gray-400);margin-top:.2rem">พร้อมขยายสู่ CLMV</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     PRICING
+══════════════════════════ -->
+<section class="section" id="pricing" style="background:var(--gray-50);border-top:1px solid var(--gray-200)">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow center">เลือกแพ็กเกจ</div>
+      <h2 class="h2" style="text-align:center">3 เดือน · 6 เดือน · <em>12 เดือน</em></h2>
+      <p class="lead" style="text-align:center;margin:0 auto">เหมาจ่าย ไม่มีค่าคอมมิชชัน ไม่มีค่าใช้จ่ายซ่อนเร้น</p>
+    </div>
+    <div class="pricing-grid">
+      <!-- 3 months -->
+      <div class="plan-card reveal d1">
+        <div class="plan-head gray">
+          <div class="plan-type">SHORT TRIAL</div>
+          <div class="plan-name">3 เดือน</div>
+          <div class="plan-price" style="font-size:1rem">ติดต่อทีมงาน</div>
+          <div class="plan-period">ทดสอบตลาดลาวเบื้องต้น</div>
+        </div>
+        <div class="plan-body">
+          <ul class="plan-feats">
+            <li><span class="feat-yes">✓</span> Showroom + คลัง 1 พาเลท</li>
+            <li><span class="feat-yes">✓</span> Lao Staff ดูแล Showroom</li>
+            <li><span class="feat-yes">✓</span> ขนส่งฟรีครั้งแรก 100 KG</li>
+            <li><span class="feat-no">✗</span> ส่วนลด Logistics ต่อเนื่อง</li>
+            <li><span class="feat-no">✗</span> B2B Matching</li>
+          </ul>
+          <button class="plan-btn outline-btn" onclick="goToApply('3months')">เลือกแพ็กเกจนี้</button>
+        </div>
+      </div>
+      <!-- 6 months -->
+      <div class="plan-card reveal d2">
+        <div class="plan-head blue">
+          <div class="plan-type">MARKET PRESENCE</div>
+          <div class="plan-name">6 เดือน</div>
+          <div class="plan-price" style="font-size:1rem">ติดต่อทีมงาน</div>
+          <div class="plan-period">คุ้มกว่า · ส่วนลด RB99</div>
+        </div>
+        <div class="plan-body">
+          <ul class="plan-feats">
+            <li><span class="feat-yes">✓</span> Showroom + คลัง 1 พาเลท</li>
+            <li><span class="feat-yes">✓</span> Lao Staff เข้มข้นขึ้น</li>
+            <li><span class="feat-yes">✓</span> ขนส่งฟรีครั้งแรก 100 KG</li>
+            <li><span class="feat-star">⭐</span> ส่วนลด RB99 Logistics 15%</li>
+            <li><span class="feat-no">✗</span> B2B Matching</li>
+          </ul>
+          <button class="plan-btn outline-btn" onclick="goToApply('6months')">เลือกแพ็กเกจนี้</button>
+        </div>
+      </div>
+      <!-- 12 months FOUNDER -->
+      <div class="plan-card featured reveal d3">
+        <div class="plan-head dark">
+          <div class="plan-badge-feat">🏆 คุ้มสุด</div>
+          <div class="plan-type" style="color:var(--gold)">👑 FOUNDER MEMBER</div>
+          <div class="plan-name">12 เดือน</div>
+          <div class="plan-price" style="font-size:1rem">ติดต่อทีมงาน</div>
+          <div class="plan-period">Full Managed · เริ่ม มิ.ย. 2026</div>
+        </div>
+        <div class="plan-body">
+          <ul class="plan-feats">
+            <li><span class="feat-star">⭐</span> Showroom + คลัง 1 พาเลท</li>
+            <li><span class="feat-star">⭐</span> Lao Staff Full-time (8 ชม./วัน)</li>
+            <li><span class="feat-star">⭐</span> ขนส่งฟรี 100 KG (ส่วนเกิน 25฿/KG)</li>
+            <li><span class="feat-star">⭐</span> ส่วนลด 15% ทุกครั้ง · กระจายทั่วลาว</li>
+            <li><span class="feat-star">⭐</span> B2B Matching ครบวงจร</li>
+            <li><span class="feat-star">⭐</span> Founder Member ID + สิทธิ์พิเศษ</li>
+          </ul>
+          <button class="plan-btn gold-btn" onclick="goToApply('12months')">👑 จองสิทธิ์ Founder</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     TIMELINE
+══════════════════════════ -->
+<section class="section" style="background:#fff;border-top:1px solid var(--gray-200)">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="eyebrow gold-eye center">Roadmap</div>
+      <h2 class="h2" style="text-align:center">Pre-order → <em>Active</em></h2>
+    </div>
+    <div class="tl-row" style="max-width:760px;margin:2.5rem auto 0">
+      <div class="reveal d1" style="text-align:center;padding:0 .75rem;position:relative;z-index:1">
+        <div class="tl-dot-gold">💳</div>
+        <div class="tl-date">ตอนนี้</div>
+        <div class="tl-title">Pre-ordered</div>
+        <div class="tl-desc">ชำระ 100% ล็อกสิทธิ์<br>Founder Member</div>
+      </div>
+      <div class="reveal d2" style="text-align:center;padding:0 .75rem;position:relative;z-index:1">
+        <div class="tl-dot-navy">🏗️</div>
+        <div class="tl-date">มีนาคม 2026</div>
+        <div class="tl-title">Phase 1 — Event</div>
+        <div class="tl-desc">Big C Expo<br>เปิดตัวแบรนด์</div>
+      </div>
+      <div class="reveal d3" style="text-align:center;padding:0 .75rem;position:relative;z-index:1">
+        <div class="tl-dot-navy">🎪</div>
+        <div class="tl-date">พฤษภาคม 2026</div>
+        <div class="tl-title">Phase 2 — Grand Opening</div>
+        <div class="tl-desc">Launch ระดับ<br>อินเตอร์</div>
+      </div>
+      <div class="reveal d4" style="text-align:center;padding:0 .75rem;position:relative;z-index:1">
+        <div class="tl-dot-gold">🚀</div>
+        <div class="tl-date">มิถุนายน 2026</div>
+        <div class="tl-title">Active — Showroom เปิด</div>
+        <div class="tl-desc">นับ 12 เดือน<br>เริ่มต้น</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     TRUST STRIP
+══════════════════════════ -->
+<div class="trust-strip">
+  <div class="trust-strip-inner">
+    <div class="trust-item-strip">
+      <div class="trust-item-icon">🚫</div>
+      <div class="trust-item-label">0% Commission</div>
+      <div class="trust-item-sub">ไม่รับ % ยอดขายใดๆ</div>
+    </div>
+    <div class="trust-item-strip">
+      <div class="trust-item-icon">💰</div>
+      <div class="trust-item-label">Flat Fee Only</div>
+      <div class="trust-item-sub">จ่ายครั้งเดียว ไม่มีซ่อนเร้น</div>
+    </div>
+    <div class="trust-item-strip">
+      <div class="trust-item-icon">🏪</div>
+      <div class="trust-item-label">Physical Presence</div>
+      <div class="trust-item-sub">Showroom จริงใน Big C</div>
+    </div>
+    <div class="trust-item-strip">
+      <div class="trust-item-icon">👥</div>
+      <div class="trust-item-label">Local Team</div>
+      <div class="trust-item-sub">Staff ดูแลทุกวัน</div>
+    </div>
+    <div class="trust-item-strip">
+      <div class="trust-item-icon">📊</div>
+      <div class="trust-item-label">100% Your Sales</div>
+      <div class="trust-item-sub">ยอดขายเป็นของคุณทั้งหมด</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════
+     JOIN CTA → apply.html
+══════════════════════════ -->
+<section class="form-section" id="booking-form">
+  <div class="form-box" style="text-align:center">
+    <div style="font-size:2.5rem;margin-bottom:1rem">👑</div>
+    <div class="form-title" style="margin-bottom:.5rem">จองสิทธิ์ <span>Membership</span></div>
+    <p class="form-sub" style="margin-bottom:2rem">เลือกแพ็กเกจและกรอกข้อมูลผ่านระบบสมัครกลาง<br>ทีมงานติดต่อกลับภายใน 48 ชั่วโมง</p>
+
+    <div style="display:flex;flex-direction:column;gap:.875rem;max-width:400px;margin:0 auto">
+      <a href="/pages/apply.html?program=member&plan=12months"
+         class="form-submit" style="display:block;text-decoration:none;text-align:center">
+        👑 ยื่นโปรไฟล์เพื่อรับการพิจารณา (Founder)
+      </a>
+      <a href="/pages/apply.html?program=member&plan=6months"
+         class="form-submit" style="display:block;text-decoration:none;text-align:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2)">
+        ✦ Apply for Selection — 6 เดือน
+      </a>
+      <a href="/pages/apply.html?program=member&plan=3months"
+         class="form-submit" style="display:block;text-decoration:none;text-align:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15)">
+        Apply for Selection — 3 เดือน
+      </a>
+    </div>
+
+    <p class="form-note" style="margin-top:1.5rem">🔒 ข้อมูลปลอดภัย · ไม่มีค่าคอมมิชชั่น · ยืนยันโดยทีมงาน VITH HUB</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div style="background:var(--gray-100);border-top:1px solid var(--gray-200);padding:2rem 1.5rem">
+  <p style="font-size:.73rem;color:var(--gray-400);line-height:1.7;text-align:center;max-width:820px;margin:0 auto">*หมายเหตุ: VITH HUB คือแพลตฟอร์มสนับสนุนการเข้าสู่ตลาด (Market Entry Platform) ไม่รับประกันยอดขายหรือผลกำไร ลูกค้าบริหารการตลาดและยอดขายเอง 100% VITH HUB ไม่รับ % ยอดขายหรือ Commission ใดๆ ทั้งสิ้น</p>
+</div>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-logo">VITH<span>HUB</span></div>
+    <div class="footer-links">
+      <a href="/" class="footer-link">Home</a>
+      <a href="/event" class="footer-link">Expo 2026</a>
+      <a href="/accelerator" class="footer-link">Retail Entry</a>
+      <a href="/membership" class="footer-link">Membership</a>
+      <a href="https://line.me/ti/p/@cef8930n" class="footer-link" target="_blank">LINE @cef8930n</a>
+    </div>
+    <div class="footer-copy">© 2026 VITH HUB · vithhub.asia</div>
+        <br><span style="font-size:.68rem;color:rgba(255,255,255,.2)">หจก. รอยัล บริตจ์ 99 · ทะเบียนนิติบุคคล: 0413568000586 · อุดรธานี 41000 · <a href="/pages/policy.html" style="color:rgba(255,255,255,.3)">นโยบายการคืนเงิน</a></span>
+  </div>
+</footer>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta-text">
+    <strong>Founder Member · ยื่นโปรไฟล์</strong>
+    <span>เหลือ <span id="stickySlots">20</span> slots · ปิดรับเมื่อเต็ม</span>
+  </div>
+  <button class="sticky-cta-btn" onclick="goToApply('12months')">👑 จองสิทธิ์ Founder →</button>
+</div>
+
+<!-- FLOAT -->
+<div class="float-contact">
+  <a href="https://line.me/ti/p/@cef8930n" target="_blank" class="float-btn float-line" title="LINE">
+    <svg width="20" height="20" viewBox="0 0 48 48"><path d="M24 4C13 4 4 11.8 4 21.5c0 5.5 3.1 10.4 7.9 13.7-.3 1.2-1.1 4.3-1.3 5 0 0-.1.3.2.4.2.1.5 0 .5 0 .7-.1 8.5-5.6 9.8-6.5.9.1 1.9.2 2.9.2 11 0 20-7.8 20-17.3S35 4 24 4z" fill="white"/></svg>
+  </a>
+  <a href="https://wa.me/66855907666" target="_blank" class="float-btn float-wa" title="WhatsApp">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<script>
+// ── NAV ──
+function vithToggleNav(){document.getElementById('vithMobileMenu').classList.toggle('open')}
+window.addEventListener('scroll',()=>{
+  document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>20);
+  const h=document.getElementById('hero').offsetHeight;
+  document.getElementById('stickyCta').classList.toggle('show',window.scrollY>h*.65);
+});
+
+// ── REVEAL ──
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}});
+},{rootMargin:'0px 0px -48px 0px',threshold:0});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// ── SLOTS (localStorage counter) ──
+const TOTAL=20;
+function loadSlots(){
+  const b=parseInt(localStorage.getItem('vith_slots_booked')||'0');
+  updateSlotUI(TOTAL-b,b);
+}
+function updateSlotUI(r,b){
+  ['slotHero'].forEach(id=>{const el=document.getElementById(id);if(el){el.textContent=r;if(r<=5)el.style.color='#ef4444'}});
+  ['bookedHero'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=b});
+  ['stickySlots','topbarSlots'].forEach(id=>{const el=document.getElementById(id);if(el)el.textContent=r});
+  const fill=document.getElementById('slotBarHero');
+  if(fill)fill.style.width=(r/TOTAL*100)+'%';
+}
+loadSlots();
+
+// ── GO TO APPLY ──
+function goToApply(plan){
+  window.location.href='/pages/apply.html?program=member&plan='+(plan||'12months');
+}
+</script>
+</body>
+</html>
